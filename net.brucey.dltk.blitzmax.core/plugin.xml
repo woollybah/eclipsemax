@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension id="nature" point="org.eclipse.core.resources.natures">
+      <runtime>
+         <run class="net.brucey.dltk.blitzmax.core.BlitzMaxNature"/>
+      </runtime>
+   </extension>
+   
+   <extension point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="bmx"
+            id="net.brucey.dltk.blitzmax.content-type"
+            name="BlitzMax content type"
+            priority="high">
+      </content-type>
+   </extension>
+ 
+ 	<extension point="org.eclipse.dltk.core.language">
+      <language
+            class="net.brucey.dltk.blitzmax.core.BlitzMaxLanguageToolkit"
+            nature="net.brucey.dltk.blitzmax.core.nature"
+            priority="0">
+      </language>
+   </extension>
+
+	<extension
+         point="org.eclipse.dltk.core.sourceElementParsers">
+      <parser
+            class="net.brucey.dltk.blitzmax.core.parser.BlitzMaxSourceElementParser"
+            nature="net.brucey.dltk.blitzmax.core.nature"
+            priority="0">
+      </parser>
+   </extension>
+ 
+	<extension point="org.eclipse.dltk.core.sourceParsers">
+      <parserContribution
+            natureId="net.brucey.dltk.blitzmax.core.nature">
+         <parser
+               class="net.brucey.dltk.blitzmax.core.parser.BlitzMaxSourceParserFactory"
+               description="BlitzMax Source parser"
+               id="net.brucey.dltk.blitzmax.sourceParser"
+               name="sourceParser.name"
+               priority="0" />
+      </parserContribution>
+	</extension>
+ 
+	<extension point="org.eclipse.dltk.core.sourceElementParsers">
+      <parser
+            class="net.brucey.dltk.blitzmax.core.parser.BlitzMaxSourceElementParser"
+            nature="net.brucey.dltk.blitzmax.core.nature"
+            priority="1">
+      </parser>
+	</extension>
+	
+	<extension
+		point="org.eclipse.dltk.core.buildParticipant">
+		<buildParticipant
+			class="org.eclipse.dltk.core.builder.ParserBuildParticipantFactory"
+			id="net.brucey.dltk.blitzmax.parser"
+			name="BlitzMax parser"
+			nature="net.brucey.dltk.blitzmax.core.nature">
+		</buildParticipant>
+   </extension>
+	
+  <extension
+        point="org.eclipse.core.runtime.preferences">
+     <initializer
+           class="net.brucey.dltk.blitzmax.core.BlitzMaxCorePreferenceInitializer">
+     </initializer>
+  </extension>
+
+	<extension
+	      point="org.eclipse.dltk.core.search">
+	   <seachFactory
+	         class="net.brucey.dltk.blitzmax.search.BlitzMaxSearchFactory"
+	         nature="net.brucey.dltk.blitzmax.core.nature"
+	         priority="0">
+	   </seachFactory>
+	</extension>
+
+	<extension point="org.eclipse.dltk.core.selectionEngine">
+		<selectionEngine
+			class="net.brucey.dltk.blitzmax.selection.BlitzMaxSelectionEngine"
+			nature="net.brucey.dltk.blitzmax.core.nature"
+			priority="0">
+		</selectionEngine>
+   </extension>
+
+	<extension point="org.eclipse.dltk.core.completionEngine">
+	   <completionEngine
+	         class="net.brucey.dltk.blitzmax.completion.BlitzMaxCompletionEngine"
+	         nature="net.brucey.dltk.blitzmax.core.nature"
+	         priority="0">
+	   </completionEngine>
+	</extension>
+
+</plugin>
