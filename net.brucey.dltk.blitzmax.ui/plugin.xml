@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.dltk.ui.scriptCompletionProposalComputer"
+			id="BlitzMaxTypeCompletionProposalComputer">
+			<scriptCompletionProposalComputer
+				class="net.brucey.dltk.blitzmax.ui.text.completion.BlitzMaxCompletionProposalComputer"
+				categoryId="org.eclipse.dltk.ui.scriptTypeProposalCategory"
+				toolkitId="net.brucey.dltk.blitzmax.core.nature">
+				<partition type="__dftl_partition_content_type"/>
+			</scriptCompletionProposalComputer>
+	</extension>
+
+	<extension point="org.eclipse.ui.editors.templates">
+	       <contextType
+	          class="net.brucey.dltk.blitzmax.ui.templates.BlitzMaxUniversalTemplateContextType"
+	          id="blitzMaxUniversalTemplateContextType"
+	          name="blitzmax">
+<!--	          name="%BlitzMaxTemplateContext.name">-->
+	       </contextType>
+	       <include
+	          file="templates/templates.xml"
+	          translations="templates/templates.properties">
+	       </include>
+	    </extension>
+
+	<extension
+	       point="org.eclipse.ui.preferencePages">
+       <page
+	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxGlobalPreferencePage"
+	          id="net.brucey.dltk.blitzmax.preferences"
+	          name="BlitzMax"/>
+<!--	          name="%BlitzMaxPreferencePage.name"/>-->
+		<page
+	          category="net.brucey.dltk.blitzmax.preferences"
+	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxEditorPreferencePage"
+	          id="net.brucey.dltk.blitzmax.preferences.editor"
+	          name="Editor"/>
+<!--	          name="%BlitzMaxEditorPreferencePage.name"/>-->
+	    <page
+	          category="net.brucey.dltk.blitzmax.preferences.editor"
+	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxEditorSyntaxColoringPreferencePage"
+	          id="net.brucey.dltk.blitzmax.preferences.editor.syntaxcoloring"
+	          name="Syntax Coloring"/>
+<!--	          name="%BlitzMaxEditorSyntaxColoringPreferencePage.name"/>-->
+<!--	    <page
+    	      category="net.brucey.dltk.blitzmax.preferences.editor"
+         	  class="org.eclipse.dltk.ui.preferences.ScriptEditorHoverPreferencePage:net.brucey.dltk.blitzmax.core.nature"
+	          id="net.brucey.dltk.blitzmax.preferences.editor.hovers"
+    	      name="%BlitzMaxEditorHoversPreferencePage.name"/>
+-->    
+	    <page category="net.brucey.dltk.blitzmax.preferences.editor"
+	    	  class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxFoldingPreferencePage"
+	    	  id="net.brucey.dltk.blitzmax.preferences.editor.folding"
+	    	  name="Folding" />
+<!--	    	  name="%BlitzMaxEditorFoldingPreferencePage.name" />-->
+     	<page
+              category="net.brucey.dltk.blitzmax.preferences.editor"
+              class="net.brucey.dltk.blitzmax.ui.templates.BlitzMaxCodeTemplatesPreferencePage"
+              id="net.brucey.dltk.blitzmax.preferences.templates"
+              name="Templates"/>
+<!--              name="%BlitzMaxCodeTemplatesPreferencePage.name"/>-->
+       <page
+              category="net.brucey.dltk.blitzmax.preferences"
+              class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxTodoTaskPreferencePage"
+              id="net.brucey.dltk.blitzmax.preferences.todo"
+              name="Task Tags"/>
+<!--              name="%BlitzMaxTaskTagsPreferencePage.name"/>-->
+	</extension>
+
+	 <extension
+	       point="org.eclipse.ui.propertyPages">
+	    <page
+	          category="net.brucey.dltk.blitzmax.propertyPage"
+	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxTodoTaskPreferencePage"
+	          id="net.brucey.dltk.blitzmax.ui.propertyPage.todo"
+	          name="Task Tags">
+<!--	          name="%BlitzMaxTodoPropertyPage.name">-->
+	      <enabledWhen>
+	        <adapt type="org.eclipse.core.resources.IProject">
+	          <test property="org.eclipse.core.resources.projectNature" value="net.brucey.dltk.blitzmax.core.nature"/>
+	        </adapt>         
+	      </enabledWhen>
+	    </page>    
+	    <page
+	      class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxPropertyPage"
+	      id="net.brucey.dltk.blitzmax.propertyPage"
+	      name="BlitzMax">
+<!--	      name="%BlitzMaxPropertyPage.name">-->
+	      <enabledWhen>
+	        <adapt type="org.eclipse.core.resources.IProject">
+	          <test property="org.eclipse.core.resources.projectNature" value="net.brucey.dltk.blitzmax.core.nature"/>
+	        </adapt>         
+	      </enabledWhen>
+	    </page>    
+	      
+	 </extension>   
+
+	<extension point="org.eclipse.ui.newWizards">
+      <wizard
+            category="net.brucey.dltk.blitzmax.category"
+            class="org.eclipse.dltk.ui.wizards.GenericDLTKProjectWizard:net.brucey.dltk.blitzmax.core.nature"
+            icon="icons/etool16/newprj_wiz.gif"
+            id="net.brucey.dltk.blitzmax.wizard1"
+            name="BlitzMax ProjectWizard"
+            project="true">
+      </wizard>
+      <category
+            id="net.brucey.dltk.blitzmax.category"
+            name="DLTK Examples">
+      </category>
+   </extension>
+   
+   	<extension point="org.eclipse.ui.editors">
+      <editor class="net.brucey.dltk.blitzmax.ui.editor.BlitzMaxEditor"
+          contributorClass="org.eclipse.dltk.internal.ui.editor.SourceModuleEditorActionContributor"
+         default="true"
+        extensions="bmx"
+            icon="icons/obj16/blitzmax_obj.gif"
+            id="net.brucey.dltk.blitzmax.ui.editor"
+            name="%BlitzMaxEditor.name">
+         <contentTypeBinding contentTypeId="net.brucey.dltk.blitzmax.content-type"/>
+      </editor>
+   </extension>
+   
+   	<extension
+	      point="org.eclipse.ui.actionSets">
+	   <actionSet
+	         id="net.brucey.dltk.blitzmax.actionSet"
+	         label="BlitzMax action set">
+	          <action
+	                class="net.brucey.dltk.blitzmax.ui.actions.BlitzMaxOpenTypeAction"
+	                icon="icons/opentype.gif"
+	                id="openType"
+	                label="BlitzMax Open type"
+	                menubarPath="navigate/open.ext2"
+	                toolbarPath="org.eclipse.search.searchActionSet/Search"
+	                tooltip="BlitzMax open type">
+	         </action>
+	   </actionSet>
+	</extension>
+
+	<extension point="org.eclipse.dltk.ui.scriptDocumentationProviders">
+	     <provider
+	           class="net.brucey.dltk.blitzmax.selection.BlitzMaxCommentDocumentationProvider"
+	           id="net.brucey.dltk.blitzmax.ui.BlitzMaxCommentDocumentationProvider"
+	           nature="net.brucey.dltk.blitzmax.core.nature"/>
+	</extension>
+
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.brucey.dltk.blitzmax.ui.BlitzMaxUIPreferenceInitializer">
+      </initializer>
+   </extension>
+  
+	<extension
+	     point="org.eclipse.search.searchPages">
+	  <page
+	        canSearchEnclosingProjects="true"
+	        class="net.brucey.dltk.blitzmax.ui.search.BlitzMaxSearchPage"
+	        enabled="true"
+	        extensions="bmx:90"
+	        icon="/icons/search_obj.gif"
+	        id="net.brucey.dltk.blitzmax.ui.BlitzMaxSearchPage"
+	        label="BlitzMax Search"
+	        showScopeSection="true"
+	        sizeHint="460,160">
+	  </page>
+	</extension>
+
+</plugin>

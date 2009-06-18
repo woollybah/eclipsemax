@@ -1,0 +1,20 @@
+SuperStrict
+
+Const VERSION:String = "1.2.3"             ' constant
+
+Rem
+bbdoc: header
+about: description
+End Rem
+Type Foo
+  ' TODO Task in the comment
+  Field name:String         ' field
+
+  Global total:Int          ' tyoe global
+  Const DEG:Int = 360       ' type const
+
+  Method nextInstance(param:Int)
+    name = "Fred"
+  End Method
+  
+End Type
