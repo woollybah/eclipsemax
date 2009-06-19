@@ -1,6 +1,7 @@
 package net.brucey.dltk.blitzmax.ui.editor;
 
 import net.brucey.dltk.blitzmax.ui.text.BlitzMaxCodeScanner;
+import net.brucey.dltk.blitzmax.ui.text.BlitzMaxOutlineInformationControl;
 import net.brucey.dltk.blitzmax.ui.text.BlitzMaxRemScanner;
 import net.brucey.dltk.blitzmax.ui.text.IBlitzMaxColorConstants;
 
@@ -15,14 +16,20 @@ import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.DefaultIndentLineAutoEditStrategy;
 import org.eclipse.jface.text.IAutoEditStrategy;
 import org.eclipse.jface.text.IDocument;
+import org.eclipse.jface.text.IInformationControl;
+import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.contentassist.ContentAssistant;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
 import org.eclipse.jface.text.information.IInformationPresenter;
+import org.eclipse.jface.text.information.IInformationProvider;
+import org.eclipse.jface.text.information.InformationPresenter;
 import org.eclipse.jface.text.presentation.IPresentationReconciler;
 import org.eclipse.jface.text.presentation.PresentationReconciler;
 import org.eclipse.jface.text.rules.DefaultDamagerRepairer;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.texteditor.ITextEditor;
 
 public class BlitzMaxSourceViewerConfiguration extends
@@ -53,9 +60,16 @@ public class BlitzMaxSourceViewerConfiguration extends
     return BlitzMaxContentAssistPreference.getDefault();
   }
 
-  public IInformationPresenter getOutlinePresenter(ScriptSourceViewer viewer,
-      boolean doCodeResolve) {
-    return null;
+  protected IInformationControlCreator getOutlinePresenterControlCreator(
+      ISourceViewer sourceViewer, final String commandId) {
+    return new IInformationControlCreator() {
+      public IInformationControl createInformationControl(Shell parent) {
+        int shellStyle = SWT.RESIZE;
+        int treeStyle = SWT.V_SCROLL | SWT.H_SCROLL;
+        return new BlitzMaxOutlineInformationControl(parent, shellStyle,
+            treeStyle, commandId);
+      }
+    };
   }
 
   public String[] getConfiguredContentTypes(ISourceViewer sourceViewer) {
@@ -130,4 +144,15 @@ public class BlitzMaxSourceViewerConfiguration extends
     assistant.setContentAssistProcessor(scriptProcessor,
         IBlitzMaxPartitions.BLITZMAX_STRING);
   }
+
+  protected void initializeQuickOutlineContexts(InformationPresenter presenter,
+      IInformationProvider provider) {
+    presenter.setInformationProvider(provider,
+        IBlitzMaxPartitions.BLITZMAX_COMMENT);
+    presenter.setInformationProvider(provider,
+        IBlitzMaxPartitions.BLITZMAX_MULTILINE_COMMENT);
+    presenter.setInformationProvider(provider,
+        IBlitzMaxPartitions.BLITZMAX_STRING);
+  }
+
 }

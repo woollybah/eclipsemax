@@ -11,22 +11,23 @@ import org.eclipse.ui.editors.text.EditorsUI;
 public class BlitzMaxUIPreferenceInitializer extends
     AbstractPreferenceInitializer {
 
-	public void initializeDefaultPreferences() {
-		IPreferenceStore store = BlitzMaxUIPlugin.getDefault().getPreferenceStore();
+  public void initializeDefaultPreferences() {
+    IPreferenceStore store = BlitzMaxUIPlugin.getDefault().getPreferenceStore();
 
-		// TODO : this section mirrors TaskTagUtils.initializeDefaultValues()
-		store.setDefault(ITodoTaskPreferences.ENABLED, true);
-		store.setDefault(ITodoTaskPreferences.CASE_SENSITIVE, true);
-		store.setDefault(ITodoTaskPreferences.TAGS, TaskTagUtils
-		    .encodeTaskTags(TaskTagUtils.getDefaultTags()));
+    EditorsUI.useAnnotationsPreferencePage(store);
+    EditorsUI.useQuickDiffPreferencePage(store);
+    BlitzMaxPreferenceConstants.initializeDefaultValues(store);
+    SemanticHighlightingUtils.initializeDefaultValues(store, BlitzMaxUIPlugin
+        .getDefault().getTextTools().getSemanticHighlightings());
+    store.setDefault(BlitzMaxPreferenceConstants.FORMATTER_ID,
+        Util.EMPTY_STRING);
 
-		EditorsUI.useAnnotationsPreferencePage(store);
-		EditorsUI.useQuickDiffPreferencePage(store);
-		BlitzMaxPreferenceConstants.initializeDefaultValues(store);
-		SemanticHighlightingUtils.initializeDefaultValues(store, BlitzMaxUIPlugin
-		    .getDefault().getTextTools().getSemanticHighlightings());
-		store.setDefault(BlitzMaxPreferenceConstants.FORMATTER_ID,
-		    Util.EMPTY_STRING);
-	}
+    // TODO : this section mirrors TaskTagUtils.initializeDefaultValues()
+    store.setDefault(ITodoTaskPreferences.ENABLED, true);
+    store.setDefault(ITodoTaskPreferences.CASE_SENSITIVE, true);
+    store.setDefault(ITodoTaskPreferences.TAGS, TaskTagUtils
+        .encodeTaskTags(TaskTagUtils.getDefaultTags()));
+
+  }
 
 }
