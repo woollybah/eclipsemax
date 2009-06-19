@@ -143,7 +143,7 @@
 
 	<extension point="org.eclipse.dltk.ui.scriptDocumentationProviders">
 	     <provider
-	           class="net.brucey.dltk.blitzmax.selection.BlitzMaxCommentDocumentationProvider"
+	           class="net.brucey.dltk.blitzmax.ui.documentation.BlitzMaxCommentDocumentationProvider"
 	           id="net.brucey.dltk.blitzmax.ui.BlitzMaxCommentDocumentationProvider"
 	           nature="net.brucey.dltk.blitzmax.core.nature"/>
 	</extension>
@@ -168,6 +168,14 @@
 	        showScopeSection="true"
 	        sizeHint="460,160">
 	  </page>
+	</extension>
+
+	<extension point="org.eclipse.dltk.core.completionEngine">
+	   <completionEngine
+	         class="net.brucey.dltk.blitzmax.ui.text.completion.BlitzMaxCompletionEngine"
+	         nature="net.brucey.dltk.blitzmax.core.nature"
+	         priority="0">
+	   </completionEngine>
 	</extension>
 
 </plugin>

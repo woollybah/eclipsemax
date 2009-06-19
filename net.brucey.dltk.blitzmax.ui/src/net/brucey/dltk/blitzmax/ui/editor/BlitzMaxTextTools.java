@@ -8,30 +8,32 @@ import org.eclipse.ui.texteditor.ITextEditor;
 
 public class BlitzMaxTextTools extends ScriptTextTools {
 
-	private final static String[] LEGAL_CONTENT_TYPES = new String[] {
-	    IBlitzMaxPartitions.BLITZMAX_STRING, IBlitzMaxPartitions.BLITZMAX_COMMENT };
+  private final static String[] LEGAL_CONTENT_TYPES = new String[] {
+      IBlitzMaxPartitions.BLITZMAX_STRING,
+      IBlitzMaxPartitions.BLITZMAX_COMMENT,
+      IBlitzMaxPartitions.BLITZMAX_MULTILINE_COMMENT };
 
-	private IPartitionTokenScanner partitionScanner;
+  private IPartitionTokenScanner partitionScanner;
 
-	public BlitzMaxTextTools(boolean autoDisposeOnDisplayDispose) {
+  public BlitzMaxTextTools(boolean autoDisposeOnDisplayDispose) {
 
-		super(IBlitzMaxPartitions.BLITZMAX_PARTITIONING, LEGAL_CONTENT_TYPES,
-		    autoDisposeOnDisplayDispose);
+    super(IBlitzMaxPartitions.BLITZMAX_PARTITIONING, LEGAL_CONTENT_TYPES,
+        autoDisposeOnDisplayDispose);
 
-		partitionScanner = new BlitzMaxPartitionScanner();
-	}
+    partitionScanner = new BlitzMaxPartitionScanner();
+  }
 
-	@Override
-	public ScriptSourceViewerConfiguration createSourceViewerConfiguraton(
-	    IPreferenceStore preferenceStore, ITextEditor editor, String partitioning) {
+  @Override
+  public ScriptSourceViewerConfiguration createSourceViewerConfiguraton(
+      IPreferenceStore preferenceStore, ITextEditor editor, String partitioning) {
 
-		return new BlitzMaxSourceViewerConfiguration(getColorManager(),
-		    preferenceStore, editor, partitioning);
+    return new BlitzMaxSourceViewerConfiguration(getColorManager(),
+        preferenceStore, editor, partitioning);
 
-	}
+  }
 
-	public IPartitionTokenScanner getPartitionScanner() {
-		return partitionScanner;
-	}
+  public IPartitionTokenScanner getPartitionScanner() {
+    return partitionScanner;
+  }
 
 }

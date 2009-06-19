@@ -19,89 +19,98 @@ import org.eclipse.jface.text.rules.WordRule;
 
 public class BlitzMaxCodeScanner extends AbstractScriptScanner {
 
-	private static String[] keywords = { "and", "for", "assert", "elseif",
-	    "from", "exit", "else", "global", "not", "try", "type", "end", "if",
-	    "or", "while", "continue", "then", "import", "include", "strict",
-	    "until", "next", "extends", "to", "superstrict", "finally", "method",
-	    "function", "self", "return", "step", "field", "final", "abstract" };
+  private static String[] keywords = { "and", "for", "assert", "elseif",
+      "from", "exit", "else", "global", "not", "try", "type", "end", "if",
+      "or", "while", "continue", "then", "import", "include", "strict",
+      "until", "next", "extends", "to", "superstrict", "finally", "method",
+      "function", "self", "return", "step", "field", "final", "abstract",
+      "const" };
 
-	private static String tokenProperties[] = new String[] {
-	    IBlitzMaxColorConstants.BLITZMAX_COMMENT,
-	    IBlitzMaxColorConstants.BLITZMAX_DEFAULT,
-	    IBlitzMaxColorConstants.BLITZMAX_KEYWORD,
-	    IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT,
-	    IBlitzMaxColorConstants.BLITZMAX_TODO_COMMENT };
+  private static String tokenProperties[] = new String[] {
+      IBlitzMaxColorConstants.BLITZMAX_COMMENT,
+      IBlitzMaxColorConstants.BLITZMAX_DEFAULT,
+      IBlitzMaxColorConstants.BLITZMAX_KEYWORD,
+      IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT,
+      IBlitzMaxColorConstants.BLITZMAX_TODO_COMMENT,
+      IBlitzMaxColorConstants.BLITZMAX_NUMBER,
+      IBlitzMaxColorConstants.BLITZMAX_VARIABLE,
+      IBlitzMaxColorConstants.BLITZMAX_TYPE_VARIABLE,
+      IBlitzMaxColorConstants.BLITZMAX_CONSTANT_VARIABLE,
+      IBlitzMaxColorConstants.BLITZMAX_GLOBAL_VARIABLE,
+      IBlitzMaxColorConstants.BLITZMAX_FIELD_VARIABLE, };
 
-	public BlitzMaxCodeScanner(IColorManager manager, IPreferenceStore store) {
-		super(manager, store);
-		this.initialize();
-	}
+  public BlitzMaxCodeScanner(IColorManager manager, IPreferenceStore store) {
+    super(manager, store);
+    this.initialize();
+  }
 
-	@Override
-	protected List createRules() {
-		List/* <IRule> */rules = new ArrayList/* <IRule> */();
-		IToken keyword = this.getToken(IBlitzMaxColorConstants.BLITZMAX_KEYWORD);
-		IToken comment = this.getToken(IBlitzMaxColorConstants.BLITZMAX_COMMENT);
-		IToken other = this.getToken(IBlitzMaxColorConstants.BLITZMAX_DEFAULT);
-		IToken multilineComment = this
-		    .getToken(IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT);
-		final IToken todo = getToken(IBlitzMaxColorConstants.BLITZMAX_TODO_COMMENT);
+  @Override
+  protected List createRules() {
+    List/* <IRule> */rules = new ArrayList/* <IRule> */();
+    IToken keyword = this.getToken(IBlitzMaxColorConstants.BLITZMAX_KEYWORD);
+    IToken comment = this.getToken(IBlitzMaxColorConstants.BLITZMAX_COMMENT);
+    IToken other = this.getToken(IBlitzMaxColorConstants.BLITZMAX_DEFAULT);
+    // IToken multilineComment = this
+    // .getToken(IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT);
+    final IToken todo = getToken(IBlitzMaxColorConstants.BLITZMAX_TODO_COMMENT);
 
-		// Add rule for single line comments.
-		rules.add(new EndOfLineRule("'", comment));
+    IToken number = getToken(IBlitzMaxColorConstants.BLITZMAX_NUMBER);
 
-		rules.add(new MultiLineRule("rem", "end rem", multilineComment));
-		rules.add(new MultiLineRule("rem", "endrem", multilineComment));
+    IToken typeVariable = getToken(IBlitzMaxColorConstants.BLITZMAX_TYPE_VARIABLE);
+    IToken constVariable = getToken(IBlitzMaxColorConstants.BLITZMAX_CONSTANT_VARIABLE);
+    IToken variable = getToken(IBlitzMaxColorConstants.BLITZMAX_VARIABLE);
+    IToken globalVariable = getToken(IBlitzMaxColorConstants.BLITZMAX_GLOBAL_VARIABLE);
+    IToken fieldVariable = getToken(IBlitzMaxColorConstants.BLITZMAX_FIELD_VARIABLE);
 
-		// Add generic whitespace rule.
-		rules.add(new WhitespaceRule(new BlitzMaxWhitespaceDetector()));
-		// Add word rule for keywords.
-		WordRule wordRule = new WordRule(new BlitzMaxWordDetector(), other, true);
-		for (int i = 0; i < keywords.length; i++) {
-			wordRule.addWord(keywords[i], keyword);
-		}
-		rules.add(wordRule);
-		rules.add(createTodoTagRule(todo));
+    // Add rule for single line comments.
+    rules.add(new EndOfLineRule("'", comment));
 
-		this.setDefaultReturnToken(other);
-		return rules;
-	}
+    // rules.add(new MultiLineRule("rem", "end rem", multilineComment));
+    // rules.add(new MultiLineRule("rem", "endrem", multilineComment));
 
-	@Override
-	protected String[] getTokenProperties() {
-		return tokenProperties;
-	}
+    // Add generic whitespace rule.
+    rules.add(new WhitespaceRule(new BlitzMaxWhitespaceDetector()));
+    // Add word rule for keywords.
+    WordRule wordRule = new WordRule(new BlitzMaxWordDetector(), other, true);
+    for (int i = 0; i < keywords.length; i++) {
+      wordRule.addWord(keywords[i], keyword);
+    }
+    rules.add(wordRule);
+    rules.add(createTodoTagRule(todo));
 
-	public class BlitzMaxWhitespaceDetector implements IWhitespaceDetector {
-		public boolean isWhitespace(char character) {
-			return Character.isWhitespace(character);
-		}
-	}
+    this.setDefaultReturnToken(other);
+    return rules;
+  }
 
-	public class BlitzMaxWordDetector implements IWordDetector {
-		public boolean isWordPart(char character) {
-			return Character.isJavaIdentifierPart(character);
-		}
+  @Override
+  protected String[] getTokenProperties() {
+    return tokenProperties;
+  }
 
-		public boolean isWordStart(char character) {
-			return Character.isJavaIdentifierStart(character);
-		}
-	}
+  public class BlitzMaxWordDetector implements IWordDetector {
+    public boolean isWordPart(char character) {
+      return Character.isJavaIdentifierPart(character);
+    }
 
-	public int read() {
-		int c = super.read();
+    public boolean isWordStart(char character) {
+      return Character.isJavaIdentifierStart(character);
+    }
+  }
 
-		if (c != EOF) {
-			c = Character.toLowerCase((char) c);
-		}
+  public int read() {
+    int c = super.read();
 
-		return c;
-	}
+    if (c != EOF) {
+      c = Character.toLowerCase((char) c);
+    }
 
-	private TodoTagRule createTodoTagRule(final IToken token) {
-		final ITodoTaskPreferences prefs = new TodoTaskPreferencesOnPreferenceStore(
-		    getPreferenceStore());
-		return new TodoTagRule(token, prefs.getTagNames(), prefs.isCaseSensitive());
-	}
+    return c;
+  }
+
+  private TodoTagRule createTodoTagRule(final IToken token) {
+    final ITodoTaskPreferences prefs = new TodoTaskPreferencesOnPreferenceStore(
+        getPreferenceStore());
+    return new TodoTagRule(token, prefs.getTagNames(), prefs.isCaseSensitive());
+  }
 
 }

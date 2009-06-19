@@ -59,11 +59,23 @@
 		point="org.eclipse.dltk.core.buildParticipant">
 		<buildParticipant
 			class="org.eclipse.dltk.core.builder.ParserBuildParticipantFactory"
-			id="net.brucey.dltk.blitzmax.parser"
-			name="BlitzMax parser"
-			nature="net.brucey.dltk.blitzmax.core.nature">
+			id="net.brucey.dltk.blitzmax.buildParticipant.parser"
+			nature="net.brucey.dltk.blitzmax.core.nature"
+			name="BlitzMax Parser">
+<!--			name="%parserBuildParticipant.name">-->
 		</buildParticipant>
+       <buildParticipant
+            class="net.brucey.dltk.blitzmax.core.parser.BlitzMaxTodoParserType"
+            id="net.brucey.dltk.blitzmax.todo"
+            nature="net.brucey.dltk.blitzmax.core.nature"
+            name="BlitzMax Task Tags Parser">
+<!--            name="%taskTagsBuildParticipant.name">-->
+            <requires
+                  id="net.brucey.dltk.blitzmax.buildParticipant.parser">
+            </requires>
+      </buildParticipant>
    </extension>
+
 	
   <extension
         point="org.eclipse.core.runtime.preferences">
@@ -88,13 +100,5 @@
 			priority="0">
 		</selectionEngine>
    </extension>
-
-	<extension point="org.eclipse.dltk.core.completionEngine">
-	   <completionEngine
-	         class="net.brucey.dltk.blitzmax.completion.BlitzMaxCompletionEngine"
-	         nature="net.brucey.dltk.blitzmax.core.nature"
-	         priority="0">
-	   </completionEngine>
-	</extension>
 
 </plugin>

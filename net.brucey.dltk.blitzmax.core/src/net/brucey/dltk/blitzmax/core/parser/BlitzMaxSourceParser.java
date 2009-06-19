@@ -1,12 +1,10 @@
 package net.brucey.dltk.blitzmax.core.parser;
 
-import net.brucey.dltk.blitzmax.core.parsers.BlitzMaxTokenStream;
 import net.brucey.dltk.blitzmax.core.parsers.DLTKBlitzMaxErrorReporter;
 import net.brucey.dltk.blitzmax.core.parsers.blitzmaxLexer;
 import net.brucey.dltk.blitzmax.core.parsers.blitzmaxParser;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxModuleDeclaration;
 
-import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.Token;

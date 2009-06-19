@@ -8,7 +8,7 @@ public class BlitzMaxStringLiteral extends StringLiteral {
 
 	public BlitzMaxStringLiteral(Token value) {
 		super(((CommonToken) value).getStartIndex(), ((CommonToken) value)
-		    .getStopIndex() - 1, value.getText());
+		    .getStopIndex() + 1, value.getText());
 	}
 
 }

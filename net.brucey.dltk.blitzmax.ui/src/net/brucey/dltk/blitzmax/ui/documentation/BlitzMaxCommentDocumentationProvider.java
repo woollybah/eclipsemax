@@ -1,4 +1,4 @@
-package net.brucey.dltk.blitzmax.selection;
+package net.brucey.dltk.blitzmax.ui.documentation;
 
 import java.io.Reader;
 import java.io.StringReader;

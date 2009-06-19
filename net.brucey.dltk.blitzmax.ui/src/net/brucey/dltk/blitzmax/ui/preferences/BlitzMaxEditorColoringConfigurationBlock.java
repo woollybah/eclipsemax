@@ -29,74 +29,77 @@ public class BlitzMaxEditorColoringConfigurationBlock extends
     AbstractScriptEditorColoringConfigurationBlock implements
     IPreferenceConfigurationBlock {
 
-	private static final String PREVIEW_FILE_NAME = "PreviewFile.txt"; //$NON-NLS-1$
+  private static final String PREVIEW_FILE_NAME = "PreviewFile.txt"; //$NON-NLS-1$
 
-	private static final String[][] syntaxColorListModel = new String[][] {
-	    { PreferencesMessages.DLTKEditorPreferencePage_singleLineComment,
-	        BlitzMaxPreferenceConstants.EDITOR_SINGLE_LINE_COMMENT_COLOR,
-	        sCommentsCategory },
-	    { PreferencesMessages.DLTKEditorPreferencePage_CommentTaskTags,
-	        BlitzMaxPreferenceConstants.COMMENT_TASK_TAGS_COLOR,
-	        sCommentsCategory },
+  private static final String[][] syntaxColorListModel = new String[][] {
+      { BlitzMaxPreferencesMessages.BlitzMaxRemComments,
+          BlitzMaxPreferenceConstants.EDITOR_REM_COMMENT_COLOR,
+          sCommentsCategory },
+      { PreferencesMessages.DLTKEditorPreferencePage_singleLineComment,
+          BlitzMaxPreferenceConstants.EDITOR_SINGLE_LINE_COMMENT_COLOR,
+          sCommentsCategory },
+      { PreferencesMessages.DLTKEditorPreferencePage_CommentTaskTags,
+          BlitzMaxPreferenceConstants.COMMENT_TASK_TAGS_COLOR,
+          sCommentsCategory },
 
-	    { PreferencesMessages.DLTKEditorPreferencePage_keywords,
-	        BlitzMaxPreferenceConstants.EDITOR_KEYWORD_COLOR, sCoreCategory },
+      { PreferencesMessages.DLTKEditorPreferencePage_keywords,
+          BlitzMaxPreferenceConstants.EDITOR_KEYWORD_COLOR, sCoreCategory },
 
-	    { PreferencesMessages.DLTKEditorPreferencePage_strings,
-	        BlitzMaxPreferenceConstants.EDITOR_STRING_COLOR, sCoreCategory },
-	    { PreferencesMessages.DLTKEditorPreferencePage_default,
-	        IBlitzMaxColorConstants.BLITZMAX_DEFAULT, sCoreCategory },
-	    { PreferencesMessages.DLTKEditorPreferencePage_numbers,
-	        BlitzMaxPreferenceConstants.EDITOR_NUMBER_COLOR, sCoreCategory },
-	    { BlitzMaxPreferencesMessages.BlitzMaxClassVariable,
-	        BlitzMaxPreferenceConstants.EDITOR_CLASS_VARIABLE_COLOR,
-	        sCoreCategory },
-	    { BlitzMaxPreferencesMessages.BlitzMaxInstanceVariable,
-	        BlitzMaxPreferenceConstants.EDITOR_INSTANCE_VARIABLE_COLOR,
-	        sCoreCategory },
-	    { BlitzMaxPreferencesMessages.BlitzMaxGlobalVariable,
-	        BlitzMaxPreferenceConstants.EDITOR_GLOBAL_VARIABLE_COLOR,
-	        sCoreCategory },
+      { PreferencesMessages.DLTKEditorPreferencePage_strings,
+          BlitzMaxPreferenceConstants.EDITOR_STRING_COLOR, sCoreCategory },
+      { PreferencesMessages.DLTKEditorPreferencePage_default,
+          IBlitzMaxColorConstants.BLITZMAX_DEFAULT, sCoreCategory },
+      { PreferencesMessages.DLTKEditorPreferencePage_numbers,
+          BlitzMaxPreferenceConstants.EDITOR_NUMBER_COLOR, sCoreCategory },
+      { BlitzMaxPreferencesMessages.BlitzMaxClassVariable,
+          BlitzMaxPreferenceConstants.EDITOR_CLASS_VARIABLE_COLOR,
+          sCoreCategory },
+      { BlitzMaxPreferencesMessages.BlitzMaxInstanceVariable,
+          BlitzMaxPreferenceConstants.EDITOR_INSTANCE_VARIABLE_COLOR,
+          sCoreCategory },
+      { BlitzMaxPreferencesMessages.BlitzMaxGlobalVariable,
+          BlitzMaxPreferenceConstants.EDITOR_GLOBAL_VARIABLE_COLOR,
+          sCoreCategory },
 
-	/*
-	 * { PreferencesMessages.DLTKEditorPreferencePage_variables,
-	 * BlitzMaxPreferenceConstants.EDITOR_VARIABLE_COLOR, sCoreCategory }
-	 */};
+  /*
+   * { PreferencesMessages.DLTKEditorPreferencePage_variables,
+   * BlitzMaxPreferenceConstants.EDITOR_VARIABLE_COLOR, sCoreCategory }
+   */};
 
-	public BlitzMaxEditorColoringConfigurationBlock(OverlayPreferenceStore store) {
-		super(store);
-	}
+  public BlitzMaxEditorColoringConfigurationBlock(OverlayPreferenceStore store) {
+    super(store);
+  }
 
-	protected String[][] getSyntaxColorListModel() {
-		return syntaxColorListModel;
-	}
+  protected String[][] getSyntaxColorListModel() {
+    return syntaxColorListModel;
+  }
 
-	protected ProjectionViewer createPreviewViewer(Composite parent,
-	    IVerticalRuler verticalRuler, IOverviewRuler overviewRuler,
-	    boolean showAnnotationsOverview, int styles, IPreferenceStore store) {
-		return new ScriptSourceViewer(parent, verticalRuler, overviewRuler,
-		    showAnnotationsOverview, styles, store);
-	}
+  protected ProjectionViewer createPreviewViewer(Composite parent,
+      IVerticalRuler verticalRuler, IOverviewRuler overviewRuler,
+      boolean showAnnotationsOverview, int styles, IPreferenceStore store) {
+    return new ScriptSourceViewer(parent, verticalRuler, overviewRuler,
+        showAnnotationsOverview, styles, store);
+  }
 
-	protected ScriptSourceViewerConfiguration createSimpleSourceViewerConfiguration(
-	    IColorManager colorManager, IPreferenceStore preferenceStore,
-	    ITextEditor editor, boolean configureFormatter) {
-		return new SimpleBlitzMaxSourceViewerConfiguration(colorManager,
-		    preferenceStore, editor, IBlitzMaxPartitions.BLITZMAX_PARTITIONING,
-		    configureFormatter);
-	}
+  protected ScriptSourceViewerConfiguration createSimpleSourceViewerConfiguration(
+      IColorManager colorManager, IPreferenceStore preferenceStore,
+      ITextEditor editor, boolean configureFormatter) {
+    return new SimpleBlitzMaxSourceViewerConfiguration(colorManager,
+        preferenceStore, editor, IBlitzMaxPartitions.BLITZMAX_PARTITIONING,
+        configureFormatter);
+  }
 
-	protected void setDocumentPartitioning(IDocument document) {
-		BlitzMaxDocumentSetupParticipant participant = new BlitzMaxDocumentSetupParticipant();
-		participant.setup(document);
-	}
+  protected void setDocumentPartitioning(IDocument document) {
+    BlitzMaxDocumentSetupParticipant participant = new BlitzMaxDocumentSetupParticipant();
+    participant.setup(document);
+  }
 
-	protected InputStream getPreviewContentReader() {
-		return getClass().getResourceAsStream(PREVIEW_FILE_NAME);
-	}
+  protected InputStream getPreviewContentReader() {
+    return getClass().getResourceAsStream(PREVIEW_FILE_NAME);
+  }
 
-	protected ScriptTextTools getTextTools() {
-		return BlitzMaxUIPlugin.getDefault().getTextTools();
-	}
+  protected ScriptTextTools getTextTools() {
+    return BlitzMaxUIPlugin.getDefault().getTextTools();
+  }
 
 }

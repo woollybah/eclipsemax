@@ -86,8 +86,8 @@ catch (Throwable extre) {
 
 file_input:
     	(
-    		NEWLINE
-    		|
+    		//NEWLINE
+    		//|
     		s = main_statements
     			{ 
     				if( s != null ) {
@@ -301,6 +301,8 @@ statement_list returns [ ArrayList statements = new ArrayList( ) ]
 			{
 				statements.add(s2);
 			}
+		| while_block
+		| repeat_block
 		| const_def
 		| global_def
 		| local_def
