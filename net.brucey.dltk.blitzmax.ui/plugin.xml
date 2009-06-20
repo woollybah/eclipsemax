@@ -97,20 +97,27 @@
 	      
 	 </extension>   
 
-	<extension point="org.eclipse.ui.newWizards">
-      <wizard
-            category="net.brucey.dltk.blitzmax.category"
-            class="org.eclipse.dltk.ui.wizards.GenericDLTKProjectWizard:net.brucey.dltk.blitzmax.core.nature"
-            icon="icons/etool16/newprj_wiz.gif"
-            id="net.brucey.dltk.blitzmax.wizard1"
-            name="BlitzMax ProjectWizard"
-            project="true">
-      </wizard>
+	<extension
+         point="org.eclipse.ui.newWizards">
       <category
-            id="net.brucey.dltk.blitzmax.category"
-            name="DLTK Examples">
+            id="org.eclipse.dltk.python.ui"
+            name="%PythonWizardsCategory.name"
+            >
       </category>
-   </extension>
+      <wizard
+            category="net.brucey.dltk.blitzmax.ui"
+            class="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxProjectCreationWizard"
+            finalPerspective="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            icon="$nl$/icons/etool16/newprj_wiz.gif"
+            id="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxProjectWizard"
+            name="BlitzMax Project"
+            preferredPerspectives="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            project="true">
+         <description>
+            Creates new BlitzMax Project.
+         </description>
+      </wizard>
+      </extension>
    
    	<extension point="org.eclipse.ui.editors">
       <editor class="net.brucey.dltk.blitzmax.ui.editor.BlitzMaxEditor"
@@ -123,6 +130,15 @@
          <contentTypeBinding contentTypeId="net.brucey.dltk.blitzmax.content-type"/>
       </editor>
    </extension>
+   
+   	 <extension point="org.eclipse.ui.perspectives">
+    	<perspective
+          class="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+          icon="$nl$/icons/eview16/blitzmax_persp.gif"
+          id="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+          name="BlitzMax"/>
+<!--          name="%BlitzMaxPerspective.name"/>-->
+ 	</extension>
    
    	<extension
 	      point="org.eclipse.ui.actionSets">

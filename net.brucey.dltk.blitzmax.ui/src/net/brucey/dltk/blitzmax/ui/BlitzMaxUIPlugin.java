@@ -2,6 +2,9 @@ package net.brucey.dltk.blitzmax.ui;
 
 import net.brucey.dltk.blitzmax.ui.editor.BlitzMaxTextTools;
 
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.dltk.core.IShutdownListener;
 import org.eclipse.jface.resource.ImageDescriptor;
@@ -85,6 +88,14 @@ public class BlitzMaxUIPlugin extends AbstractUIPlugin {
 	 */
 	public static ImageDescriptor getImageDescriptor(String path) {
 		return imageDescriptorFromPlugin(PLUGIN_ID, path);
+	}
+
+	public static IWorkspace getWorkspace() {
+		return ResourcesPlugin.getWorkspace();
+	}
+
+	public static void log(IStatus status) {
+		getDefault().getLog().log(status);
 	}
 
 }
