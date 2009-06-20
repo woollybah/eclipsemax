@@ -7,11 +7,15 @@ package net.brucey.dltk.blitzmax.core.parsers;
 @parser::header {
 package net.brucey.dltk.blitzmax.core.parsers;
 
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxBlock;
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxConstDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxConstants;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxFieldDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxForStatement;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxFunctionDeclaration;
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxGlobalDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxImportStatement;
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxLocalDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxMethodDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxModuleDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxPrimitiveType;
@@ -88,8 +92,8 @@ file_input:
     	(
     		//NEWLINE
     		//|
-    		s = main_statements
-    			{ 
+    		main_statements[decl.getStatements()]
+    		/*	{ 
     				if( s != null ) {
     					Iterator i = s.iterator();
     					while( i.hasNext() ) {
@@ -99,13 +103,13 @@ file_input:
     						}
     					}
     				}
-    			} 
+    			} */
     	
     	)*
     	EOF
 	;
 
-main_statements returns [ ArrayList statements = new ArrayList( ) ]
+main_statements[List statements]
 	:	(SUPERSTRICT
 			{
 				statements.add(new BlitzMaxStrictExpression(true));
@@ -125,10 +129,7 @@ main_statements returns [ ArrayList statements = new ArrayList( ) ]
 			{
 				statements.add(s3);
 			}
-		| s4 = statement_list
-			{
-				statements.addAll(s4);
-			}
+		| statement_list[statements]
 	;
 
 type_block returns [ BlitzMaxTypeDeclaration typeDeclaration = null ]
@@ -174,9 +175,9 @@ type_block returns [ BlitzMaxTypeDeclaration typeDeclaration = null ]
 
 type_content_list returns [ Block typeContent = new Block() ]
 	:	(
-			const_def
-			| global_def
-			| field_def[typeContent]
+			const_def[typeContent.getStatements()]
+			| global_def[typeContent.getStatements()]
+			| field_def[typeContent.getStatements()]
 			| mb = method_block
 				{
 					typeContent.addStatement(mb);
@@ -220,28 +221,52 @@ method_block returns [ BlitzMaxMethodDeclaration methodDeclaration = null ]
 		)
 	;
 
-field_def [Block b]
+field_def [List statements]
 	: FIELD 
 		args = argument_list [false]
 		{
 			if (args != null) {
 				for (Iterator i = args.iterator(); i.hasNext();) {
-					b.addStatement(new BlitzMaxFieldDeclaration((Declaration)i.next()));
+					statements.add(new BlitzMaxFieldDeclaration((Declaration)i.next()));
 				}
 			}
 		}
 	;
 
-global_def
-	: GLOBAL argument_list [false]
+global_def [List statements]
+	: GLOBAL 
+		args = argument_list [false]
+		{
+			if (args != null) {
+				for (Iterator i = args.iterator(); i.hasNext();) {
+					statements.add(new BlitzMaxGlobalDeclaration((Declaration)i.next()));
+				}
+			}
+		}
 	;
 
-const_def
-	: CONST argument_list [false]
+const_def [List statements]
+	: CONST
+		args = argument_list [false]
+		{
+			if (args != null) {
+				for (Iterator i = args.iterator(); i.hasNext();) {
+					statements.add(new BlitzMaxConstDeclaration((Declaration)i.next()));
+				}
+			}
+		}
 	;
 	
-local_def
-	:	LOCAL argument_list [false]
+local_def [List statements]
+	:	LOCAL
+		args = argument_list [false]
+		{
+			if (args != null) {
+				for (Iterator i = args.iterator(); i.hasNext();) {
+					statements.add(new BlitzMaxLocalDeclaration((Declaration)i.next()));
+				}
+			}
+		}
 	;
 
 function_block returns [ BlitzMaxFunctionDeclaration functionDeclaration = null ]
@@ -260,7 +285,7 @@ function_block returns [ BlitzMaxFunctionDeclaration functionDeclaration = null 
 		}
 	;
 
-statement_block returns [ Block statement = new Block() ]
+statement_block returns [ BlitzMaxBlock statement = new BlitzMaxBlock() ]
 	:
 		{
 		  	int startPos = -1;
@@ -268,23 +293,32 @@ statement_block returns [ Block statement = new Block() ]
 		}
 		(
 			(
-				s = statement_list
+				statement_list[statement.getStatements()]
 				{
-		  			if( s != null ) {
-			  			Iterator i = s.iterator();
-	  					while( i.hasNext() ) {
-		  					Statement sst = (Statement)i.next();
-		  					if( sst != null ) {
-		  						statement.addStatement( sst );
+		  			//if( s != null ) {
+			  			//Iterator i = s.iterator();
+	  					//while( i.hasNext() ) {
+		  				//	Statement sst = (Statement)i.next();
+		  				//	if( sst != null ) {
+		  				//		statement.addStatement( sst );
+		  						Statement sst = (Statement)statement.getList().getFirst();
 		  						if( sst.sourceStart() < startPos || startPos == -1 ) {
 		  							startPos = sst.sourceStart();
 		  						} 
 		  						if( sst.sourceEnd() > endPos || endPos == -1 ) {
 		  							endPos = sst.sourceEnd();
 		  						}
-		  					}
-		  				}
-		  			}
+		  						
+		  						sst = (Statement)statement.getList().getLast();
+		  						if( sst.sourceStart() < startPos || startPos == -1 ) {
+		  							startPos = sst.sourceStart();
+		  						} 
+		  						if( sst.sourceEnd() > endPos || endPos == -1 ) {
+		  							endPos = sst.sourceEnd();
+		  						}
+		  					//}
+		  				//}
+		  			//}
 				}
 			)*
 		)
@@ -295,7 +329,7 @@ statement_block returns [ Block statement = new Block() ]
 
 	;
 	
-statement_list returns [ ArrayList statements = new ArrayList( ) ]
+statement_list[List statements]
 	:	include_stmt
 		| s2 = for_block
 			{
@@ -303,9 +337,9 @@ statement_list returns [ ArrayList statements = new ArrayList( ) ]
 			}
 		| while_block
 		| repeat_block
-		| const_def
-		| global_def
-		| local_def
+		| const_def[statements]
+		| global_def[statements]
+		| local_def[statements]
 		| rem_block
 	;
 
@@ -494,7 +528,7 @@ for_block returns [ BlitzMaxForStatement stmt = null ]
 	
 repeat_block
 	:	REPEAT
-		statement_list
+		b = statement_block
 		(FOREVER | UNTIL expression)
 	;
 
@@ -545,7 +579,7 @@ select_block
 
 default_block
 	: DEFAULT
-		statement_list
+		statement_block
 	;
 
 end_select
@@ -555,7 +589,7 @@ end_select
 
 case_block
 	:	CASE expression (COMMA expression)*
-		statement_list
+		statement_block
 	;
 
 import_stmt returns [ Statement stmt = null ]

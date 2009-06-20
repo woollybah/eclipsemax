@@ -16,4 +16,5 @@ public class BlitzMaxModuleDeclaration extends ModuleDeclaration {
 	public void addType(TypeDeclaration type) {
 		getTypeList().add(type);
 	}
+	
 }
