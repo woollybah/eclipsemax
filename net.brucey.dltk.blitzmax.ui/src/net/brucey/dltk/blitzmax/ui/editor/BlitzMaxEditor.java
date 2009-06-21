@@ -7,6 +7,7 @@ import net.brucey.dltk.blitzmax.ui.text.folding.BlitzMaxFoldingStructureProvider
 import org.eclipse.dltk.core.IDLTKLanguageToolkit;
 import org.eclipse.dltk.internal.ui.actions.FoldingActionGroup;
 import org.eclipse.dltk.internal.ui.editor.ScriptEditor;
+import org.eclipse.dltk.internal.ui.editor.ScriptOutlinePage;
 import org.eclipse.dltk.ui.text.ScriptTextTools;
 import org.eclipse.dltk.ui.text.folding.IFoldingStructureProvider;
 import org.eclipse.jface.preference.IPreferenceStore;
@@ -46,6 +47,11 @@ public class BlitzMaxEditor extends ScriptEditor {
 
 	public ScriptTextTools getTextTools() {
 		return BlitzMaxUIPlugin.getDefault().getTextTools();
+	}
+
+	protected ScriptOutlinePage doCreateOutlinePage() {
+		return new BlitzMaxOutlinePage(this, BlitzMaxUIPlugin.getDefault()
+		    .getPreferenceStore());
 	}
 
 	protected void connectPartitioningToElement(IEditorInput input,

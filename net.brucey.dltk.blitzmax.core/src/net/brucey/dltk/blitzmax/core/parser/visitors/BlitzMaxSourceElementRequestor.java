@@ -7,7 +7,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxBaseVariableDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxImportStatement;
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxLocalDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.expressions.Assignment;
 import net.brucey.dltk.blitzmax.parser.ast.expressions.BlitzMaxImportExpression;
 import net.brucey.dltk.blitzmax.parser.ast.expressions.ExtendedVariableReference;
@@ -359,6 +361,17 @@ public class BlitzMaxSourceElementRequestor extends SourceElementRequestVisitor 
 					}
 				}
 			}
+		} else if (statement instanceof BlitzMaxBaseVariableDeclaration) {
+			BlitzMaxBaseVariableDeclaration var = (BlitzMaxBaseVariableDeclaration) statement;
+			ISourceElementRequestor.FieldInfo info = new ISourceElementRequestor.FieldInfo();
+			info.modifiers = var.getModifiers();
+			info.name = var.getName();
+			info.nameSourceEnd = var.getNameEnd();
+			info.nameSourceStart = var.getNameStart();
+			info.declarationStart = var.sourceStart();
+			this.fRequestor.enterField(info);
+			this.fRequestor.exitField(var.sourceEnd());
+			
 		}
 		return true;
 	}

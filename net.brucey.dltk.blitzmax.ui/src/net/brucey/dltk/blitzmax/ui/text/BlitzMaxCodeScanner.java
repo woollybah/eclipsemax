@@ -8,6 +8,7 @@ import org.eclipse.dltk.ui.text.AbstractScriptScanner;
 import org.eclipse.dltk.ui.text.IColorManager;
 import org.eclipse.dltk.ui.text.TodoTagRule;
 import org.eclipse.dltk.ui.text.TodoTaskPreferencesOnPreferenceStore;
+import org.eclipse.dltk.ui.text.rules.ScriptWordRule;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.rules.EndOfLineRule;
 import org.eclipse.jface.text.rules.IToken;

@@ -31,6 +31,7 @@ import net.brucey.dltk.blitzmax.parser.ast.expressions.BlitzMaxNumericLiteral;
 import net.brucey.dltk.blitzmax.parser.ast.expressions.BlitzMaxStrictExpression;
 import net.brucey.dltk.blitzmax.parser.ast.expressions.BlitzMaxTypedefExpression;
 
+import org.eclipse.dltk.ast.ASTNode;
 import org.eclipse.dltk.ast.Modifiers;
 import org.eclipse.dltk.ast.declarations.Argument;
 import org.eclipse.dltk.ast.declarations.Declaration;
@@ -170,6 +171,14 @@ type_block returns [ BlitzMaxTypeDeclaration typeDeclaration = null ]
 		( et = END TYPE | et = 'endtype' )
 		{
 			typeDeclaration.setEnd(((CommonToken) et).getStopIndex()+1);
+			
+			List s = typeDeclaration.getBody().getStatements();
+			for (Iterator i = s.iterator(); i.hasNext();) {
+				ASTNode node = (ASTNode) i.next();
+				if (node instanceof FieldDeclaration) {
+					typeDeclaration.getFieldList().add(node);
+				}
+			}
 		}
 	;
 

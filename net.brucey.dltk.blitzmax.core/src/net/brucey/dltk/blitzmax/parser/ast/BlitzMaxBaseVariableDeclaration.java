@@ -1,5 +1,6 @@
 package net.brucey.dltk.blitzmax.parser.ast;
 
+import org.eclipse.dltk.ast.ASTVisitor;
 import org.eclipse.dltk.ast.declarations.Declaration;
 import org.eclipse.dltk.ast.declarations.FieldDeclaration;
 
@@ -15,9 +16,18 @@ public class BlitzMaxBaseVariableDeclaration extends FieldDeclaration {
 			BlitzMaxVariableDeclaration v = (BlitzMaxVariableDeclaration) typedef;
 
 			setName(v.getName());
-			setNameStart(v.sourceStart());
-			setNameEnd(v.sourceEnd());
+			setNameStart(typedef.getNameStart());
+			setNameEnd(typedef.getNameEnd());
+			setStart(v.sourceStart());
+			setEnd(v.sourceEnd());
 
 		}
 	}
+	
+	public void traverse(ASTVisitor pVisitor) throws Exception {
+		if (pVisitor.visit(this)) {
+			pVisitor.endvisit(this);
+		}
+	}
+
 }
