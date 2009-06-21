@@ -3,6 +3,7 @@ package net.brucey.dltk.blitzmax.parser.ast;
 import org.eclipse.dltk.ast.ASTVisitor;
 import org.eclipse.dltk.ast.declarations.Declaration;
 import org.eclipse.dltk.ast.declarations.FieldDeclaration;
+import org.eclipse.dltk.codeassist.ISelectionEngine;
 
 public class BlitzMaxBaseVariableDeclaration extends FieldDeclaration {
 
@@ -26,6 +27,9 @@ public class BlitzMaxBaseVariableDeclaration extends FieldDeclaration {
 	
 	public void traverse(ASTVisitor pVisitor) throws Exception {
 		if (pVisitor.visit(this)) {
+			if (pVisitor instanceof ISelectionEngine) {
+				
+			}
 			pVisitor.endvisit(this);
 		}
 	}

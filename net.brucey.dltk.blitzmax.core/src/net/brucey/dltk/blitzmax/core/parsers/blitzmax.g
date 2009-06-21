@@ -18,8 +18,10 @@ import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxImportStatement;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxLocalDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxMethodDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxModuleDeclaration;
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxObjectType;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxPrimitiveType;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxStringLiteral;
+import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxStringType;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxType;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxTypeDeclaration;
 import net.brucey.dltk.blitzmax.parser.ast.BlitzMaxTypeReference;
@@ -405,8 +407,14 @@ named_type returns [ BlitzMaxTypeReference tr = null ]
 			{
 				tr = new BlitzMaxTypeReference(d);
 			}
-		| STRING_TYPE
-		| OBJECT_TYPE
+		| s = STRING_TYPE
+			{
+				tr = new BlitzMaxTypeReference( new BlitzMaxStringType(s) );
+			}
+		| o = OBJECT_TYPE
+			{
+				tr = new BlitzMaxTypeReference( new BlitzMaxObjectType(o) );
+			}
 		| name = IDENTIFIER
 			{
 				tr = new BlitzMaxTypeReference( new BlitzMaxVariableReference(name) );

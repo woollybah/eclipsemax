@@ -1,8 +1,10 @@
 package net.brucey.dltk.blitzmax;
 
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.ListenerList;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.dltk.core.IShutdownListener;
+import org.eclipse.dltk.core.ModelException;
 import org.osgi.framework.BundleContext;
 
 /**
@@ -61,6 +63,9 @@ public class BlitzMaxCorePlugin extends Plugin {
 		return plugin;
 	}
 
+	public static void log(ModelException e) {
+		// TODO : something with this exception
+  }
 
 
 }

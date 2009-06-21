@@ -99,7 +99,7 @@ public class BlitzMaxCommentDocumentationProvider implements
 				// if (str == null)
 				// break;
 				if (str.startsWith("bbdoc:")) {
-					result.append(str.substring(6));
+					result.append(str.substring(6)).append("<br/>");
 					continue;
 				}
 				if (str.startsWith("about:")) {
