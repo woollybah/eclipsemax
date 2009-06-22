@@ -17,8 +17,7 @@ public class BlitzMaxMethodDeclaration extends MethodDeclaration {
 	BlitzMaxFunctionExpression func;
 
 	public BlitzMaxMethodDeclaration(Token m, BlitzMaxFunctionExpression fd) {
-		super(((CommonToken) m).getStartIndex(), (fd != null) ? fd.sourceEnd()
-				: 0);
+		super(((CommonToken) m).getStartIndex(), (fd != null) ? fd.sourceEnd() : 0);
 
 		if (fd != null) {
 			func = fd;
@@ -41,6 +40,10 @@ public class BlitzMaxMethodDeclaration extends MethodDeclaration {
 
 			}
 		}
+	}
+
+	public BlitzMaxFunctionExpression getFunc() {
+		return func;
 	}
 
 }
