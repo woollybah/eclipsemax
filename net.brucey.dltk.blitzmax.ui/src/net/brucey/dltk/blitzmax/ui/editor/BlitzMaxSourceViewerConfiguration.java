@@ -3,14 +3,18 @@ package net.brucey.dltk.blitzmax.ui.editor;
 import net.brucey.dltk.blitzmax.ui.text.BlitzMaxCodeScanner;
 import net.brucey.dltk.blitzmax.ui.text.BlitzMaxOutlineInformationControl;
 import net.brucey.dltk.blitzmax.ui.text.BlitzMaxRemScanner;
+import net.brucey.dltk.blitzmax.ui.text.BlitzMaxScriptCommentScanner;
 import net.brucey.dltk.blitzmax.ui.text.IBlitzMaxColorConstants;
 
+import org.eclipse.dltk.compiler.task.ITodoTaskPreferences;
 import org.eclipse.dltk.internal.ui.editor.ScriptSourceViewer;
 import org.eclipse.dltk.ui.text.AbstractScriptScanner;
 import org.eclipse.dltk.ui.text.IColorManager;
+import org.eclipse.dltk.ui.text.ScriptCommentScanner;
 import org.eclipse.dltk.ui.text.ScriptPresentationReconciler;
 import org.eclipse.dltk.ui.text.ScriptSourceViewerConfiguration;
 import org.eclipse.dltk.ui.text.SingleTokenScriptScanner;
+import org.eclipse.dltk.ui.text.TodoTaskPreferencesOnPreferenceStore;
 import org.eclipse.dltk.ui.text.completion.ContentAssistPreference;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.DefaultIndentLineAutoEditStrategy;
@@ -82,10 +86,16 @@ public class BlitzMaxSourceViewerConfiguration extends
     this.stringScanner = new SingleTokenScriptScanner(this.getColorManager(),
         this.fPreferenceStore, IBlitzMaxColorConstants.BLITZMAX_STRING);
     this.commentScanner = createCommentScanner(
-        IBlitzMaxColorConstants.BLITZMAX_COMMENT,
+        IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT,
         IBlitzMaxColorConstants.BLITZMAX_TODO_COMMENT);
     this.remScanner = new BlitzMaxRemScanner(this.getColorManager(),
         this.fPreferenceStore);
+  }
+
+  protected AbstractScriptScanner createCommentScanner(String commentColor,
+      String tagColor, ITodoTaskPreferences taskPrefs) {
+    return new BlitzMaxScriptCommentScanner(getColorManager(),
+        fPreferenceStore, commentColor, tagColor, taskPrefs);
   }
 
   public IPresentationReconciler getPresentationReconciler(
@@ -102,13 +112,13 @@ public class BlitzMaxSourceViewerConfiguration extends
     reconciler.setDamager(dr, IBlitzMaxPartitions.BLITZMAX_STRING);
     reconciler.setRepairer(dr, IBlitzMaxPartitions.BLITZMAX_STRING);
 
-    dr = new DefaultDamagerRepairer(this.commentScanner);
-    reconciler.setDamager(dr, IBlitzMaxPartitions.BLITZMAX_COMMENT);
-    reconciler.setRepairer(dr, IBlitzMaxPartitions.BLITZMAX_COMMENT);
-
     dr = new DefaultDamagerRepairer(this.remScanner);
     reconciler.setDamager(dr, IBlitzMaxPartitions.BLITZMAX_MULTILINE_COMMENT);
     reconciler.setRepairer(dr, IBlitzMaxPartitions.BLITZMAX_MULTILINE_COMMENT);
+
+    dr = new DefaultDamagerRepairer(this.commentScanner);
+    reconciler.setDamager(dr, IBlitzMaxPartitions.BLITZMAX_COMMENT);
+    reconciler.setRepairer(dr, IBlitzMaxPartitions.BLITZMAX_COMMENT);
 
     return reconciler;
   }

@@ -28,7 +28,7 @@ public class BlitzMaxCodeScanner extends AbstractScriptScanner {
       "const" };
 
   private static String tokenProperties[] = new String[] {
-      IBlitzMaxColorConstants.BLITZMAX_COMMENT,
+      IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT,
       IBlitzMaxColorConstants.BLITZMAX_DEFAULT,
       IBlitzMaxColorConstants.BLITZMAX_KEYWORD,
       IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT,
@@ -49,7 +49,7 @@ public class BlitzMaxCodeScanner extends AbstractScriptScanner {
   protected List createRules() {
     List/* <IRule> */rules = new ArrayList/* <IRule> */();
     IToken keyword = this.getToken(IBlitzMaxColorConstants.BLITZMAX_KEYWORD);
-    IToken comment = this.getToken(IBlitzMaxColorConstants.BLITZMAX_COMMENT);
+    IToken comment = this.getToken(IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT);
     IToken other = this.getToken(IBlitzMaxColorConstants.BLITZMAX_DEFAULT);
     // IToken multilineComment = this
     // .getToken(IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT);

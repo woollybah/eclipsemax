@@ -25,7 +25,7 @@ public class BlitzMaxPreferenceConstants extends PreferenceConstants {
    * @see org.eclipse.jface.resource.StringConverter
    * @see org.eclipse.jface.preference.PreferenceConverter
    */
-  public final static String EDITOR_SINGLE_LINE_COMMENT_COLOR = IBlitzMaxColorConstants.BLITZMAX_COMMENT;
+  public final static String EDITOR_SINGLE_LINE_COMMENT_COLOR = IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT;
 
   /**
    * A named preference that controls whether single line comments are rendered
@@ -36,7 +36,7 @@ public class BlitzMaxPreferenceConstants extends PreferenceConstants {
    * no font style attribute.
    * </p>
    */
-  public final static String EDITOR_SINGLE_LINE_COMMENT_BOLD = IBlitzMaxColorConstants.BLITZMAX_COMMENT
+  public final static String EDITOR_SINGLE_LINE_COMMENT_BOLD = IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT
       + EDITOR_BOLD_SUFFIX;
 
   /**
@@ -48,7 +48,7 @@ public class BlitzMaxPreferenceConstants extends PreferenceConstants {
    * using no italic font style attribute.
    * </p>
    */
-  public final static String EDITOR_SINGLE_LINE_COMMENT_ITALIC = IBlitzMaxColorConstants.BLITZMAX_COMMENT
+  public final static String EDITOR_SINGLE_LINE_COMMENT_ITALIC = IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT
       + EDITOR_ITALIC_SUFFIX;
 
   /**
@@ -60,7 +60,7 @@ public class BlitzMaxPreferenceConstants extends PreferenceConstants {
    * rendered using no italic font style attribute.
    * </p>
    */
-  public final static String EDITOR_SINGLE_LINE_COMMENT_STRIKETHROUGH = IBlitzMaxColorConstants.BLITZMAX_COMMENT
+  public final static String EDITOR_SINGLE_LINE_COMMENT_STRIKETHROUGH = IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT
       + EDITOR_STRIKETHROUGH_SUFFIX;
 
   /**
@@ -74,7 +74,7 @@ public class BlitzMaxPreferenceConstants extends PreferenceConstants {
    * 
    * 
    */
-  public final static String EDITOR_SINGLE_LINE_COMMENT_UNDERLINE = IBlitzMaxColorConstants.BLITZMAX_COMMENT
+  public final static String EDITOR_SINGLE_LINE_COMMENT_UNDERLINE = IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT
       + EDITOR_UNDERLINE_SUFFIX;
 
   
