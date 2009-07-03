@@ -41,7 +41,8 @@ public class BlitzMaxSourceParser extends AbstractSourceParser {
 		BlitzMaxModuleDeclaration moduleDeclaration = new BlitzMaxModuleDeclaration(
 		    source.length, true);
 
-		CharStream st = new ANTLRNoCaseStringStream(new String(source));
+		// FIXME : re-enable this section to test the grammar/parser
+		/*CharStream st = new ANTLRNoCaseStringStream(new String(source));
 		blitzmaxLexer lexer = new Lexer(st);
 
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
@@ -65,7 +66,7 @@ public class BlitzMaxSourceParser extends AbstractSourceParser {
 			}
 		}
 		moduleDeclaration.rebuild();
-
+*/
 		return moduleDeclaration;
 
 	}
