@@ -7,14 +7,14 @@ import org.eclipse.dltk.internal.debug.ui.interpreters.AbstractInterpreterComboB
 
 public class BlitzMaxCompilerTab extends InterpreterTab {
 
-	@Override
+  @Override
   protected AbstractInterpreterComboBlock getInterpreterBlock() {
-	  return new BlitzMaxCompilerComboBlock(getMainTab());
+    return new BlitzMaxCompilerComboBlock(getMainTab());
   }
 
-	@Override
+  @Override
   protected String getNature() {
-	  return BlitzMaxNature.BLITZMAX_NATURE;
+    return BlitzMaxNature.BLITZMAX_NATURE;
   }
 
 }

@@ -7,19 +7,19 @@ import org.eclipse.dltk.internal.debug.ui.interpreters.AbstractInterpreterComboB
 
 public class BlitzMaxCompilerComboBlock extends AbstractInterpreterComboBlock {
 
-	public BlitzMaxCompilerComboBlock(
-	    IMainLaunchConfigurationTabListenerManager tab) {
-		super(tab);
-	}
+  public BlitzMaxCompilerComboBlock(
+      IMainLaunchConfigurationTabListenerManager tab) {
+    super(tab);
+  }
 
-	@Override
-	protected String getCurrentLanguageNature() {
-		return BlitzMaxNature.BLITZMAX_NATURE;
-	}
+  @Override
+  protected String getCurrentLanguageNature() {
+    return BlitzMaxNature.BLITZMAX_NATURE;
+  }
 
-	@Override
-	protected void showInterpreterPreferencePage() {
-		showPrefPage(BlitzMaxCompilerPreferencePage.PAGE_ID);
-	}
+  @Override
+  protected void showInterpreterPreferencePage() {
+    showPrefPage(BlitzMaxCompilerPreferencePage.PAGE_ID);
+  }
 
 }

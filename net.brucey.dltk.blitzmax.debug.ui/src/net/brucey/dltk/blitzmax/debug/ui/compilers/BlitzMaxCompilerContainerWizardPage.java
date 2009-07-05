@@ -6,9 +6,9 @@ import org.eclipse.dltk.internal.debug.ui.interpreters.AbstractInterpreterContai
 public class BlitzMaxCompilerContainerWizardPage extends
     AbstractInterpreterContainerWizardPage {
 
-	@Override
-	protected AbstractInterpreterComboBlock getInterpreterBlock() {
-		return new BlitzMaxCompilerComboBlock(null);
-	}
+  @Override
+  protected AbstractInterpreterComboBlock getInterpreterBlock() {
+    return new BlitzMaxCompilerComboBlock(null);
+  }
 
 }

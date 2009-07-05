@@ -7,7 +7,7 @@ import net.brucey.dltk.blitzmax.core.BlitzMaxNature;
 public class BlitzMaxDebugUIPreferenceInitializer extends
     DLTKDebugUIPluginPreferenceInitializer {
 
-	protected String getNatureId() {
-		return BlitzMaxNature.BLITZMAX_NATURE;
-	}
+  protected String getNatureId() {
+    return BlitzMaxNature.BLITZMAX_NATURE;
+  }
 }

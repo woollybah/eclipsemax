@@ -13,51 +13,51 @@ import org.eclipse.ui.preferences.IWorkbenchPreferenceContainer;
 public class BlitzMaxDebugPreferencePage extends
     AbstractConfigurationBlockPropertyAndPreferencePage {
 
-	private static String PREFERENCE_PAGE_ID = "net.brucey.dltk.blitzmax.preferences.debug"; //$NON-NLS-1$
-	private static String PROPERTY_PAGE_ID = "net.brucey.dltk.blitzmax.propertyPage.debug"; //$NON-NLS-1$
+  private static String PREFERENCE_PAGE_ID = "net.brucey.dltk.blitzmax.preferences.debug"; //$NON-NLS-1$
+  private static String PROPERTY_PAGE_ID = "net.brucey.dltk.blitzmax.propertyPage.debug"; //$NON-NLS-1$
 
-	@Override
-	protected AbstractOptionsBlock createOptionsBlock(
-	    IStatusChangeListener newStatusChangedListener, IProject project,
-	    IWorkbenchPreferenceContainer container) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+  @Override
+  protected AbstractOptionsBlock createOptionsBlock(
+      IStatusChangeListener newStatusChangedListener, IProject project,
+      IWorkbenchPreferenceContainer container) {
+    // TODO Auto-generated method stub
+    return null;
+  }
 
-	@Override
-	protected String getHelpId() {
-		return null;
-	}
+  @Override
+  protected String getHelpId() {
+    return null;
+  }
 
-	@Override
-	protected String getProjectHelpId() {
-		return null;
-	}
+  @Override
+  protected String getProjectHelpId() {
+    return null;
+  }
 
-	@Override
-	protected void setDescription() {
-		setDescription("General settings for BlitzMax Debugging");
-	}
+  @Override
+  protected void setDescription() {
+    setDescription("General settings for BlitzMax Debugging");
+  }
 
-	@Override
-	protected void setPreferenceStore() {
-		setPreferenceStore(new PreferencesAdapter(BlitzMaxDebugPlugin.getDefault()
-		    .getPluginPreferences()));
-	}
+  @Override
+  protected void setPreferenceStore() {
+    setPreferenceStore(new PreferencesAdapter(BlitzMaxDebugPlugin.getDefault()
+        .getPluginPreferences()));
+  }
 
-	@Override
-	protected String getPreferencePageId() {
-		return PREFERENCE_PAGE_ID;
-	}
+  @Override
+  protected String getPreferencePageId() {
+    return PREFERENCE_PAGE_ID;
+  }
 
-	@Override
-	protected String getPropertyPageId() {
-		return PROPERTY_PAGE_ID;
-	}
+  @Override
+  protected String getPropertyPageId() {
+    return PROPERTY_PAGE_ID;
+  }
 
-	@Override
-	protected String getNatureId() {
-		return BlitzMaxNature.BLITZMAX_NATURE;
-	}
+  @Override
+  protected String getNatureId() {
+    return BlitzMaxNature.BLITZMAX_NATURE;
+  }
 
 }

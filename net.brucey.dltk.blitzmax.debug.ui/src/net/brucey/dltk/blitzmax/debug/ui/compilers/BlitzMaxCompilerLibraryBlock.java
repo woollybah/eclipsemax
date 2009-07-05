@@ -12,12 +12,12 @@ import org.eclipse.jface.viewers.IBaseLabelProvider;
 public class BlitzMaxCompilerLibraryBlock extends
     AbstractInterpreterLibraryBlock {
 
-	protected BlitzMaxCompilerLibraryBlock(AddScriptInterpreterDialog dialog) {
-		super(dialog);
-	}
+  protected BlitzMaxCompilerLibraryBlock(AddScriptInterpreterDialog dialog) {
+    super(dialog);
+  }
 
-	@Override
-	protected IBaseLabelProvider getLabelProvider() {
-		return new LibraryLabelProvider();
-	}
+  @Override
+  protected IBaseLabelProvider getLabelProvider() {
+    return new LibraryLabelProvider();
+  }
 }

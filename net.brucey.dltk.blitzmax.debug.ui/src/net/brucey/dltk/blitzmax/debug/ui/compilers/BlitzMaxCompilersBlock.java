@@ -11,21 +11,22 @@ import org.eclipse.dltk.launching.ScriptRuntime;
 
 public class BlitzMaxCompilersBlock extends InterpretersBlock {
 
-	protected IScriptInterpreterDialog createInterpreterDialog(
-	    IEnvironment environment, IInterpreterInstall standin) {
-		AddScriptInterpreterDialog dialog = new AddBlitzMaxCompilerDialog(this,
-		    getShell(), ScriptRuntime
-		        .getInterpreterInstallTypes(getCurrentNature()), standin);
-		if (dialog != null) {
-			dialog.setEnvironment(environment);
-		}
+  @Override
+  protected IScriptInterpreterDialog createInterpreterDialog(
+      IEnvironment environment, IInterpreterInstall standin) {
+    AddScriptInterpreterDialog dialog = new AddBlitzMaxCompilerDialog(this,
+        getShell(), ScriptRuntime
+            .getInterpreterInstallTypes(getCurrentNature()), standin);
+    if (dialog != null) {
+      dialog.setEnvironment(environment);
+    }
 
-		return dialog;
-	}
+    return dialog;
+  }
 
-	@Override
-	protected String getCurrentNature() {
-		return BlitzMaxNature.BLITZMAX_NATURE;
-	}
+  @Override
+  protected String getCurrentNature() {
+    return BlitzMaxNature.BLITZMAX_NATURE;
+  }
 
 }
