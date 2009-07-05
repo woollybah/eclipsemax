@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+	<extension point="org.eclipse.ui.bindings">
+		<key
+			commandId="net.brucey.dltk.blitzmax.debug.ui.launchShortcut.run"
+			contextId="org.eclipse.ui.globalScope"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			sequence="M3+M2+X Z">
+		</key>
+		<key
+			commandId="net.brucey.dltk.blitzmax.debug.ui.launchShortcut.debug"
+			contextId="org.eclipse.ui.globalScope"
+			schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+			sequence="M3+M2+D Z">
+		</key>
+	</extension>
+
+	<extension point="org.eclipse.ui.preferencePages">
+      <page 
+        category="net.brucey.dltk.blitzmax.preferences"
+		class="net.brucey.dltk.blitzmax.debug.ui.compilers.BlitzMaxCompilerPreferencePage"
+		id="net.brucey.dltk.blitzmax.preferences.compilers"
+		name="Compilers" />
+  	  <page 
+  	    category="net.brucey.dltk.blitzmax.preferences"
+		class="net.brucey.dltk.blitzmax.debug.ui.preferences.BlitzMaxDebugPreferencePage"
+		id="net.brucey.dltk.blitzmax.preferences.debug" 
+		name="Debug" />
+	  <page
+	    category="net.brucey.dltk.blitzmax.preferences.debug"
+	    class="net.brucey.dltk.blitzmax.debug.ui.preferences.BlitzMaxDebuggingEnginePreferencePage"
+	    id="net.brucey.dltk.blitzmax.preferences.debug.engines"
+	    name="Engines" />
+      <page
+        category="net.brucey.dltk.blitzmax.preferences.debug"
+        class="org.eclipse.dltk.debug.ui.preferences.ScriptStepFilterPreferencePage:org.eclipse.dltk.blitzmax.core.nature"
+        id="net.brucey.dltk.blitzmax.debug.ui.stepfilter"
+        name="Step filters" />
+      <page
+        category="net.brucey.dltk.blitzmax.preferences.debug"
+        class="org.eclipse.dltk.debug.ui.preferences.ScriptDetailFormattersPreferencePage:org.eclipse.dltk.blitzmax.core.nature"
+        id="net.brucey.dltk.blitzmax.preferences.debug.detailFormatters"
+        name="Detail Formatters" />    
+	</extension>
+
+    <extension point="org.eclipse.ui.propertyPages">
+      <page
+        class="net.brucey.dltk.blitzmax.debug.ui.preferences.BlitzMaxDebugPreferencePage"
+        category="net.brucey.dltk.blitzmax.propertyPage"
+        id="net.brucey.dltk.blitzmax.propertyPage.debug"
+        name="Debug">
+        <enabledWhen>
+          <adapt type="org.eclipse.core.resources.IProject">
+            <test property="org.eclipse.core.resources.projectNature" value="net.brucey.dltk.blitzmax.core.nature"/>
+          </adapt>         
+        </enabledWhen>
+      </page>    
+      <page
+        class="net.brucey.dltk.blitzmax.debug.ui.preferences.BlitzMaxDebuggingEnginePreferencePage"
+        category="net.brucey.dltk.blitzmax.propertyPage.debug"
+        id="net.brucey.dltk.blitzmax.propertyPage.debug.engines"
+        name="Engines">
+        <enabledWhen>
+          <adapt type="org.eclipse.core.resources.IProject">
+            <test property="org.eclipse.core.resources.projectNature" value="net.brucey.dltk.blitzmax.core.nature"/>
+          </adapt>         
+        </enabledWhen>
+      </page> 
+    </extension>   
+
+
+</plugin>
