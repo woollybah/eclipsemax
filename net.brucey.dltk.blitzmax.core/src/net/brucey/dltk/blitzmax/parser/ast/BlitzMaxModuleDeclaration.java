@@ -13,8 +13,9 @@ public class BlitzMaxModuleDeclaration extends ModuleDeclaration {
 		super(length, rebuild);
 	}
 
+	@SuppressWarnings("unchecked")
 	public void addType(TypeDeclaration type) {
 		getTypeList().add(type);
 	}
-	
+
 }

@@ -37,6 +37,7 @@ public class ExtendedVariableReference extends Reference {
 	/**
 	 * Return Identifier Kind.
 	 */
+	@Override
 	public int getKind() {
 		return E_IDENTIFIER;
 	}
@@ -46,6 +47,7 @@ public class ExtendedVariableReference extends Reference {
 	 * 
 	 * @param expr
 	 */
+	@SuppressWarnings("unchecked")
 	public void addExpression(Expression expr) {
 		if (expr != null) {
 			this.fExpressions.add(expr);
@@ -136,6 +138,7 @@ public class ExtendedVariableReference extends Reference {
 	 */
 
 	// TODO: FIX MY PERFOMANCE
+	@Override
 	public String getStringRepresentation() {
 		StringBuffer b = new StringBuffer();
 		Iterator i = this.fExpressions.iterator();
@@ -206,6 +209,7 @@ public class ExtendedVariableReference extends Reference {
 	/**
 	 * Testing purposes only. Print extended variable.
 	 */
+	@Override
 	public void printNode(CorePrinter output) {
 		List expressions = this.getExpressions();
 		boolean bFirst = true;

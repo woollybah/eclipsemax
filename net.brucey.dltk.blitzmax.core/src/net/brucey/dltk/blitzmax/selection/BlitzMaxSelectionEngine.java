@@ -28,6 +28,7 @@ public class BlitzMaxSelectionEngine extends ScriptSelectionEngine {
 	private org.eclipse.dltk.core.ISourceModule sourceModule;
 	private Set selectionElements = new HashSet();
 
+	@SuppressWarnings("unchecked")
 	public IModelElement[] select(ISourceModule module,
 	    final int selectionSourceStart, int selectionSourceEnd) {
 
@@ -118,6 +119,7 @@ public class BlitzMaxSelectionEngine extends ScriptSelectionEngine {
 		    .toArray(new IModelElement[selectionElements.size()]);
 	}
 
+	@SuppressWarnings( { "unchecked" })
 	private void selectionOnTypeReference(ModuleDeclaration moduleDeclaration,
 	    TypeReference var) {
 		IModelElement elementAt = null;
@@ -132,6 +134,7 @@ public class BlitzMaxSelectionEngine extends ScriptSelectionEngine {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	private void selectionOnVariableDeclaration(
 	    ModuleDeclaration moduleDeclaration, BlitzMaxBaseVariableDeclaration var) {
 
@@ -150,6 +153,7 @@ public class BlitzMaxSelectionEngine extends ScriptSelectionEngine {
 	private void findDeclaration(final String name) {
 		try {
 			this.sourceModule.accept(new IModelElementVisitor() {
+				@SuppressWarnings("unchecked")
 				public boolean visit(IModelElement element) {
 					if (element.getElementName().equals(name)) {
 						selectionElements.add(element);
@@ -164,9 +168,11 @@ public class BlitzMaxSelectionEngine extends ScriptSelectionEngine {
 		}
 	}
 
+	@Override
 	public void setOptions(Map options) {
 	}
 
+	@SuppressWarnings("unchecked")
 	private void selectionOnTypeDeclaration(ModuleDeclaration parsedUnit,
 	    TypeDeclaration typeDeclaration, int start) {
 
@@ -186,6 +192,7 @@ public class BlitzMaxSelectionEngine extends ScriptSelectionEngine {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void selectionOnMethodDeclaration(ModuleDeclaration parsedUnit,
 	    MethodDeclaration methodDeclaration, int start) {
 

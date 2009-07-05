@@ -5,6 +5,7 @@ import org.eclipse.dltk.ast.DLTKToken;
 import org.eclipse.dltk.ast.expressions.Expression;
 import org.eclipse.dltk.utils.CorePrinter;
 
+@SuppressWarnings("deprecation")
 public class CallHolder extends Expression {
 	/**
 	 * Can be EmptyExpression if no arguments are specified. Overwise it possible
@@ -23,10 +24,12 @@ public class CallHolder extends Expression {
 		this.fArguments = k;
 	}
 
+	@Override
 	public int getKind() {
 		return Expression.E_CALL;
 	}
 
+	@Override
 	public void traverse(ASTVisitor pVisitor) throws Exception {
 		if (pVisitor.visit(this)) {
 			if (this.fArguments != null) {
@@ -40,6 +43,7 @@ public class CallHolder extends Expression {
 		return fArguments;
 	}
 
+	@Override
 	public void printNode(CorePrinter output) {
 		output.formatPrintLn("( ");
 		if (this.fArguments != null) {

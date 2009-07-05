@@ -13,15 +13,18 @@ public class IndexHolder extends Expression {
 		this.fIndex = indexExpression;
 	}
 
+	@SuppressWarnings("deprecation")
 	public IndexHolder(DLTKToken dltk, DLTKToken dltk2, Expression k) {
 		super(dltk.getColumn(), dltk2.getColumn() + 1);
 		this.fIndex = k;
 	}
 
+	@Override
 	public int getKind() {
 		return Expression.E_INDEX;
 	}
 
+	@Override
 	public void traverse(ASTVisitor pVisitor) throws Exception {
 		if (pVisitor.visit(this)) {
 			if (this.fIndex != null) {
@@ -31,6 +34,7 @@ public class IndexHolder extends Expression {
 		}
 	}
 
+	@Override
 	public void printNode(CorePrinter output) {
 		output.formatPrintLn("[");
 		if (this.fIndex != null) {

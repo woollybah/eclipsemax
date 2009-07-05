@@ -26,6 +26,7 @@ public class BlitzMaxBlock extends Block {
 		return list;
 	}
 
+	@Override
 	public void traverse(ASTVisitor visitor) throws Exception {
 		if (visitor.visit(this)) {
 			Iterator it = list.iterator();
@@ -37,6 +38,8 @@ public class BlitzMaxBlock extends Block {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
 	public void addStatement(ASTNode statem) {
 		if (statem == null) {
 			throw new IllegalArgumentException();
@@ -45,6 +48,7 @@ public class BlitzMaxBlock extends Block {
 		list.add(statem);
 	}
 
+	@Override
 	public void printNode(CorePrinter output) {
 		output.indent();
 		Iterator it = list.iterator();
