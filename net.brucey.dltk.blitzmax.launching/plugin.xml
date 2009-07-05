@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="net.brucey.dltk.blitzmax.launching.BlitzMaxLaunchingPluginPreferenceInitializer">
+      </initializer>
+   </extension>
+  <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+         <launchConfigurationType
+               delegate="net.brucey.dltk.blitzmax.launching.BlitzMaxLaunchConfigurationDelegate"
+               id="net.brucey.dltk.blitzmax.launching.BlitzMaxLaunchConfigurationType"
+               modes="run,debug"
+               name="BlitzMax Application"
+               public="true"
+               sourceLocatorId="blitzmaxSourceLocator"
+               sourcePathComputerId="blitzmaxSourcePathComputer" />
+   </extension>
+
+   <extension
+        point="org.eclipse.debug.core.sourceLocators">
+        <sourceLocator
+           class="org.eclipse.dltk.launching.sourcelookup.ScriptSourceLookupDirector"
+           id="blitzmaxSourceLocator"
+           name="BlitzMax source locator" />
+   </extension>
+   
+   <extension 
+        point="org.eclipse.debug.core.sourcePathComputers">
+        <sourcePathComputer
+            class="org.eclipse.dltk.launching.sourcelookup.ScriptSourcePathComputer"
+            id="blitzmaxSourcePathComputer"/>
+   </extension>
+  
+     <extension
+         point="org.eclipse.dltk.launching.interpreterInstallTypes">
+          <interpreterInstallType
+            class="net.brucey.dltk.blitzmax.launching.BlitzMaxInstallType"
+            id="net.brucey.dltk.blitzmax.debug.ui.launcher.BlitzMaxInstallType"/>
+   </extension>
+   <extension
+         point="org.eclipse.dltk.launching.debuggingEngine">
+      <engineContribution
+            natureId="net.brucey.dltk.blitzmax.core.nature">
+         <selector
+               class="net.brucey.dltk.blitzmax.launching.BlitzMaxDebuggingEngineSelector">
+         </selector>
+      </engineContribution>
+   </extension>
+</plugin>
