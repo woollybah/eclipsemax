@@ -13,7 +13,7 @@
                delegate="net.brucey.dltk.blitzmax.launching.BlitzMaxLaunchConfigurationDelegate"
                id="net.brucey.dltk.blitzmax.launching.BlitzMaxLaunchConfigurationType"
                modes="run,debug"
-               name="BlitzMax Application"
+               name="%BlitzMaxLaunchConfigurationType.name"
                public="true"
                sourceLocatorId="blitzmaxSourceLocator"
                sourcePathComputerId="blitzmaxSourcePathComputer" />
@@ -24,7 +24,7 @@
         <sourceLocator
            class="org.eclipse.dltk.launching.sourcelookup.ScriptSourceLookupDirector"
            id="blitzmaxSourceLocator"
-           name="BlitzMax source locator" />
+           name="%BlitzMaxSourceLocator.name" />
    </extension>
    
    <extension 
