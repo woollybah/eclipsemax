@@ -181,7 +181,7 @@
              commandId="net.brucey.dltk.blitzmax.debug.ui.commands.toggleLocalVariables">
        </handler>
        <handler
-             class="org.eclipse.dltk.debug.ui.handlers.VariablesViewOptionsHandler:org.eclipse.dltk.ruby.core.nature"
+             class="org.eclipse.dltk.debug.ui.handlers.VariablesViewOptionsHandler:net.brucey.dltk.blitzmax.core.nature"
              commandId="net.brucey.dltk.blitzmax.debug.ui.commands.showPreferences">
        </handler>
     </extension>
