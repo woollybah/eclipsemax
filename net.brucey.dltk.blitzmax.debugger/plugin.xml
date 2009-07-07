@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+  
+  <extension point="org.eclipse.core.runtime.preferences">
+    <initializer
+      class="net.brucey.dltk.blitzmax.debugger.preferences.DebuggerPreferenceInitializer" />
+  </extension>
+  
+  <extension point="org.eclipse.dltk.launching.debuggingEngine">
+    <engineContribution natureId="net.brucey.dltk.blitzmax.core.nature">
+      <engine
+        class="net.brucey.dltk.blitzmax.debugger.BlitzMaxDebuggerRunnerFactory"
+        description="%BlitzMaxDebuggingEngine.description"
+        id="net.brucey.dltk.blitzmax.debugger"
+        name="%BlitzMaxDebuggingEngine.name"
+        propertyPageId="net.brucey.dltk.blitzmax.propertyPage.debug.engines.debugger"
+        preferencePageId="net.brucey.dltk.blitzmax.preferences.debug.engines.debugger"
+        priority="5">
+      </engine>
+    </engineContribution>
+  </extension>
+  
+  <extension point="org.eclipse.ui.preferencePages">
+    <page
+      category="net.brucey.dltk.blitzmax.preferences.debug.engines"
+      class="net.brucey.dltk.blitzmax.debugger.preferences.BlitzMaxDebuggerPreferencePage"
+      id="net.brucey.dltk.blitzmax.preferences.debug.engines.debugger"
+      name="%BlitzMaxDebuggerPreferencePage.name">
+    </page>
+  </extension>
+
+  <extension point="org.eclipse.ui.propertyPages">
+    <page
+      class="net.brucey.dltk.blitzmax.debugger.preferences.BlitzMaxDebuggerPreferencePage"
+      category="net.brucey.dltk.blitzmax.propertyPage.debug.engines"
+      id="net.brucey.dltk.blitzmax.propertyPage.debug.engines.debugger"
+      name="%BlitzMaxDebuggerPropertyPage.name">
+      <enabledWhen>
+        <adapt type="org.eclipse.core.resources.IProject">
+          <test
+            property="org.eclipse.core.resources.projectNature"
+            value="net.brucey.dltk.blitzmax.core.nature" />
+        </adapt>
+      </enabledWhen>
+    </page>
+  </extension>
+  
+</plugin>
