@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Ui
+Bundle-Name: %pluginName
 Bundle-SymbolicName: net.brucey.dltk.blitzmax.debug.ui;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: net.brucey.dltk.blitzmax.debug.ui.BlitzMaxDebugUIPlugin
@@ -14,6 +14,12 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.dltk.launching;bundle-version="1.0.0",
  org.eclipse.dltk.ui;bundle-version="1.0.0",
  org.eclipse.dltk.core;bundle-version="1.0.0",
- org.eclipse.ui.console;bundle-version="3.4.0"
+ org.eclipse.ui.console;bundle-version="3.4.0",
+ org.eclipse.jface.text;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ net.brucey.dltk.blitzmax.launching;bundle-version="1.0.0",
+ net.brucey.dltk.blitzmax.ui;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: %pluginProvider
+Bundle-Localization: plugin
