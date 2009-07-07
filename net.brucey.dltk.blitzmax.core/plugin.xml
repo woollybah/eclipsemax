@@ -12,9 +12,9 @@
       <content-type
             base-type="org.eclipse.core.runtime.text"
             file-extensions="bmx"
-            id="net.brucey.dltk.blitzmax.content-type"
+            id="net.brucey.dltk.blitzmax.blitzmaxContentType"
             name="BlitzMax content type"
-            priority="high">
+            priority="normal">
       </content-type>
    </extension>
  

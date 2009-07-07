@@ -127,7 +127,7 @@
             icon="icons/obj16/blitzmax_obj.gif"
             id="net.brucey.dltk.blitzmax.ui.editor"
             name="%BlitzMaxEditor.name">
-         <contentTypeBinding contentTypeId="net.brucey.dltk.blitzmax.content-type"/>
+         <contentTypeBinding contentTypeId="net.brucey.dltk.blitzmax.blitzmaxContentType"/>
       </editor>
    </extension>
    
