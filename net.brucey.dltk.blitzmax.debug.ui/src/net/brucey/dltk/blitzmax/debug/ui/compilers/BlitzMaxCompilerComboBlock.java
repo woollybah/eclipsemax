@@ -10,6 +10,8 @@ public class BlitzMaxCompilerComboBlock extends AbstractInterpreterComboBlock {
   public BlitzMaxCompilerComboBlock(
       IMainLaunchConfigurationTabListenerManager tab) {
     super(tab);
+    setTitle("BlitzMax Compiler:");
+
   }
 
   @Override

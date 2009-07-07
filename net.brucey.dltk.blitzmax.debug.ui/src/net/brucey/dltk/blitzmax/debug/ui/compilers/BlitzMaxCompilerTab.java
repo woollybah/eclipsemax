@@ -17,4 +17,8 @@ public class BlitzMaxCompilerTab extends InterpreterTab {
     return BlitzMaxNature.BLITZMAX_NATURE;
   }
 
+  @Override
+  public String getName() {
+    return "Compiler";
+  }
 }
