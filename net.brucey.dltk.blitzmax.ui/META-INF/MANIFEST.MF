@@ -18,5 +18,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.console;bundle-version="3.4.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
-Export-Package: net.brucey.dltk.blitzmax.ui
+Export-Package: net.brucey.dltk.blitzmax.ui,
+ net.brucey.dltk.blitzmax.ui.editor
 Bundle-Vendor: %pluginName
+Bundle-Localization: plugin

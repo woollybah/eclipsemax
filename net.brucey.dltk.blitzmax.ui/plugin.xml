@@ -30,19 +30,19 @@
        <page
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxGlobalPreferencePage"
 	          id="net.brucey.dltk.blitzmax.preferences"
-	          name="BlitzMax"/>
+	          name="%BlitzMaxPreferencePage.name"/>
 <!--	          name="%BlitzMaxPreferencePage.name"/>-->
 		<page
 	          category="net.brucey.dltk.blitzmax.preferences"
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxEditorPreferencePage"
 	          id="net.brucey.dltk.blitzmax.preferences.editor"
-	          name="Editor"/>
+	          name="%BlitzMaxEditorPreferencePage.name"/>
 <!--	          name="%BlitzMaxEditorPreferencePage.name"/>-->
 	    <page
 	          category="net.brucey.dltk.blitzmax.preferences.editor"
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxEditorSyntaxColoringPreferencePage"
 	          id="net.brucey.dltk.blitzmax.preferences.editor.syntaxcoloring"
-	          name="Syntax Coloring"/>
+	          name="%BlitzMaxEditorSyntaxColoringPreferencePage.name"/>
 <!--	          name="%BlitzMaxEditorSyntaxColoringPreferencePage.name"/>-->
 <!--	    <page
     	      category="net.brucey.dltk.blitzmax.preferences.editor"
@@ -53,19 +53,19 @@
 	    <page category="net.brucey.dltk.blitzmax.preferences.editor"
 	    	  class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxFoldingPreferencePage"
 	    	  id="net.brucey.dltk.blitzmax.preferences.editor.folding"
-	    	  name="Folding" />
+	    	  name="%BlitzMaxEditorFoldingPreferencePage.name" />
 <!--	    	  name="%BlitzMaxEditorFoldingPreferencePage.name" />-->
      	<page
               category="net.brucey.dltk.blitzmax.preferences.editor"
               class="net.brucey.dltk.blitzmax.ui.templates.BlitzMaxCodeTemplatesPreferencePage"
               id="net.brucey.dltk.blitzmax.preferences.templates"
-              name="Templates"/>
+              name="%BlitzMaxCodeTemplatesPreferencePage.name"/>
 <!--              name="%BlitzMaxCodeTemplatesPreferencePage.name"/>-->
        <page
               category="net.brucey.dltk.blitzmax.preferences"
               class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxTodoTaskPreferencePage"
               id="net.brucey.dltk.blitzmax.preferences.todo"
-              name="Task Tags"/>
+              name="%BlitzMaxTaskTagsPreferencePage.name"/>
 <!--              name="%BlitzMaxTaskTagsPreferencePage.name"/>-->
 	</extension>
 
@@ -75,7 +75,7 @@
 	          category="net.brucey.dltk.blitzmax.propertyPage"
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxTodoTaskPreferencePage"
 	          id="net.brucey.dltk.blitzmax.ui.propertyPage.todo"
-	          name="Task Tags">
+	          name="%BlitzMaxTodoPropertyPage.name">
 <!--	          name="%BlitzMaxTodoPropertyPage.name">-->
 	      <enabledWhen>
 	        <adapt type="org.eclipse.core.resources.IProject">
@@ -86,7 +86,7 @@
 	    <page
 	      class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxPropertyPage"
 	      id="net.brucey.dltk.blitzmax.propertyPage"
-	      name="BlitzMax">
+	      name="%BlitzMaxPropertyPage.name">
 <!--	      name="%BlitzMaxPropertyPage.name">-->
 	      <enabledWhen>
 	        <adapt type="org.eclipse.core.resources.IProject">
@@ -101,7 +101,7 @@
          point="org.eclipse.ui.newWizards">
       <category
             id="org.eclipse.dltk.python.ui"
-            name="%PythonWizardsCategory.name"
+            name="%BlitzMaxWizardsCategory.name"
             >
       </category>
       <wizard
@@ -110,7 +110,7 @@
             finalPerspective="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
             icon="$nl$/icons/etool16/newprj_wiz.gif"
             id="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxProjectWizard"
-            name="BlitzMax Project"
+            name="%NewProjectWizard.name"
             preferredPerspectives="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
             project="true">
          <description>
@@ -136,7 +136,7 @@
           class="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
           icon="$nl$/icons/eview16/blitzmax_persp.gif"
           id="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
-          name="BlitzMax"/>
+          name="%BlitzMaxPerspective.name"/>
 <!--          name="%BlitzMaxPerspective.name"/>-->
  	</extension>
    
@@ -144,7 +144,7 @@
 	      point="org.eclipse.ui.actionSets">
 	   <actionSet
 	         id="net.brucey.dltk.blitzmax.actionSet"
-	         label="BlitzMax action set">
+	         label="%BlitzMaxActionSet.label">
 	          <action
 	                class="net.brucey.dltk.blitzmax.ui.actions.BlitzMaxOpenTypeAction"
 	                icon="icons/opentype.gif"
@@ -180,7 +180,7 @@
 	        extensions="bmx:90"
 	        icon="/icons/search_obj.gif"
 	        id="net.brucey.dltk.blitzmax.ui.BlitzMaxSearchPage"
-	        label="BlitzMax Search"
+	        label="%BlitzMaxSearchPage.label"
 	        showScopeSection="true"
 	        sizeHint="460,160">
 	  </page>
