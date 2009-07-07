@@ -25,113 +25,91 @@ import org.eclipse.dltk.ui.util.BusyIndicatorRunnableContext;
 import org.eclipse.dltk.ui.util.IStatusChangeListener;
 import org.eclipse.dltk.ui.wizards.BuildpathsBlock;
 import org.eclipse.dltk.ui.wizards.NewElementWizard;
-import org.eclipse.dltk.ui.wizards.ProjectWizardFirstPage;
 import org.eclipse.dltk.ui.wizards.ProjectWizardSecondPage;
 import org.eclipse.jface.preference.IPreferenceStore;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.ui.INewWizard;
 import org.eclipse.ui.wizards.newresource.BasicNewProjectResourceWizard;
 
 public class BlitzMaxProjectCreationWizard extends NewElementWizard implements
     INewWizard, IExecutableExtension {
-	private ProjectWizardFirstPage fFirstPage;
-	private ProjectWizardSecondPage fSecondPage;
-	private IConfigurationElement fConfigElement;
+  private BlitzMaxProjectWizardFirstPage fFirstPage;
+  private ProjectWizardSecondPage fSecondPage;
+  private IConfigurationElement fConfigElement;
 
-	public BlitzMaxProjectCreationWizard() {
-		setDefaultPageImageDescriptor(BlitzMaxImages.DESC_WIZBAN_PROJECT_CREATION);
-		setDialogSettings(DLTKUIPlugin.getDefault().getDialogSettings());
-		setWindowTitle(BlitzMaxWizardMessages.ProjectCreationWizard_title);
-	}
+  public BlitzMaxProjectCreationWizard() {
+    setDefaultPageImageDescriptor(BlitzMaxImages.DESC_WIZBAN_PROJECT_CREATION);
+    setDialogSettings(DLTKUIPlugin.getDefault().getDialogSettings());
+    setWindowTitle(BlitzMaxWizardMessages.ProjectCreationWizard_title);
+  }
 
-	public void addPages() {
-		super.addPages();
-		fFirstPage = new ProjectWizardFirstPage() {
+  @Override
+  public void addPages() {
+    super.addPages();
+    fFirstPage = new BlitzMaxProjectWizardFirstPage();
+    fFirstPage
+        .setTitle(BlitzMaxWizardMessages.ProjectCreationWizardFirstPage_title);
+    fFirstPage
+        .setDescription(BlitzMaxWizardMessages.ProjectCreationWizardFirstPage_description);
+    addPage(fFirstPage);
+    fSecondPage = new ProjectWizardSecondPage(fFirstPage) {
+      @Override
+      protected BuildpathsBlock createBuildpathBlock(
+          IStatusChangeListener listener) {
+        BlitzMaxBuildPathsBlock block = new BlitzMaxBuildPathsBlock(
+            new BusyIndicatorRunnableContext(), listener, 0,
+            useNewSourcePage(), null);
 
-			final class BlitzMaxInterpreterGroup extends AbstractInterpreterGroup {
+        block.setBaseSourceFolder();
 
-				public BlitzMaxInterpreterGroup(Composite composite) {
-					super(composite);
-				}
+        return block;
+      }
 
-				protected String getCurrentLanguageNature() {
-					return BlitzMaxNature.BLITZMAX_NATURE;
-				}
+      @Override
+      protected String getScriptNature() {
+        return BlitzMaxNature.BLITZMAX_NATURE;
+      }
 
-				protected String getIntereprtersPreferencePageId() {
-					return "net.brucey.dltk.blitzmax.preferences.interpreters"; //$NON-NLS-1$
-				}
+      @Override
+      protected IPreferenceStore getPreferenceStore() {
+        return BlitzMaxUIPlugin.getDefault().getPreferenceStore();
+      }
+    };
+    addPage(fSecondPage);
+  }
 
-				protected boolean isTargetEnvironmentAllowed() {
-					return false;
-				}
-			};
+  @Override
+  protected void finishPage(IProgressMonitor monitor)
+      throws InterruptedException, CoreException {
+    fSecondPage.performFinish(monitor); // use the full progress monitor
+  }
 
-			protected IInterpreterGroup createInterpreterGroup(Composite parent) {
-				return new BlitzMaxInterpreterGroup(parent);
-			}
+  @Override
+  public boolean performFinish() {
+    boolean res = super.performFinish();
+    if (res) {
+      BasicNewProjectResourceWizard.updatePerspective(fConfigElement);
+      selectAndReveal(fSecondPage.getScriptProject().getProject());
+    }
+    return res;
+  }
 
-			protected boolean interpeterRequired() {
-				// TODO Auto-generated method stub
-				return false;
-			}
-		};
-		fFirstPage
-		    .setTitle(BlitzMaxWizardMessages.ProjectCreationWizardFirstPage_title);
-		fFirstPage
-		    .setDescription(BlitzMaxWizardMessages.ProjectCreationWizardFirstPage_description);
-		addPage(fFirstPage);
-		fSecondPage = new ProjectWizardSecondPage(fFirstPage) {
-			protected BuildpathsBlock createBuildpathBlock(
-			    IStatusChangeListener listener) {
-				BlitzMaxBuildPathsBlock block = new BlitzMaxBuildPathsBlock(new BusyIndicatorRunnableContext(),
-				    listener, 0, useNewSourcePage(), null);
-				
-				block.setBaseSourceFolder();
-				
-				return block;
-			}
+  /*
+   * Stores the configuration element for the wizard. The config element will be
+   * used in <code>performFinish</code> to set the result perspective.
+   */
+  public void setInitializationData(IConfigurationElement cfig,
+      String propertyName, Object data) {
+    fConfigElement = cfig;
+  }
 
-			protected String getScriptNature() {
-				return BlitzMaxNature.BLITZMAX_NATURE;
-			}
+  @Override
+  public boolean performCancel() {
+    fSecondPage.performCancel();
+    return super.performCancel();
+  }
 
-			protected IPreferenceStore getPreferenceStore() {
-				return BlitzMaxUIPlugin.getDefault().getPreferenceStore();
-			}
-		};
-		addPage(fSecondPage);
-	}
-
-	protected void finishPage(IProgressMonitor monitor)
-	    throws InterruptedException, CoreException {
-		fSecondPage.performFinish(monitor); // use the full progress monitor
-	}
-
-	public boolean performFinish() {
-		boolean res = super.performFinish();
-		if (res) {
-			BasicNewProjectResourceWizard.updatePerspective(fConfigElement);
-			selectAndReveal(fSecondPage.getScriptProject().getProject());
-		}
-		return res;
-	}
-
-	/*
-	 * Stores the configuration element for the wizard. The config element will be
-	 * used in <code>performFinish</code> to set the result perspective.
-	 */
-	public void setInitializationData(IConfigurationElement cfig,
-	    String propertyName, Object data) {
-		fConfigElement = cfig;
-	}
-
-	public boolean performCancel() {
-		fSecondPage.performCancel();
-		return super.performCancel();
-	}
-
-	public IModelElement getCreatedElement() {
-		return DLTKCore.create(fFirstPage.getProjectHandle());
-	}
+  @Override
+  public IModelElement getCreatedElement() {
+    return DLTKCore.create(fFirstPage.getProjectHandle());
+  }
 }
