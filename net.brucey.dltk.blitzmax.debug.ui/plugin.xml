@@ -117,9 +117,41 @@
        <shortcut
              class="net.brucey.dltk.blitzmax.debug.ui.launcher.BlitzMaxLaunchShortcut"
              description="%BlitzMaxLaunchShortcut.description"
+             icon="icons/obj16/blitzmax_obj.gif"
              id="net.brucey.dltk.blitzmax.debug.ui.launchShortcut"
              label="%BlitzMaxLaunchShortcut.name"
              modes="run, debug">
+          <description
+                description="%BlitzMaxLaunchShortcut.runDescription"
+                mode="run">
+          </description>
+          <description
+                description="%BlitzMaxLaunchShortcut.debugDescription"
+                mode="debug">
+          </description>
+          <contextualLaunch>
+             <enablement>
+                <with
+                      variable="selection">
+                   <count
+                         value="1">
+                   </count>
+                   <iterate>
+                      <instanceof
+                            value="org.eclipse.core.resources.IFile">
+                      </instanceof>
+                   </iterate>
+                </with>
+             </enablement>
+             <contextLabel
+                   label="%BlitzMaxLaunchShortcut.runName"
+                   mode="run">
+             </contextLabel>
+             <contextLabel
+                   label="%BlitzMaxLaunchShortcut.debugName"
+                   mode="debug">
+             </contextLabel>
+          </contextualLaunch>
        </shortcut>
     </extension>
     <extension
