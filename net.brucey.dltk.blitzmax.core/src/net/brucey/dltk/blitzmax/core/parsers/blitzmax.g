@@ -113,15 +113,16 @@ file_input:
 	;
 
 main_statements[List statements]
-	:	(SUPERSTRICT
+	:	(SUPERSTRICT NEWLINE
 			{
 				statements.add(new BlitzMaxStrictExpression(true));
 			}
-		| STRICT
+		| STRICT NEWLINE
 			{
 				statements.add(new BlitzMaxStrictExpression(false));
 			}
 		)
+		| framework_stmt
 		| module_stmt
 		| moduleinfo_stmt
 		| s1 = import_stmt
@@ -131,6 +132,10 @@ main_statements[List statements]
 		| s3 = type_block
 			{
 				statements.add(s3);
+			}
+		| fb = function_block
+			{
+				statements.add(fb);
 			}
 		| statement_list[statements]
 	;
@@ -164,6 +169,7 @@ type_block returns [ BlitzMaxTypeDeclaration typeDeclaration = null ]
 			}
 		
 		)? 
+		NEWLINE
 		
 		tcl = type_content_list
 		{
@@ -182,6 +188,7 @@ type_block returns [ BlitzMaxTypeDeclaration typeDeclaration = null ]
 				}
 			}
 		}
+		NEWLINE
 	;
 
 type_content_list returns [ Block typeContent = new Block() ]
@@ -195,9 +202,10 @@ type_content_list returns [ Block typeContent = new Block() ]
 				}
 			| fb = function_block
 				{
-					typeContent.addStatement(mb);
+					typeContent.addStatement(fb);
 				}
 			| rem_block
+			| NEWLINE
 		)*
 	;
 	
@@ -220,7 +228,8 @@ method_block returns [ BlitzMaxMethodDeclaration methodDeclaration = null ]
 				methodDeclaration.setModifiers(methodDeclaration.getModifiers() | Modifiers.AccFinal);
 			}
 		
-		)? 
+		)?
+		NEWLINE
 		b = statement_block
 			{
 				methodDeclaration.acceptBody(b, true);
@@ -230,6 +239,7 @@ method_block returns [ BlitzMaxMethodDeclaration methodDeclaration = null ]
 			methodDeclaration.setEnd(((CommonToken) em).getStopIndex()+1);
 		}
 		)
+		NEWLINE
 	;
 
 field_def [List statements]
@@ -242,6 +252,7 @@ field_def [List statements]
 				}
 			}
 		}
+		NEWLINE
 	;
 
 global_def [List statements]
@@ -254,6 +265,7 @@ global_def [List statements]
 				}
 			}
 		}
+		NEWLINE
 	;
 
 const_def [List statements]
@@ -266,6 +278,7 @@ const_def [List statements]
 				}
 			}
 		}
+		NEWLINE
 	;
 	
 local_def [List statements]
@@ -278,6 +291,7 @@ local_def [List statements]
 				}
 			}
 		}
+		NEWLINE
 	;
 
 function_block returns [ BlitzMaxFunctionDeclaration functionDeclaration = null ]
@@ -294,6 +308,7 @@ function_block returns [ BlitzMaxFunctionDeclaration functionDeclaration = null 
 		{
 			functionDeclaration.setEnd(((CommonToken) ef).getStopIndex()+1);
 		}
+		NEWLINE
 	;
 
 statement_block returns [ BlitzMaxBlock statement = new BlitzMaxBlock() ]
@@ -312,6 +327,7 @@ statement_block returns [ BlitzMaxBlock statement = new BlitzMaxBlock() ]
 		  				//	Statement sst = (Statement)i.next();
 		  				//	if( sst != null ) {
 		  				//		statement.addStatement( sst );
+		  				if (!statement.getList().isEmpty()) {
 		  						Statement sst = (Statement)statement.getList().getFirst();
 		  						if( sst.sourceStart() < startPos || startPos == -1 ) {
 		  							startPos = sst.sourceStart();
@@ -321,13 +337,15 @@ statement_block returns [ BlitzMaxBlock statement = new BlitzMaxBlock() ]
 		  						}
 		  						
 		  						sst = (Statement)statement.getList().getLast();
-		  						if( sst.sourceStart() < startPos || startPos == -1 ) {
-		  							startPos = sst.sourceStart();
-		  						} 
-		  						if( sst.sourceEnd() > endPos || endPos == -1 ) {
-		  							endPos = sst.sourceEnd();
+		  						if (sst != null) {
+			  						if( sst.sourceStart() < startPos || startPos == -1 ) {
+			  							startPos = sst.sourceStart();
+			  						} 
+			  						if( sst.sourceEnd() > endPos || endPos == -1 ) {
+			  							endPos = sst.sourceEnd();
+			  						}
 		  						}
-		  					//}
+		  				}
 		  				//}
 		  			//}
 				}
@@ -352,6 +370,8 @@ statement_list[List statements]
 		| global_def[statements]
 		| local_def[statements]
 		| rem_block
+		| expression
+		| NEWLINE
 	;
 
 function_definition returns [BlitzMaxFunctionExpression exp = null]
@@ -482,9 +502,10 @@ variable_definition[boolean functionArg] returns [ Declaration dec = null ]
 	;
 
 rem_block
-	:	REM
+	:	REM NEWLINE
 		( options {greedy=false;} : . )*
 		end_rem
+		NEWLINE
 	;
 	
 end_rem
@@ -536,17 +557,19 @@ for_block returns [ BlitzMaxForStatement stmt = null ]
 					}
 			)
 		)
+		NEWLINE
 		sb = statement_block
-		{
-			stmt.setBlock(sb);
-		}
-		NEXT
+			{
+				stmt.setBlock(sb);
+			}
+		NEXT NEWLINE
 	;
 	
 repeat_block
-	:	REPEAT
+	:	REPEAT NEWLINE
 		b = statement_block
 		(FOREVER | UNTIL expression)
+		NEWLINE
 	;
 
 expression returns [ Expression exp = null ]
@@ -574,7 +597,7 @@ expression returns [ Expression exp = null ]
 	;
 
 cast_or_function_call
-	:	IDENTIFIER LPAREN expression_list? RPAREN
+	:	(IDENTIFIER LPAREN expression_list? RPAREN)
 	;
 
 expression_list
@@ -582,20 +605,21 @@ expression_list
 	;
 
 while_block
-	:	WHILE expression
+	:	WHILE expression NEWLINE
 		statement_block
-		WEND
+		WEND NEWLINE
 	;
 
 select_block
-	:	SELECT expression
+	:	SELECT expression NEWLINE
 		case_block*
 		default_block?
 		end_select
+		NEWLINE
 	;
 
 default_block
-	: DEFAULT
+	: DEFAULT NEWLINE
 		statement_block
 	;
 
@@ -605,7 +629,7 @@ end_select
 	;
 
 case_block
-	:	CASE expression (COMMA expression)*
+	:	CASE expression (COMMA expression)* NEWLINE
 		statement_block
 	;
 
@@ -622,22 +646,23 @@ import_stmt returns [ Statement stmt = null ]
 				stmt = new BlitzMaxImportStatement(imp, e);
 			}
 		)
+		NEWLINE
 	;
 
 include_stmt
-	:	INCLUDE STRING_LITERAL
+	:	INCLUDE STRING_LITERAL NEWLINE
 	;
 
 framework_stmt
-	:	FRAMEWORK module_name
+	:	FRAMEWORK module_name NEWLINE
 	;
 
 module_stmt
-	:	MODULE module_name
+	:	MODULE module_name NEWLINE
 	;
 	
 moduleinfo_stmt
-	:	MODULEINFO STRING_LITERAL
+	:	MODULEINFO STRING_LITERAL NEWLINE
 	;
 
 module_name returns [ BlitzMaxModuleNameExpression expr = null ]
@@ -648,7 +673,7 @@ module_name returns [ BlitzMaxModuleNameExpression expr = null ]
 	;
 
 debuglog_stmt
-	:	DEBUGLOG expression
+	:	DEBUGLOG expression NEWLINE
 	;
 
 if_block
@@ -674,6 +699,7 @@ if_block
 			END IF
 			| 'endif'
 		)
+		NEWLINE
 	;
 
 LINE_COMMENT
@@ -962,6 +988,6 @@ STRING_LITERAL
 NEWLINE
     :   (('\r')? '\n' )+
         //{if ( startPos==0 || implicitLineJoiningLevel>0 )
-        {$channel=HIDDEN;}
+        //{$channel=HIDDEN;}
         //}
     ;
