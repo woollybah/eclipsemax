@@ -68,6 +68,18 @@ public class BlitzMaxProjectWizardFirstPage extends ProjectWizardFirstPage {
     return new GenerateGroup(composite);
   }
 
+  public String getMainScript() {
+    return fGenerateGroup.getMainScript();
+  }
+
+  public String getReleaseExecutable() {
+    return fGenerateGroup.getReleaseExecutable();
+  }
+
+  public String getDebugExecutable() {
+    return fGenerateGroup.getDebugExecutable();
+  }
+
   private class GenerateGroup extends Observable implements Observer,
       IDialogFieldListener {
     private StringDialogField fMainScriptField;

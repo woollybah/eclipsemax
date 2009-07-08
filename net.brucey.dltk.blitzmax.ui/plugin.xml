@@ -100,7 +100,7 @@
 	<extension
          point="org.eclipse.ui.newWizards">
       <category
-            id="org.eclipse.dltk.python.ui"
+            id="net.brucey.dltk.blitzmax.ui"
             name="%BlitzMaxWizardsCategory.name"
             >
       </category>
@@ -109,12 +109,51 @@
             class="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxProjectCreationWizard"
             finalPerspective="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
             icon="$nl$/icons/etool16/newprj_wiz.gif"
-            id="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxProjectWizard"
+            id="net.brucey.dltk.blitzmax.ui.wizards.newproject"
             name="%NewProjectWizard.name"
             preferredPerspectives="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
             project="true">
          <description>
-            Creates new BlitzMax Project.
+            %NewProjectWizard.description
+         </description>
+      </wizard>
+      <wizard
+            category="net.brucey.dltk.blitzmax.ui"
+            class="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxModuleProjectCreationWizard"
+            finalPerspective="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            icon="$nl$/icons/etool16/newmodprj_wiz.gif"
+            id="net.brucey.dltk.blitzmax.ui.wizards.newmoduleproject"
+            name="%NewModuleProjectWizard.name"
+            preferredPerspectives="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            project="true">
+         <description>
+            %NewModuleProjectWizard.description
+         </description>
+      </wizard>
+      <wizard
+            category="net.brucey.dltk.blitzmax.ui"
+            class="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxNewFileWizard"
+            finalPerspective="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            icon="$nl$/icons/obj16/newblitzmax_obj.gif"
+            id="net.brucey.dltk.blitzmax.ui.wizards.newbmxfile"
+            name="%NewFileWizard.name"
+            preferredPerspectives="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            project="false">
+         <description>
+            %NewFileWizard.description
+         </description>
+      </wizard>
+      <wizard
+            category="net.brucey.dltk.blitzmax.ui"
+            class="net.brucey.dltk.blitzmax.ui.wizards.BlitzMaxNewTypeWizard"
+            finalPerspective="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            icon="$nl$/icons/obj16/newtype_obj.gif"
+            id="net.brucey.dltk.blitzmax.ui.wizards.newtype"
+            name="%NewClassWizard.name"
+            preferredPerspectives="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
+            project="false">
+         <description>
+            %NewClassWizard.description
          </description>
       </wizard>
       </extension>
@@ -137,7 +176,6 @@
           icon="$nl$/icons/eview16/blitzmax_persp.gif"
           id="net.brucey.dltk.blitzmax.ui.BlitzMaxPerspective"
           name="%BlitzMaxPerspective.name"/>
-<!--          name="%BlitzMaxPerspective.name"/>-->
  	</extension>
    
    	<extension
