@@ -21,8 +21,7 @@ public class DbgpBlitzMaxConnector {
 
   private Process debugProcess;
 
-  private final DataBuffer inputBuffer = new DataBuffer();
-  private BlitzMaxStdDebugProcessor processor;
+  private BlitzMaxDebugManager manager;
 
   /**
    * @param args
@@ -30,84 +29,27 @@ public class DbgpBlitzMaxConnector {
   public static void main(String[] args) {
 
     // TODO : remove test data
-    // String[] a = { "127.0.0.1", "9000",
-    // "/Users/brucey/Documents/programming/Blitz/remote_debugging/java_test.debug"
-    // };
+    //    String[] a = { "127.0.0.1", "9000",
+    //        "/Users/brucey/Documents/programming/Blitz/remote_debugging/java_test.debug" };
     // String[] a = { "127.0.0.1", "9000",
     // "C:/000_programming/blitz/debugging/java_test.debug.exe" };
-    // args = a;
+    //    args = a;
 
     DbgpBlitzMaxConnector connector = new DbgpBlitzMaxConnector(args);
 
     connector.start();
 
-    connector.monitor();
+    connector.run();
+  }
 
-    connector.finish();
+  private void run() {
+    manager.run(exePath);
+
+    finish();
   }
 
   private void finish() {
     debugProcess.destroy();
-  }
-
-  private void monitor() {
-
-    byte[] inBuffer = new byte[1024];
-
-    while (true) {
-
-      try {
-        int inBytes = blitzStdIn.available();
-        int bytesRead = 0;
-
-        if (inBytes > 0) {
-
-          bytesRead = blitzStdIn.read(inBuffer, 0,
-              (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
-
-          System.out.println(inBuffer);
-
-        }
-
-        inBytes = blitzStdErr.available();
-
-        if (inBytes > 0) {
-          bytesRead = blitzStdErr.read(inBuffer, 0,
-              (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
-
-          inputBuffer.addData(inBuffer, bytesRead);
-
-        }
-
-        while (inputBuffer.lineAvail()) {
-
-          String line = inputBuffer.readLine();
-
-          line = processor.processLine(line);
-
-          if (line != null) {
-            System.out.println(line);
-          }
-
-        }
-
-        debugProcess.exitValue();
-
-        // we get here if the app has terminated.
-        break;
-
-      } catch (IllegalThreadStateException e) {
-        // sleep a little
-        try {
-          Thread.sleep(10);
-        } catch (InterruptedException e1) {
-        }
-      } catch (IOException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-      }
-
-    }
   }
 
   public DbgpBlitzMaxConnector(String[] args) {
@@ -125,9 +67,14 @@ public class DbgpBlitzMaxConnector {
   }
 
   private boolean start() {
+
+    BlitzMaxIDEDebugProcessor ideProcessor = new BlitzMaxIDEDebugProcessor(
+        dbgpHost, dbgpPort);
+    ideProcessor.connect();
+
     ProcessBuilder pb = new ProcessBuilder(blitzMaxArgs);
     pb.directory(new File(exePath).getParentFile()); // set the working
-                                                     // directory
+    // directory
 
     try {
       debugProcess = pb.start();
@@ -136,8 +83,10 @@ public class DbgpBlitzMaxConnector {
       blitzStdIn = new BufferedInputStream(debugProcess.getInputStream());
       blitzStdOut = new BufferedOutputStream(debugProcess.getOutputStream());
 
-      processor = new BlitzMaxStdDebugProcessor(blitzStdIn, blitzStdOut,
-          blitzStdErr);
+      BlitzMaxStdDebugProcessor processor = new BlitzMaxStdDebugProcessor(
+          blitzStdIn, blitzStdOut, blitzStdErr, debugProcess);
+
+      manager = new BlitzMaxDebugManager(processor, ideProcessor);
 
     } catch (IOException e) {
       // TODO Auto-generated catch block

@@ -2,7 +2,7 @@ package net.brucey.dltk.blitzmax.debugger.dbgp;
 
 public enum CommandType {
 
-  STATUS, FEATURE_GET, FEATURE_SET, RUN, STEP_INTO, STEP_OUT, STEP_OVER, STOP, DETACH, STACK_DEPTH, STACK_GET, PROP_SET, PROP_GET, PROP_VALUE, CONTEXT_GET, EVAL, STDOUT, STDERR, BREAK,
+  STATUS, FEATURE_GET, FEATURE_SET, RUN, STEP_INTO, STEP_OUT, STEP_OVER, STOP, DETACH, STACK_DEPTH, STACK_GET, PROP_SET, PROP_GET, PROP_VALUE, CONTEXT_GET, CONTEXT_NAMES, EVAL, STDOUT, STDERR, BREAK,
 
   UNKOWN;
 
@@ -37,6 +37,8 @@ public enum CommandType {
       return PROP_VALUE;
     } else if (("context_get").equals(cmd)) {
       return CONTEXT_GET;
+    } else if (("context_names").equals(cmd)) {
+      return CONTEXT_NAMES;
     } else if (("eval").equals(cmd)) {
       return EVAL;
     } else if (("stdout").equals(cmd)) {

@@ -22,12 +22,18 @@ public class BlitzMaxIDEDebugProcessor {
   private InputStream in;
   private OutputStream out;
 
+  private DbgpCommand command;
+  private DbgpResponse response;
+
   public BlitzMaxIDEDebugProcessor(String ideHost, int idePort) {
     this.ideHost = ideHost;
     this.idePort = idePort;
   }
 
-  public boolean init() {
+  public boolean connect() {
+
+    command = new DbgpCommand();
+    response = new DbgpResponse();
 
     boolean success = true;
 
@@ -46,6 +52,36 @@ public class BlitzMaxIDEDebugProcessor {
     }
 
     return success;
+  }
+
+  /**
+   * Send init response.
+   * 
+   * @param file
+   */
+  public void init(String file) {
+    sendResponse(response.init(file));
+  }
+
+  private void sendResponse(String xml) {
+    int length = xml.length();
+
+    try {
+
+      // length
+      out.write(String.valueOf(length).getBytes());
+      out.write(0);
+
+      // response
+      out.write(xml.getBytes());
+      out.write(0);
+
+      // flush
+      out.flush();
+
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
 }

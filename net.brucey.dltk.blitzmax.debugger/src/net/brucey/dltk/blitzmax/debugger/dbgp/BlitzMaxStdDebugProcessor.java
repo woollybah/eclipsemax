@@ -28,12 +28,100 @@ public class BlitzMaxStdDebugProcessor {
   private InputStream blitzStdIn;
   private OutputStream blitzStdOut;
 
+  private final DataBuffer inputBuffer = new DataBuffer();
+  private Process debugProcess;
+
   public BlitzMaxStdDebugProcessor(InputStream blitzStdIn,
-      OutputStream blitzStdOut, InputStream blitzStdErr) {
+      OutputStream blitzStdOut, InputStream blitzStdErr, Process debugProcess) {
 
     this.blitzStdIn = blitzStdIn;
     this.blitzStdOut = blitzStdOut;
     this.blitzStdErr = blitzStdErr;
+    this.debugProcess = debugProcess;
+
+  }
+
+  public boolean reset() {
+    // clear the buffers
+    boolean finished = monitor();
+
+    inVariable = false;
+    inFile = false;
+    stack.clear();
+    inStack = false;
+    scope = null;
+
+    return finished;
+  }
+
+  /**
+   * 
+   * @return true if app has terminated, false otherwise.
+   */
+  public boolean monitor() {
+
+    byte[] inBuffer = new byte[1024];
+
+    try {
+
+      int inBytes = blitzStdIn.available();
+      int errBytes = blitzStdErr.available();
+
+      // loop until there's nothing left in the buffers
+      while (inBytes > 0 || errBytes > 0) {
+
+        int bytesRead = 0;
+
+        if (inBytes > 0) {
+
+          bytesRead = blitzStdIn.read(inBuffer, 0,
+              (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
+
+          System.out.println(inBuffer);
+
+        }
+
+        if (errBytes > 0) {
+          bytesRead = blitzStdErr.read(inBuffer, 0,
+              (errBytes < inBuffer.length) ? errBytes : inBuffer.length);
+
+          inputBuffer.addData(inBuffer, bytesRead);
+
+        }
+
+        while (inputBuffer.lineAvail()) {
+
+          String line = inputBuffer.readLine();
+
+          line = processLine(line);
+
+          if (line != null) {
+            System.out.println(line);
+          }
+
+        }
+
+        inBytes = blitzStdIn.available();
+        errBytes = blitzStdErr.available();
+
+      }
+
+      debugProcess.exitValue();
+
+      // we get here if the app has terminated.
+      return true;
+
+    } catch (IllegalThreadStateException e) {
+
+      // ignored - the app is still running.
+
+    } catch (IOException e) {
+      // TODO throw an exception ?
+      e.printStackTrace();
+
+    }
+
+    return false;
 
   }
 

@@ -10,6 +10,24 @@
  *******************************************************************************/
 package net.brucey.dltk.blitzmax.debugger.dbgp;
 
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.BreakCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.Command;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextGetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextNamesCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureGetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureSetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.PropGetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.PropSetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.PropValueCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.RunCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StackDepthCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StackGetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StatusCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StepIntoCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StepOutCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StepOverCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StopCommand;
+
 public class DbgpCommand {
 
   private static final String id = " -i ";
@@ -98,19 +116,6 @@ public class DbgpCommand {
   // break
   public static final String suspend = "break";
 
-  // Socket socket;
-  // OutputStreamWriter outStream;
-
-  // private static int trId = 0;
-  // private static Object idMonitor = new Object();
-
-  // private int lastIdSent;
-  // private String lastCmdSent;
-
-  // public String getLastCmdSent() {
-  // return lastCmdSent;
-  // }
-
   public DbgpCommand() {
   }
 
@@ -119,13 +124,49 @@ public class DbgpCommand {
    * 
    * @param command
    */
-  public void parseCommand(byte[] command) {
+  public Command parseCommand(byte[] command) {
 
     String cmd = new String(command);
     String[] cmdParts = cmd.split(" ");
 
     CommandType type = CommandType.fromString(cmdParts[0]);
 
+    switch (type) {
+    case STATUS:
+      return new StatusCommand(cmdParts);
+    case FEATURE_GET:
+      return new FeatureGetCommand(cmdParts);
+    case FEATURE_SET:
+      return new FeatureSetCommand(cmdParts);
+    case RUN:
+      return new RunCommand(cmdParts);
+    case STOP:
+      return new StopCommand(cmdParts);
+    case STEP_OVER:
+      return new StepOverCommand(cmdParts);
+    case STEP_INTO:
+      return new StepIntoCommand(cmdParts);
+    case STEP_OUT:
+      return new StepOutCommand(cmdParts);
+    case CONTEXT_GET:
+      return new ContextGetCommand(cmdParts);
+    case CONTEXT_NAMES:
+      return new ContextNamesCommand(cmdParts);
+    case PROP_GET:
+      return new PropGetCommand(cmdParts);
+    case PROP_SET:
+      return new PropSetCommand(cmdParts);
+    case PROP_VALUE:
+      return new PropValueCommand(cmdParts);
+    case STACK_DEPTH:
+      return new StackDepthCommand(cmdParts);
+    case STACK_GET:
+      return new StackGetCommand(cmdParts);
+    case BREAK:
+      return new BreakCommand(cmdParts);
+    }
+
+    return null;
   }
 
 }
