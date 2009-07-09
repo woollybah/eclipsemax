@@ -9,11 +9,11 @@ import java.io.OutputStream;
 
 public class DbgpBlitzMaxConnector {
 
-  private int dbgpPort;
-  private String dbgpHost;
+  private final int dbgpPort;
+  private final String dbgpHost;
 
-  private String exePath;
-  private String[] blitzMaxArgs = { "" };
+  private final String exePath;
+  private final String[] blitzMaxArgs = { "" };
 
   private InputStream blitzStdErr;
   private InputStream blitzStdIn;
@@ -21,7 +21,7 @@ public class DbgpBlitzMaxConnector {
 
   private Process debugProcess;
 
-  private DataBuffer inputBuffer = new DataBuffer();
+  private final DataBuffer inputBuffer = new DataBuffer();
   private BlitzMaxStdDebugProcessor processor;
 
   /**
@@ -30,9 +30,12 @@ public class DbgpBlitzMaxConnector {
   public static void main(String[] args) {
 
     // TODO : remove test data
-    //    String[] a = { "127.0.0.1", "9000",
-    //        "/Users/brucey/Documents/programming/Blitz/remote_debugging/java_test.debug" };
-    //    args = a;
+    // String[] a = { "127.0.0.1", "9000",
+    // "/Users/brucey/Documents/programming/Blitz/remote_debugging/java_test.debug"
+    // };
+    // String[] a = { "127.0.0.1", "9000",
+    // "C:/000_programming/blitz/debugging/java_test.debug.exe" };
+    // args = a;
 
     DbgpBlitzMaxConnector connector = new DbgpBlitzMaxConnector(args);
 
@@ -49,7 +52,7 @@ public class DbgpBlitzMaxConnector {
 
   private void monitor() {
 
-    byte[] inBuffer = new byte[4096];
+    byte[] inBuffer = new byte[1024];
 
     while (true) {
 
@@ -89,6 +92,10 @@ public class DbgpBlitzMaxConnector {
         }
 
         debugProcess.exitValue();
+
+        // we get here if the app has terminated.
+        break;
+
       } catch (IllegalThreadStateException e) {
         // sleep a little
         try {
@@ -119,7 +126,8 @@ public class DbgpBlitzMaxConnector {
 
   private boolean start() {
     ProcessBuilder pb = new ProcessBuilder(blitzMaxArgs);
-    pb.directory(new File(exePath).getParentFile()); // set the working directory
+    pb.directory(new File(exePath).getParentFile()); // set the working
+                                                     // directory
 
     try {
       debugProcess = pb.start();

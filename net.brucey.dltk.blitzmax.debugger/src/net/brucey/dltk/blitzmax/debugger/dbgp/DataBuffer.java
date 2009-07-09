@@ -17,9 +17,16 @@ public class DataBuffer {
 
     for (int i = 0; i < length; i++) {
 
+      // ASCII 10 is a newline
       if (newData[i] == 10) {
 
-        int size = i - last;
+        // trim out ASCII 13
+        int trim = 0;
+        if (i > 1 && newData[i-1] == 13) {
+          trim = 1;
+        }
+        
+        int size = i - last - trim;
         if (remaining != null) {
           size += remaining.length;
         }
@@ -29,10 +36,10 @@ public class DataBuffer {
         if (remaining != null) {
           System.arraycopy(remaining, 0, b, 0, remaining.length);
           System
-              .arraycopy(newData, last + 1, b, remaining.length, i - last - 1);
+              .arraycopy(newData, last + 1, b, remaining.length, i - last - 1 - trim);
           remaining = null;
         } else {
-          System.arraycopy(newData, last + 1, b, 0, i - last - 1);
+          System.arraycopy(newData, last + 1, b, 0, i - last - 1 - trim);
         }
         last = i;
 
@@ -40,6 +47,7 @@ public class DataBuffer {
       }
     }
 
+    // if we have data left over, hold onto it for adding to the next chunk.
     if (last + 1 < length) {
       remaining = new byte[length - last];
       System.arraycopy(newData, last + 1, remaining, 0, length - last);
