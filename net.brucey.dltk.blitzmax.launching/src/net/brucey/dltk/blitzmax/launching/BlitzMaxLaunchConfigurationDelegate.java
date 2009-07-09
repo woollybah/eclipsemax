@@ -25,6 +25,7 @@ public class BlitzMaxLaunchConfigurationDelegate extends
     return BlitzMaxNature.BLITZMAX_NATURE;
   }
 
+  @Override
   protected InterpreterConfig createInterpreterConfig(
       ILaunchConfiguration configuration, ILaunch launch) throws CoreException {
 
@@ -34,6 +35,40 @@ public class BlitzMaxLaunchConfigurationDelegate extends
       config.addInterpreterArg("makeapp"); // we're building an app
       config.addInterpreterArg("-r"); // Release (not debug)
       config.addInterpreterArg("-x"); // Execute
+
+      String buildEnvironment = configuration.getAttribute(
+          BlitzMaxLaunchConfigurationConstants.ATTR_BUILD_ENVIRONMENT,
+          BlitzMaxLaunchConfigurationConstants.VAL_BUILD_ENVIRONMENT_CONSOLE);
+      String buildMode = configuration.getAttribute(
+          BlitzMaxLaunchConfigurationConstants.ATTR_BUILD_MODE,
+          BlitzMaxLaunchConfigurationConstants.VAL_BUILD_MODE_QUICK);
+      String garbageCollector = configuration
+          .getAttribute(
+              BlitzMaxLaunchConfigurationConstants.ATTR_GARBAGE_COLLECTOR,
+              BlitzMaxLaunchConfigurationConstants.VAL_GARBAGE_COLLECTOR_NONTHREADED);
+      String appStub = configuration.getAttribute(
+          BlitzMaxLaunchConfigurationConstants.ATTR_APP_STUB,
+          BlitzMaxLaunchConfigurationConstants.VAL_APP_STUB_DEFAULT);
+
+      if (buildMode
+          .equals(BlitzMaxLaunchConfigurationConstants.VAL_BUILD_MODE_FULL)) {
+        config.addInterpreterArg("-a");
+      }
+
+      if (buildEnvironment
+          .equals(BlitzMaxLaunchConfigurationConstants.VAL_BUILD_ENVIRONMENT_GUI)) {
+        config.addInterpreterArg("-t");
+        config.addInterpreterArg("gui");
+      } else {
+        config.addInterpreterArg("-t");
+        config.addInterpreterArg("console");
+      }
+
+      if (garbageCollector
+          .equals(BlitzMaxLaunchConfigurationConstants.VAL_GARBAGE_COLLECTOR_THREADED)) {
+        config.addInterpreterArg("-h");
+      }
+
       addOutputBinary(config, configuration);
     }
 
@@ -57,8 +92,9 @@ public class BlitzMaxLaunchConfigurationDelegate extends
     IProject project = getScriptProject(configuration).getProject();
     String scriptName = getMainScriptName(configuration);
     IResource resource = null;
-    if (scriptName != null)
+    if (scriptName != null) {
       resource = project.findMember(scriptName);
+    }
 
     if (resource instanceof IFile) {
       IFile file = (IFile) resource;

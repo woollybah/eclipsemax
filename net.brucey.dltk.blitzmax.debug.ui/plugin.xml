@@ -117,7 +117,7 @@
        <shortcut
              class="net.brucey.dltk.blitzmax.debug.ui.launcher.BlitzMaxLaunchShortcut"
              description="%BlitzMaxLaunchShortcut.description"
-             icon="icons/obj16/blitzmax_obj.gif"
+             icon="$nl$/icons/obj16/blitzmax_obj.gif"
              id="net.brucey.dltk.blitzmax.debug.ui.launchShortcut"
              label="%BlitzMaxLaunchShortcut.name"
              modes="run, debug">
@@ -152,6 +152,44 @@
                    mode="debug">
              </contextLabel>
           </contextualLaunch>
+       </shortcut>
+       <shortcut
+             class="net.brucey.dltk.blitzmax.debug.ui.launcher.BlitzMaxConsoleLaunchShortcut"
+             description="%BlitzMaxConsoleLaunchShortcut.description"
+             icon="$nl$/icons/obj16/blitzmax_obj.gif"
+             id="net.brucey.dltk.blitzmax.debug.ui.consoleLaunchShortcut"
+             label="%BlitzMaxConsoleLaunchShortcut.name"
+             modes="run, debug">
+          <description
+                description="%BlitzMaxConsoleLaunchShortcut.runDescription"
+                mode="run">
+          </description>
+          <description
+                description="%BlitzMaxConsoleLaunchShortcut.debugDescription"
+                mode="debug">
+          </description>
+          <contextualLaunch>
+             <enablement>
+                <with
+                      variable="selection">
+                   <count
+                         value="1">
+                   </count>
+                   <iterate>
+                      <instanceof
+                            value="org.eclipse.core.resources.IFile">
+                      </instanceof>
+                   </iterate>
+                </with>
+             </enablement>
+             <contextLabel
+                   label="%BlitzMaxConsoleLaunchShortcut.runName"
+                   mode="run">
+             </contextLabel>
+             <contextLabel
+                   label="%BlitzMaxConsoleLaunchShortcut.debugName"
+                   mode="debug">
+             </contextLabel></contextualLaunch>
        </shortcut>
     </extension>
     <extension
