@@ -4,7 +4,7 @@
   
   <extension point="org.eclipse.core.runtime.preferences">
     <initializer
-      class="net.brucey.dltk.blitzmax.debugger.preferences.DebuggerPreferenceInitializer" />
+      class="net.brucey.dltk.blitzmax.debugger.preferences.BlitzMaxDebuggerPreferenceInitializer" />
   </extension>
   
   <extension point="org.eclipse.dltk.launching.debuggingEngine">
