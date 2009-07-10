@@ -12,7 +12,7 @@
       <content-type
             base-type="org.eclipse.core.runtime.text"
             file-extensions="bmx"
-            id="net.brucey.dltk.blitzmax.blitzmaxContentType"
+            id="net.brucey.dltk.blitzmax.content-type"
             name="BlitzMax content type"
             priority="normal">
       </content-type>
@@ -42,17 +42,9 @@
                class="net.brucey.dltk.blitzmax.core.parser.BlitzMaxSourceParserFactory"
                description="BlitzMax Source parser"
                id="net.brucey.dltk.blitzmax.sourceParser"
-               name="sourceParser.name"
+               name="%sourceParser.name"
                priority="0" />
       </parserContribution>
-	</extension>
- 
-	<extension point="org.eclipse.dltk.core.sourceElementParsers">
-      <parser
-            class="net.brucey.dltk.blitzmax.core.parser.BlitzMaxSourceElementParser"
-            nature="net.brucey.dltk.blitzmax.core.nature"
-            priority="1">
-      </parser>
 	</extension>
 	
 	<extension
