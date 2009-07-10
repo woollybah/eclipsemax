@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g 2009-07-08 09:10:26
+// $ANTLR 3.1.2 C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g 2009-07-10 11:39:28
 
 package net.brucey.dltk.blitzmax.core.parsers;
 
@@ -2406,25 +2406,61 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "rem_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:504:1: rem_block : REM NEWLINE ( options {greedy=false; } : . )* end_rem NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:504:1: rem_block : REM NEWLINE rem_block_contents ;
     public final void rem_block() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:505:2: ( REM NEWLINE ( options {greedy=false; } : . )* end_rem NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:505:4: REM NEWLINE ( options {greedy=false; } : . )* end_rem NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:505:3: ( REM NEWLINE rem_block_contents )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:505:5: REM NEWLINE rem_block_contents
             {
-            match(input,REM,FOLLOW_REM_in_rem_block1472); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_rem_block1474); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:506:3: ( options {greedy=false; } : . )*
+            match(input,REM,FOLLOW_REM_in_rem_block1473); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_rem_block1475); 
+            pushFollow(FOLLOW_rem_block_contents_in_rem_block1480);
+            rem_block_contents();
+
+            state._fsp--;
+
+
+            }
+
+        }
+
+        catch (RecognitionException re) {
+        	if( reporter != null ) {
+        		reporter.reportError(re);
+        	}
+        	recover(input,re);
+        }
+        catch (Throwable extre) {
+        	//System.err.println(t);
+        	if( reporter != null ) {
+        		reporter.reportThrowable(extre);
+        	}
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "rem_block"
+
+
+    // $ANTLR start "rem_block_contents"
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:509:1: rem_block_contents : ( . )* ( 'endrem' | END (~ REM rem_block_contents | REM ) ) ;
+    public final void rem_block_contents() throws RecognitionException {
+        try {
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:510:3: ( ( . )* ( 'endrem' | END (~ REM rem_block_contents | REM ) ) )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:510:5: ( . )* ( 'endrem' | END (~ REM rem_block_contents | REM ) )
+            {
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:510:5: ( . )*
             loop25:
             do {
                 int alt25=2;
                 switch ( input.LA(1) ) {
-                case END:
+                case 126:
                     {
                     alt25=2;
                     }
                     break;
-                case 126:
+                case END:
                     {
                     alt25=2;
                     }
@@ -2562,7 +2598,7 @@ public class blitzmaxParser extends Parser {
 
                 switch (alt25) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:506:31: .
+            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:510:5: .
             	    {
             	    matchAny(input); 
 
@@ -2574,74 +2610,90 @@ public class blitzmaxParser extends Parser {
                 }
             } while (true);
 
-            pushFollow(FOLLOW_end_rem_in_rem_block1496);
-            end_rem();
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:5: ( 'endrem' | END (~ REM rem_block_contents | REM ) )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            state._fsp--;
-
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_rem_block1500); 
-
+            if ( (LA27_0==126) ) {
+                alt27=1;
             }
-
-        }
-
-        catch (RecognitionException re) {
-        	if( reporter != null ) {
-        		reporter.reportError(re);
-        	}
-        	recover(input,re);
-        }
-        catch (Throwable extre) {
-        	//System.err.println(t);
-        	if( reporter != null ) {
-        		reporter.reportThrowable(extre);
-        	}
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "rem_block"
-
-
-    // $ANTLR start "end_rem"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:1: end_rem : ( END REM | 'endrem' );
-    public final void end_rem() throws RecognitionException {
-        try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:512:2: ( END REM | 'endrem' )
-            int alt26=2;
-            int LA26_0 = input.LA(1);
-
-            if ( (LA26_0==END) ) {
-                alt26=1;
-            }
-            else if ( (LA26_0==126) ) {
-                alt26=2;
+            else if ( (LA27_0==END) ) {
+                alt27=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt26) {
+            switch (alt27) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:512:4: END REM
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:6: 'endrem'
                     {
-                    match(input,END,FOLLOW_END_in_end_rem1512); 
-                    match(input,REM,FOLLOW_REM_in_end_rem1514); 
+                    match(input,126,FOLLOW_126_in_rem_block_contents1501); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:513:5: 'endrem'
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:17: END (~ REM rem_block_contents | REM )
                     {
-                    match(input,126,FOLLOW_126_in_end_rem1520); 
+                    match(input,END,FOLLOW_END_in_rem_block_contents1505); 
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:21: (~ REM rem_block_contents | REM )
+                    int alt26=2;
+                    int LA26_0 = input.LA(1);
+
+                    if ( ((LA26_0>=SUPERSTRICT && LA26_0<=VAR)||(LA26_0>=FOR && LA26_0<=129)) ) {
+                        alt26=1;
+                    }
+                    else if ( (LA26_0==REM) ) {
+                        alt26=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 26, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt26) {
+                        case 1 :
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:22: ~ REM rem_block_contents
+                            {
+                            if ( (input.LA(1)>=SUPERSTRICT && input.LA(1)<=VAR)||(input.LA(1)>=FOR && input.LA(1)<=129) ) {
+                                input.consume();
+                                state.errorRecovery=false;
+                            }
+                            else {
+                                MismatchedSetException mse = new MismatchedSetException(null,input);
+                                throw mse;
+                            }
+
+                            pushFollow(FOLLOW_rem_block_contents_in_rem_block_contents1511);
+                            rem_block_contents();
+
+                            state._fsp--;
+
+
+                            }
+                            break;
+                        case 2 :
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:511:48: REM
+                            {
+                            match(input,REM,FOLLOW_REM_in_rem_block_contents1515); 
+
+                            }
+                            break;
+
+                    }
+
 
                     }
                     break;
 
             }
+
+
+            }
+
         }
 
         catch (RecognitionException re) {
@@ -2660,11 +2712,11 @@ public class blitzmaxParser extends Parser {
         }
         return ;
     }
-    // $ANTLR end "end_rem"
+    // $ANTLR end "rem_block_contents"
 
 
     // $ANTLR start "for_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:516:1: for_block returns [ BlitzMaxForStatement stmt = null ] : (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) ) NEWLINE sb= statement_block NEXT NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:514:1: for_block returns [ BlitzMaxForStatement stmt = null ] : (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) ) NEWLINE sb= statement_block NEXT NEWLINE ;
     public final BlitzMaxForStatement for_block() throws RecognitionException {
         BlitzMaxForStatement stmt =  null;
 
@@ -2681,61 +2733,61 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:517:2: ( (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) ) NEWLINE sb= statement_block NEXT NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:517:4: (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) ) NEWLINE sb= statement_block NEXT NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:515:2: ( (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) ) NEWLINE sb= statement_block NEXT NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:515:4: (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) ) NEWLINE sb= statement_block NEXT NEWLINE
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:517:4: (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:518:4: f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:515:4: (f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression ) )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:516:4: f= FOR ( LOCAL )? vdef= variable_definition[false] EQUAL ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression )
             {
-            f=(Token)match(input,FOR,FOLLOW_FOR_in_for_block1545); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:519:4: ( LOCAL )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            f=(Token)match(input,FOR,FOLLOW_FOR_in_for_block1543); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:517:4: ( LOCAL )?
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA27_0==LOCAL) ) {
-                alt27=1;
+            if ( (LA28_0==LOCAL) ) {
+                alt28=1;
             }
-            switch (alt27) {
+            switch (alt28) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:519:4: LOCAL
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:517:4: LOCAL
                     {
-                    match(input,LOCAL,FOLLOW_LOCAL_in_for_block1550); 
+                    match(input,LOCAL,FOLLOW_LOCAL_in_for_block1548); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_variable_definition_in_for_block1560);
+            pushFollow(FOLLOW_variable_definition_in_for_block1558);
             vdef=variable_definition(false);
 
             state._fsp--;
 
-            match(input,EQUAL,FOLLOW_EQUAL_in_for_block1566); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:522:4: ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            match(input,EQUAL,FOLLOW_EQUAL_in_for_block1564); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:520:4: ( (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? ) | EACHIN to= expression )
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA30_0==IDENTIFIER||(LA30_0>=TRUE && LA30_0<=FALSE)||LA30_0==STRING_LITERAL||(LA30_0>=PLUS && LA30_0<=MINUS)||(LA30_0>=FLOAT && LA30_0<=INT)) ) {
-                alt30=1;
+            if ( (LA31_0==IDENTIFIER||(LA31_0>=TRUE && LA31_0<=FALSE)||LA31_0==STRING_LITERAL||(LA31_0>=PLUS && LA31_0<=MINUS)||(LA31_0>=FLOAT && LA31_0<=INT)) ) {
+                alt31=1;
             }
-            else if ( (LA30_0==EACHIN) ) {
-                alt30=2;
+            else if ( (LA31_0==EACHIN) ) {
+                alt31=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
-            switch (alt30) {
+            switch (alt31) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:523:4: (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? )
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:521:4: (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? )
                     {
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:523:4: (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? )
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:524:5: frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )?
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:521:4: (frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )? )
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:522:5: frm= expression ( TO | UNTIL ) to= expression ( STEP sexp= expression )?
                     {
-                    pushFollow(FOLLOW_expression_in_for_block1586);
+                    pushFollow(FOLLOW_expression_in_for_block1584);
                     frm=expression();
 
                     state._fsp--;
@@ -2743,27 +2795,27 @@ public class blitzmaxParser extends Parser {
 
                     					stmt = new BlitzMaxForStatement(vdef, frm);
                     				
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:528:5: ( TO | UNTIL )
-                    int alt28=2;
-                    int LA28_0 = input.LA(1);
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:526:5: ( TO | UNTIL )
+                    int alt29=2;
+                    int LA29_0 = input.LA(1);
 
-                    if ( (LA28_0==TO) ) {
-                        alt28=1;
+                    if ( (LA29_0==TO) ) {
+                        alt29=1;
                     }
-                    else if ( (LA28_0==UNTIL) ) {
-                        alt28=2;
+                    else if ( (LA29_0==UNTIL) ) {
+                        alt29=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 28, 0, input);
+                            new NoViableAltException("", 29, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt28) {
+                    switch (alt29) {
                         case 1 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:528:7: TO
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:526:7: TO
                             {
-                            match(input,TO,FOLLOW_TO_in_for_block1600); 
+                            match(input,TO,FOLLOW_TO_in_for_block1598); 
 
                             						stmt.setForType(BlitzMaxConstants.FORTYPE_TO);
                             					
@@ -2771,9 +2823,9 @@ public class blitzmaxParser extends Parser {
                             }
                             break;
                         case 2 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:532:7: UNTIL
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:530:7: UNTIL
                             {
-                            match(input,UNTIL,FOLLOW_UNTIL_in_for_block1615); 
+                            match(input,UNTIL,FOLLOW_UNTIL_in_for_block1613); 
 
                             						stmt.setForType(BlitzMaxConstants.FORTYPE_UNTIL);
                             				 	
@@ -2783,7 +2835,7 @@ public class blitzmaxParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_expression_in_for_block1640);
+                    pushFollow(FOLLOW_expression_in_for_block1638);
                     to=expression();
 
                     state._fsp--;
@@ -2791,19 +2843,19 @@ public class blitzmaxParser extends Parser {
 
                     					stmt.setToExpr(to);
                     				
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:542:5: ( STEP sexp= expression )?
-                    int alt29=2;
-                    int LA29_0 = input.LA(1);
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:540:5: ( STEP sexp= expression )?
+                    int alt30=2;
+                    int LA30_0 = input.LA(1);
 
-                    if ( (LA29_0==STEP) ) {
-                        alt29=1;
+                    if ( (LA30_0==STEP) ) {
+                        alt30=1;
                     }
-                    switch (alt29) {
+                    switch (alt30) {
                         case 1 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:542:7: STEP sexp= expression
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:540:7: STEP sexp= expression
                             {
-                            match(input,STEP,FOLLOW_STEP_in_for_block1654); 
-                            pushFollow(FOLLOW_expression_in_for_block1666);
+                            match(input,STEP,FOLLOW_STEP_in_for_block1652); 
+                            pushFollow(FOLLOW_expression_in_for_block1664);
                             sexp=expression();
 
                             state._fsp--;
@@ -2824,13 +2876,13 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:550:5: EACHIN to= expression
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:548:5: EACHIN to= expression
                     {
-                    match(input,EACHIN,FOLLOW_EACHIN_in_for_block1696); 
+                    match(input,EACHIN,FOLLOW_EACHIN_in_for_block1694); 
 
                     						stmt.setForType(BlitzMaxConstants.FORTYPE_EACHIN);
                     				 	
-                    pushFollow(FOLLOW_expression_in_for_block1714);
+                    pushFollow(FOLLOW_expression_in_for_block1712);
                     to=expression();
 
                     state._fsp--;
@@ -2847,8 +2899,8 @@ public class blitzmaxParser extends Parser {
 
             }
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_for_block1734); 
-            pushFollow(FOLLOW_statement_block_in_for_block1742);
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_for_block1732); 
+            pushFollow(FOLLOW_statement_block_in_for_block1740);
             sb=statement_block();
 
             state._fsp--;
@@ -2856,8 +2908,8 @@ public class blitzmaxParser extends Parser {
 
             				stmt.setBlock(sb);
             			
-            match(input,NEXT,FOLLOW_NEXT_in_for_block1751); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_for_block1753); 
+            match(input,NEXT,FOLLOW_NEXT_in_for_block1749); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_for_block1751); 
 
             }
 
@@ -2883,51 +2935,51 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "repeat_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:568:1: repeat_block : REPEAT NEWLINE b= statement_block ( FOREVER | UNTIL expression ) NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:566:1: repeat_block : REPEAT NEWLINE b= statement_block ( FOREVER | UNTIL expression ) NEWLINE ;
     public final void repeat_block() throws RecognitionException {
         BlitzMaxBlock b = null;
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:569:2: ( REPEAT NEWLINE b= statement_block ( FOREVER | UNTIL expression ) NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:569:4: REPEAT NEWLINE b= statement_block ( FOREVER | UNTIL expression ) NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:567:2: ( REPEAT NEWLINE b= statement_block ( FOREVER | UNTIL expression ) NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:567:4: REPEAT NEWLINE b= statement_block ( FOREVER | UNTIL expression ) NEWLINE
             {
-            match(input,REPEAT,FOLLOW_REPEAT_in_repeat_block1765); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_repeat_block1767); 
-            pushFollow(FOLLOW_statement_block_in_repeat_block1775);
+            match(input,REPEAT,FOLLOW_REPEAT_in_repeat_block1763); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_repeat_block1765); 
+            pushFollow(FOLLOW_statement_block_in_repeat_block1773);
             b=statement_block();
 
             state._fsp--;
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:571:3: ( FOREVER | UNTIL expression )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:569:3: ( FOREVER | UNTIL expression )
+            int alt32=2;
+            int LA32_0 = input.LA(1);
 
-            if ( (LA31_0==FOREVER) ) {
-                alt31=1;
+            if ( (LA32_0==FOREVER) ) {
+                alt32=1;
             }
-            else if ( (LA31_0==UNTIL) ) {
-                alt31=2;
+            else if ( (LA32_0==UNTIL) ) {
+                alt32=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 32, 0, input);
 
                 throw nvae;
             }
-            switch (alt31) {
+            switch (alt32) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:571:4: FOREVER
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:569:4: FOREVER
                     {
-                    match(input,FOREVER,FOLLOW_FOREVER_in_repeat_block1780); 
+                    match(input,FOREVER,FOLLOW_FOREVER_in_repeat_block1778); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:571:14: UNTIL expression
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:569:14: UNTIL expression
                     {
-                    match(input,UNTIL,FOLLOW_UNTIL_in_repeat_block1784); 
-                    pushFollow(FOLLOW_expression_in_repeat_block1786);
+                    match(input,UNTIL,FOLLOW_UNTIL_in_repeat_block1782); 
+                    pushFollow(FOLLOW_expression_in_repeat_block1784);
                     expression();
 
                     state._fsp--;
@@ -2938,7 +2990,7 @@ public class blitzmaxParser extends Parser {
 
             }
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_repeat_block1791); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_repeat_block1789); 
 
             }
 
@@ -2964,7 +3016,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "expression"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:575:1: expression returns [ Expression exp = null ] : (id= IDENTIFIER | n= number | cast_or_function_call | t= TRUE | t= FALSE | s= string_literal );
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:573:1: expression returns [ Expression exp = null ] : (id= IDENTIFIER | n= number | cast_or_function_call | t= TRUE | t= FALSE | s= string_literal );
     public final Expression expression() throws RecognitionException {
         Expression exp =  null;
 
@@ -2976,22 +3028,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:576:2: (id= IDENTIFIER | n= number | cast_or_function_call | t= TRUE | t= FALSE | s= string_literal )
-            int alt32=6;
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:574:2: (id= IDENTIFIER | n= number | cast_or_function_call | t= TRUE | t= FALSE | s= string_literal )
+            int alt33=6;
             switch ( input.LA(1) ) {
             case IDENTIFIER:
                 {
-                int LA32_1 = input.LA(2);
+                int LA33_1 = input.LA(2);
 
-                if ( (LA32_1==LPAREN) ) {
-                    alt32=3;
+                if ( (LA33_1==LPAREN) ) {
+                    alt33=3;
                 }
-                else if ( (LA32_1==EOF||(LA32_1>=SUPERSTRICT && LA32_1<=IDENTIFIER)||LA32_1==END||(LA32_1>=GLOBAL && LA32_1<=FUNCTION)||LA32_1==RPAREN||LA32_1==COMMA||(LA32_1>=REM && LA32_1<=FOR)||(LA32_1>=TO && LA32_1<=STEP)||(LA32_1>=NEXT && LA32_1<=WEND)||(LA32_1>=DEFAULT && LA32_1<=MODULEINFO)||(LA32_1>=THEN && LA32_1<=ELSE)||(LA32_1>=PLUS && LA32_1<=MINUS)||(LA32_1>=FLOAT && LA32_1<=INT)||(LA32_1>=124 && LA32_1<=125)||(LA32_1>=127 && LA32_1<=129)) ) {
-                    alt32=1;
+                else if ( (LA33_1==EOF||(LA33_1>=SUPERSTRICT && LA33_1<=IDENTIFIER)||LA33_1==END||(LA33_1>=GLOBAL && LA33_1<=FUNCTION)||LA33_1==RPAREN||LA33_1==COMMA||(LA33_1>=REM && LA33_1<=FOR)||(LA33_1>=TO && LA33_1<=STEP)||(LA33_1>=NEXT && LA33_1<=WEND)||(LA33_1>=DEFAULT && LA33_1<=MODULEINFO)||(LA33_1>=THEN && LA33_1<=ELSE)||(LA33_1>=PLUS && LA33_1<=MINUS)||(LA33_1>=FLOAT && LA33_1<=INT)||(LA33_1>=124 && LA33_1<=125)||(LA33_1>=127 && LA33_1<=129)) ) {
+                    alt33=1;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 32, 1, input);
+                        new NoViableAltException("", 33, 1, input);
 
                     throw nvae;
                 }
@@ -3003,36 +3055,36 @@ public class blitzmaxParser extends Parser {
             case LONG:
             case INT:
                 {
-                alt32=2;
+                alt33=2;
                 }
                 break;
             case TRUE:
                 {
-                alt32=4;
+                alt33=4;
                 }
                 break;
             case FALSE:
                 {
-                alt32=5;
+                alt33=5;
                 }
                 break;
             case STRING_LITERAL:
                 {
-                alt32=6;
+                alt33=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt33) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:576:4: id= IDENTIFIER
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:574:4: id= IDENTIFIER
                     {
-                    id=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_expression1810); 
+                    id=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_expression1808); 
 
                     				exp = new BlitzMaxStringLiteral(id);
                     			
@@ -3040,9 +3092,9 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:580:5: n= number
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:578:5: n= number
                     {
-                    pushFollow(FOLLOW_number_in_expression1825);
+                    pushFollow(FOLLOW_number_in_expression1823);
                     n=number();
 
                     state._fsp--;
@@ -3054,9 +3106,9 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:584:5: cast_or_function_call
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:582:5: cast_or_function_call
                     {
-                    pushFollow(FOLLOW_cast_or_function_call_in_expression1836);
+                    pushFollow(FOLLOW_cast_or_function_call_in_expression1834);
                     cast_or_function_call();
 
                     state._fsp--;
@@ -3065,9 +3117,9 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:585:5: t= TRUE
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:583:5: t= TRUE
                     {
-                    t=(Token)match(input,TRUE,FOLLOW_TRUE_in_expression1846); 
+                    t=(Token)match(input,TRUE,FOLLOW_TRUE_in_expression1844); 
 
                     				exp = new BlitzMaxNumericLiteral(t, 1);
                     			
@@ -3075,9 +3127,9 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:589:5: t= FALSE
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:587:5: t= FALSE
                     {
-                    t=(Token)match(input,FALSE,FOLLOW_FALSE_in_expression1861); 
+                    t=(Token)match(input,FALSE,FOLLOW_FALSE_in_expression1859); 
 
                     				exp = new BlitzMaxNumericLiteral(t, 0);
                     			
@@ -3085,9 +3137,9 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 6 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:593:5: s= string_literal
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:591:5: s= string_literal
                     {
-                    pushFollow(FOLLOW_string_literal_in_expression1876);
+                    pushFollow(FOLLOW_string_literal_in_expression1874);
                     s=string_literal();
 
                     state._fsp--;
@@ -3122,29 +3174,29 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "cast_or_function_call"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:599:1: cast_or_function_call : ( IDENTIFIER LPAREN ( expression_list )? RPAREN ) ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:597:1: cast_or_function_call : ( IDENTIFIER LPAREN ( expression_list )? RPAREN ) ;
     public final void cast_or_function_call() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:600:2: ( ( IDENTIFIER LPAREN ( expression_list )? RPAREN ) )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:600:4: ( IDENTIFIER LPAREN ( expression_list )? RPAREN )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:598:2: ( ( IDENTIFIER LPAREN ( expression_list )? RPAREN ) )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:598:4: ( IDENTIFIER LPAREN ( expression_list )? RPAREN )
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:600:4: ( IDENTIFIER LPAREN ( expression_list )? RPAREN )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:600:5: IDENTIFIER LPAREN ( expression_list )? RPAREN
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:598:4: ( IDENTIFIER LPAREN ( expression_list )? RPAREN )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:598:5: IDENTIFIER LPAREN ( expression_list )? RPAREN
             {
-            match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_cast_or_function_call1893); 
-            match(input,LPAREN,FOLLOW_LPAREN_in_cast_or_function_call1895); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:600:23: ( expression_list )?
-            int alt33=2;
-            int LA33_0 = input.LA(1);
+            match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_cast_or_function_call1891); 
+            match(input,LPAREN,FOLLOW_LPAREN_in_cast_or_function_call1893); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:598:23: ( expression_list )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA33_0==IDENTIFIER||(LA33_0>=TRUE && LA33_0<=FALSE)||LA33_0==STRING_LITERAL||(LA33_0>=PLUS && LA33_0<=MINUS)||(LA33_0>=FLOAT && LA33_0<=INT)) ) {
-                alt33=1;
+            if ( (LA34_0==IDENTIFIER||(LA34_0>=TRUE && LA34_0<=FALSE)||LA34_0==STRING_LITERAL||(LA34_0>=PLUS && LA34_0<=MINUS)||(LA34_0>=FLOAT && LA34_0<=INT)) ) {
+                alt34=1;
             }
-            switch (alt33) {
+            switch (alt34) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:600:23: expression_list
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:598:23: expression_list
                     {
-                    pushFollow(FOLLOW_expression_list_in_cast_or_function_call1897);
+                    pushFollow(FOLLOW_expression_list_in_cast_or_function_call1895);
                     expression_list();
 
                     state._fsp--;
@@ -3155,7 +3207,7 @@ public class blitzmaxParser extends Parser {
 
             }
 
-            match(input,RPAREN,FOLLOW_RPAREN_in_cast_or_function_call1900); 
+            match(input,RPAREN,FOLLOW_RPAREN_in_cast_or_function_call1898); 
 
             }
 
@@ -3184,34 +3236,34 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "expression_list"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:603:1: expression_list : expression ( COMMA expression )* ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:601:1: expression_list : expression ( COMMA expression )* ;
     public final void expression_list() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:604:2: ( expression ( COMMA expression )* )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:604:4: expression ( COMMA expression )*
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:602:2: ( expression ( COMMA expression )* )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:602:4: expression ( COMMA expression )*
             {
-            pushFollow(FOLLOW_expression_in_expression_list1912);
+            pushFollow(FOLLOW_expression_in_expression_list1910);
             expression();
 
             state._fsp--;
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:604:15: ( COMMA expression )*
-            loop34:
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:602:15: ( COMMA expression )*
+            loop35:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA34_0==COMMA) ) {
-                    alt34=1;
+                if ( (LA35_0==COMMA) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt35) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:604:16: COMMA expression
+            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:602:16: COMMA expression
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_expression_list1915); 
-            	    pushFollow(FOLLOW_expression_in_expression_list1917);
+            	    match(input,COMMA,FOLLOW_COMMA_in_expression_list1913); 
+            	    pushFollow(FOLLOW_expression_in_expression_list1915);
             	    expression();
 
             	    state._fsp--;
@@ -3221,7 +3273,7 @@ public class blitzmaxParser extends Parser {
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop35;
                 }
             } while (true);
 
@@ -3250,26 +3302,26 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "while_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:607:1: while_block : WHILE expression NEWLINE statement_block WEND NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:605:1: while_block : WHILE expression NEWLINE statement_block WEND NEWLINE ;
     public final void while_block() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:608:2: ( WHILE expression NEWLINE statement_block WEND NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:608:4: WHILE expression NEWLINE statement_block WEND NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:606:2: ( WHILE expression NEWLINE statement_block WEND NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:606:4: WHILE expression NEWLINE statement_block WEND NEWLINE
             {
-            match(input,WHILE,FOLLOW_WHILE_in_while_block1930); 
-            pushFollow(FOLLOW_expression_in_while_block1932);
+            match(input,WHILE,FOLLOW_WHILE_in_while_block1928); 
+            pushFollow(FOLLOW_expression_in_while_block1930);
             expression();
 
             state._fsp--;
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_while_block1934); 
-            pushFollow(FOLLOW_statement_block_in_while_block1938);
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_while_block1932); 
+            pushFollow(FOLLOW_statement_block_in_while_block1936);
             statement_block();
 
             state._fsp--;
 
-            match(input,WEND,FOLLOW_WEND_in_while_block1942); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_while_block1944); 
+            match(input,WEND,FOLLOW_WEND_in_while_block1940); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_while_block1942); 
 
             }
 
@@ -3295,35 +3347,35 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "select_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:613:1: select_block : SELECT expression NEWLINE ( case_block )* ( default_block )? end_select NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:611:1: select_block : SELECT expression NEWLINE ( case_block )* ( default_block )? end_select NEWLINE ;
     public final void select_block() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:614:2: ( SELECT expression NEWLINE ( case_block )* ( default_block )? end_select NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:614:4: SELECT expression NEWLINE ( case_block )* ( default_block )? end_select NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:612:2: ( SELECT expression NEWLINE ( case_block )* ( default_block )? end_select NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:612:4: SELECT expression NEWLINE ( case_block )* ( default_block )? end_select NEWLINE
             {
-            match(input,SELECT,FOLLOW_SELECT_in_select_block1955); 
-            pushFollow(FOLLOW_expression_in_select_block1957);
+            match(input,SELECT,FOLLOW_SELECT_in_select_block1953); 
+            pushFollow(FOLLOW_expression_in_select_block1955);
             expression();
 
             state._fsp--;
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_select_block1959); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:615:3: ( case_block )*
-            loop35:
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_select_block1957); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:613:3: ( case_block )*
+            loop36:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA35_0==CASE) ) {
-                    alt35=1;
+                if ( (LA36_0==CASE) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt36) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:615:3: case_block
+            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:613:3: case_block
             	    {
-            	    pushFollow(FOLLOW_case_block_in_select_block1963);
+            	    pushFollow(FOLLOW_case_block_in_select_block1961);
             	    case_block();
 
             	    state._fsp--;
@@ -3333,22 +3385,22 @@ public class blitzmaxParser extends Parser {
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop36;
                 }
             } while (true);
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:616:3: ( default_block )?
-            int alt36=2;
-            int LA36_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:614:3: ( default_block )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( (LA36_0==DEFAULT) ) {
-                alt36=1;
+            if ( (LA37_0==DEFAULT) ) {
+                alt37=1;
             }
-            switch (alt36) {
+            switch (alt37) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:616:3: default_block
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:614:3: default_block
                     {
-                    pushFollow(FOLLOW_default_block_in_select_block1968);
+                    pushFollow(FOLLOW_default_block_in_select_block1966);
                     default_block();
 
                     state._fsp--;
@@ -3359,12 +3411,12 @@ public class blitzmaxParser extends Parser {
 
             }
 
-            pushFollow(FOLLOW_end_select_in_select_block1973);
+            pushFollow(FOLLOW_end_select_in_select_block1971);
             end_select();
 
             state._fsp--;
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_select_block1977); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_select_block1975); 
 
             }
 
@@ -3390,15 +3442,15 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "default_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:621:1: default_block : DEFAULT NEWLINE statement_block ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:619:1: default_block : DEFAULT NEWLINE statement_block ;
     public final void default_block() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:622:2: ( DEFAULT NEWLINE statement_block )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:622:4: DEFAULT NEWLINE statement_block
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:620:2: ( DEFAULT NEWLINE statement_block )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:620:4: DEFAULT NEWLINE statement_block
             {
-            match(input,DEFAULT,FOLLOW_DEFAULT_in_default_block1988); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_default_block1990); 
-            pushFollow(FOLLOW_statement_block_in_default_block1994);
+            match(input,DEFAULT,FOLLOW_DEFAULT_in_default_block1986); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_default_block1988); 
+            pushFollow(FOLLOW_statement_block_in_default_block1992);
             statement_block();
 
             state._fsp--;
@@ -3428,38 +3480,38 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "end_select"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:626:1: end_select : ( END SELECT | 'endselect' );
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:624:1: end_select : ( END SELECT | 'endselect' );
     public final void end_select() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:627:2: ( END SELECT | 'endselect' )
-            int alt37=2;
-            int LA37_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:625:2: ( END SELECT | 'endselect' )
+            int alt38=2;
+            int LA38_0 = input.LA(1);
 
-            if ( (LA37_0==END) ) {
-                alt37=1;
+            if ( (LA38_0==END) ) {
+                alt38=1;
             }
-            else if ( (LA37_0==127) ) {
-                alt37=2;
+            else if ( (LA38_0==127) ) {
+                alt38=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 38, 0, input);
 
                 throw nvae;
             }
-            switch (alt37) {
+            switch (alt38) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:627:4: END SELECT
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:625:4: END SELECT
                     {
-                    match(input,END,FOLLOW_END_in_end_select2005); 
-                    match(input,SELECT,FOLLOW_SELECT_in_end_select2007); 
+                    match(input,END,FOLLOW_END_in_end_select2003); 
+                    match(input,SELECT,FOLLOW_SELECT_in_end_select2005); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:628:5: 'endselect'
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:626:5: 'endselect'
                     {
-                    match(input,127,FOLLOW_127_in_end_select2013); 
+                    match(input,127,FOLLOW_127_in_end_select2011); 
 
                     }
                     break;
@@ -3487,35 +3539,35 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "case_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:631:1: case_block : CASE expression ( COMMA expression )* NEWLINE statement_block ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:629:1: case_block : CASE expression ( COMMA expression )* NEWLINE statement_block ;
     public final void case_block() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:632:2: ( CASE expression ( COMMA expression )* NEWLINE statement_block )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:632:4: CASE expression ( COMMA expression )* NEWLINE statement_block
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:630:2: ( CASE expression ( COMMA expression )* NEWLINE statement_block )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:630:4: CASE expression ( COMMA expression )* NEWLINE statement_block
             {
-            match(input,CASE,FOLLOW_CASE_in_case_block2024); 
-            pushFollow(FOLLOW_expression_in_case_block2026);
+            match(input,CASE,FOLLOW_CASE_in_case_block2022); 
+            pushFollow(FOLLOW_expression_in_case_block2024);
             expression();
 
             state._fsp--;
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:632:20: ( COMMA expression )*
-            loop38:
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:630:20: ( COMMA expression )*
+            loop39:
             do {
-                int alt38=2;
-                int LA38_0 = input.LA(1);
+                int alt39=2;
+                int LA39_0 = input.LA(1);
 
-                if ( (LA38_0==COMMA) ) {
-                    alt38=1;
+                if ( (LA39_0==COMMA) ) {
+                    alt39=1;
                 }
 
 
-                switch (alt38) {
+                switch (alt39) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:632:21: COMMA expression
+            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:630:21: COMMA expression
             	    {
-            	    match(input,COMMA,FOLLOW_COMMA_in_case_block2029); 
-            	    pushFollow(FOLLOW_expression_in_case_block2031);
+            	    match(input,COMMA,FOLLOW_COMMA_in_case_block2027); 
+            	    pushFollow(FOLLOW_expression_in_case_block2029);
             	    expression();
 
             	    state._fsp--;
@@ -3525,12 +3577,12 @@ public class blitzmaxParser extends Parser {
             	    break;
 
             	default :
-            	    break loop38;
+            	    break loop39;
                 }
             } while (true);
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_case_block2035); 
-            pushFollow(FOLLOW_statement_block_in_case_block2039);
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_case_block2033); 
+            pushFollow(FOLLOW_statement_block_in_case_block2037);
             statement_block();
 
             state._fsp--;
@@ -3560,7 +3612,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "import_stmt"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:636:1: import_stmt returns [ Statement stmt = null ] : imp= IMPORT (l= string_literal | e= module_name ) NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:634:1: import_stmt returns [ Statement stmt = null ] : imp= IMPORT (l= string_literal | e= module_name ) NEWLINE ;
     public final Statement import_stmt() throws RecognitionException {
         Statement stmt =  null;
 
@@ -3571,31 +3623,31 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:637:2: (imp= IMPORT (l= string_literal | e= module_name ) NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:637:4: imp= IMPORT (l= string_literal | e= module_name ) NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:635:2: (imp= IMPORT (l= string_literal | e= module_name ) NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:635:4: imp= IMPORT (l= string_literal | e= module_name ) NEWLINE
             {
-            imp=(Token)match(input,IMPORT,FOLLOW_IMPORT_in_import_stmt2058); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:638:3: (l= string_literal | e= module_name )
-            int alt39=2;
-            int LA39_0 = input.LA(1);
+            imp=(Token)match(input,IMPORT,FOLLOW_IMPORT_in_import_stmt2056); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:636:3: (l= string_literal | e= module_name )
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA39_0==STRING_LITERAL) ) {
-                alt39=1;
+            if ( (LA40_0==STRING_LITERAL) ) {
+                alt40=1;
             }
-            else if ( (LA39_0==IDENTIFIER) ) {
-                alt39=2;
+            else if ( (LA40_0==IDENTIFIER) ) {
+                alt40=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 39, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
-            switch (alt39) {
+            switch (alt40) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:639:4: l= string_literal
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:637:4: l= string_literal
                     {
-                    pushFollow(FOLLOW_string_literal_in_import_stmt2071);
+                    pushFollow(FOLLOW_string_literal_in_import_stmt2069);
                     l=string_literal();
 
                     state._fsp--;
@@ -3607,9 +3659,9 @@ public class blitzmaxParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:644:4: e= module_name
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:642:4: e= module_name
                     {
-                    pushFollow(FOLLOW_module_name_in_import_stmt2089);
+                    pushFollow(FOLLOW_module_name_in_import_stmt2087);
                     e=module_name();
 
                     state._fsp--;
@@ -3623,7 +3675,7 @@ public class blitzmaxParser extends Parser {
 
             }
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_import_stmt2102); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_import_stmt2100); 
 
             }
 
@@ -3649,15 +3701,15 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "include_stmt"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:652:1: include_stmt : INCLUDE STRING_LITERAL NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:650:1: include_stmt : INCLUDE STRING_LITERAL NEWLINE ;
     public final void include_stmt() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:653:2: ( INCLUDE STRING_LITERAL NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:653:4: INCLUDE STRING_LITERAL NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:651:2: ( INCLUDE STRING_LITERAL NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:651:4: INCLUDE STRING_LITERAL NEWLINE
             {
-            match(input,INCLUDE,FOLLOW_INCLUDE_in_include_stmt2113); 
-            match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_include_stmt2115); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_include_stmt2117); 
+            match(input,INCLUDE,FOLLOW_INCLUDE_in_include_stmt2111); 
+            match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_include_stmt2113); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_include_stmt2115); 
 
             }
 
@@ -3683,19 +3735,19 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "framework_stmt"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:656:1: framework_stmt : FRAMEWORK module_name NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:654:1: framework_stmt : FRAMEWORK module_name NEWLINE ;
     public final void framework_stmt() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:657:2: ( FRAMEWORK module_name NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:657:4: FRAMEWORK module_name NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:655:2: ( FRAMEWORK module_name NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:655:4: FRAMEWORK module_name NEWLINE
             {
-            match(input,FRAMEWORK,FOLLOW_FRAMEWORK_in_framework_stmt2128); 
-            pushFollow(FOLLOW_module_name_in_framework_stmt2130);
+            match(input,FRAMEWORK,FOLLOW_FRAMEWORK_in_framework_stmt2126); 
+            pushFollow(FOLLOW_module_name_in_framework_stmt2128);
             module_name();
 
             state._fsp--;
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_framework_stmt2132); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_framework_stmt2130); 
 
             }
 
@@ -3721,19 +3773,19 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "module_stmt"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:660:1: module_stmt : MODULE module_name NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:658:1: module_stmt : MODULE module_name NEWLINE ;
     public final void module_stmt() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:661:2: ( MODULE module_name NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:661:4: MODULE module_name NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:659:2: ( MODULE module_name NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:659:4: MODULE module_name NEWLINE
             {
-            match(input,MODULE,FOLLOW_MODULE_in_module_stmt2143); 
-            pushFollow(FOLLOW_module_name_in_module_stmt2145);
+            match(input,MODULE,FOLLOW_MODULE_in_module_stmt2141); 
+            pushFollow(FOLLOW_module_name_in_module_stmt2143);
             module_name();
 
             state._fsp--;
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_module_stmt2147); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_module_stmt2145); 
 
             }
 
@@ -3759,15 +3811,15 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "moduleinfo_stmt"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:664:1: moduleinfo_stmt : MODULEINFO STRING_LITERAL NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:662:1: moduleinfo_stmt : MODULEINFO STRING_LITERAL NEWLINE ;
     public final void moduleinfo_stmt() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:665:2: ( MODULEINFO STRING_LITERAL NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:665:4: MODULEINFO STRING_LITERAL NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:663:2: ( MODULEINFO STRING_LITERAL NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:663:4: MODULEINFO STRING_LITERAL NEWLINE
             {
-            match(input,MODULEINFO,FOLLOW_MODULEINFO_in_moduleinfo_stmt2159); 
-            match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_moduleinfo_stmt2161); 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_moduleinfo_stmt2163); 
+            match(input,MODULEINFO,FOLLOW_MODULEINFO_in_moduleinfo_stmt2157); 
+            match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_moduleinfo_stmt2159); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_moduleinfo_stmt2161); 
 
             }
 
@@ -3793,7 +3845,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "module_name"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:668:1: module_name returns [ BlitzMaxModuleNameExpression expr = null ] : (ns= IDENTIFIER DOT name= IDENTIFIER ) ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:666:1: module_name returns [ BlitzMaxModuleNameExpression expr = null ] : (ns= IDENTIFIER DOT name= IDENTIFIER ) ;
     public final BlitzMaxModuleNameExpression module_name() throws RecognitionException {
         BlitzMaxModuleNameExpression expr =  null;
 
@@ -3801,15 +3853,15 @@ public class blitzmaxParser extends Parser {
         Token name=null;
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:669:2: ( (ns= IDENTIFIER DOT name= IDENTIFIER ) )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:669:4: (ns= IDENTIFIER DOT name= IDENTIFIER )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:667:2: ( (ns= IDENTIFIER DOT name= IDENTIFIER ) )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:667:4: (ns= IDENTIFIER DOT name= IDENTIFIER )
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:669:4: (ns= IDENTIFIER DOT name= IDENTIFIER )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:669:6: ns= IDENTIFIER DOT name= IDENTIFIER
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:667:4: (ns= IDENTIFIER DOT name= IDENTIFIER )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:667:6: ns= IDENTIFIER DOT name= IDENTIFIER
             {
-            ns=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_module_name2184); 
-            match(input,DOT,FOLLOW_DOT_in_module_name2186); 
-            name=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_module_name2192); 
+            ns=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_module_name2182); 
+            match(input,DOT,FOLLOW_DOT_in_module_name2184); 
+            name=(Token)match(input,IDENTIFIER,FOLLOW_IDENTIFIER_in_module_name2190); 
 
             }
 
@@ -3841,19 +3893,19 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "debuglog_stmt"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:675:1: debuglog_stmt : DEBUGLOG expression NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:673:1: debuglog_stmt : DEBUGLOG expression NEWLINE ;
     public final void debuglog_stmt() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:676:2: ( DEBUGLOG expression NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:676:4: DEBUGLOG expression NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:674:2: ( DEBUGLOG expression NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:674:4: DEBUGLOG expression NEWLINE
             {
-            match(input,DEBUGLOG,FOLLOW_DEBUGLOG_in_debuglog_stmt2208); 
-            pushFollow(FOLLOW_expression_in_debuglog_stmt2210);
+            match(input,DEBUGLOG,FOLLOW_DEBUGLOG_in_debuglog_stmt2206); 
+            pushFollow(FOLLOW_expression_in_debuglog_stmt2208);
             expression();
 
             state._fsp--;
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_debuglog_stmt2212); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_debuglog_stmt2210); 
 
             }
 
@@ -3879,121 +3931,121 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "if_block"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:679:1: if_block : IF expression ( THEN )? statement_block ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )? ( END IF | 'endif' ) NEWLINE ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:677:1: if_block : IF expression ( THEN )? statement_block ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )? ( END IF | 'endif' ) NEWLINE ;
     public final void if_block() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:680:2: ( IF expression ( THEN )? statement_block ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )? ( END IF | 'endif' ) NEWLINE )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:681:3: IF expression ( THEN )? statement_block ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )? ( END IF | 'endif' ) NEWLINE
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:678:2: ( IF expression ( THEN )? statement_block ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )? ( END IF | 'endif' ) NEWLINE )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:679:3: IF expression ( THEN )? statement_block ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )? ( END IF | 'endif' ) NEWLINE
             {
-            match(input,IF,FOLLOW_IF_in_if_block2226); 
-            pushFollow(FOLLOW_expression_in_if_block2228);
+            match(input,IF,FOLLOW_IF_in_if_block2224); 
+            pushFollow(FOLLOW_expression_in_if_block2226);
             expression();
 
             state._fsp--;
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:682:3: ( THEN )?
-            int alt40=2;
-            int LA40_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:680:3: ( THEN )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
 
-            if ( (LA40_0==THEN) ) {
-                alt40=1;
+            if ( (LA41_0==THEN) ) {
+                alt41=1;
             }
-            switch (alt40) {
+            switch (alt41) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:682:3: THEN
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:680:3: THEN
                     {
-                    match(input,THEN,FOLLOW_THEN_in_if_block2232); 
+                    match(input,THEN,FOLLOW_THEN_in_if_block2230); 
 
                     }
                     break;
 
             }
 
-            pushFollow(FOLLOW_statement_block_in_if_block2240);
+            pushFollow(FOLLOW_statement_block_in_if_block2238);
             statement_block();
 
             state._fsp--;
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:686:3: ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:684:3: ( ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block )?
+            int alt44=2;
+            int LA44_0 = input.LA(1);
 
-            if ( (LA43_0==ELSE||LA43_0==128) ) {
-                alt43=1;
+            if ( (LA44_0==ELSE||LA44_0==128) ) {
+                alt44=1;
             }
-            switch (alt43) {
+            switch (alt44) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:687:4: ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:685:4: ( ELSE | ( ELSE IF | 'elseif' ) ) statement_block
                     {
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:687:4: ( ELSE | ( ELSE IF | 'elseif' ) )
-                    int alt42=2;
-                    int LA42_0 = input.LA(1);
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:685:4: ( ELSE | ( ELSE IF | 'elseif' ) )
+                    int alt43=2;
+                    int LA43_0 = input.LA(1);
 
-                    if ( (LA42_0==ELSE) ) {
-                        int LA42_1 = input.LA(2);
+                    if ( (LA43_0==ELSE) ) {
+                        int LA43_1 = input.LA(2);
 
-                        if ( (LA42_1==IF) ) {
-                            alt42=2;
+                        if ( (LA43_1==IF) ) {
+                            alt43=2;
                         }
-                        else if ( (LA42_1==NEWLINE||LA42_1==IDENTIFIER||LA42_1==END||(LA42_1>=GLOBAL && LA42_1<=LOCAL)||(LA42_1>=REM && LA42_1<=FOR)||LA42_1==REPEAT||(LA42_1>=TRUE && LA42_1<=WHILE)||(LA42_1>=INCLUDE && LA42_1<=STRING_LITERAL)||(LA42_1>=PLUS && LA42_1<=MINUS)||(LA42_1>=FLOAT && LA42_1<=INT)||LA42_1==129) ) {
-                            alt42=1;
+                        else if ( (LA43_1==NEWLINE||LA43_1==IDENTIFIER||LA43_1==END||(LA43_1>=GLOBAL && LA43_1<=LOCAL)||(LA43_1>=REM && LA43_1<=FOR)||LA43_1==REPEAT||(LA43_1>=TRUE && LA43_1<=WHILE)||(LA43_1>=INCLUDE && LA43_1<=STRING_LITERAL)||(LA43_1>=PLUS && LA43_1<=MINUS)||(LA43_1>=FLOAT && LA43_1<=INT)||LA43_1==129) ) {
+                            alt43=1;
                         }
                         else {
                             NoViableAltException nvae =
-                                new NoViableAltException("", 42, 1, input);
+                                new NoViableAltException("", 43, 1, input);
 
                             throw nvae;
                         }
                     }
-                    else if ( (LA42_0==128) ) {
-                        alt42=2;
+                    else if ( (LA43_0==128) ) {
+                        alt43=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 42, 0, input);
+                            new NoViableAltException("", 43, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt42) {
+                    switch (alt43) {
                         case 1 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:688:5: ELSE
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:686:5: ELSE
                             {
-                            match(input,ELSE,FOLLOW_ELSE_in_if_block2258); 
+                            match(input,ELSE,FOLLOW_ELSE_in_if_block2256); 
 
                             }
                             break;
                         case 2 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:689:7: ( ELSE IF | 'elseif' )
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:687:7: ( ELSE IF | 'elseif' )
                             {
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:689:7: ( ELSE IF | 'elseif' )
-                            int alt41=2;
-                            int LA41_0 = input.LA(1);
+                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:687:7: ( ELSE IF | 'elseif' )
+                            int alt42=2;
+                            int LA42_0 = input.LA(1);
 
-                            if ( (LA41_0==ELSE) ) {
-                                alt41=1;
+                            if ( (LA42_0==ELSE) ) {
+                                alt42=1;
                             }
-                            else if ( (LA41_0==128) ) {
-                                alt41=2;
+                            else if ( (LA42_0==128) ) {
+                                alt42=2;
                             }
                             else {
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 41, 0, input);
+                                    new NoViableAltException("", 42, 0, input);
 
                                 throw nvae;
                             }
-                            switch (alt41) {
+                            switch (alt42) {
                                 case 1 :
-                                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:690:6: ELSE IF
+                                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:688:6: ELSE IF
                                     {
-                                    match(input,ELSE,FOLLOW_ELSE_in_if_block2273); 
-                                    match(input,IF,FOLLOW_IF_in_if_block2275); 
+                                    match(input,ELSE,FOLLOW_ELSE_in_if_block2271); 
+                                    match(input,IF,FOLLOW_IF_in_if_block2273); 
 
                                     }
                                     break;
                                 case 2 :
-                                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:691:8: 'elseif'
+                                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:689:8: 'elseif'
                                     {
-                                    match(input,128,FOLLOW_128_in_if_block2284); 
+                                    match(input,128,FOLLOW_128_in_if_block2282); 
 
                                     }
                                     break;
@@ -4006,7 +4058,7 @@ public class blitzmaxParser extends Parser {
 
                     }
 
-                    pushFollow(FOLLOW_statement_block_in_if_block2304);
+                    pushFollow(FOLLOW_statement_block_in_if_block2302);
                     statement_block();
 
                     state._fsp--;
@@ -4017,42 +4069,42 @@ public class blitzmaxParser extends Parser {
 
             }
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:698:3: ( END IF | 'endif' )
-            int alt44=2;
-            int LA44_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:696:3: ( END IF | 'endif' )
+            int alt45=2;
+            int LA45_0 = input.LA(1);
 
-            if ( (LA44_0==END) ) {
-                alt44=1;
+            if ( (LA45_0==END) ) {
+                alt45=1;
             }
-            else if ( (LA44_0==129) ) {
-                alt44=2;
+            else if ( (LA45_0==129) ) {
+                alt45=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 44, 0, input);
+                    new NoViableAltException("", 45, 0, input);
 
                 throw nvae;
             }
-            switch (alt44) {
+            switch (alt45) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:699:4: END IF
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:697:4: END IF
                     {
-                    match(input,END,FOLLOW_END_in_if_block2321); 
-                    match(input,IF,FOLLOW_IF_in_if_block2323); 
+                    match(input,END,FOLLOW_END_in_if_block2319); 
+                    match(input,IF,FOLLOW_IF_in_if_block2321); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:700:6: 'endif'
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:698:6: 'endif'
                     {
-                    match(input,129,FOLLOW_129_in_if_block2330); 
+                    match(input,129,FOLLOW_129_in_if_block2328); 
 
                     }
                     break;
 
             }
 
-            match(input,NEWLINE,FOLLOW_NEWLINE_in_if_block2338); 
+            match(input,NEWLINE,FOLLOW_NEWLINE_in_if_block2336); 
 
             }
 
@@ -4078,34 +4130,34 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "pointer_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:753:1: pointer_def returns [int count = 0] : POINTER ( POINTER )* ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:751:1: pointer_def returns [int count = 0] : POINTER ( POINTER )* ;
     public final int pointer_def() throws RecognitionException {
         int count =  0;
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:754:2: ( POINTER ( POINTER )* )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:754:4: POINTER ( POINTER )*
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:752:2: ( POINTER ( POINTER )* )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:752:4: POINTER ( POINTER )*
             {
-            match(input,POINTER,FOLLOW_POINTER_in_pointer_def2642); 
+            match(input,POINTER,FOLLOW_POINTER_in_pointer_def2640); 
 
             			count = 1;
             		
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:758:3: ( POINTER )*
-            loop45:
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:756:3: ( POINTER )*
+            loop46:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt46=2;
+                int LA46_0 = input.LA(1);
 
-                if ( (LA45_0==POINTER) ) {
-                    alt45=1;
+                if ( (LA46_0==POINTER) ) {
+                    alt46=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt46) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:759:4: POINTER
+            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:757:4: POINTER
             	    {
-            	    match(input,POINTER,FOLLOW_POINTER_in_pointer_def2656); 
+            	    match(input,POINTER,FOLLOW_POINTER_in_pointer_def2654); 
 
             	    				count++;
             	    			
@@ -4114,7 +4166,7 @@ public class blitzmaxParser extends Parser {
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop46;
                 }
             } while (true);
 
@@ -4143,7 +4195,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "byte_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:767:1: byte_def returns [Expression exp = null] : t= BYTE_TYPE (c= pointer_def )? ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:765:1: byte_def returns [Expression exp = null] : t= BYTE_TYPE (c= pointer_def )? ;
     public final Expression byte_def() throws RecognitionException {
         Expression exp =  null;
 
@@ -4152,22 +4204,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:768:2: (t= BYTE_TYPE (c= pointer_def )? )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:768:4: t= BYTE_TYPE (c= pointer_def )?
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:766:2: (t= BYTE_TYPE (c= pointer_def )? )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:766:4: t= BYTE_TYPE (c= pointer_def )?
             {
-            t=(Token)match(input,BYTE_TYPE,FOLLOW_BYTE_TYPE_in_byte_def2688); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:769:5: (c= pointer_def )?
-            int alt46=2;
-            int LA46_0 = input.LA(1);
+            t=(Token)match(input,BYTE_TYPE,FOLLOW_BYTE_TYPE_in_byte_def2686); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:767:5: (c= pointer_def )?
+            int alt47=2;
+            int LA47_0 = input.LA(1);
 
-            if ( (LA46_0==POINTER) ) {
-                alt46=1;
+            if ( (LA47_0==POINTER) ) {
+                alt47=1;
             }
-            switch (alt46) {
+            switch (alt47) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:769:5: c= pointer_def
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:767:5: c= pointer_def
                     {
-                    pushFollow(FOLLOW_pointer_def_in_byte_def2696);
+                    pushFollow(FOLLOW_pointer_def_in_byte_def2694);
                     c=pointer_def();
 
                     state._fsp--;
@@ -4206,7 +4258,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "int_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:776:1: int_def returns [Expression exp = null] : t= INT_TYPE (c= pointer_def )? ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:774:1: int_def returns [Expression exp = null] : t= INT_TYPE (c= pointer_def )? ;
     public final Expression int_def() throws RecognitionException {
         Expression exp =  null;
 
@@ -4215,22 +4267,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:777:2: (t= INT_TYPE (c= pointer_def )? )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:777:4: t= INT_TYPE (c= pointer_def )?
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:775:2: (t= INT_TYPE (c= pointer_def )? )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:775:4: t= INT_TYPE (c= pointer_def )?
             {
-            t=(Token)match(input,INT_TYPE,FOLLOW_INT_TYPE_in_int_def2721); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:778:5: (c= pointer_def )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            t=(Token)match(input,INT_TYPE,FOLLOW_INT_TYPE_in_int_def2719); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:776:5: (c= pointer_def )?
+            int alt48=2;
+            int LA48_0 = input.LA(1);
 
-            if ( (LA47_0==POINTER) ) {
-                alt47=1;
+            if ( (LA48_0==POINTER) ) {
+                alt48=1;
             }
-            switch (alt47) {
+            switch (alt48) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:778:5: c= pointer_def
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:776:5: c= pointer_def
                     {
-                    pushFollow(FOLLOW_pointer_def_in_int_def2729);
+                    pushFollow(FOLLOW_pointer_def_in_int_def2727);
                     c=pointer_def();
 
                     state._fsp--;
@@ -4269,7 +4321,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "short_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:784:1: short_def returns [Expression exp = null] : t= SHORT_TYPE (c= pointer_def )? ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:782:1: short_def returns [Expression exp = null] : t= SHORT_TYPE (c= pointer_def )? ;
     public final Expression short_def() throws RecognitionException {
         Expression exp =  null;
 
@@ -4278,22 +4330,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:785:2: (t= SHORT_TYPE (c= pointer_def )? )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:785:4: t= SHORT_TYPE (c= pointer_def )?
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:783:2: (t= SHORT_TYPE (c= pointer_def )? )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:783:4: t= SHORT_TYPE (c= pointer_def )?
             {
-            t=(Token)match(input,SHORT_TYPE,FOLLOW_SHORT_TYPE_in_short_def2753); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:786:5: (c= pointer_def )?
-            int alt48=2;
-            int LA48_0 = input.LA(1);
+            t=(Token)match(input,SHORT_TYPE,FOLLOW_SHORT_TYPE_in_short_def2751); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:784:5: (c= pointer_def )?
+            int alt49=2;
+            int LA49_0 = input.LA(1);
 
-            if ( (LA48_0==POINTER) ) {
-                alt48=1;
+            if ( (LA49_0==POINTER) ) {
+                alt49=1;
             }
-            switch (alt48) {
+            switch (alt49) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:786:5: c= pointer_def
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:784:5: c= pointer_def
                     {
-                    pushFollow(FOLLOW_pointer_def_in_short_def2761);
+                    pushFollow(FOLLOW_pointer_def_in_short_def2759);
                     c=pointer_def();
 
                     state._fsp--;
@@ -4332,7 +4384,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "long_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:793:1: long_def returns [Expression exp = null] : t= LONG_TYPE (c= pointer_def )? ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:791:1: long_def returns [Expression exp = null] : t= LONG_TYPE (c= pointer_def )? ;
     public final Expression long_def() throws RecognitionException {
         Expression exp =  null;
 
@@ -4341,22 +4393,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:794:2: (t= LONG_TYPE (c= pointer_def )? )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:794:4: t= LONG_TYPE (c= pointer_def )?
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:792:2: (t= LONG_TYPE (c= pointer_def )? )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:792:4: t= LONG_TYPE (c= pointer_def )?
             {
-            t=(Token)match(input,LONG_TYPE,FOLLOW_LONG_TYPE_in_long_def2786); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:795:5: (c= pointer_def )?
-            int alt49=2;
-            int LA49_0 = input.LA(1);
+            t=(Token)match(input,LONG_TYPE,FOLLOW_LONG_TYPE_in_long_def2784); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:793:5: (c= pointer_def )?
+            int alt50=2;
+            int LA50_0 = input.LA(1);
 
-            if ( (LA49_0==POINTER) ) {
-                alt49=1;
+            if ( (LA50_0==POINTER) ) {
+                alt50=1;
             }
-            switch (alt49) {
+            switch (alt50) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:795:5: c= pointer_def
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:793:5: c= pointer_def
                     {
-                    pushFollow(FOLLOW_pointer_def_in_long_def2794);
+                    pushFollow(FOLLOW_pointer_def_in_long_def2792);
                     c=pointer_def();
 
                     state._fsp--;
@@ -4395,7 +4447,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "float_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:802:1: float_def returns [Expression exp = null] : t= FLOAT_TYPE (c= pointer_def )? ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:800:1: float_def returns [Expression exp = null] : t= FLOAT_TYPE (c= pointer_def )? ;
     public final Expression float_def() throws RecognitionException {
         Expression exp =  null;
 
@@ -4404,22 +4456,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:803:2: (t= FLOAT_TYPE (c= pointer_def )? )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:803:4: t= FLOAT_TYPE (c= pointer_def )?
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:801:2: (t= FLOAT_TYPE (c= pointer_def )? )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:801:4: t= FLOAT_TYPE (c= pointer_def )?
             {
-            t=(Token)match(input,FLOAT_TYPE,FOLLOW_FLOAT_TYPE_in_float_def2819); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:804:5: (c= pointer_def )?
-            int alt50=2;
-            int LA50_0 = input.LA(1);
+            t=(Token)match(input,FLOAT_TYPE,FOLLOW_FLOAT_TYPE_in_float_def2817); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:802:5: (c= pointer_def )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA50_0==POINTER) ) {
-                alt50=1;
+            if ( (LA51_0==POINTER) ) {
+                alt51=1;
             }
-            switch (alt50) {
+            switch (alt51) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:804:5: c= pointer_def
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:802:5: c= pointer_def
                     {
-                    pushFollow(FOLLOW_pointer_def_in_float_def2827);
+                    pushFollow(FOLLOW_pointer_def_in_float_def2825);
                     c=pointer_def();
 
                     state._fsp--;
@@ -4458,7 +4510,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "double_def"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:811:1: double_def returns [Expression exp = null] : t= DOUBLE_TYPE (c= pointer_def )? ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:809:1: double_def returns [Expression exp = null] : t= DOUBLE_TYPE (c= pointer_def )? ;
     public final Expression double_def() throws RecognitionException {
         Expression exp =  null;
 
@@ -4467,22 +4519,22 @@ public class blitzmaxParser extends Parser {
 
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:812:2: (t= DOUBLE_TYPE (c= pointer_def )? )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:812:4: t= DOUBLE_TYPE (c= pointer_def )?
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:810:2: (t= DOUBLE_TYPE (c= pointer_def )? )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:810:4: t= DOUBLE_TYPE (c= pointer_def )?
             {
-            t=(Token)match(input,DOUBLE_TYPE,FOLLOW_DOUBLE_TYPE_in_double_def2852); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:813:5: (c= pointer_def )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            t=(Token)match(input,DOUBLE_TYPE,FOLLOW_DOUBLE_TYPE_in_double_def2850); 
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:811:5: (c= pointer_def )?
+            int alt52=2;
+            int LA52_0 = input.LA(1);
 
-            if ( (LA51_0==POINTER) ) {
-                alt51=1;
+            if ( (LA52_0==POINTER) ) {
+                alt52=1;
             }
-            switch (alt51) {
+            switch (alt52) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:813:5: c= pointer_def
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:811:5: c= pointer_def
                     {
-                    pushFollow(FOLLOW_pointer_def_in_double_def2860);
+                    pushFollow(FOLLOW_pointer_def_in_double_def2858);
                     c=pointer_def();
 
                     state._fsp--;
@@ -4521,7 +4573,7 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "number"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:911:1: number returns [ Literal num = null ] : (s= MINUS | s= PLUS )? (n= FLOAT | n= LONG | n= INT ) ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:909:1: number returns [ Literal num = null ] : (s= MINUS | s= PLUS )? (n= FLOAT | n= LONG | n= INT ) ;
     public final Literal number() throws RecognitionException {
         Literal num =  null;
 
@@ -4529,81 +4581,81 @@ public class blitzmaxParser extends Parser {
         Token n=null;
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:912:2: ( (s= MINUS | s= PLUS )? (n= FLOAT | n= LONG | n= INT ) )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:913:3: (s= MINUS | s= PLUS )? (n= FLOAT | n= LONG | n= INT )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:910:2: ( (s= MINUS | s= PLUS )? (n= FLOAT | n= LONG | n= INT ) )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:911:3: (s= MINUS | s= PLUS )? (n= FLOAT | n= LONG | n= INT )
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:913:3: (s= MINUS | s= PLUS )?
-            int alt52=3;
-            int LA52_0 = input.LA(1);
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:911:3: (s= MINUS | s= PLUS )?
+            int alt53=3;
+            int LA53_0 = input.LA(1);
 
-            if ( (LA52_0==MINUS) ) {
-                alt52=1;
+            if ( (LA53_0==MINUS) ) {
+                alt53=1;
             }
-            else if ( (LA52_0==PLUS) ) {
-                alt52=2;
+            else if ( (LA53_0==PLUS) ) {
+                alt53=2;
             }
-            switch (alt52) {
+            switch (alt53) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:913:5: s= MINUS
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:911:5: s= MINUS
                     {
-                    s=(Token)match(input,MINUS,FOLLOW_MINUS_in_number3409); 
+                    s=(Token)match(input,MINUS,FOLLOW_MINUS_in_number3407); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:914:5: s= PLUS
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:912:5: s= PLUS
                     {
-                    s=(Token)match(input,PLUS,FOLLOW_PLUS_in_number3419); 
+                    s=(Token)match(input,PLUS,FOLLOW_PLUS_in_number3417); 
 
                     }
                     break;
 
             }
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:916:3: (n= FLOAT | n= LONG | n= INT )
-            int alt53=3;
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:914:3: (n= FLOAT | n= LONG | n= INT )
+            int alt54=3;
             switch ( input.LA(1) ) {
             case FLOAT:
                 {
-                alt53=1;
+                alt54=1;
                 }
                 break;
             case LONG:
                 {
-                alt53=2;
+                alt54=2;
                 }
                 break;
             case INT:
                 {
-                alt53=3;
+                alt54=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 53, 0, input);
+                    new NoViableAltException("", 54, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt53) {
+            switch (alt54) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:916:4: n= FLOAT
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:914:4: n= FLOAT
                     {
-                    n=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_number3433); 
+                    n=(Token)match(input,FLOAT,FOLLOW_FLOAT_in_number3431); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:917:5: n= LONG
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:915:5: n= LONG
                     {
-                    n=(Token)match(input,LONG,FOLLOW_LONG_in_number3443); 
+                    n=(Token)match(input,LONG,FOLLOW_LONG_in_number3441); 
 
                     }
                     break;
                 case 3 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:918:5: n= INT
+                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:916:5: n= INT
                     {
-                    n=(Token)match(input,INT,FOLLOW_INT_in_number3453); 
+                    n=(Token)match(input,INT,FOLLOW_INT_in_number3451); 
 
                     }
                     break;
@@ -4638,17 +4690,17 @@ public class blitzmaxParser extends Parser {
 
 
     // $ANTLR start "string_literal"
-    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:977:1: string_literal returns [BlitzMaxStringLiteral str = null] : e= STRING_LITERAL ;
+    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:975:1: string_literal returns [BlitzMaxStringLiteral str = null] : e= STRING_LITERAL ;
     public final BlitzMaxStringLiteral string_literal() throws RecognitionException {
         BlitzMaxStringLiteral str =  null;
 
         Token e=null;
 
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:978:2: (e= STRING_LITERAL )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:978:4: e= STRING_LITERAL
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:976:2: (e= STRING_LITERAL )
+            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:976:4: e= STRING_LITERAL
             {
-            e=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_string_literal3792); 
+            e=(Token)match(input,STRING_LITERAL,FOLLOW_STRING_LITERAL_in_string_literal3790); 
 
             			str = new BlitzMaxStringLiteral(e);
             		
@@ -4884,128 +4936,129 @@ public class blitzmaxParser extends Parser {
     public static final BitSet FOLLOW_typedef_in_variable_definition1403 = new BitSet(new long[]{0x0000000080000002L});
     public static final BitSet FOLLOW_VAR_in_variable_definition1426 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_function_definition_in_variable_definition1461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_REM_in_rem_block1472 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_rem_block1474 = new BitSet(new long[]{0xFFFFFFFFFFFFFFF0L,0xFFFFFFFFFFFFFFFFL,0x0000000000000003L});
-    public static final BitSet FOLLOW_end_rem_in_rem_block1496 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_rem_block1500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_END_in_end_rem1512 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_REM_in_end_rem1514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_126_in_end_rem1520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FOR_in_for_block1545 = new BitSet(new long[]{0x0000000000020100L});
-    public static final BitSet FOLLOW_LOCAL_in_for_block1550 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_variable_definition_in_for_block1560 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_EQUAL_in_for_block1566 = new BitSet(new long[]{0x00080C4000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_for_block1586 = new BitSet(new long[]{0x0000001800000000L});
-    public static final BitSet FOLLOW_TO_in_for_block1600 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_UNTIL_in_for_block1615 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_for_block1640 = new BitSet(new long[]{0x0000002000000020L});
-    public static final BitSet FOLLOW_STEP_in_for_block1654 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_for_block1666 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_EACHIN_in_for_block1696 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_for_block1714 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_for_block1734 = new BitSet(new long[]{0x007E1D83000781F0L,0x0003800003000000L});
-    public static final BitSet FOLLOW_statement_block_in_for_block1742 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_NEXT_in_for_block1751 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_for_block1753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_REPEAT_in_repeat_block1765 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_repeat_block1767 = new BitSet(new long[]{0x007E1F13000781F0L,0x0003800003000000L});
-    public static final BitSet FOLLOW_statement_block_in_repeat_block1775 = new BitSet(new long[]{0x0000021000000000L});
-    public static final BitSet FOLLOW_FOREVER_in_repeat_block1780 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_UNTIL_in_repeat_block1784 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_repeat_block1786 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_repeat_block1791 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_expression1810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_number_in_expression1825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_cast_or_function_call_in_expression1836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRUE_in_expression1846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FALSE_in_expression1861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_string_literal_in_expression1876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_cast_or_function_call1893 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_LPAREN_in_cast_or_function_call1895 = new BitSet(new long[]{0x00080C0000100100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_list_in_cast_or_function_call1897 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_RPAREN_in_cast_or_function_call1900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_expression_in_expression_list1912 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_COMMA_in_expression_list1915 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_expression_list1917 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_WHILE_in_while_block1930 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_while_block1932 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_while_block1934 = new BitSet(new long[]{0x007E3D03000781F0L,0x0003800003000000L});
-    public static final BitSet FOLLOW_statement_block_in_while_block1938 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_WEND_in_while_block1942 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_while_block1944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SELECT_in_select_block1955 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_select_block1957 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_select_block1959 = new BitSet(new long[]{0x0001800000001000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_case_block_in_select_block1963 = new BitSet(new long[]{0x0001800000001000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_default_block_in_select_block1968 = new BitSet(new long[]{0x0001800000001000L,0x8000000000000000L});
-    public static final BitSet FOLLOW_end_select_in_select_block1973 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_select_block1977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEFAULT_in_default_block1988 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_default_block1990 = new BitSet(new long[]{0x007E1D03000781F0L,0x0003800003000000L});
-    public static final BitSet FOLLOW_statement_block_in_default_block1994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_END_in_end_select2005 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_SELECT_in_end_select2007 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_127_in_end_select2013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_CASE_in_case_block2024 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_case_block2026 = new BitSet(new long[]{0x0000000040000020L});
-    public static final BitSet FOLLOW_COMMA_in_case_block2029 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_case_block2031 = new BitSet(new long[]{0x0000000040000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_case_block2035 = new BitSet(new long[]{0x007E1D03000781F0L,0x0003800003000000L});
-    public static final BitSet FOLLOW_statement_block_in_case_block2039 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IMPORT_in_import_stmt2058 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_string_literal_in_import_stmt2071 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_module_name_in_import_stmt2089 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_import_stmt2102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INCLUDE_in_include_stmt2113 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_STRING_LITERAL_in_include_stmt2115 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_include_stmt2117 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FRAMEWORK_in_framework_stmt2128 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_module_name_in_framework_stmt2130 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_framework_stmt2132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODULE_in_module_stmt2143 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_module_name_in_module_stmt2145 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_module_stmt2147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MODULEINFO_in_moduleinfo_stmt2159 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_STRING_LITERAL_in_moduleinfo_stmt2161 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_moduleinfo_stmt2163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_module_name2184 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_DOT_in_module_name2186 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_IDENTIFIER_in_module_name2192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DEBUGLOG_in_debuglog_stmt2208 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_debuglog_stmt2210 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_debuglog_stmt2212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IF_in_if_block2226 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
-    public static final BitSet FOLLOW_expression_in_if_block2228 = new BitSet(new long[]{0x0C7E1D03000791F0L,0x0003800003000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_THEN_in_if_block2232 = new BitSet(new long[]{0x087E1D03000791F0L,0x0003800003000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_statement_block_in_if_block2240 = new BitSet(new long[]{0x0800000000001000L,0x0000000000000000L,0x0000000000000003L});
-    public static final BitSet FOLLOW_ELSE_in_if_block2258 = new BitSet(new long[]{0x007E1D03000791F0L,0x0003800003000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_ELSE_in_if_block2273 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_IF_in_if_block2275 = new BitSet(new long[]{0x007E1D03000791F0L,0x0003800003000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_128_in_if_block2284 = new BitSet(new long[]{0x007E1D03000791F0L,0x0003800003000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_statement_block_in_if_block2304 = new BitSet(new long[]{0x0000000000001000L,0x0000000000000000L,0x0000000000000002L});
-    public static final BitSet FOLLOW_END_in_if_block2321 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_IF_in_if_block2323 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_129_in_if_block2330 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_NEWLINE_in_if_block2338 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_POINTER_in_pointer_def2642 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_POINTER_in_pointer_def2656 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_BYTE_TYPE_in_byte_def2688 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_pointer_def_in_byte_def2696 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_TYPE_in_int_def2721 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_pointer_def_in_int_def2729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SHORT_TYPE_in_short_def2753 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_pointer_def_in_short_def2761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LONG_TYPE_in_long_def2786 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_pointer_def_in_long_def2794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FLOAT_TYPE_in_float_def2819 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_pointer_def_in_float_def2827 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_DOUBLE_TYPE_in_double_def2852 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
-    public static final BitSet FOLLOW_pointer_def_in_double_def2860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_MINUS_in_number3409 = new BitSet(new long[]{0x0000000000000000L,0x0003800000000000L});
-    public static final BitSet FOLLOW_PLUS_in_number3419 = new BitSet(new long[]{0x0000000000000000L,0x0003800000000000L});
-    public static final BitSet FOLLOW_FLOAT_in_number3433 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LONG_in_number3443 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INT_in_number3453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_STRING_LITERAL_in_string_literal3792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_REM_in_rem_block1473 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_rem_block1475 = new BitSet(new long[]{0xFFFFFFFFFFFFFFF0L,0xFFFFFFFFFFFFFFFFL,0x0000000000000003L});
+    public static final BitSet FOLLOW_rem_block_contents_in_rem_block1480 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_126_in_rem_block_contents1501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_END_in_rem_block_contents1505 = new BitSet(new long[]{0xFFFFFFFFFFFFFFF0L,0xFFFFFFFFFFFFFFFFL,0x0000000000000003L});
+    public static final BitSet FOLLOW_set_in_rem_block_contents1508 = new BitSet(new long[]{0xFFFFFFFFFFFFFFF0L,0xFFFFFFFFFFFFFFFFL,0x0000000000000003L});
+    public static final BitSet FOLLOW_rem_block_contents_in_rem_block_contents1511 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_REM_in_rem_block_contents1515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FOR_in_for_block1543 = new BitSet(new long[]{0x0000000000020100L});
+    public static final BitSet FOLLOW_LOCAL_in_for_block1548 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_variable_definition_in_for_block1558 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_EQUAL_in_for_block1564 = new BitSet(new long[]{0x00080C4000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_for_block1584 = new BitSet(new long[]{0x0000001800000000L});
+    public static final BitSet FOLLOW_TO_in_for_block1598 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_UNTIL_in_for_block1613 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_for_block1638 = new BitSet(new long[]{0x0000002000000020L});
+    public static final BitSet FOLLOW_STEP_in_for_block1652 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_for_block1664 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_EACHIN_in_for_block1694 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_for_block1712 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_for_block1732 = new BitSet(new long[]{0x007E1D83000781F0L,0x0003800003000000L});
+    public static final BitSet FOLLOW_statement_block_in_for_block1740 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_NEXT_in_for_block1749 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_for_block1751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_REPEAT_in_repeat_block1763 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_repeat_block1765 = new BitSet(new long[]{0x007E1F13000781F0L,0x0003800003000000L});
+    public static final BitSet FOLLOW_statement_block_in_repeat_block1773 = new BitSet(new long[]{0x0000021000000000L});
+    public static final BitSet FOLLOW_FOREVER_in_repeat_block1778 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_UNTIL_in_repeat_block1782 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_repeat_block1784 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_repeat_block1789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_expression1808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_number_in_expression1823 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_cast_or_function_call_in_expression1834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRUE_in_expression1844 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FALSE_in_expression1859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_string_literal_in_expression1874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_cast_or_function_call1891 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_LPAREN_in_cast_or_function_call1893 = new BitSet(new long[]{0x00080C0000100100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_list_in_cast_or_function_call1895 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_RPAREN_in_cast_or_function_call1898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expression_in_expression_list1910 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_COMMA_in_expression_list1913 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_expression_list1915 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_WHILE_in_while_block1928 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_while_block1930 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_while_block1932 = new BitSet(new long[]{0x007E3D03000781F0L,0x0003800003000000L});
+    public static final BitSet FOLLOW_statement_block_in_while_block1936 = new BitSet(new long[]{0x0000200000000000L});
+    public static final BitSet FOLLOW_WEND_in_while_block1940 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_while_block1942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SELECT_in_select_block1953 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_select_block1955 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_select_block1957 = new BitSet(new long[]{0x0001800000001000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_case_block_in_select_block1961 = new BitSet(new long[]{0x0001800000001000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_default_block_in_select_block1966 = new BitSet(new long[]{0x0001800000001000L,0x8000000000000000L});
+    public static final BitSet FOLLOW_end_select_in_select_block1971 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_select_block1975 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEFAULT_in_default_block1986 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_default_block1988 = new BitSet(new long[]{0x007E1D03000781F0L,0x0003800003000000L});
+    public static final BitSet FOLLOW_statement_block_in_default_block1992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_END_in_end_select2003 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_SELECT_in_end_select2005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_127_in_end_select2011 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_CASE_in_case_block2022 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_case_block2024 = new BitSet(new long[]{0x0000000040000020L});
+    public static final BitSet FOLLOW_COMMA_in_case_block2027 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_case_block2029 = new BitSet(new long[]{0x0000000040000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_case_block2033 = new BitSet(new long[]{0x007E1D03000781F0L,0x0003800003000000L});
+    public static final BitSet FOLLOW_statement_block_in_case_block2037 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IMPORT_in_import_stmt2056 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_string_literal_in_import_stmt2069 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_module_name_in_import_stmt2087 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_import_stmt2100 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INCLUDE_in_include_stmt2111 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_STRING_LITERAL_in_include_stmt2113 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_include_stmt2115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FRAMEWORK_in_framework_stmt2126 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_module_name_in_framework_stmt2128 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_framework_stmt2130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODULE_in_module_stmt2141 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_module_name_in_module_stmt2143 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_module_stmt2145 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MODULEINFO_in_moduleinfo_stmt2157 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_STRING_LITERAL_in_moduleinfo_stmt2159 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_moduleinfo_stmt2161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_module_name2182 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_DOT_in_module_name2184 = new BitSet(new long[]{0x0000000000000100L});
+    public static final BitSet FOLLOW_IDENTIFIER_in_module_name2190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DEBUGLOG_in_debuglog_stmt2206 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_debuglog_stmt2208 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_debuglog_stmt2210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IF_in_if_block2224 = new BitSet(new long[]{0x00080C0000000100L,0x0003800003000000L});
+    public static final BitSet FOLLOW_expression_in_if_block2226 = new BitSet(new long[]{0x0C7E1D03000791F0L,0x0003800003000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_THEN_in_if_block2230 = new BitSet(new long[]{0x087E1D03000791F0L,0x0003800003000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_statement_block_in_if_block2238 = new BitSet(new long[]{0x0800000000001000L,0x0000000000000000L,0x0000000000000003L});
+    public static final BitSet FOLLOW_ELSE_in_if_block2256 = new BitSet(new long[]{0x007E1D03000791F0L,0x0003800003000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_ELSE_in_if_block2271 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_IF_in_if_block2273 = new BitSet(new long[]{0x007E1D03000791F0L,0x0003800003000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_128_in_if_block2282 = new BitSet(new long[]{0x007E1D03000791F0L,0x0003800003000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_statement_block_in_if_block2302 = new BitSet(new long[]{0x0000000000001000L,0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_END_in_if_block2319 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_IF_in_if_block2321 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_129_in_if_block2328 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_NEWLINE_in_if_block2336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_POINTER_in_pointer_def2640 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_POINTER_in_pointer_def2654 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_BYTE_TYPE_in_byte_def2686 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_pointer_def_in_byte_def2694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_TYPE_in_int_def2719 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_pointer_def_in_int_def2727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SHORT_TYPE_in_short_def2751 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_pointer_def_in_short_def2759 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LONG_TYPE_in_long_def2784 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_pointer_def_in_long_def2792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FLOAT_TYPE_in_float_def2817 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_pointer_def_in_float_def2825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_DOUBLE_TYPE_in_double_def2850 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+    public static final BitSet FOLLOW_pointer_def_in_double_def2858 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_MINUS_in_number3407 = new BitSet(new long[]{0x0000000000000000L,0x0003800000000000L});
+    public static final BitSet FOLLOW_PLUS_in_number3417 = new BitSet(new long[]{0x0000000000000000L,0x0003800000000000L});
+    public static final BitSet FOLLOW_FLOAT_in_number3431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LONG_in_number3441 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INT_in_number3451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_STRING_LITERAL_in_string_literal3790 = new BitSet(new long[]{0x0000000000000002L});
 
 }

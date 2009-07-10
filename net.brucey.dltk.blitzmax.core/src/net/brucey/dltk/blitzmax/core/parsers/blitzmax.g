@@ -502,17 +502,15 @@ variable_definition[boolean functionArg] returns [ Declaration dec = null ]
 	;
 
 rem_block
-	:	REM NEWLINE
-		( options {greedy=false;} : . )*
-		end_rem
-		NEWLINE
-	;
-	
-end_rem
-	:	END REM
-		| 'endrem' 
-	;
+  : REM NEWLINE
+  	rem_block_contents
+  ;
 
+rem_block_contents
+  : .*
+    ('endrem' | END (~REM rem_block_contents | REM))
+  ;
+	
 for_block returns [ BlitzMaxForStatement stmt = null ]
 	:	(
 			f = FOR
