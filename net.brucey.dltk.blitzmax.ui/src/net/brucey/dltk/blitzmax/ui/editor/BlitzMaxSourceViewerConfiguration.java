@@ -7,14 +7,11 @@ import net.brucey.dltk.blitzmax.ui.text.BlitzMaxScriptCommentScanner;
 import net.brucey.dltk.blitzmax.ui.text.IBlitzMaxColorConstants;
 
 import org.eclipse.dltk.compiler.task.ITodoTaskPreferences;
-import org.eclipse.dltk.internal.ui.editor.ScriptSourceViewer;
 import org.eclipse.dltk.ui.text.AbstractScriptScanner;
 import org.eclipse.dltk.ui.text.IColorManager;
-import org.eclipse.dltk.ui.text.ScriptCommentScanner;
 import org.eclipse.dltk.ui.text.ScriptPresentationReconciler;
 import org.eclipse.dltk.ui.text.ScriptSourceViewerConfiguration;
 import org.eclipse.dltk.ui.text.SingleTokenScriptScanner;
-import org.eclipse.dltk.ui.text.TodoTaskPreferencesOnPreferenceStore;
 import org.eclipse.dltk.ui.text.completion.ContentAssistPreference;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.DefaultIndentLineAutoEditStrategy;
@@ -24,7 +21,6 @@ import org.eclipse.jface.text.IInformationControl;
 import org.eclipse.jface.text.IInformationControlCreator;
 import org.eclipse.jface.text.contentassist.ContentAssistant;
 import org.eclipse.jface.text.contentassist.IContentAssistProcessor;
-import org.eclipse.jface.text.information.IInformationPresenter;
 import org.eclipse.jface.text.information.IInformationProvider;
 import org.eclipse.jface.text.information.InformationPresenter;
 import org.eclipse.jface.text.presentation.IPresentationReconciler;
@@ -49,11 +45,13 @@ public class BlitzMaxSourceViewerConfiguration extends
     super(colorManager, preferenceStore, editor, partitioning);
   }
 
+  @Override
   public IAutoEditStrategy[] getAutoEditStrategies(ISourceViewer sourceViewer,
       String contentType) {
     return new IAutoEditStrategy[] { new DefaultIndentLineAutoEditStrategy() };
   }
 
+  @Override
   public String[] getIndentPrefixes(ISourceViewer sourceViewer,
       String contentType) {
     return new String[] { "\t", "    " };
@@ -64,6 +62,7 @@ public class BlitzMaxSourceViewerConfiguration extends
     return BlitzMaxContentAssistPreference.getDefault();
   }
 
+  @Override
   protected IInformationControlCreator getOutlinePresenterControlCreator(
       ISourceViewer sourceViewer, final String commandId) {
     return new IInformationControlCreator() {
@@ -76,10 +75,12 @@ public class BlitzMaxSourceViewerConfiguration extends
     };
   }
 
+  @Override
   public String[] getConfiguredContentTypes(ISourceViewer sourceViewer) {
     return IBlitzMaxPartitions.BLITZMAX_PARITION_TYPES;
   }
 
+  @Override
   protected void initializeScanners() {
     this.codeScanner = new BlitzMaxCodeScanner(this.getColorManager(),
         this.fPreferenceStore);
@@ -92,12 +93,14 @@ public class BlitzMaxSourceViewerConfiguration extends
         this.fPreferenceStore);
   }
 
+  @Override
   protected AbstractScriptScanner createCommentScanner(String commentColor,
       String tagColor, ITodoTaskPreferences taskPrefs) {
     return new BlitzMaxScriptCommentScanner(getColorManager(),
         fPreferenceStore, commentColor, tagColor, taskPrefs);
   }
 
+  @Override
   public IPresentationReconciler getPresentationReconciler(
       ISourceViewer sourceViewer) {
     PresentationReconciler reconciler = new ScriptPresentationReconciler();
@@ -123,6 +126,7 @@ public class BlitzMaxSourceViewerConfiguration extends
     return reconciler;
   }
 
+  @Override
   public void handlePropertyChangeEvent(PropertyChangeEvent event) {
     if (this.codeScanner.affectsBehavior(event)) {
       this.codeScanner.adaptToPreferenceChange(event);
@@ -138,6 +142,7 @@ public class BlitzMaxSourceViewerConfiguration extends
     }
   }
 
+  @Override
   public boolean affectsTextPresentation(PropertyChangeEvent event) {
     return codeScanner.affectsBehavior(event)
         || stringScanner.affectsBehavior(event)
@@ -145,6 +150,7 @@ public class BlitzMaxSourceViewerConfiguration extends
         || remScanner.affectsBehavior(event);
   }
 
+  @Override
   protected void alterContentAssistant(ContentAssistant assistant) {
     // IDocument.DEFAULT_CONTENT_TYPE
     IContentAssistProcessor scriptProcessor = new BlitzMaxCompletionProcessor(
@@ -155,6 +161,7 @@ public class BlitzMaxSourceViewerConfiguration extends
         IBlitzMaxPartitions.BLITZMAX_STRING);
   }
 
+  @Override
   protected void initializeQuickOutlineContexts(InformationPresenter presenter,
       IInformationProvider provider) {
     presenter.setInformationProvider(provider,

@@ -32,6 +32,7 @@ public class BlitzMaxPartitionScanner extends RuleBasedPartitionScanner {
     setPredicateRules(result);
   }
 
+  @Override
   public int read() {
     int c = super.read();
 
