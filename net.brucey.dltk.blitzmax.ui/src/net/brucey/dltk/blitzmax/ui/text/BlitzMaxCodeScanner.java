@@ -8,24 +8,28 @@ import org.eclipse.dltk.ui.text.AbstractScriptScanner;
 import org.eclipse.dltk.ui.text.IColorManager;
 import org.eclipse.dltk.ui.text.TodoTagRule;
 import org.eclipse.dltk.ui.text.TodoTaskPreferencesOnPreferenceStore;
-import org.eclipse.dltk.ui.text.rules.ScriptWordRule;
 import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.jface.text.rules.EndOfLineRule;
 import org.eclipse.jface.text.rules.IToken;
-import org.eclipse.jface.text.rules.IWhitespaceDetector;
 import org.eclipse.jface.text.rules.IWordDetector;
-import org.eclipse.jface.text.rules.MultiLineRule;
 import org.eclipse.jface.text.rules.WhitespaceRule;
 import org.eclipse.jface.text.rules.WordRule;
 
 public class BlitzMaxCodeScanner extends AbstractScriptScanner {
 
-  private static String[] keywords = { "and", "for", "assert", "elseif",
-      "from", "exit", "else", "global", "not", "try", "type", "end", "if",
-      "or", "while", "continue", "then", "import", "include", "strict",
-      "until", "next", "extends", "to", "superstrict", "finally", "method",
-      "function", "self", "return", "step", "field", "final", "abstract",
-      "const" };
+  private static String[] keywords = { "abs", "abstract", "and", "asc",
+      "assert", "case", "catch", "chr", "const", "continue", "default",
+      "defdata", "delete", "eachin", "else", "elseif", "end", "endextern",
+      "endfunction", "endif", "endmethod", "endselect", "endtry", "endtype",
+      "exit", "extends", "extern", "false", "field", "final", "flushmem",
+      "for", "forever", "framework", "function", "global", "goto", "if",
+      "import", "incbin", "incbinlen", "incbinptr", "include", "len", "local",
+      "max", "method", "min", "mod", "module", "moduleinfo", "new", "next",
+      "not", "null", "or", "pi", "private", "ptr", "public", "readdata",
+      "release", "repeat", "restoredata", "return", "sar", "select", "self",
+      "sgn", "shl", "shr", "sizeof", "step", "strict", "super", "superstrict",
+      "then", "throw", "to", "true", "try", "type", "until", "var", "varptr",
+      "wend", "while" };
 
   private static String tokenProperties[] = new String[] {
       IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT,
@@ -49,7 +53,8 @@ public class BlitzMaxCodeScanner extends AbstractScriptScanner {
   protected List createRules() {
     List/* <IRule> */rules = new ArrayList/* <IRule> */();
     IToken keyword = this.getToken(IBlitzMaxColorConstants.BLITZMAX_KEYWORD);
-    IToken comment = this.getToken(IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT);
+    IToken comment = this
+        .getToken(IBlitzMaxColorConstants.BLITZMAX_SINGLE_LINE_COMMENT);
     IToken other = this.getToken(IBlitzMaxColorConstants.BLITZMAX_DEFAULT);
     // IToken multilineComment = this
     // .getToken(IBlitzMaxColorConstants.BLITZMAX_MULTILINE_COMMENT);
@@ -98,6 +103,7 @@ public class BlitzMaxCodeScanner extends AbstractScriptScanner {
     }
   }
 
+  @Override
   public int read() {
     int c = super.read();
 
