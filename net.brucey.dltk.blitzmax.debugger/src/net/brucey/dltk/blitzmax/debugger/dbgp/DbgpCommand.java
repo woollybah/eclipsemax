@@ -124,7 +124,7 @@ public class DbgpCommand {
    * 
    * @param command
    */
-  public Command parseCommand(byte[] command) {
+  public static Command parseCommand(byte[] command) {
 
     String cmd = new String(command);
     String[] cmdParts = cmd.split(" ");

@@ -24,6 +24,8 @@ public class Node {
    */
   public void render(StringBuffer buf) {
 
+    boolean empty = false;
+
     buf.append('<').append(name);
 
     // attributes
@@ -31,6 +33,12 @@ public class Node {
       for (Attribute att : attributes) {
         att.render(buf);
       }
+    }
+
+    // no children?, we can close this node now
+    if (nodes == null || nodes.isEmpty()) {
+      buf.append('/');
+      empty = true;
     }
 
     buf.append('>');
@@ -42,7 +50,10 @@ public class Node {
       }
     }
 
-    buf.append("</").append(name).append('>');
+    // if we have content, then we need to close the node
+    if (!empty) {
+      buf.append("</").append(name).append('>');
+    }
 
   }
 

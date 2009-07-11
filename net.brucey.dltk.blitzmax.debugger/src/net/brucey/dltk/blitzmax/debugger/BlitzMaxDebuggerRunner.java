@@ -1,18 +1,26 @@
 package net.brucey.dltk.blitzmax.debugger;
 
+import java.io.File;
+import java.util.List;
+
 import net.brucey.dltk.blitzmax.debug.BlitzMaxDebugPlugin;
 
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.dltk.core.PreferencesLookupDelegate;
+import org.eclipse.dltk.core.environment.FileAsFileHandle;
+import org.eclipse.dltk.core.environment.IFileHandle;
 import org.eclipse.dltk.launching.ExternalDebuggingEngineRunner;
 import org.eclipse.dltk.launching.IInterpreterInstall;
 import org.eclipse.dltk.launching.InterpreterConfig;
 import org.eclipse.dltk.launching.debug.DbgpConnectionConfig;
+import org.eclipse.dltk.launching.debug.DbgpConstants;
+import org.eclipse.jdt.launching.JavaRuntime;
 
 public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
 
   public static final String ENGINE_ID = "net.brucey.dltk.blitzmax.debugger"; //$NON-NLS-1$
+
+  private String javaPath = null;
 
   public BlitzMaxDebuggerRunner(IInterpreterInstall install) {
     super(install);
@@ -40,6 +48,20 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
   }
 
   @Override
+  protected IFileHandle getDebuggingEnginePath(
+      PreferencesLookupDelegate delegate) {
+
+    StringBuffer f = new StringBuffer(JavaRuntime.getDefaultVMInstall()
+        .getInstallLocation().getAbsoluteFile().toString());
+    f.append(File.separatorChar).append("bin").append(File.separatorChar)
+        .append("java");
+
+    javaPath = f.toString();
+    return new FileAsFileHandle(new File(javaPath));
+  }
+
+  @SuppressWarnings("unchecked")
+  @Override
   protected InterpreterConfig alterConfig(InterpreterConfig config,
       PreferencesLookupDelegate delegate) throws CoreException {
 
@@ -48,27 +70,51 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
     DbgpConnectionConfig dbgpConfig = DbgpConnectionConfig.load(config);
 
     if (config != null) {
-      config.addInterpreterArg("makeapp"); // we're building an app
-      config.addInterpreterArg("-d"); // Release (not debug)
-      config.addInterpreterArg("-x"); // Execute
-      addOutputBinary(config, dbgpConfig);
+      config.setProperty("OVERRIDE_EXE", javaPath);
+
+      // we need to clear out the interpreter args...
+      List<String> args = config.getInterpreterArgs();
+      for (String arg : args) {
+        config.removeInterpreterArg(arg);
+      }
+
+      config.addInterpreterArg("-cp"); // FIXME require classpath to Connector
+      config
+          .addInterpreterArg("/Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.debugger/bin");
+
+      config
+          .addInterpreterArg("net.brucey.dltk.blitzmax.debugger.dbgp.DbgpBlitzMaxConnector");
+
+      config.addInterpreterArg("127.0.0.1");
+      config.addInterpreterArg((String) config
+          .getProperty(DbgpConstants.PORT_PROP));
+      config.addInterpreterArg((String) config
+          .getProperty(DbgpConstants.SESSION_ID_PROP));
+
+      config.addInterpreterArg(getInstall().getInstallLocation().toOSString());
+
+      config.addInterpreterArgs(args);
+      //      config.addInterpreterArg("makeapp"); // we're building an app
+      //      config.addInterpreterArg("-d"); // Release (not debug)
+      //      config.addInterpreterArg("-x"); // Execute
+      //      addOutputBinary(config, dbgpConfig);
     }
 
     return config;
 
   }
 
-  protected void addOutputBinary(InterpreterConfig config,
-      DbgpConnectionConfig dbgpConfig) {
-
-    IPath path = config.getScriptFilePath();
-
-    IPath temp = path.removeFileExtension();
-
-    config.addInterpreterArg("-o");
-    config.addInterpreterArg(temp.addFileExtension("debug.exe").toOSString()); // the name of the exe
-
-  }
+  //  protected void addOutputBinary(InterpreterConfig config,
+  //      DbgpConnectionConfig dbgpConfig) {
+  //
+  //    IPath path = config.getScriptFilePath();
+  //
+  //    IPath temp = path.removeFileExtension();
+  //
+  //    config.addInterpreterArg("-o");
+  //    config.addInterpreterArg(temp.addFileExtension("debug.exe").toOSString()); // the name of the exe
+  //
+  //  }
 
   @Override
   protected String getDebuggingEnginePreferenceKey() {

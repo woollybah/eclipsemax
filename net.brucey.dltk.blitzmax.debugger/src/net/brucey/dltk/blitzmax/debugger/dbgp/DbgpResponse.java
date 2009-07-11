@@ -14,8 +14,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 
 import net.brucey.dltk.blitzmax.debugger.dbgp.xml.Node;
 
@@ -55,11 +53,11 @@ public class DbgpResponse {
    * status codes
    * {"", "starting", "stopping", "stopped", "running", "break"};
    */
-  public static final String STATUS_STARTING = "starting";
-  public static final String STATUS_STOPPING = "stopping";
-  public static final String STATUS_STOPPED = "stopped";
-  public static final String STATUS_RUNNING = "running";
-  public static final String STATUS_BREAK = "break";
+  //  public static final String STATUS_STARTING = "starting";
+  //  public static final String STATUS_STOPPING = "stopping";
+  //  public static final String STATUS_STOPPED = "stopped";
+  //  public static final String STATUS_RUNNING = "running";
+  //  public static final String STATUS_BREAK = "break";
 
   /*
    * reason codes
@@ -150,14 +148,14 @@ public class DbgpResponse {
 
   private byte[] rawXML;
 
-  public DbgpResponse() {
-    DocumentBuilderFactory dbFact = DocumentBuilderFactory.newInstance();
-    try {
-      db = dbFact.newDocumentBuilder();
-    } catch (ParserConfigurationException e) {
-      //			DBGpLogger.logException(null, this, e);
-    }
-  }
+  //  public DbgpResponse() {
+  //    DocumentBuilderFactory dbFact = DocumentBuilderFactory.newInstance();
+  //    try {
+  //      db = dbFact.newDocumentBuilder();
+  //    } catch (ParserConfigurationException e) {
+  //      //			DBGpLogger.logException(null, this, e);
+  //    }
+  //  }
 
   //  public void parseResponse(byte[] xmlResponse) {
   //    rawXML = xmlResponse;
@@ -325,66 +323,66 @@ public class DbgpResponse {
   //    return attrValue;
   //  }
 
-  public String getCommand() {
-    return command;
-  }
-
-  public String getId() {
-    return id;
-  }
-
-  public String getReason() {
-    return reason;
-  }
-
-  public String getStatus() {
-    return status;
-  }
-
-  public int getType() {
-    return type;
-  }
-
-  public String getFileUri() {
-    return fileUri;
-  }
-
-  public String getIdekey() {
-    return idekey;
-  }
-
-  public String getSession() {
-    return session;
-  }
-
-  public int getErrorCode() {
-    return errorCode;
-  }
-
-  public String getErrorMessage() {
-    return errorMessage;
-  }
-
-  public String getEngineVersion() {
-    return engineVersion;
-  }
-
-  /**
-   * this will either be null or base64 encoded. It needs to be decoded.
-   * 
-   * @return encoded stream data or null.
-   */
-  public String getStreamData() {
-    return streamData;
-  }
-
-  public String getStreamType() {
-    return streamType;
-  }
-
-  public byte[] getRawXML() {
-    return rawXML;
-  }
+  //  public String getCommand() {
+  //    return command;
+  //  }
+  //
+  //  public String getId() {
+  //    return id;
+  //  }
+  //
+  //  public String getReason() {
+  //    return reason;
+  //  }
+  //
+  //  public String getStatus() {
+  //    return status;
+  //  }
+  //
+  //  public int getType() {
+  //    return type;
+  //  }
+  //
+  //  public String getFileUri() {
+  //    return fileUri;
+  //  }
+  //
+  //  public String getIdekey() {
+  //    return idekey;
+  //  }
+  //
+  //  public String getSession() {
+  //    return session;
+  //  }
+  //
+  //  public int getErrorCode() {
+  //    return errorCode;
+  //  }
+  //
+  //  public String getErrorMessage() {
+  //    return errorMessage;
+  //  }
+  //
+  //  public String getEngineVersion() {
+  //    return engineVersion;
+  //  }
+  //
+  //  /**
+  //   * this will either be null or base64 encoded. It needs to be decoded.
+  //   * 
+  //   * @return encoded stream data or null.
+  //   */
+  //  public String getStreamData() {
+  //    return streamData;
+  //  }
+  //
+  //  public String getStreamType() {
+  //    return streamType;
+  //  }
+  //
+  //  public byte[] getRawXML() {
+  //    return rawXML;
+  //  }
 
   /*
    * 
@@ -404,7 +402,7 @@ public class DbgpResponse {
    *    </copyright>
    * </init>
    */
-  public String init(String file) {
+  public String init(String file, String session) {
     StringBuffer buf = xml();
 
     Node init = new Node("init");
@@ -416,15 +414,49 @@ public class DbgpResponse {
     }
 
     init.addAttribute("fileuri", uri.toASCIIString());
+    init.addAttribute("session", session);
     init.addAttribute("language", "BlitzMax");
     init.addAttribute("protocol_version", "1.0");
-    init.addAttribute("appid", "1234");
-    init.addAttribute("idekey", "ECLIPSEBLITZMAX");
+    init.addAttribute("appid", "1234"); // TODO : what should we put here?
+    init.addAttribute("idekey", "ECLIPSEBLITZMAX"); // TODO : what should we put here?
 
     init.render(buf);
     return buf.toString();
   }
 
+  /**
+   * Send a "status" response.
+   * 
+   * @param id
+   *          the transaction id.
+   * @param state
+   *          the state.
+   * @param reason
+   *          the reason.
+   * 
+   * @return the rendered response.
+   */
+  public String status(String id, DebugState state, String reason) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("status", id);
+
+    response.addAttribute("status", DebugState.map(state));
+    response.addAttribute("reason", reason);
+
+    response.render(buf);
+    return buf.toString();
+  }
+
+  // a response node
+  private Node newResponse(String command, String id) {
+    Node node = new Node("response");
+    node.addAttribute("command", command);
+    node.addAttribute("transaction_id", id);
+    return node;
+  }
+
+  // xml header buffer
   private StringBuffer xml() {
     StringBuffer buf = new StringBuffer();
     buf.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");

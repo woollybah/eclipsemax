@@ -13,7 +13,7 @@ public class DbgpBlitzMaxConnector {
   private final String dbgpHost;
 
   private final String exePath;
-  private final String[] blitzMaxArgs = { "" };
+  private String[] blitzMaxArgs = { "" };
 
   private InputStream blitzStdErr;
   private InputStream blitzStdIn;
@@ -22,6 +22,7 @@ public class DbgpBlitzMaxConnector {
   private Process debugProcess;
 
   private BlitzMaxDebugManager manager;
+  private String dbgpSession;
 
   /**
    * @param args
@@ -56,20 +57,24 @@ public class DbgpBlitzMaxConnector {
     // expected in this order :
     // host
     // port
-    // /path/to/exe
-    // params
+    // session_id
+    // bmk path
+    // bmk params ...
+    // app params
     dbgpHost = args[0];
     dbgpPort = Integer.parseInt(args[1]);
-    exePath = args[2];
+    dbgpSession = args[2];
+    exePath = args[3];
 
-    System.arraycopy(args, 2, blitzMaxArgs, 0, args.length - 2);
+    blitzMaxArgs = new String[args.length - 3];
+    System.arraycopy(args, 3, blitzMaxArgs, 0, args.length - 3);
 
   }
 
   private boolean start() {
 
     BlitzMaxIDEDebugProcessor ideProcessor = new BlitzMaxIDEDebugProcessor(
-        dbgpHost, dbgpPort);
+        dbgpHost, dbgpPort, dbgpSession);
     ideProcessor.connect();
 
     ProcessBuilder pb = new ProcessBuilder(blitzMaxArgs);

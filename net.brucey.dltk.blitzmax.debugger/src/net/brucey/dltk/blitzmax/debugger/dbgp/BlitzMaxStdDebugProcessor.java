@@ -85,7 +85,7 @@ public class BlitzMaxStdDebugProcessor {
           bytesRead = blitzStdErr.read(inBuffer, 0,
               (errBytes < inBuffer.length) ? errBytes : inBuffer.length);
 
-          inputBuffer.addData(inBuffer, bytesRead);
+          inputBuffer.addLineBasedData(inBuffer, bytesRead);
 
         }
 
@@ -211,7 +211,7 @@ public class BlitzMaxStdDebugProcessor {
     }
 
     if (line.equals("Debug:") || line.equals("DebugStop:")) {
-      requestCurrentStack();
+      // requestCurrentStack();
       //      If Not cancontinue Then
       //        cancontinue=True
       //        host.RefreshToolbar()
