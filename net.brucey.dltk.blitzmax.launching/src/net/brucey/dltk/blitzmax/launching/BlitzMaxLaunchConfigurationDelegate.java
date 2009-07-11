@@ -33,7 +33,11 @@ public class BlitzMaxLaunchConfigurationDelegate extends
         configuration, launch);
     if (config != null) {
       config.addInterpreterArg("makeapp"); // we're building an app
-      config.addInterpreterArg("-r"); // Release (not debug)
+      if (launch.getLaunchMode().equals("debug")) {
+        config.addInterpreterArg("-d"); // Release (not debug)
+      } else {
+        config.addInterpreterArg("-r"); // Release (not debug)
+      }
       config.addInterpreterArg("-x"); // Execute
 
       String buildEnvironment = configuration.getAttribute(
@@ -69,21 +73,25 @@ public class BlitzMaxLaunchConfigurationDelegate extends
         config.addInterpreterArg("-h");
       }
 
-      addOutputBinary(config, configuration);
+      addOutputBinary(config, configuration, launch);
     }
 
     return config;
   }
 
   protected void addOutputBinary(InterpreterConfig config,
-      ILaunchConfiguration configuration) {
+      ILaunchConfiguration configuration, ILaunch launch) {
 
     IPath path = config.getScriptFilePath();
 
     IPath temp = path.removeFileExtension();
 
     config.addInterpreterArg("-o");
-    config.addInterpreterArg(temp.addFileExtension("exe").toOSString()); // the name of the exe
+    if (launch.getLaunchMode().equals("debug")) {
+      config.addInterpreterArg(temp.addFileExtension("exe").toOSString()); // the name of the exe
+    } else {
+      config.addInterpreterArg(temp.addFileExtension("debug.exe").toOSString()); // the name of the exe
+    }
 
   }
 
