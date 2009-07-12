@@ -34,7 +34,7 @@ public class BlitzMaxLaunchConfigurationDelegate extends
     if (config != null) {
       config.addInterpreterArg("makeapp"); // we're building an app
       if (launch.getLaunchMode().equals("debug")) {
-        config.addInterpreterArg("-d"); // Release (not debug)
+        config.addInterpreterArg("-d"); // Debug (not release)
       } else {
         config.addInterpreterArg("-r"); // Release (not debug)
       }
@@ -87,7 +87,7 @@ public class BlitzMaxLaunchConfigurationDelegate extends
     IPath temp = path.removeFileExtension();
 
     config.addInterpreterArg("-o");
-    if (launch.getLaunchMode().equals("debug")) {
+    if (!launch.getLaunchMode().equals("debug")) {
       config.addInterpreterArg(temp.addFileExtension("exe").toOSString()); // the name of the exe
     } else {
       config.addInterpreterArg(temp.addFileExtension("debug.exe").toOSString()); // the name of the exe
