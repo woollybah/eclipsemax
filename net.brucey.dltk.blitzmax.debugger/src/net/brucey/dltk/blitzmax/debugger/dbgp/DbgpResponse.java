@@ -13,8 +13,7 @@ package net.brucey.dltk.blitzmax.debugger.dbgp;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import javax.xml.parsers.DocumentBuilder;
-
+import net.brucey.dltk.blitzmax.debugger.dbgp.xml.DataNode;
 import net.brucey.dltk.blitzmax.debugger.dbgp.xml.Node;
 
 /**
@@ -43,13 +42,6 @@ public class DbgpResponse {
    */
 
   /*
-   * Example stream
-   * 
-   * <stream type="stdout" encoding="base64"><![CDATA[PGh0bWw+DQo8aGVhZD4NCjx0aXRsZT5HdWVzc2luZyBHYW1lPC90aXRsZT4NCjwvaGVhZD4NCjxib2R5Pg0KPGZvcm0gYWN0aW9uPScnIG1ldGhvZD0ncG9zdCc+PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzUnIG5hbWU9J3R4dE51bWJlcic+PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzAnIG5hbWU9J3R4dFRyaWVzJz5QbGVhc2UgR3Vlc3MgQSBOdW1iZXIgKDEgLSA1MCk8aW5wdXQgdHlwZT0ndGV4dCcgbmFtZT0ndHh0R3Vlc3MnIHNpemU9JzEwJz48aW5wdXQgdHlwZT0nc3VibWl0JyB2YWx1ZT0nU3VibWl0JyBuYW1lPSdTdWJtaXQnPjwvZm9ybT48YnIgLz4gPCEtLSA1LS0hPjwvYm9keT4NCjwvaHRtbD4=]]></stream>
-   * 
-   */
-
-  /*
    * status codes
    * {"", "starting", "stopping", "stopped", "running", "break"};
    */
@@ -69,10 +61,6 @@ public class DbgpResponse {
   public static final String REASON_ABORTED = "aborted";
   public static final String REASON_EXCEPTION = "exception";
 
-  private DocumentBuilder db;
-  //  private Document doc;
-  //  private Node parent;
-
   //type
   public static final int PARSE_FAILURE = 0;
   public static final int INIT = 1;
@@ -84,21 +72,6 @@ public class DbgpResponse {
   public static final int UNKNOWN_TYPE = 99;
 
   int type;
-
-  //init attributes
-  private String idekey;
-  private String session;
-  private String engineVersion = "";
-  //	private EngineTypes engineType = EngineTypes.other;	
-  private String fileUri;
-
-  // Response attributes
-  private String id;
-  private String command;
-
-  // Status Response attributes
-  private String status;
-  private String reason;
 
   // error responses
 
@@ -142,248 +115,6 @@ public class DbgpResponse {
   int errorCode;
   String errorMessage;
 
-  // stream data
-  private String streamType;
-  private String streamData;
-
-  private byte[] rawXML;
-
-  //  public DbgpResponse() {
-  //    DocumentBuilderFactory dbFact = DocumentBuilderFactory.newInstance();
-  //    try {
-  //      db = dbFact.newDocumentBuilder();
-  //    } catch (ParserConfigurationException e) {
-  //      //			DBGpLogger.logException(null, this, e);
-  //    }
-  //  }
-
-  //  public void parseResponse(byte[] xmlResponse) {
-  //    rawXML = xmlResponse;
-  //    if (db != null && xmlResponse != null) {
-  //      ByteArrayInputStream bais = new ByteArrayInputStream(xmlResponse);
-  //      parseResponse(bais);
-  //    } else {
-  //      type = PARSE_FAILURE;
-  //      errorCode = ERROR_PARSE_FAILURE;
-  //    }
-  //  }
-
-  //  private void parseResponse(InputStream is) {
-  //    id = null;
-  //    command = null;
-  //    type = UNKNOWN_TYPE;
-  //    errorCode = ERROR_UNKNOWN_TYPE;
-  //
-  //    try {
-  //      doc = db.parse(is);
-  //      parent = doc.getFirstChild();
-  //      String nodeName = parent.getNodeName();
-  //      if (nodeName.equals("response")) {
-  //        parseResponseType();
-  //      } else if (nodeName.equals("init")) {
-  //        parseInitType();
-  //      } else if (nodeName.equals("stream")) {
-  //        parseStreamType();
-  //      } else if (nodeName.equals("proxyinit")) {
-  //        parseProxyInitType();
-  //      } else if (nodeName.equals("proxyerror")) {
-  //        parseProxyErrorType();
-  //      }
-  //
-  //    } catch (SAXException e) {
-  //      //			DBGpLogger.logException(null, this, e);
-  //      type = PARSE_FAILURE;
-  //      errorCode = ERROR_PARSE_FAILURE;
-  //    } catch (IOException e) {
-  //      //			DBGpLogger.logException(null, this, e);
-  //      type = PARSE_FAILURE;
-  //      errorCode = ERROR_PARSE_FAILURE;
-  //    }
-  //    //System.out.println("wait for me");
-  //  }
-  //
-  //  private void parseStreamType() {
-  //    type = STREAM;
-  //    streamType = getTopAttribute("type");
-  //    Node Child = parent.getFirstChild();
-  //    if (Child != null) {
-  //      streamData = Child.getNodeValue();
-  //    }
-  //
-  //    if (streamType.length() != 0) {
-  //      errorCode = ERROR_OK;
-  //    } else {
-  //      errorCode = ERROR_INVALID_RESPONSE;
-  //    }
-  //
-  //  }
-
-  //  private void parseProxyInitType() {
-  //    type = PROXY_INIT;
-  //    idekey = getTopAttribute("idekey");
-  //    //caller can retrieve address, port
-  //    getErrorInformation(false);
-  //
-  //  }
-  //
-  //  private void parseProxyErrorType() {
-  //    type = PROXY_ERROR;
-  //    getErrorInformation(false);
-  //
-  //  }
-
-  //  private void parseInitType() {
-  //    // get the init information
-  //    type = INIT;
-  //    idekey = getTopAttribute("idekey");
-  //    session = getTopAttribute("session");
-  //    if (session.trim().length() == 0) {
-  //      session = null;
-  //    }
-  //    fileUri = getTopAttribute("fileuri");
-  //    // engine may not be the first child so you will need to search
-  //    // for it.
-  //    NodeList nodes = parent.getChildNodes();
-  //    for (int i = 0; i < nodes.getLength(); i++) {
-  //      Node node = nodes.item(i);
-  //      if (node.getNodeName().equals("engine")) {
-  //        engineVersion = getAttribute(node, "version");
-  //        NodeList moreNodes = node.getChildNodes();
-  //        if (moreNodes != null && moreNodes.getLength() > 0) {
-  //          String engineTypeStr = moreNodes.item(0).getNodeValue();
-  //          if (engineTypeStr != null) {
-  //            try {
-  //              //							engineType = EngineTypes.valueOf(engineTypeStr);
-  //            } catch (IllegalArgumentException e) {
-  //              //							engineType = EngineTypes.other;
-  //            }
-  //          }
-  //
-  //        }
-  //        i = nodes.getLength();
-  //      }
-  //    }
-  //    if (idekey.length() != 0 && fileUri.length() != 0) {
-  //      errorCode = ERROR_OK;
-  //    } else {
-  //      errorCode = ERROR_INVALID_RESPONSE;
-  //    }
-  //  }
-
-  //  private void parseResponseType() {
-  //    type = RESPONSE;
-  //    id = getTopAttribute("transaction_id");
-  //    command = getTopAttribute("command");
-  //    status = getTopAttribute("status");
-  //    reason = getTopAttribute("reason");
-  //    getErrorInformation(true);
-  //  }
-
-  //  private void getErrorInformation(boolean checkID) {
-  //    // get the error information
-  //    Node errNode = parent.getFirstChild();
-  //    if (errNode != null && errNode.getNodeName().equals("error")) {
-  //      String errVal = getAttribute(errNode, "code");
-  //      try {
-  //        errorCode = Integer.parseInt(errVal);
-  //      } catch (NumberFormatException nfe) {
-  //        errorCode = ERROR_UNKNOWN_ERROR_CODE;
-  //      }
-  //      Node msgNode = errNode.getFirstChild();
-  //      if (msgNode != null) {
-  //        Node dataNode = msgNode.getFirstChild();
-  //        if (dataNode != null) {
-  //          errorMessage = dataNode.getNodeValue();
-  //        }
-  //      }
-  //    } else {
-  //      errorCode = ERROR_OK;
-  //      if (checkID && (id == null || id.length() == 0)) {
-  //        errorCode = ERROR_INVALID_RESPONSE;
-  //      }
-  //    }
-  //  }
-  //
-  //  public Node getParentNode() {
-  //    return doc.getFirstChild();
-  //  }
-  //
-  //  public String getTopAttribute(String attrName) {
-  //    return getAttribute(parent, attrName);
-  //  }
-  //
-  //  public static String getAttribute(Node node, String attrName) {
-  //    String attrValue = "";
-  //    if (node != null && node.hasAttributes()) {
-  //      NamedNodeMap attrs = node.getAttributes();
-  //      Node attribute = attrs.getNamedItem(attrName);
-  //      if (attribute != null)
-  //        attrValue = attribute.getNodeValue();
-  //    }
-  //    return attrValue;
-  //  }
-
-  //  public String getCommand() {
-  //    return command;
-  //  }
-  //
-  //  public String getId() {
-  //    return id;
-  //  }
-  //
-  //  public String getReason() {
-  //    return reason;
-  //  }
-  //
-  //  public String getStatus() {
-  //    return status;
-  //  }
-  //
-  //  public int getType() {
-  //    return type;
-  //  }
-  //
-  //  public String getFileUri() {
-  //    return fileUri;
-  //  }
-  //
-  //  public String getIdekey() {
-  //    return idekey;
-  //  }
-  //
-  //  public String getSession() {
-  //    return session;
-  //  }
-  //
-  //  public int getErrorCode() {
-  //    return errorCode;
-  //  }
-  //
-  //  public String getErrorMessage() {
-  //    return errorMessage;
-  //  }
-  //
-  //  public String getEngineVersion() {
-  //    return engineVersion;
-  //  }
-  //
-  //  /**
-  //   * this will either be null or base64 encoded. It needs to be decoded.
-  //   * 
-  //   * @return encoded stream data or null.
-  //   */
-  //  public String getStreamData() {
-  //    return streamData;
-  //  }
-  //
-  //  public String getStreamType() {
-  //    return streamType;
-  //  }
-  //
-  //  public byte[] getRawXML() {
-  //    return rawXML;
-  //  }
-
   /*
    * 
    * Example Init
@@ -414,11 +145,11 @@ public class DbgpResponse {
     }
 
     init.addAttribute("fileuri", uri.toASCIIString());
-    init.addAttribute("session", session);
+    init.addAttribute("idekey", session);
     init.addAttribute("language", "BlitzMax");
     init.addAttribute("protocol_version", "1.0");
-    init.addAttribute("appid", "1234"); // TODO : what should we put here?
-    init.addAttribute("idekey", "ECLIPSEBLITZMAX"); // TODO : what should we put here?
+    init.addAttribute("appid", "blitzmax_debugger"); // TODO : what should we put here?
+    //init.addAttribute("idekey", "ECLIPSEBLITZMAX"); // TODO : what should we put here?
 
     init.render(buf);
     return buf.toString();
@@ -448,6 +179,10 @@ public class DbgpResponse {
     return buf.toString();
   }
 
+  public String featureGet(String id) {
+    return null;
+  }
+
   // a response node
   private Node newResponse(String command, String id) {
     Node node = new Node("response");
@@ -462,6 +197,85 @@ public class DbgpResponse {
     buf.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 
     return buf;
+  }
+
+  public String featureGet(String id, String name, boolean supported,
+      String value) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("feature_get", id);
+    response.addAttribute("feature_name", name);
+    response.addAttribute("supported", (supported) ? "1" : "0");
+
+    response.addText(value);
+
+    response.render(buf);
+    return buf.toString();
+  }
+
+  public String featureSet(String id, String name, boolean success) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("feature_set", id);
+    response.addAttribute("feature_name", name);
+    response.addAttribute("success", (success) ? "1" : "0");
+
+    response.render(buf);
+    return buf.toString();
+  }
+
+  private String simpleResponseWithSuccess(String name, String id,
+      boolean success) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse(name, id);
+    response.addAttribute("success", (success) ? "1" : "0");
+
+    response.render(buf);
+    return buf.toString();
+  }
+
+  public String stdin(String id, boolean success) {
+    return simpleResponseWithSuccess("stdin", id, success);
+  }
+
+  public String stderr(String id, boolean success) {
+    return simpleResponseWithSuccess("stderr", id, success);
+  }
+
+  public String stdout(String id, boolean success) {
+    return simpleResponseWithSuccess("stdout", id, success);
+  }
+
+  /*
+   * Example stream
+   * 
+   * <stream type="stdout" encoding="base64"><![CDATA[PGh0bWw+DQo8aGVhZD4NCjx0aXRsZT5HdWVzc2luZyBHYW1lPC90aXRsZT4NCjwvaGVhZD4NCjxib2R5Pg0KPGZvcm0gYWN0aW9uPScnIG1ldGhvZD0ncG9zdCc+PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzUnIG5hbWU9J3R4dE51bWJlcic+PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzAnIG5hbWU9J3R4dFRyaWVzJz5QbGVhc2UgR3Vlc3MgQSBOdW1iZXIgKDEgLSA1MCk8aW5wdXQgdHlwZT0ndGV4dCcgbmFtZT0ndHh0R3Vlc3MnIHNpemU9JzEwJz48aW5wdXQgdHlwZT0nc3VibWl0JyB2YWx1ZT0nU3VibWl0JyBuYW1lPSdTdWJtaXQnPjwvZm9ybT48YnIgLz4gPCEtLSA1LS0hPjwvYm9keT4NCjwvaHRtbD4=]]></stream>
+   * 
+   */
+  public String stream(String type, byte[] data) {
+    StringBuffer buf = xml();
+
+    Node stream = new Node("stream");
+    stream.addAttribute("type", type);
+    stream.addAttribute("encoding", "base64");
+
+    stream.addNode(new DataNode(data));
+
+    stream.render(buf);
+    return buf.toString();
+  }
+
+  public String run(String id, DebugState state, boolean success) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("run", id);
+    response.addAttribute("status", DebugState.map(state));
+    response.addAttribute("reason", (success) ? "ok" : "error");
+
+    response.render(buf);
+    return buf.toString();
+
   }
 
   //	public EngineTypes getEngineType() {

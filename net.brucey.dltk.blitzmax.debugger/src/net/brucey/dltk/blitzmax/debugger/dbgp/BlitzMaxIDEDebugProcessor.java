@@ -1,7 +1,7 @@
 package net.brucey.dltk.blitzmax.debugger.dbgp;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -48,7 +48,7 @@ public class BlitzMaxIDEDebugProcessor {
     try {
       socket = new Socket(ideHost, idePort);
 
-      in = new BufferedInputStream(socket.getInputStream());
+      in = new DataInputStream(socket.getInputStream());
       out = new BufferedOutputStream(socket.getOutputStream());
 
     } catch (UnknownHostException e) {
@@ -81,7 +81,10 @@ public class BlitzMaxIDEDebugProcessor {
   }
 
   private void sendResponse(String xml) {
-    int length = xml.length();
+    System.out.println("Sending response : " + xml);
+
+    byte[] bytes = xml.getBytes();
+    int length = bytes.length;
 
     try {
 
@@ -90,7 +93,7 @@ public class BlitzMaxIDEDebugProcessor {
       out.write(0);
 
       // response
-      out.write(xml.getBytes());
+      out.write(bytes);
       out.write(0);
 
       // flush
@@ -101,36 +104,52 @@ public class BlitzMaxIDEDebugProcessor {
     }
   }
 
-  public void monitor() {
+  public void monitor(boolean needCommand) {
     byte[] inBuffer = new byte[1024];
 
     try {
 
       int inBytes = in.available();
 
-      // loop until there's nothing left in the buffers
-      while (inBytes > 0) {
+      if (inBytes > 0 || needCommand) {
+        //      System.out.println("bytes available : " + inBytes);
+
+        // loop until there's nothing left in the buffers
+        // while (inBytes > 0) {
 
         int bytesRead = 0;
+        int c;
 
-        if (inBytes > 0) {
-          bytesRead = in.read(inBuffer, 0,
-              (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
-
-          inputBuffer.addNullBasedData(inBuffer, bytesRead);
-
-          // process the commands
-          while (inputBuffer.lineAvail()) {
-
-            commands.add(DbgpCommand.parseCommand(inputBuffer.readBytes()));
-
+        // if (inBytes > 0) {
+        while ((c = in.read()) != 0) {
+          if (c == -1) {
+            break;
           }
+
+          inBuffer[bytesRead++] = (byte) c;
 
         }
 
-        inBytes = in.available();
+        //       bytesRead = in.read(inBuffer, 0,
+        //         (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
+
+        inputBuffer.addNullBasedData(inBuffer, bytesRead);
+
+        System.out.println("Receiving command data... : "
+            + new String(inBuffer));
+
+        // process the commands
+        while (inputBuffer.lineAvail()) {
+
+          commands.add(DbgpCommand.parseCommand(inputBuffer.readBytes()));
+
+        }
 
       }
+
+      // inBytes = in.available();
+
+      //  }
 
     } catch (IOException e) {
       // TODO throw an exception ?
@@ -142,6 +161,42 @@ public class BlitzMaxIDEDebugProcessor {
 
   public LinkedList<Command> getCommands() {
     return commands;
+  }
+
+  public void featureGet(String id, String name, boolean supported, String value) {
+    sendResponse(response.featureGet(id, name, supported, value));
+  }
+
+  public void featureSet(String id, String name, boolean success) {
+    sendResponse(response.featureSet(id, name, success));
+  }
+
+  public void stdin(String id, boolean success) {
+    sendResponse(response.stdin(id, success));
+  }
+
+  public void stderr(String id, boolean success) {
+    sendResponse(response.stderr(id, success));
+  }
+
+  public void stdout(String id, boolean success) {
+    sendResponse(response.stdout(id, success));
+  }
+
+  public BlitzMaxStreamRedirect getStderrRedirect() {
+    return new BlitzMaxStreamRedirect(this, BlitzMaxStreamRedirect.STDERR);
+  }
+
+  public BlitzMaxStreamRedirect getStdoutRedirect() {
+    return new BlitzMaxStreamRedirect(this, BlitzMaxStreamRedirect.STDOUT);
+  }
+
+  public void stream(String type, byte[] buf) {
+    sendResponse(response.stream(type, buf));
+  }
+
+  public void run(String id, DebugState state, boolean success) {
+    sendResponse(response.run(id, state, success));
   }
 
 }

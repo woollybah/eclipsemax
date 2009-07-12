@@ -1,5 +1,8 @@
 package net.brucey.dltk.blitzmax.debugger.dbgp;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -12,6 +15,9 @@ import java.util.List;
  * 
  */
 public class BlitzMaxStdDebugProcessor {
+
+  private String sourcePath;
+  private String args[];
 
   private boolean inStack = false;
   private List<BlitzMaxStackScope> stack = new ArrayList<BlitzMaxStackScope>();
@@ -28,17 +34,34 @@ public class BlitzMaxStdDebugProcessor {
   private InputStream blitzStdIn;
   private OutputStream blitzStdOut;
 
+  private BlitzMaxStreamRedirect stderrRedirect;
+  private BlitzMaxStreamRedirect stdoutRedirect;
+
   private final DataBuffer inputBuffer = new DataBuffer();
   private Process debugProcess;
 
-  public BlitzMaxStdDebugProcessor(InputStream blitzStdIn,
-      OutputStream blitzStdOut, InputStream blitzStdErr, Process debugProcess) {
+  public BlitzMaxStdDebugProcessor(String sourcePath, String[] args) {
+    this.sourcePath = sourcePath;
+    this.args = args;
+  }
 
-    this.blitzStdIn = blitzStdIn;
-    this.blitzStdOut = blitzStdOut;
-    this.blitzStdErr = blitzStdErr;
-    this.debugProcess = debugProcess;
+  public boolean start() {
+    ProcessBuilder pb = new ProcessBuilder(args);
 
+    pb.directory(new File(sourcePath).getParentFile()); // set the working directory
+
+    try {
+      debugProcess = pb.start();
+
+      blitzStdErr = new BufferedInputStream(debugProcess.getErrorStream());
+      blitzStdIn = new BufferedInputStream(debugProcess.getInputStream());
+      blitzStdOut = new BufferedOutputStream(debugProcess.getOutputStream());
+
+    } catch (IOException e) {
+      return false;
+    }
+
+    return true;
   }
 
   public boolean reset() {
@@ -77,7 +100,12 @@ public class BlitzMaxStdDebugProcessor {
           bytesRead = blitzStdIn.read(inBuffer, 0,
               (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
 
-          System.out.println(inBuffer);
+          if (stdoutRedirect == null) {
+            System.out.println(inBuffer);
+          } else {
+            // redirect output
+            stdoutRedirect.println(inBuffer);
+          }
 
         }
 
@@ -96,7 +124,12 @@ public class BlitzMaxStdDebugProcessor {
           line = processLine(line);
 
           if (line != null) {
-            System.out.println(line);
+            if (stderrRedirect == null) {
+              System.out.println(line);
+            } else {
+              // redirect output
+              stderrRedirect.println(line);
+            }
           }
 
         }
@@ -198,6 +231,7 @@ public class BlitzMaxStdDebugProcessor {
 
     // 
     if (line.startsWith("Unhandled Exception:")) {
+      // TODO: we should tell the IDE something bad happened.
       //inexception=line
       //host.output.WritePipe "t"
       //cancontinue=False
@@ -211,6 +245,7 @@ public class BlitzMaxStdDebugProcessor {
     }
 
     if (line.equals("Debug:") || line.equals("DebugStop:")) {
+      // TODO: if we are running, we need to tell the IDE we've stopped.
       // requestCurrentStack();
       //      If Not cancontinue Then
       //        cancontinue=True
@@ -220,7 +255,8 @@ public class BlitzMaxStdDebugProcessor {
     }
 
     if (line.startsWith("ObjectDump@")) {
-      // TODO : object dump
+
+      // TODO : implement object dump
       //      p=line.find("{")
       //      If p=-1 Return line
       //      line=line[11..p]
@@ -261,6 +297,18 @@ public class BlitzMaxStdDebugProcessor {
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public void shutdown() {
+    debugProcess.destroy();
+  }
+
+  public void setStderrRedirect(BlitzMaxStreamRedirect redirect) {
+    stderrRedirect = redirect;
+  }
+
+  public void setStdoutRedirect(BlitzMaxStreamRedirect redirect) {
+    stdoutRedirect = redirect;
   }
 
 }

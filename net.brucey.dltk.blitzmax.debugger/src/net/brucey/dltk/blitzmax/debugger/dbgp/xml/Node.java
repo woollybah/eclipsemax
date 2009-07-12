@@ -9,9 +9,10 @@ import java.util.List;
  */
 public class Node {
 
-  private String name;
+  protected String name;
   private List<Attribute> attributes;
   private List<Node> nodes;
+  private String text = null;
 
   public Node(String name) {
     this.name = name;
@@ -36,7 +37,7 @@ public class Node {
     }
 
     // no children?, we can close this node now
-    if (nodes == null || nodes.isEmpty()) {
+    if ((nodes == null || nodes.isEmpty()) && text == null) {
       buf.append('/');
       empty = true;
     }
@@ -48,6 +49,10 @@ public class Node {
       for (Node node : nodes) {
         node.render(buf);
       }
+    }
+
+    if (text != null) {
+      buf.append(text);
     }
 
     // if we have content, then we need to close the node
@@ -80,6 +85,12 @@ public class Node {
   public Node addNode(String name) {
     Node node = new Node(name);
 
+    addNode(node);
+
+    return node;
+  }
+
+  public Node addNode(Node node) {
     if (nodes == null) {
       nodes = new ArrayList<Node>();
     }
@@ -87,6 +98,10 @@ public class Node {
     nodes.add(node);
 
     return node;
+  }
+
+  public void addText(String value) {
+    text = value;
   }
 
 }

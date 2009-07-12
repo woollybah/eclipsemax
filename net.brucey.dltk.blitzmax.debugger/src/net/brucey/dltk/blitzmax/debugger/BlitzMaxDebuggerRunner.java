@@ -64,7 +64,7 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
   @Override
   protected InterpreterConfig alterConfig(InterpreterConfig config,
       PreferencesLookupDelegate delegate) throws CoreException {
-
+    //    JavaRuntime.
     //    IFileHandle debugEnginePath = getDebuggingEnginePath(delegate);
 
     DbgpConnectionConfig dbgpConfig = DbgpConnectionConfig.load(config);
@@ -82,6 +82,7 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
       config
           .addInterpreterArg("/Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.debugger/bin");
 
+      // this is our debugger Main class.
       config
           .addInterpreterArg("net.brucey.dltk.blitzmax.debugger.dbgp.DbgpBlitzMaxConnector");
 
@@ -94,27 +95,12 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
       config.addInterpreterArg(getInstall().getInstallLocation().toOSString());
 
       config.addInterpreterArgs(args);
-      //      config.addInterpreterArg("makeapp"); // we're building an app
-      //      config.addInterpreterArg("-d"); // Release (not debug)
-      //      config.addInterpreterArg("-x"); // Execute
-      //      addOutputBinary(config, dbgpConfig);
+
     }
 
     return config;
 
   }
-
-  //  protected void addOutputBinary(InterpreterConfig config,
-  //      DbgpConnectionConfig dbgpConfig) {
-  //
-  //    IPath path = config.getScriptFilePath();
-  //
-  //    IPath temp = path.removeFileExtension();
-  //
-  //    config.addInterpreterArg("-o");
-  //    config.addInterpreterArg(temp.addFileExtension("debug.exe").toOSString()); // the name of the exe
-  //
-  //  }
 
   @Override
   protected String getDebuggingEnginePreferenceKey() {

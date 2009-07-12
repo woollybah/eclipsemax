@@ -14,6 +14,8 @@ import net.brucey.dltk.blitzmax.debugger.dbgp.command.BreakCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.Command;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextGetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextNamesCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.DetachCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.EvalCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureGetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureSetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.PropGetCommand;
@@ -23,6 +25,9 @@ import net.brucey.dltk.blitzmax.debugger.dbgp.command.RunCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.StackDepthCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.StackGetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.StatusCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StderrCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StdinCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StdoutCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.StepIntoCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.StepOutCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.StepOverCommand;
@@ -164,6 +169,16 @@ public class DbgpCommand {
       return new StackGetCommand(cmdParts);
     case BREAK:
       return new BreakCommand(cmdParts);
+    case DETACH:
+      return new DetachCommand(cmdParts);
+    case EVAL:
+      return new EvalCommand(cmdParts);
+    case STDERR:
+      return new StderrCommand(cmdParts);
+    case STDIN:
+      return new StdinCommand(cmdParts);
+    case STDOUT:
+      return new StdoutCommand(cmdParts);
     }
 
     return null;

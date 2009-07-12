@@ -1,31 +1,26 @@
 package net.brucey.dltk.blitzmax.debugger.dbgp;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-
 public class DbgpBlitzMaxConnector {
 
   private final int dbgpPort;
   private final String dbgpHost;
 
-  private final String exePath;
+  //private final String exePath;
   private String[] blitzMaxArgs = { "" };
 
-  private InputStream blitzStdErr;
-  private InputStream blitzStdIn;
-  private OutputStream blitzStdOut;
+  //  private InputStream blitzStdErr;
+  //  private InputStream blitzStdIn;
+  //  private OutputStream blitzStdOut;
 
-  private Process debugProcess;
+  //  private Process debugProcess;
 
   private BlitzMaxDebugManager manager;
   private String dbgpSession;
+  private String sourcePath;
 
   /**
    * @param args
+   * @throws Exception
    */
   public static void main(String[] args) {
 
@@ -40,17 +35,26 @@ public class DbgpBlitzMaxConnector {
 
     connector.start();
 
-    connector.run();
+    try {
+
+      connector.run();
+
+    } catch (Exception e) {
+
+      e.printStackTrace();
+    }
   }
 
-  private void run() {
-    manager.run(exePath);
+  private void run() throws Exception {
+    manager.initIDEProcessor();
+
+    manager.run(sourcePath);
 
     finish();
   }
 
   private void finish() {
-    debugProcess.destroy();
+    manager.destroy();
   }
 
   public DbgpBlitzMaxConnector(String[] args) {
@@ -64,10 +68,33 @@ public class DbgpBlitzMaxConnector {
     dbgpHost = args[0];
     dbgpPort = Integer.parseInt(args[1]);
     dbgpSession = args[2];
-    exePath = args[3];
+
+    // find source path...
+    getSourcePath(args);
 
     blitzMaxArgs = new String[args.length - 3];
     System.arraycopy(args, 3, blitzMaxArgs, 0, args.length - 3);
+
+  }
+
+  private void getSourcePath(String[] args) {
+
+    int count = 0;
+    for (String arg : args) {
+      if (arg.equals("-o")) {
+        count++;
+        continue;
+      }
+
+      if (count > 0) {
+        if (count == 2) {
+          sourcePath = arg;
+          return;
+        }
+        count++;
+      }
+
+    }
 
   }
 
@@ -75,28 +102,11 @@ public class DbgpBlitzMaxConnector {
 
     BlitzMaxIDEDebugProcessor ideProcessor = new BlitzMaxIDEDebugProcessor(
         dbgpHost, dbgpPort, dbgpSession);
-    ideProcessor.connect();
 
-    ProcessBuilder pb = new ProcessBuilder(blitzMaxArgs);
-    pb.directory(new File(exePath).getParentFile()); // set the working
-    // directory
+    BlitzMaxStdDebugProcessor processor = new BlitzMaxStdDebugProcessor(
+        sourcePath, blitzMaxArgs);
 
-    try {
-      debugProcess = pb.start();
-
-      blitzStdErr = new BufferedInputStream(debugProcess.getErrorStream());
-      blitzStdIn = new BufferedInputStream(debugProcess.getInputStream());
-      blitzStdOut = new BufferedOutputStream(debugProcess.getOutputStream());
-
-      BlitzMaxStdDebugProcessor processor = new BlitzMaxStdDebugProcessor(
-          blitzStdIn, blitzStdOut, blitzStdErr, debugProcess);
-
-      manager = new BlitzMaxDebugManager(processor, ideProcessor);
-
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
-      e.printStackTrace();
-    }
+    manager = new BlitzMaxDebugManager(processor, ideProcessor);
 
     return true;
   }
