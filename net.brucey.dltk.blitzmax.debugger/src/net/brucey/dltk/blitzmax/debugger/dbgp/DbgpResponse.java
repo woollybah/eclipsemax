@@ -278,6 +278,17 @@ public class DbgpResponse {
 
   }
 
+  public String breakpoint(String id) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("break", id);
+    response.addAttribute("status", DebugState.map(DebugState.BREAK));
+    response.addAttribute("reason", "ok");
+
+    response.render(buf);
+    return buf.toString();
+  }
+
   //	public EngineTypes getEngineType() {
   //		return engineType;
   //	}

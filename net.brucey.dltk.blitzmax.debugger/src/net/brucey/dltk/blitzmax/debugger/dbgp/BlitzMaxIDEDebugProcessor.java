@@ -17,9 +17,9 @@ import net.brucey.dltk.blitzmax.debugger.dbgp.command.Command;
  */
 public class BlitzMaxIDEDebugProcessor {
 
-  private String ideHost;
-  private int idePort;
-  private String session;
+  private final String ideHost;
+  private final int idePort;
+  private final String session;
 
   private Socket socket;
 
@@ -29,7 +29,7 @@ public class BlitzMaxIDEDebugProcessor {
   private DbgpCommand command;
   private DbgpResponse response;
 
-  private LinkedList<Command> commands = new LinkedList<Command>();
+  private final LinkedList<Command> commands = new LinkedList<Command>();
   private final DataBuffer inputBuffer = new DataBuffer();
 
   public BlitzMaxIDEDebugProcessor(String ideHost, int idePort, String session) {
@@ -197,6 +197,10 @@ public class BlitzMaxIDEDebugProcessor {
 
   public void run(String id, DebugState state, boolean success) {
     sendResponse(response.run(id, state, success));
+  }
+
+  public void breakpoint(String id) {
+    sendResponse(response.breakpoint(id));
   }
 
 }

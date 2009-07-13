@@ -6,8 +6,8 @@ import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureSetCommand;
 
 public class BlitzMaxDebugManager {
 
-  private BlitzMaxStdDebugProcessor processor;
-  private BlitzMaxIDEDebugProcessor ideProcessor;
+  private final BlitzMaxStdDebugProcessor processor;
+  private final BlitzMaxIDEDebugProcessor ideProcessor;
 
   private boolean finish = false;
   private boolean needCommand = false;
@@ -20,7 +20,7 @@ public class BlitzMaxDebugManager {
   private static final int MODE_RUNWAIT = 2;
 
   private int mode = MODE_WAITING;
-  private BlitzMaxFeatures features;
+  private final BlitzMaxFeatures features;
 
   public BlitzMaxDebugManager(BlitzMaxStdDebugProcessor processor,
       BlitzMaxIDEDebugProcessor ideProcessor) {
@@ -55,6 +55,9 @@ public class BlitzMaxDebugManager {
       if (mode > MODE_WAITING) {
         // check the app buffers
         finish = processor.monitor();
+        
+        checkForBreak();
+        
       }
       // sleep a little
       try {
@@ -64,6 +67,16 @@ public class BlitzMaxDebugManager {
 
     }
 
+  }
+
+  private void checkForBreak() {
+  
+    // we are currently stopped? (perhaps due to DebugStop, or step, etc.
+    if (processor.getBreakpointHandler().hasDebugStopped()) {
+      state = DebugState.BREAK;
+      ideProcessor.breakpoint(transactionId);
+    }
+    
   }
 
   private void checkForCommands() {
@@ -144,7 +157,7 @@ public class BlitzMaxDebugManager {
             break;
           }
 
-          ideProcessor.run(transactionId, state, success);
+          // ideProcessor.run(transactionId, state, success); - spec says doesn't expect response yet.
 
           if (success) {
             state = DebugState.RUNNING;

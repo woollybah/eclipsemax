@@ -16,8 +16,8 @@ import java.util.List;
  */
 public class BlitzMaxStdDebugProcessor {
 
-  private String sourcePath;
-  private String args[];
+  private final String sourcePath;
+  private final String args[];
 
   private boolean inStack = false;
   private List<BlitzMaxStackScope> stack = new ArrayList<BlitzMaxStackScope>();
@@ -37,18 +37,23 @@ public class BlitzMaxStdDebugProcessor {
   private BlitzMaxStreamRedirect stderrRedirect;
   private BlitzMaxStreamRedirect stdoutRedirect;
 
+  private final BlitzMaxBreakpointHandler breakpointHandler;
+
   private final DataBuffer inputBuffer = new DataBuffer();
   private Process debugProcess;
 
   public BlitzMaxStdDebugProcessor(String sourcePath, String[] args) {
     this.sourcePath = sourcePath;
     this.args = args;
+
+    breakpointHandler = new BlitzMaxBreakpointHandler();
   }
 
   public boolean start() {
     ProcessBuilder pb = new ProcessBuilder(args);
 
-    pb.directory(new File(sourcePath).getParentFile()); // set the working directory
+    pb.directory(new File(sourcePath).getParentFile()); // set the working
+                                                        // directory
 
     try {
       debugProcess = pb.start();
@@ -181,11 +186,11 @@ public class BlitzMaxStdDebugProcessor {
 
     if (inVariable) {
       if (line.equals("}")) {
-        //SetValue invar
-        //invar.Free
-        //invar=Null
+        // SetValue invar
+        // invar.Free
+        // invar=Null
       } else {
-        //invar.AddVar line
+        // invar.AddVar line
       }
       return null;
     }
@@ -232,9 +237,9 @@ public class BlitzMaxStdDebugProcessor {
     // 
     if (line.startsWith("Unhandled Exception:")) {
       // TODO: we should tell the IDE something bad happened.
-      //inexception=line
-      //host.output.WritePipe "t"
-      //cancontinue=False
+      // inexception=line
+      // host.output.WritePipe "t"
+      // cancontinue=False
       return null;
     }
 
@@ -245,24 +250,20 @@ public class BlitzMaxStdDebugProcessor {
     }
 
     if (line.equals("Debug:") || line.equals("DebugStop:")) {
-      // TODO: if we are running, we need to tell the IDE we've stopped.
-      // requestCurrentStack();
-      //      If Not cancontinue Then
-      //        cancontinue=True
-      //        host.RefreshToolbar()
-      //      EndIf
+      // flag as stopped for IDE
+      breakpointHandler.setDebugStopped();
       return null;
     }
 
     if (line.startsWith("ObjectDump@")) {
 
       // TODO : implement object dump
-      //      p=line.find("{")
-      //      If p=-1 Return line
-      //      line=line[11..p]
-      //      invar=New TVar
-      //      invar.obj=FindObj(line)
-      //      invar.owner=Self
+      // p=line.find("{")
+      // If p=-1 Return line
+      // line=line[11..p]
+      // invar=New TVar
+      // invar.obj=FindObj(line)
+      // invar.owner=Self
       return null;
     }
 
@@ -309,6 +310,10 @@ public class BlitzMaxStdDebugProcessor {
 
   public void setStdoutRedirect(BlitzMaxStreamRedirect redirect) {
     stdoutRedirect = redirect;
+  }
+
+  public BlitzMaxBreakpointHandler getBreakpointHandler() {
+    return breakpointHandler;
   }
 
 }
