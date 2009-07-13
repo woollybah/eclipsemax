@@ -1,8 +1,12 @@
 package net.brucey.dltk.blitzmax.debugger.dbgp;
 
+import java.util.List;
+
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.Command;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextNamesCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureGetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureSetCommand;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.StackGetCommand;
 
 public class BlitzMaxDebugManager {
 
@@ -47,7 +51,7 @@ public class BlitzMaxDebugManager {
     ideProcessor.init(file);
     needCommand = true;
 
-    while (!finish) {
+    while (!finish && (!state.equals(DebugState.STOPPED))) {
 
       // check the IDE commands.
       checkForCommands();
@@ -55,9 +59,9 @@ public class BlitzMaxDebugManager {
       if (mode > MODE_WAITING) {
         // check the app buffers
         finish = processor.monitor();
-        
+
         checkForBreak();
-        
+
       }
       // sleep a little
       try {
@@ -70,13 +74,13 @@ public class BlitzMaxDebugManager {
   }
 
   private void checkForBreak() {
-  
+
     // we are currently stopped? (perhaps due to DebugStop, or step, etc.
     if (processor.getBreakpointHandler().hasDebugStopped()) {
       state = DebugState.BREAK;
       ideProcessor.breakpoint(transactionId);
     }
-    
+
   }
 
   private void checkForCommands() {
@@ -126,7 +130,12 @@ public class BlitzMaxDebugManager {
           // TODO : implement me
           break;
         case CONTEXT_NAMES:
-          // TODO : implement me
+
+          List<BlitzMaxStackScope> stack = processor
+              .stackGet(((ContextNamesCommand) command).getDepth());
+
+          ideProcessor.contextNames(transactionId, stack);
+
           break;
         case DETACH:
           // TODO : implement me
@@ -191,7 +200,10 @@ public class BlitzMaxDebugManager {
 
           break;
         case STACK_GET:
-          // TODO : implement me
+          stack = processor.stackGet(((StackGetCommand) command).getDepth());
+
+          ideProcessor.stackGet(transactionId, stack);
+
           break;
         case STEP_INTO:
           // TODO : implement me
@@ -203,7 +215,14 @@ public class BlitzMaxDebugManager {
           // TODO : implement me
           break;
         case STOP:
-          // TODO : implement me
+          processor.shutdown();
+
+          state = DebugState.STOPPING;
+
+          ideProcessor.stop(transactionId, state);
+
+          state = DebugState.STOPPED;
+
           break;
         }
       } else {

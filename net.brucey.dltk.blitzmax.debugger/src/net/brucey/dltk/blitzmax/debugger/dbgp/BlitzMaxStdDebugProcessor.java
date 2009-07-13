@@ -42,6 +42,8 @@ public class BlitzMaxStdDebugProcessor {
   private final DataBuffer inputBuffer = new DataBuffer();
   private Process debugProcess;
 
+  private boolean ready;
+
   public BlitzMaxStdDebugProcessor(String sourcePath, String[] args) {
     this.sourcePath = sourcePath;
     this.args = args;
@@ -53,7 +55,7 @@ public class BlitzMaxStdDebugProcessor {
     ProcessBuilder pb = new ProcessBuilder(args);
 
     pb.directory(new File(sourcePath).getParentFile()); // set the working
-                                                        // directory
+    // directory
 
     try {
       debugProcess = pb.start();
@@ -79,6 +81,8 @@ public class BlitzMaxStdDebugProcessor {
     inStack = false;
     scope = null;
 
+    ready = false;
+
     return finished;
   }
 
@@ -90,6 +94,8 @@ public class BlitzMaxStdDebugProcessor {
 
     byte[] inBuffer = new byte[1024];
 
+    ready = true;
+
     try {
 
       int inBytes = blitzStdIn.available();
@@ -97,6 +103,8 @@ public class BlitzMaxStdDebugProcessor {
 
       // loop until there's nothing left in the buffers
       while (inBytes > 0 || errBytes > 0) {
+
+        ready = false;
 
         int bytesRead = 0;
 
@@ -201,12 +209,8 @@ public class BlitzMaxStdDebugProcessor {
       // end of the stack?
       if (line.equals("}")) {
 
-        // TODO : send the stack details to IDE....
-
         inStack = false;
         inScope = false;
-
-        stack.clear();
 
         return null;
       }
@@ -215,16 +219,19 @@ public class BlitzMaxStdDebugProcessor {
         if (!line.equals("Local <local>")) {
           scope = new BlitzMaxStackScope(line);
           stack.add(scope);
+          inScope = true;
         }
         if (inScope) {
           scope.setSource(currentFile);
         }
         currentFile = null;
+        inFile = false;
         return null;
       }
 
       if (line.startsWith("@") && line.indexOf('<') > 0) {
         currentFile = line.substring(1);
+        inFile = true;
       } else {
         if (inScope) {
           scope.addVariable(line);
@@ -291,6 +298,10 @@ public class BlitzMaxStdDebugProcessor {
     sendCommand("l\n");
   }
 
+  public void quit() {
+    sendCommand("q\n");
+  }
+
   private void sendCommand(String command) {
     try {
       blitzStdOut.write(command.getBytes());
@@ -301,6 +312,15 @@ public class BlitzMaxStdDebugProcessor {
   }
 
   public void shutdown() {
+    quit();
+
+    try {
+      // hang around long enough for the quit to kick in...
+      Thread.sleep(200);
+    } catch (InterruptedException e) {
+    }
+
+    // interestingly, if the app is "stopped" this doesn't kill off the process. (well, on Mac anyway)
     debugProcess.destroy();
   }
 
@@ -314,6 +334,44 @@ public class BlitzMaxStdDebugProcessor {
 
   public BlitzMaxBreakpointHandler getBreakpointHandler() {
     return breakpointHandler;
+  }
+
+  public List<BlitzMaxStackScope> stackGet(int depth) {
+    reset();
+    requestCurrentStack();
+
+    // we expect something on the stack
+    // ... of course, if this never gets populated, we are kind of screwed.
+    while (stack.size() == 0) {
+
+      // are we still getting data?
+      while (!ready) {
+        monitor();
+
+        try {
+          Thread.sleep(10);
+        } catch (InterruptedException e) {
+        }
+      }
+    }
+
+    if (depth >= 0) {
+
+      List<BlitzMaxStackScope> list = new ArrayList<BlitzMaxStackScope>();
+      int count = stack.size();
+
+      for (BlitzMaxStackScope scope : stack) {
+        if (count <= depth) {
+          list.add(scope);
+        }
+      }
+
+      return list;
+
+    } else {
+
+      return stack;
+    }
   }
 
 }

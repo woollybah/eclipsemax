@@ -12,6 +12,7 @@ package net.brucey.dltk.blitzmax.debugger.dbgp;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 import net.brucey.dltk.blitzmax.debugger.dbgp.xml.DataNode;
 import net.brucey.dltk.blitzmax.debugger.dbgp.xml.Node;
@@ -137,14 +138,7 @@ public class DbgpResponse {
     StringBuffer buf = xml();
 
     Node init = new Node("init");
-
-    URI uri = null;
-    try {
-      uri = new URI("file", "", file, null, null);
-    } catch (URISyntaxException e) {
-    }
-
-    init.addAttribute("fileuri", uri.toASCIIString());
+    init.addAttribute("fileuri", fileToURI(file));
     init.addAttribute("idekey", session);
     init.addAttribute("language", "BlitzMax");
     init.addAttribute("protocol_version", "1.0");
@@ -153,6 +147,16 @@ public class DbgpResponse {
 
     init.render(buf);
     return buf.toString();
+  }
+
+  private static String fileToURI(String file) {
+    URI uri = null;
+    try {
+      uri = new URI("file", "", file, null, null);
+    } catch (URISyntaxException e) {
+    }
+
+    return uri.toString();
   }
 
   /**
@@ -289,7 +293,55 @@ public class DbgpResponse {
     return buf.toString();
   }
 
-  //	public EngineTypes getEngineType() {
-  //		return engineType;
-  //	}
+  public String stackGet(String id, List<BlitzMaxStackScope> stack) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("stack_get", id);
+
+    int level = 0;
+    for (BlitzMaxStackScope scope : stack) {
+      addToStack(response, scope, level++);
+    }
+
+    response.render(buf);
+    return buf.toString();
+  }
+
+  private void addToStack(Node parent, BlitzMaxStackScope scope, int level) {
+    Node stack = parent.addNode("stack");
+
+    stack.addAttribute("level", String.valueOf(level));
+    stack.addAttribute("type", "file");
+    stack.addAttribute("filename", fileToURI(scope.getSource()));
+    stack.addAttribute("lineno", String.valueOf(scope.getLine()));
+
+  }
+
+  public String contextNames(String id, List<BlitzMaxStackScope> stack) {
+    // FIXME : make this work for different contexts. I'm hard-coding this to Local for now.
+
+    StringBuffer buf = xml();
+
+    Node response = newResponse("context_names", id);
+
+    Node context = response.addNode("context");
+    context.addAttribute("name", "Local");
+    context.addAttribute("id", "0");
+
+    response.render(buf);
+    return buf.toString();
+
+  }
+
+  public String stop(String id, DebugState state) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("stop", id);
+    response.addAttribute("status", DebugState.map(state));
+    response.addAttribute("reason", "ok");
+
+    response.render(buf);
+    return buf.toString();
+  }
+
 }

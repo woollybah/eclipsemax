@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.LinkedList;
+import java.util.List;
 
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.Command;
 
@@ -201,6 +202,18 @@ public class BlitzMaxIDEDebugProcessor {
 
   public void breakpoint(String id) {
     sendResponse(response.breakpoint(id));
+  }
+
+  public void stackGet(String id, List<BlitzMaxStackScope> stack) {
+    sendResponse(response.stackGet(id, stack));
+  }
+
+  public void contextNames(String id, List<BlitzMaxStackScope> stack) {
+    sendResponse(response.contextNames(id, stack));
+  }
+
+  public void stop(String id, DebugState state) {
+    sendResponse(response.stop(id, state));
   }
 
 }

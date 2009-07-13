@@ -18,7 +18,14 @@ public class BlitzMaxStackScope {
   }
 
   public void setSource(String source) {
-    this.source = source;
+    String[] parts = source.split("\\<");
+    this.source = parts[0];
+
+    String[] lc = parts[1].substring(0, parts[1].length() - 1).split(",");
+
+    line = Integer.parseInt(lc[0]);
+    column = Integer.parseInt(lc[1]);
+
   }
 
   public void addVariable(String var) {
@@ -27,6 +34,18 @@ public class BlitzMaxStackScope {
     }
 
     variables.add(var);
+  }
+
+  public String getSource() {
+    return source;
+  }
+
+  public int getLine() {
+    return line;
+  }
+
+  public int getColumn() {
+    return column;
   }
 
 }
