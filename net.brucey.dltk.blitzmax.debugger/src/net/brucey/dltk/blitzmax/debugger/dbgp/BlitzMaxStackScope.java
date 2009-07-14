@@ -5,7 +5,7 @@ import java.util.List;
 
 public class BlitzMaxStackScope {
 
-  private String name;
+  private final String name;
 
   private String source;
   private int line;
@@ -13,19 +13,35 @@ public class BlitzMaxStackScope {
 
   private List variables;
 
+  private static boolean osChecked = false;
+  private static boolean isWindows = false;
+
   public BlitzMaxStackScope(String name) {
     this.name = name;
   }
 
   public void setSource(String source) {
     String[] parts = source.split("\\<");
-    this.source = parts[0];
+    this.source = convertPath(parts[0]);
 
     String[] lc = parts[1].substring(0, parts[1].length() - 1).split(",");
 
     line = Integer.parseInt(lc[0]);
     column = Integer.parseInt(lc[1]);
 
+  }
+
+  private String convertPath(String path) {
+    if (!osChecked) {
+      isWindows = System.getProperty("os.name").startsWith("Windows");
+      osChecked = true;
+    }
+
+    if (isWindows) {
+      return path.replaceAll("/", "\\\\");
+    } else {
+      return path;
+    }
   }
 
   public void addVariable(String var) {

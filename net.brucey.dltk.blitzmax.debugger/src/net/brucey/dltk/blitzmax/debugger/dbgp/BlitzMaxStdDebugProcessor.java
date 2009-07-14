@@ -114,10 +114,10 @@ public class BlitzMaxStdDebugProcessor {
               (inBytes < inBuffer.length) ? inBytes : inBuffer.length);
 
           if (stdoutRedirect == null) {
-            System.out.println(inBuffer);
+            System.out.println(new String(inBuffer, 0, bytesRead));
           } else {
             // redirect output
-            stdoutRedirect.println(inBuffer);
+            stdoutRedirect.println(new String(inBuffer, 0, bytesRead));
           }
 
         }
@@ -307,7 +307,7 @@ public class BlitzMaxStdDebugProcessor {
       blitzStdOut.write(command.getBytes());
       blitzStdOut.flush();
     } catch (IOException e) {
-      e.printStackTrace();
+      // ignore
     }
   }
 
@@ -320,7 +320,8 @@ public class BlitzMaxStdDebugProcessor {
     } catch (InterruptedException e) {
     }
 
-    // interestingly, if the app is "stopped" this doesn't kill off the process. (well, on Mac anyway)
+    // interestingly, if the app is "stopped" this doesn't kill off the process.
+    // (well, on Mac anyway)
     debugProcess.destroy();
   }
 
@@ -341,7 +342,8 @@ public class BlitzMaxStdDebugProcessor {
     requestCurrentStack();
 
     // we expect something on the stack
-    // ... of course, if this never gets populated, we are kind of screwed.
+    int attempts = 0;
+    int loopCount = 0;
     while (stack.size() == 0) {
 
       // are we still getting data?
@@ -349,19 +351,36 @@ public class BlitzMaxStdDebugProcessor {
         monitor();
 
         try {
-          Thread.sleep(10);
+          Thread.sleep(50);
         } catch (InterruptedException e) {
         }
+      }
+
+      try {
+        Thread.sleep(100);
+      } catch (InterruptedException e) {
+      }
+
+      if (loopCount++ > 10) {
+        if (attempts++ > 0) {
+          break;
+        }
+
+        loopCount = 0;
+
+        // let's try to get it again!
+        reset();
+        requestCurrentStack();
       }
     }
 
     if (depth >= 0) {
 
       List<BlitzMaxStackScope> list = new ArrayList<BlitzMaxStackScope>();
-      int count = stack.size();
+      int size = stack.size();
 
       for (BlitzMaxStackScope scope : stack) {
-        if (count <= depth) {
+        if (size <= depth) {
           list.add(scope);
         }
       }

@@ -56,6 +56,10 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
     f.append(File.separatorChar).append("bin").append(File.separatorChar)
         .append("java");
 
+    if (System.getProperty("os.name").startsWith("Windows")) {
+      f.append(".exe");
+    }
+
     javaPath = f.toString();
     return new FileAsFileHandle(new File(javaPath));
   }
@@ -64,8 +68,8 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
   @Override
   protected InterpreterConfig alterConfig(InterpreterConfig config,
       PreferencesLookupDelegate delegate) throws CoreException {
-    //    JavaRuntime.
-    //    IFileHandle debugEnginePath = getDebuggingEnginePath(delegate);
+    // JavaRuntime.
+    // IFileHandle debugEnginePath = getDebuggingEnginePath(delegate);
 
     DbgpConnectionConfig dbgpConfig = DbgpConnectionConfig.load(config);
 
@@ -81,6 +85,8 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
       config.addInterpreterArg("-cp"); // FIXME require classpath to Connector
       config
           .addInterpreterArg("/Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.debugger/bin");
+      // config
+      // .addInterpreterArg("C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.debugger\\bin");
 
       // this is our debugger Main class.
       config

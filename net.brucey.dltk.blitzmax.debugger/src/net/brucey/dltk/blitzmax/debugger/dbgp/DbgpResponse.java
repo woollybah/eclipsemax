@@ -10,6 +10,7 @@
  *******************************************************************************/
 package net.brucey.dltk.blitzmax.debugger.dbgp;
 
+import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -26,35 +27,29 @@ import net.brucey.dltk.blitzmax.debugger.dbgp.xml.Node;
 public class DbgpResponse {
 
   /*
-   * Example Responses
-   *  <response command="property_get" transaction_id="95" status="break" reason="ok">
-   *     <error code="300">
-   *        <message>
-   *           <![CDATA[can not get property]]>
-   *        </message>
-   *     </error>
-   *  </response>
-   *  
-   *  <response command="stop" transaction_id="32" status="stopped" reason="ok"></response>
-   *  
-   *  <response command="breakpoint_set" transaction_id="1" id="49240001"></response>
-   *  <response command="feature_set" transaction_id="19" feature="max_depth" success="1"></response>
-   *
+   * Example Responses <response command="property_get" transaction_id="95"
+   * status="break" reason="ok"> <error code="300"> <message> <![CDATA[can not
+   * get property]]> </message> </error> </response>
+   * 
+   * <response command="stop" transaction_id="32" status="stopped"
+   * reason="ok"></response>
+   * 
+   * <response command="breakpoint_set" transaction_id="1"
+   * id="49240001"></response> <response command="feature_set"
+   * transaction_id="19" feature="max_depth" success="1"></response>
    */
 
   /*
-   * status codes
-   * {"", "starting", "stopping", "stopped", "running", "break"};
+   * status codes {"", "starting", "stopping", "stopped", "running", "break"};
    */
-  //  public static final String STATUS_STARTING = "starting";
-  //  public static final String STATUS_STOPPING = "stopping";
-  //  public static final String STATUS_STOPPED = "stopped";
-  //  public static final String STATUS_RUNNING = "running";
-  //  public static final String STATUS_BREAK = "break";
+  // public static final String STATUS_STARTING = "starting";
+  // public static final String STATUS_STOPPING = "stopping";
+  // public static final String STATUS_STOPPED = "stopped";
+  // public static final String STATUS_RUNNING = "running";
+  // public static final String STATUS_BREAK = "break";
 
   /*
-   * reason codes
-   * {"ok", "error", "aborted", "exception"}; 
+   * reason codes {"ok", "error", "aborted", "exception"};
    */
 
   public static final String REASON_OK = "ok";
@@ -62,7 +57,7 @@ public class DbgpResponse {
   public static final String REASON_ABORTED = "aborted";
   public static final String REASON_EXCEPTION = "exception";
 
-  //type
+  // type
   public static final int PARSE_FAILURE = 0;
   public static final int INIT = 1;
   public static final int RESPONSE = 2;
@@ -78,31 +73,18 @@ public class DbgpResponse {
 
   /*
    * Error codes, eg
-
-   {   0, "no error" },
-   {   1, "parse error in command" },
-   {   2, "duplicate arguments in command" },
-   {   3, "invalid or missing options" },
-   {   4, "unimplemented command" },
-   {   5, "command is not available" },
-   { 100, "can not open file" },
-   { 101, "stream redirect failed" },
-   { 200, "breakpoint could not be set" },
-   { 201, "breakpoint type is not supported" },
-   { 202, "invalid breakpoint line" },
-   { 203, "no code on breakpoint line" },
-   { 204, "invalid breakpoint state" },
-   { 205, "no such breakpoint" },
-   { 206, "error evaluating code" },
-   { 207, "invalid expression" },
-   { 300, "can not get property" },
-   { 301, "stack depth invalid" },
-   { 302, "context invalid" },
-   { 900, "encoding not supported" },
-   { 998, "an internal exception in the debugger" },
-   { 999, "unknown error" },
-
-   *  
+   * 
+   * { 0, "no error" }, { 1, "parse error in command" }, { 2,
+   * "duplicate arguments in command" }, { 3, "invalid or missing options" }, {
+   * 4, "unimplemented command" }, { 5, "command is not available" }, { 100,
+   * "can not open file" }, { 101, "stream redirect failed" }, { 200,
+   * "breakpoint could not be set" }, { 201, "breakpoint type is not supported"
+   * }, { 202, "invalid breakpoint line" }, { 203, "no code on breakpoint line"
+   * }, { 204, "invalid breakpoint state" }, { 205, "no such breakpoint" }, {
+   * 206, "error evaluating code" }, { 207, "invalid expression" }, { 300,
+   * "can not get property" }, { 301, "stack depth invalid" }, { 302,
+   * "context invalid" }, { 900, "encoding not supported" }, { 998,
+   * "an internal exception in the debugger" }, { 999, "unknown error" },
    */
   public static final int ERROR_OK = 0;
   public static final int ERROR_CANT_GET_PROPERTY = 300;
@@ -118,21 +100,13 @@ public class DbgpResponse {
 
   /*
    * 
-   * Example Init
-   * <init fileuri="file:///C%3A%5Cudata-eclipse%5Cphpide025%5CtestXdebug%5CPhpCode%5Ctestcase3.php" language="PHP" protocol_version="1.0" appid="2116" idekey="ECLIPSE_XDEBUG11623014568921">
-   *    <engine version="2.0.0RC2-dev">
-   *       <![CDATA[Xdebug]]>
-   *    </engine>
-   *    <author>
-   *       <![CDATA[Derick Rethans]]>
-   *    </author>
-   *    <url>
-   *       <![CDATA[http://xdebug.org]]>
-   *    </url>
-   *    <copyright>
-   *       <![CDATA[Copyright (c) 2002-2006 by Derick Rethans]]>
-   *    </copyright>
-   * </init>
+   * Example Init <initfileuri=
+   * "file:///C%3A%5Cudata-eclipse%5Cphpide025%5CtestXdebug%5CPhpCode%5Ctestcase3.php"
+   * language="PHP" protocol_version="1.0" appid="2116"
+   * idekey="ECLIPSE_XDEBUG11623014568921"> <engine version="2.0.0RC2-dev">
+   * <![CDATA[Xdebug]]> </engine> <author> <![CDATA[Derick Rethans]]> </author>
+   * <url> <![CDATA[http://xdebug.org]]> </url> <copyright> <![CDATA[Copyright
+   * (c) 2002-2006 by Derick Rethans]]> </copyright> </init>
    */
   public String init(String file, String session) {
     StringBuffer buf = xml();
@@ -142,8 +116,10 @@ public class DbgpResponse {
     init.addAttribute("idekey", session);
     init.addAttribute("language", "BlitzMax");
     init.addAttribute("protocol_version", "1.0");
-    init.addAttribute("appid", "blitzmax_debugger"); // TODO : what should we put here?
-    //init.addAttribute("idekey", "ECLIPSEBLITZMAX"); // TODO : what should we put here?
+    init.addAttribute("appid", "blitzmax_debugger");
+    // put here?
+    // init.addAttribute("idekey", "ECLIPSEBLITZMAX"); // TODO : what should we
+    // put here?
 
     init.render(buf);
     return buf.toString();
@@ -152,11 +128,23 @@ public class DbgpResponse {
   private static String fileToURI(String file) {
     URI uri = null;
     try {
+
       uri = new URI("file", "", file, null, null);
+
     } catch (URISyntaxException e) {
+
+      // We'll get here on Windows.... so we need to fix up the URI ourselves.
+
+      uri = new File(file).toURI();
+
+      String f = uri.toASCIIString();
+      if (!f.startsWith("file://")) {
+        f = f.substring(f.indexOf(':') + 1);
+        return "file://" + f;
+      }
     }
 
-    return uri.toString();
+    return uri.toASCIIString();
   }
 
   /**
@@ -254,8 +242,11 @@ public class DbgpResponse {
   /*
    * Example stream
    * 
-   * <stream type="stdout" encoding="base64"><![CDATA[PGh0bWw+DQo8aGVhZD4NCjx0aXRsZT5HdWVzc2luZyBHYW1lPC90aXRsZT4NCjwvaGVhZD4NCjxib2R5Pg0KPGZvcm0gYWN0aW9uPScnIG1ldGhvZD0ncG9zdCc+PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzUnIG5hbWU9J3R4dE51bWJlcic+PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzAnIG5hbWU9J3R4dFRyaWVzJz5QbGVhc2UgR3Vlc3MgQSBOdW1iZXIgKDEgLSA1MCk8aW5wdXQgdHlwZT0ndGV4dCcgbmFtZT0ndHh0R3Vlc3MnIHNpemU9JzEwJz48aW5wdXQgdHlwZT0nc3VibWl0JyB2YWx1ZT0nU3VibWl0JyBuYW1lPSdTdWJtaXQnPjwvZm9ybT48YnIgLz4gPCEtLSA1LS0hPjwvYm9keT4NCjwvaHRtbD4=]]></stream>
-   * 
+   * <stream type="stdout"encoding="base64"><![CDATA[PGh0bWw+
+   * DQo8aGVhZD4NCjx0aXRsZT5HdWVzc2luZyBHYW1lPC90aXRsZT4NCjwvaGVhZD4NCjxib2R5Pg0KPGZvcm0gYWN0aW9uPScnIG1ldGhvZD0ncG9zdCc
+   * +PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzUnIG5hbWU9J3R4dE51bWJlcic+
+   * PGlucHV0IHR5cGU9J2hpZGRlbicgdmFsdWU9JzAnIG5hbWU9J3R4dFRyaWVzJz5QbGVhc2UgR3Vlc3MgQSBOdW1iZXIgKDEgLSA1MCk8aW5wdXQgdHlwZT0ndGV4dCcgbmFtZT0ndHh0R3Vlc3MnIHNpemU9JzEwJz48aW5wdXQgdHlwZT0nc3VibWl0JyB2YWx1ZT0nU3VibWl0JyBuYW1lPSdTdWJtaXQnPjwvZm9ybT48YnIgLz4gPCEtLSA1LS0hPjwvYm9keT4NCjwvaHRtbD4
+   * =]]></stream>
    */
   public String stream(String type, byte[] data) {
     StringBuffer buf = xml();
@@ -318,7 +309,8 @@ public class DbgpResponse {
   }
 
   public String contextNames(String id, List<BlitzMaxStackScope> stack) {
-    // FIXME : make this work for different contexts. I'm hard-coding this to Local for now.
+    // FIXME : make this work for different contexts. I'm hard-coding this to
+    // Local for now.
 
     StringBuffer buf = xml();
 
