@@ -7,17 +7,21 @@ public class BlitzMaxStackScope {
 
   private final String name;
 
+  private String where;
   private String source;
   private int line;
   private int column;
 
-  private List variables;
+  private int level;
+
+  private List<BlitzMaxScopeVariable> variables;
 
   private static boolean osChecked = false;
   private static boolean isWindows = false;
 
-  public BlitzMaxStackScope(String name) {
+  public BlitzMaxStackScope(String name, int level) {
     this.name = name;
+    this.level = level;
   }
 
   public void setSource(String source) {
@@ -45,11 +49,17 @@ public class BlitzMaxStackScope {
   }
 
   public void addVariable(String var) {
-    if (variables == null) {
-      variables = new ArrayList();
-    }
 
-    variables.add(var);
+    if (var.startsWith("Function")) {
+      where = var.substring(var.indexOf(' ') + 1);
+    } else {
+
+      if (variables == null) {
+        variables = new ArrayList<BlitzMaxScopeVariable>();
+      }
+
+      variables.add(new BlitzMaxScopeVariable(var));
+    }
   }
 
   public String getSource() {
@@ -62,6 +72,18 @@ public class BlitzMaxStackScope {
 
   public int getColumn() {
     return column;
+  }
+
+  public String getWhere() {
+    return where;
+  }
+
+  public List<BlitzMaxScopeVariable> getVariables() {
+    return variables;
+  }
+
+  public int getLevel() {
+    return level;
   }
 
 }

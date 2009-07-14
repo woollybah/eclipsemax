@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -44,11 +45,15 @@ public class BlitzMaxStdDebugProcessor {
 
   private boolean ready;
 
+  private String bmxPath;
+
   public BlitzMaxStdDebugProcessor(String sourcePath, String[] args) {
     this.sourcePath = sourcePath;
     this.args = args;
 
     breakpointHandler = new BlitzMaxBreakpointHandler();
+
+    bmxPath = System.getenv("BMXPATH");
   }
 
   public boolean start() {
@@ -94,7 +99,7 @@ public class BlitzMaxStdDebugProcessor {
 
     byte[] inBuffer = new byte[1024];
 
-    ready = true;
+    //ready = true;
 
     try {
 
@@ -104,7 +109,7 @@ public class BlitzMaxStdDebugProcessor {
       // loop until there's nothing left in the buffers
       while (inBytes > 0 || errBytes > 0) {
 
-        ready = false;
+        //ready = false;
 
         int bytesRead = 0;
 
@@ -197,6 +202,8 @@ public class BlitzMaxStdDebugProcessor {
         // SetValue invar
         // invar.Free
         // invar=Null
+        inVariable = false;
+        ready = true;
       } else {
         // invar.AddVar line
       }
@@ -212,16 +219,21 @@ public class BlitzMaxStdDebugProcessor {
         inStack = false;
         inScope = false;
 
+        ready = true;
+
         return null;
       }
 
       if (inFile) {
         if (!line.equals("Local <local>")) {
-          scope = new BlitzMaxStackScope(line);
+          scope = new BlitzMaxStackScope(line, stack.size());
           stack.add(scope);
           inScope = true;
         }
         if (inScope) {
+          if (currentFile.startsWith("$BMXPATH")) {
+            currentFile = currentFile.replaceFirst("\\$BMXPATH", bmxPath);
+          }
           scope.setSource(currentFile);
         }
         currentFile = null;
@@ -263,7 +275,7 @@ public class BlitzMaxStdDebugProcessor {
     }
 
     if (line.startsWith("ObjectDump@")) {
-
+      inVariable = true;
       // TODO : implement object dump
       // p=line.find("{")
       // If p=-1 Return line
@@ -357,7 +369,7 @@ public class BlitzMaxStdDebugProcessor {
       }
 
       try {
-        Thread.sleep(100);
+        Thread.sleep(50);
       } catch (InterruptedException e) {
       }
 
@@ -377,17 +389,20 @@ public class BlitzMaxStdDebugProcessor {
     if (depth >= 0) {
 
       List<BlitzMaxStackScope> list = new ArrayList<BlitzMaxStackScope>();
-      int size = stack.size();
 
       for (BlitzMaxStackScope scope : stack) {
-        if (size <= depth) {
+        if (scope.getLevel() == depth) {
           list.add(scope);
         }
       }
 
+      Collections.reverse(list);
+
       return list;
 
     } else {
+
+      Collections.reverse(stack);
 
       return stack;
     }

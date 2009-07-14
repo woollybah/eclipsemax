@@ -3,6 +3,7 @@ package net.brucey.dltk.blitzmax.debugger.dbgp;
 import java.util.List;
 
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.Command;
+import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextGetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.ContextNamesCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureGetCommand;
 import net.brucey.dltk.blitzmax.debugger.dbgp.command.FeatureSetCommand;
@@ -65,7 +66,7 @@ public class BlitzMaxDebugManager {
       }
       // sleep a little
       try {
-        Thread.sleep(20);
+        Thread.sleep(10);
       } catch (InterruptedException e1) {
       }
 
@@ -127,11 +128,18 @@ public class BlitzMaxDebugManager {
           // TODO : implement me
           break;
         case CONTEXT_GET:
-          // TODO : implement me
+
+          int depth = ((ContextGetCommand) command).getDepth();
+
+          List<BlitzMaxStackScope> stack = processor.stackGet(depth);
+
+          ideProcessor.contextGet(transactionId, stack, depth,
+              ((ContextGetCommand) command).getContextId());
+
           break;
         case CONTEXT_NAMES:
 
-          List<BlitzMaxStackScope> stack = processor
+          stack = processor
               .stackGet(((ContextNamesCommand) command).getDepth());
 
           ideProcessor.contextNames(transactionId, stack);
@@ -206,13 +214,19 @@ public class BlitzMaxDebugManager {
 
           break;
         case STEP_INTO:
-          // TODO : implement me
+
+          processor.stepIn();
+
           break;
         case STEP_OUT:
-          // TODO : implement me
+
+          processor.stepOut();
+
           break;
         case STEP_OVER:
-          // TODO : implement me
+
+          processor.stepOver();
+
           break;
         case STOP:
           processor.shutdown();

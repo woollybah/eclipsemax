@@ -31,42 +31,31 @@
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxGlobalPreferencePage"
 	          id="net.brucey.dltk.blitzmax.preferences"
 	          name="%BlitzMaxPreferencePage.name"/>
-<!--	          name="%BlitzMaxPreferencePage.name"/>-->
 		<page
 	          category="net.brucey.dltk.blitzmax.preferences"
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxEditorPreferencePage"
 	          id="net.brucey.dltk.blitzmax.preferences.editor"
 	          name="%BlitzMaxEditorPreferencePage.name"/>
-<!--	          name="%BlitzMaxEditorPreferencePage.name"/>-->
 	    <page
 	          category="net.brucey.dltk.blitzmax.preferences.editor"
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxEditorSyntaxColoringPreferencePage"
 	          id="net.brucey.dltk.blitzmax.preferences.editor.syntaxcoloring"
 	          name="%BlitzMaxEditorSyntaxColoringPreferencePage.name"/>
-<!--	          name="%BlitzMaxEditorSyntaxColoringPreferencePage.name"/>-->
-<!--	    <page
-    	      category="net.brucey.dltk.blitzmax.preferences.editor"
-         	  class="org.eclipse.dltk.ui.preferences.ScriptEditorHoverPreferencePage:net.brucey.dltk.blitzmax.core.nature"
-	          id="net.brucey.dltk.blitzmax.preferences.editor.hovers"
-    	      name="%BlitzMaxEditorHoversPreferencePage.name"/>
--->    
+
 	    <page category="net.brucey.dltk.blitzmax.preferences.editor"
 	    	  class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxFoldingPreferencePage"
 	    	  id="net.brucey.dltk.blitzmax.preferences.editor.folding"
 	    	  name="%BlitzMaxEditorFoldingPreferencePage.name" />
-<!--	    	  name="%BlitzMaxEditorFoldingPreferencePage.name" />-->
      	<page
               category="net.brucey.dltk.blitzmax.preferences.editor"
               class="net.brucey.dltk.blitzmax.ui.templates.BlitzMaxCodeTemplatesPreferencePage"
               id="net.brucey.dltk.blitzmax.preferences.templates"
               name="%BlitzMaxCodeTemplatesPreferencePage.name"/>
-<!--              name="%BlitzMaxCodeTemplatesPreferencePage.name"/>-->
        <page
               category="net.brucey.dltk.blitzmax.preferences"
               class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxTodoTaskPreferencePage"
               id="net.brucey.dltk.blitzmax.preferences.todo"
               name="%BlitzMaxTaskTagsPreferencePage.name"/>
-<!--              name="%BlitzMaxTaskTagsPreferencePage.name"/>-->
 	</extension>
 
 	 <extension
@@ -76,7 +65,6 @@
 	          class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxTodoTaskPreferencePage"
 	          id="net.brucey.dltk.blitzmax.ui.propertyPage.todo"
 	          name="%BlitzMaxTodoPropertyPage.name">
-<!--	          name="%BlitzMaxTodoPropertyPage.name">-->
 	      <enabledWhen>
 	        <adapt type="org.eclipse.core.resources.IProject">
 	          <test property="org.eclipse.core.resources.projectNature" value="net.brucey.dltk.blitzmax.core.nature"/>
@@ -87,7 +75,6 @@
 	      class="net.brucey.dltk.blitzmax.ui.preferences.BlitzMaxPropertyPage"
 	      id="net.brucey.dltk.blitzmax.propertyPage"
 	      name="%BlitzMaxPropertyPage.name">
-<!--	      name="%BlitzMaxPropertyPage.name">-->
 	      <enabledWhen>
 	        <adapt type="org.eclipse.core.resources.IProject">
 	          <test property="org.eclipse.core.resources.projectNature" value="net.brucey.dltk.blitzmax.core.nature"/>
@@ -232,4 +219,12 @@
 	   </completionEngine>
 	</extension>
 
+	<extension
+	       point="org.eclipse.dltk.ui.language">
+	    <language
+	          class="net.brucey.dltk.blitzmax.ui.BlitzMaxUILanguageToolkit"
+	          nature="net.brucey.dltk.blitzmax.core.nature"
+	          priority="0"/>
+	 </extension>
+ 
 </plugin>

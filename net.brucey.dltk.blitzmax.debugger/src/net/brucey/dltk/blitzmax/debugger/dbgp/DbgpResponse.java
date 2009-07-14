@@ -289,9 +289,8 @@ public class DbgpResponse {
 
     Node response = newResponse("stack_get", id);
 
-    int level = 0;
     for (BlitzMaxStackScope scope : stack) {
-      addToStack(response, scope, level++);
+      addToStack(response, scope, scope.getLevel());
     }
 
     response.render(buf);
@@ -305,6 +304,13 @@ public class DbgpResponse {
     stack.addAttribute("type", "file");
     stack.addAttribute("filename", fileToURI(scope.getSource()));
     stack.addAttribute("lineno", String.valueOf(scope.getLine()));
+
+    // include the function/method name?
+    if (level > 0) {
+      if (scope.getWhere() != null) {
+        stack.addAttribute("where", scope.getWhere());
+      }
+    }
 
   }
 
@@ -334,6 +340,54 @@ public class DbgpResponse {
 
     response.render(buf);
     return buf.toString();
+  }
+
+  public String contextGet(String id, List<BlitzMaxStackScope> stack,
+      int depth, int context) {
+    StringBuffer buf = xml();
+
+    Node response = newResponse("context_get", id);
+    response.addAttribute("context", String.valueOf(context));
+
+    for (BlitzMaxStackScope scope : stack) {
+
+      if (scope.getVariables() != null) {
+        for (BlitzMaxScopeVariable var : scope.getVariables()) {
+          addProperty(response, var);
+        }
+      }
+      // only interested in the first one in the stack...
+      break;
+    }
+
+    response.render(buf);
+    return buf.toString();
+
+  }
+
+  private void addProperty(Node response, BlitzMaxScopeVariable var) {
+    Node prop = response.addNode("property");
+
+    prop.addAttribute("name", var.getName());
+    prop.addAttribute("fullname", var.getName());
+    prop.addAttribute("type", var.getType());
+    prop.addAttribute("const", (var.getScope().equals(ScopeType.CONST)) ? "1"
+        : "0");
+    prop.addAttribute("children", (var.hasChildren()) ? "1" : "0");
+
+    if (var.getKey() != null) {
+      prop.addAttribute("key", var.getKey());
+    } else {
+      if (BlitzMaxType.isPrimitive(var.getBaseType())) {
+        prop.addText(var.getValue());
+      } else {
+        if (BlitzMaxType.STRING.equals(var.getBaseType())) {
+          prop.addAttribute("encoding", "base64");
+          prop.addNode(new DataNode(var.getValue().getBytes()));
+        }
+      }
+    }
+
   }
 
 }

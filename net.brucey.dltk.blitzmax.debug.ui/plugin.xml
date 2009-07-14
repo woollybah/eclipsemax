@@ -285,5 +285,17 @@
        </launchConfigurationTabGroup>
     </extension>
 
+	<extension point="org.eclipse.debug.ui.debugModelPresentations">
+		<debugModelPresentation
+			class="net.brucey.dltk.blitzmax.debug.ui.BlitzMaxDebugModelPresentation"
+			id="org.eclipse.dltk.debug.blitzmaxModel">
+		</debugModelPresentation>
+	</extension>
+
+	<extension point="org.eclipse.debug.ui.debugModelContextBindings">
+		<modelContextBinding
+			contextId="org.eclipse.dltk.debug.ui.debugging"
+			debugModelId="org.eclipse.dltk.debug.blitzmaxModel" />
+	</extension>
 
 </plugin>

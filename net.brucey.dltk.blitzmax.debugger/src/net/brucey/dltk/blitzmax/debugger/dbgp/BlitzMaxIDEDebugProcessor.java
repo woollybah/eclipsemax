@@ -137,7 +137,7 @@ public class BlitzMaxIDEDebugProcessor {
         inputBuffer.addNullBasedData(inBuffer, bytesRead);
 
         System.out.println("Receiving command data... : "
-            + new String(inBuffer,0, bytesRead));
+            + new String(inBuffer, 0, bytesRead));
 
         // process the commands
         while (inputBuffer.lineAvail()) {
@@ -214,6 +214,11 @@ public class BlitzMaxIDEDebugProcessor {
 
   public void stop(String id, DebugState state) {
     sendResponse(response.stop(id, state));
+  }
+
+  public void contextGet(String id, List<BlitzMaxStackScope> stack, int depth,
+      int context) {
+    sendResponse(response.contextGet(id, stack, depth, context));
   }
 
 }

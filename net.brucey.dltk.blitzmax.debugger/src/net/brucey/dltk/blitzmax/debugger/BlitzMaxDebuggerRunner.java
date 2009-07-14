@@ -102,6 +102,8 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
 
       config.addInterpreterArgs(args);
 
+      config.addEnvVar("BMXPATH", getInstall().getInstallLocation().getParent()
+          .getParent().toOSString());
     }
 
     return config;
