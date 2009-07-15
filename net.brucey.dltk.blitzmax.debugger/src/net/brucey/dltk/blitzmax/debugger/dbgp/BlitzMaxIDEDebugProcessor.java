@@ -27,7 +27,6 @@ public class BlitzMaxIDEDebugProcessor {
   private InputStream in;
   private OutputStream out;
 
-  private DbgpCommand command;
   private DbgpResponse response;
 
   private final LinkedList<Command> commands = new LinkedList<Command>();
@@ -41,7 +40,6 @@ public class BlitzMaxIDEDebugProcessor {
 
   public boolean connect() {
 
-    command = new DbgpCommand();
     response = new DbgpResponse();
 
     boolean success = true;
