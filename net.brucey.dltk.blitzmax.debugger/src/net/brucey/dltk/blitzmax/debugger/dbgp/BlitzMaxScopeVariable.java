@@ -19,32 +19,39 @@ public class BlitzMaxScopeVariable {
 
   public BlitzMaxScopeVariable(final String line) {
 
-    // the scope type (Local, Const etc)
-    int i = line.indexOf(' ');
-    scope = ScopeType.map(line.substring(0, i));
+    if (!line.startsWith("[")) {
 
-    String var = line.substring(i + 1);
+      // the scope type (Local, Const etc)
+      int i = line.indexOf(' ');
+      scope = ScopeType.map(line.substring(0, i));
 
-    // the variable name
-    i = var.indexOf(':');
-    name = var.substring(0, i);
+      String var = line.substring(i + 1);
 
-    var = var.substring(i + 1);
+      // the variable name
+      i = var.indexOf(':');
+      name = var.substring(0, i);
 
-    // the variable type
-    i = var.indexOf('=');
-    type = var.substring(0, i);
-    baseType = BlitzMaxType.map(type);
+      var = var.substring(i + 1);
 
-    if (baseType.equals(BlitzMaxType.OBJECT)) {
-      children = true;
-    }
+      // the variable type
+      i = var.indexOf('=');
+      type = var.substring(0, i);
+      baseType = BlitzMaxType.map(type);
 
-    value = var.substring(i + 1);
+      if (baseType.equals(BlitzMaxType.OBJECT)) {
+        children = true;
+      }
 
-    if (value.startsWith("$")) {
-      key = value.substring(1);
-      value = null;
+      value = var.substring(i + 1);
+
+      if (value.startsWith("$")) {
+        key = value.substring(1);
+        value = null;
+      } else if ("Null".equals(value)) {
+        value = null;
+      }
+    } else {
+      // TODO : add array element support.
     }
 
   }

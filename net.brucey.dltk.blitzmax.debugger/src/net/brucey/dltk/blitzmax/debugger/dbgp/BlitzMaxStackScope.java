@@ -12,7 +12,7 @@ public class BlitzMaxStackScope {
   private int line;
   private int column;
 
-  private int level;
+  private final int level;
 
   private List<BlitzMaxScopeVariable> variables;
 
@@ -60,6 +60,10 @@ public class BlitzMaxStackScope {
 
       variables.add(new BlitzMaxScopeVariable(var));
     }
+  }
+
+  public String getName() {
+    return name;
   }
 
   public String getSource() {

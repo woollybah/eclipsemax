@@ -371,13 +371,17 @@ public class DbgpResponse {
     prop.addAttribute("name", var.getName());
     prop.addAttribute("fullname", var.getName());
     prop.addAttribute("type", var.getType());
-    prop.addAttribute("const", (var.getScope().equals(ScopeType.CONST)) ? "1"
-        : "0");
-    prop.addAttribute("children", (var.hasChildren()) ? "1" : "0");
+
+    prop.addAttribute("constant", "1"); // ie. NOT modifiable in the variable editor!
 
     if (var.getKey() != null) {
+      prop.addAttribute("children", (var.hasChildren()) ? "1" : "0");
+
       prop.addAttribute("key", var.getKey());
+      prop.addAttribute("address", var.getKey());
     } else {
+      prop.addAttribute("children", (var.hasChildren()) ? "1" : "0");
+
       if (BlitzMaxType.isPrimitive(var.getBaseType())) {
         prop.addText(var.getValue());
       } else {

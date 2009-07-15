@@ -27,6 +27,7 @@ public class BlitzMaxStdDebugProcessor {
   private String currentFile;
 
   private BlitzMaxStackScope scope;
+  private BlitzMaxObjectScope objScope;
 
   private boolean inVariable;
   private boolean inFile;
@@ -45,7 +46,7 @@ public class BlitzMaxStdDebugProcessor {
 
   private boolean ready;
 
-  private String bmxPath;
+  private final String bmxPath;
 
   public BlitzMaxStdDebugProcessor(String sourcePath, String[] args) {
     this.sourcePath = sourcePath;
@@ -85,6 +86,7 @@ public class BlitzMaxStdDebugProcessor {
     stack.clear();
     inStack = false;
     scope = null;
+    objScope = null;
 
     ready = false;
 
@@ -206,6 +208,7 @@ public class BlitzMaxStdDebugProcessor {
         ready = true;
       } else {
         // invar.AddVar line
+        objScope.addVariable(line);
       }
       return null;
     }
@@ -275,14 +278,14 @@ public class BlitzMaxStdDebugProcessor {
     }
 
     if (line.startsWith("ObjectDump@")) {
-      inVariable = true;
-      // TODO : implement object dump
-      // p=line.find("{")
-      // If p=-1 Return line
-      // line=line[11..p]
-      // invar=New TVar
-      // invar.obj=FindObj(line)
-      // invar.owner=Self
+
+      if (line.indexOf('{') > 0) {
+        inVariable = true;
+        objScope = new BlitzMaxObjectScope(line.substring(11));
+      } else {
+        return line;
+      }
+
       return null;
     }
 
