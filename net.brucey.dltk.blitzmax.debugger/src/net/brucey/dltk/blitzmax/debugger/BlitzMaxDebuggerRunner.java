@@ -12,15 +12,13 @@ import org.eclipse.dltk.core.environment.IFileHandle;
 import org.eclipse.dltk.launching.ExternalDebuggingEngineRunner;
 import org.eclipse.dltk.launching.IInterpreterInstall;
 import org.eclipse.dltk.launching.InterpreterConfig;
-import org.eclipse.dltk.launching.debug.DbgpConnectionConfig;
 import org.eclipse.dltk.launching.debug.DbgpConstants;
-import org.eclipse.jdt.launching.JavaRuntime;
 
 public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
 
   public static final String ENGINE_ID = "net.brucey.dltk.blitzmax.debugger"; //$NON-NLS-1$
 
-  private String javaPath = null;
+  private String debugPath;
 
   public BlitzMaxDebuggerRunner(IInterpreterInstall install) {
     super(install);
@@ -51,46 +49,34 @@ public class BlitzMaxDebuggerRunner extends ExternalDebuggingEngineRunner {
   protected IFileHandle getDebuggingEnginePath(
       PreferencesLookupDelegate delegate) {
 
-    StringBuffer f = new StringBuffer(JavaRuntime.getDefaultVMInstall()
-        .getInstallLocation().getAbsoluteFile().toString());
-    f.append(File.separatorChar).append("bin").append(File.separatorChar)
-        .append("java");
+    StringBuffer f = new StringBuffer(getInstall().getInstallLocation()
+        .getParent().toOSString());
+    f.append(File.separatorChar).append("bmxdbgp");
 
     if (System.getProperty("os.name").startsWith("Windows")) {
       f.append(".exe");
     }
 
-    javaPath = f.toString();
-    return new FileAsFileHandle(new File(javaPath));
+    debugPath = f.toString();
+
+    return new FileAsFileHandle(new File(debugPath));
   }
 
   @SuppressWarnings("unchecked")
   @Override
   protected InterpreterConfig alterConfig(InterpreterConfig config,
       PreferencesLookupDelegate delegate) throws CoreException {
-    // JavaRuntime.
-    // IFileHandle debugEnginePath = getDebuggingEnginePath(delegate);
 
-    DbgpConnectionConfig dbgpConfig = DbgpConnectionConfig.load(config);
+    //    DbgpConnectionConfig dbgpConfig = DbgpConnectionConfig.load(config);
 
     if (config != null) {
-      config.setProperty("OVERRIDE_EXE", javaPath);
+      config.setProperty("OVERRIDE_EXE", debugPath);
 
       // we need to clear out the interpreter args...
       List<String> args = config.getInterpreterArgs();
       for (String arg : args) {
         config.removeInterpreterArg(arg);
       }
-
-      config.addInterpreterArg("-cp"); // FIXME require classpath to Connector
-      config
-          .addInterpreterArg("/Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.debugger/bin");
-      // config
-      // .addInterpreterArg("C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.debugger\\bin");
-
-      // this is our debugger Main class.
-      config
-          .addInterpreterArg("net.brucey.dltk.blitzmax.debugger.dbgp.DbgpBlitzMaxConnector");
 
       config.addInterpreterArg("127.0.0.1");
       config.addInterpreterArg((String) config
