@@ -1,7 +1,7 @@
 grammar blitzmax;
-options{
-	backtrack=true;
-}
+//options{
+//	backtrack=true;
+//}
 @lexer::header {
 package net.brucey.dltk.blitzmax.core.parsers;
 }
@@ -213,24 +213,36 @@ type_content_list returns [ Block typeContent = new Block() ]
 	
 method_block returns [ BlitzMaxMethodDeclaration methodDeclaration = null ]
 	:	m = METHOD
-		fd = function_definition
-			{
-				methodDeclaration = new BlitzMaxMethodDeclaration(m, fd);
-			}
-		( ABSTRACT 
-			{
-				methodDeclaration.setModifiers(methodDeclaration.getModifiers() | Modifiers.AccAbstract);
-			}
-			
-		| 
 		(
-		FINAL
-		
-			{
-				methodDeclaration.setModifiers(methodDeclaration.getModifiers() | Modifiers.AccFinal);
-			}
-		
-		)?
+			(fd = function_definition
+				{
+					methodDeclaration = new BlitzMaxMethodDeclaration(m, fd);
+				}
+			
+			( ABSTRACT 
+				{
+					methodDeclaration.setModifiers(methodDeclaration.getModifiers() | Modifiers.AccAbstract);
+				}
+				
+			| 
+			(
+			FINAL
+			
+				{
+					methodDeclaration.setModifiers(methodDeclaration.getModifiers() | Modifiers.AccFinal);
+				}
+			
+			)?
+			)
+			| n = NEW LPAREN rp = RPAREN
+				{
+					methodDeclaration = new BlitzMaxMethodDeclaration(m, new BlitzMaxFunctionExpression(n, null, null, rp));
+				}
+			| n = DELETE LPAREN rp = RPAREN
+				{
+					methodDeclaration = new BlitzMaxMethodDeclaration(m, new BlitzMaxFunctionExpression(n, null, null, rp));
+				}
+		)
 		NEWLINE
 		b = statement_block
 			{
@@ -374,7 +386,7 @@ statement_list[List statements]
 		| rem_block
 		| if_block
 		| DEBUGSTOP NEWLINE
-		| END NEWLINE
+		//| END NEWLINE
 		| RETURN expression NEWLINE
 		| cast_or_function_call NEWLINE
 		| IDENTIFIER assignment expression NEWLINE
@@ -656,7 +668,7 @@ signed_factor
 
 factor
     : NEW? (IDENTIFIER DOT)* IDENTIFIER
-    | func_var_designator 
+    | NEW? func_var_designator 
     | constant_expression
     | LPAREN simple_expression RPAREN
     | SELF
@@ -665,11 +677,13 @@ factor
     ;
 
 func_var_designator
-    : IDENTIFIER (DOT IDENTIFIER)* LPAREN (expr (COMMA expr)* )? RPAREN
+    : IDENTIFIER (DOT IDENTIFIER)* LPAREN (expr (COMMA expr)* )? RPAREN (DOT factor)?
     ;
 
 constant_expression
 	: number
+	| TRUE
+	| FALSE
 	| STRING_LITERAL
 	| NOT_TEST factor
 	;
@@ -686,7 +700,9 @@ assignment
 cast_or_function_call
 	:	IDENTIFIER (DOT IDENTIFIER)* 
 	(
-	LPAREN expression_list? RPAREN
+	(LPAREN)=> LPAREN
+		expression_list? RPAREN
+		(DOT expression)? 
 	| 
 	 expression_list?
 	 )
