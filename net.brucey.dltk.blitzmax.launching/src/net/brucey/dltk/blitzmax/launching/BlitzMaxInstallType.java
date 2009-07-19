@@ -50,7 +50,7 @@ public class BlitzMaxInstallType extends AbstractInterpreterInstallType {
           for (IFileHandle mod : modFolder.getChildren()) {
 
             if (mod.getPath().lastSegment().endsWith(".mod")) {
-              paths.add(mod.toOSString());
+              //              paths.add(mod.toOSString()); // FIXME : re-implement when parser and indexing are working.
             }
 
           }
