@@ -18,7 +18,7 @@ public class BlitzMaxLanguageToolkit extends AbstractLanguageToolkit implements
   }
 
   public String getLanguageContentType() {
-    return "net.brucey.dltk.blitzmax.contentType";
+    return "net.brucey.dltk.blitzmax.blitzmaxContentType";
   }
 
   public String getLanguageName() {

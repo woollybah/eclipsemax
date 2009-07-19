@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g 2009-07-10 11:39:29
+// $ANTLR 3.1.2 /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g 2009-07-19 14:47:05
 
 package net.brucey.dltk.blitzmax.core.parsers;
 
@@ -9,133 +9,134 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class blitzmaxLexer extends Lexer {
-    public static final int WEND=45;
-    public static final int FUNCTION=18;
-    public static final int SLASHEQUAL=105;
-    public static final int STAR=90;
-    public static final int WHILE=44;
-    public static final int BYTE_TYPE=66;
-    public static final int MOD=110;
     public static final int CONST=16;
-    public static final int POINTER=68;
-    public static final int CASE=48;
-    public static final int NEW=72;
-    public static final int GREATEREQUAL=101;
-    public static final int EXTERN=61;
-    public static final int EOF=-1;
-    public static final int TYPE=7;
-    public static final int NOTEQUAL=99;
-    public static final int VBAR=92;
-    public static final int MINUSEQUAL=103;
-    public static final int FINAL=11;
-    public static final int RPAREN=20;
-    public static final int IMPORT=49;
-    public static final int STRING_LITERAL=51;
-    public static final int GREATER=95;
-    public static final int INCLUDE=50;
-    public static final int ALPHA_LOWER=120;
-    public static final int LESS=94;
-    public static final int VAR=31;
-    public static final int SUPER=70;
-    public static final int SELECT=46;
-    public static final int EXIT=80;
-    public static final int RBRACK=29;
-    public static final int FLOAT_TYPE=64;
-    public static final int STRICT=6;
-    public static final int POUND=25;
-    public static final int LINE_COMMENT=60;
-    public static final int OBJECT_TYPE=23;
-    public static final int ALPHA_UPPER=121;
-    public static final int SUPERSTRICT=4;
-    public static final int NULL=69;
-    public static final int ELSE=59;
-    public static final int NOT_TEST=84;
-    public static final int WHITESPACE=122;
-    public static final int POWER=96;
-    public static final int UNDERSCORE=98;
-    public static final int DOUBLE_TYPE=65;
-    public static final int INT=113;
-    public static final int DELETE=73;
-    public static final int LOCAL=17;
-    public static final int INT_TYPE=63;
-    public static final int RIGHTSHIFT=108;
-    public static final int ASSERT=78;
-    public static final int TRY=75;
-    public static final int INCBIN=81;
-    public static final int T__126=126;
-    public static final int T__125=125;
-    public static final int T__128=128;
-    public static final int T__127=127;
-    public static final int INCBINPTR=82;
-    public static final int T__129=129;
-    public static final int FRAMEWORK=52;
-    public static final int UNTIL=36;
-    public static final int VBAREQUAL=106;
-    public static final int STRING_TYPE=22;
-    public static final int FIELD=14;
-    public static final int REPEAT=40;
+    public static final int COMMA=32;
+    public static final int MINUS=50;
     public static final int END=12;
-    public static final int CATCH=76;
-    public static final int FALSE=43;
-    public static final int LESSEQUAL=100;
-    public static final int THROW=77;
-    public static final int DOLLAR=27;
-    public static final int DEBUGSTOP=79;
-    public static final int EXPONENTFLOAT=115;
-    public static final int SHORT_TYPE=67;
-    public static final int LBRACK=28;
-    public static final int INCBINLEN=83;
-    public static final int DIGITS=116;
-    public static final int LONG_TYPE=62;
-    public static final int T__124=124;
-    public static final int T__123=123;
-    public static final int Exponent=118;
-    public static final int FOR=33;
-    public static final int STEP=37;
-    public static final int FLOAT=111;
-    public static final int ABSTRACT=10;
-    public static final int FOREVER=41;
-    public static final int POINTFLOAT=114;
-    public static final int LPAREN=19;
-    public static final int IF=57;
-    public static final int PLUSEQUAL=102;
-    public static final int SLASH=91;
-    public static final int THEN=58;
-    public static final int CONTINUE=74;
-    public static final int COMMA=30;
-    public static final int IDENTIFIER=8;
-    public static final int AMPER=93;
-    public static final int EQUAL=34;
-    public static final int TILDE=97;
-    public static final int NEXT=39;
-    public static final int PLUS=88;
-    public static final int LEFTSHIFT=107;
-    public static final int DIGIT=119;
-    public static final int DEBUGLOG=56;
-    public static final int DOT=55;
-    public static final int ARITHRIGHTSHIFT=109;
-    public static final int MODULEINFO=54;
-    public static final int PERCENT=24;
-    public static final int TO=35;
-    public static final int DEFAULT=47;
-    public static final int BANG=26;
-    public static final int REM=32;
-    public static final int MINUS=89;
-    public static final int MODULE=53;
-    public static final int AND_TEST=85;
-    public static final int TRUE=42;
-    public static final int SEMI=87;
-    public static final int COLON=21;
-    public static final int EACHIN=38;
-    public static final int NEWLINE=5;
-    public static final int OR_TEST=86;
-    public static final int GLOBAL=15;
-    public static final int FRACTION=117;
-    public static final int LONG=112;
-    public static final int SELF=71;
-    public static final int EXTENDS=9;
+    public static final int ARITHRIGHTSHIFT=111;
+    public static final int BANG=28;
     public static final int METHOD=13;
-    public static final int STAREQUAL=104;
+    public static final int FALSE=84;
+    public static final int FRACTION=118;
+    public static final int ABSTRACT=10;
+    public static final int THEN=80;
+    public static final int STEP=39;
+    public static final int TILDE=107;
+    public static final int IMPORT=73;
+    public static final int CONTINUE=94;
+    public static final int DOT=57;
+    public static final int NEWLINE=5;
+    public static final int WEND=69;
+    public static final int PLUSEQUAL=63;
+    public static final int TO=37;
+    public static final int T__128=128;
+    public static final int LOCAL=17;
+    public static final int FUNCTION=18;
+    public static final int INCLUDE=74;
+    public static final int GLOBAL=15;
+    public static final int SELECT=70;
+    public static final int STRING_LITERAL=61;
+    public static final int MODULE=76;
+    public static final int DOUBLE_TYPE=88;
+    public static final int UNTIL=38;
+    public static final int RPAREN=22;
+    public static final int SUPERSTRICT=4;
+    public static final int ASSERT=98;
+    public static final int PLUS=49;
+    public static final int EXTENDS=9;
+    public static final int SUPER=92;
+    public static final int EXTERN=82;
+    public static final int SHORT_TYPE=90;
+    public static final int NEW=56;
+    public static final int T__130=130;
+    public static final int FINAL=11;
+    public static final int POINTFLOAT=115;
+    public static final int DOLLAR=29;
+    public static final int FOREVER=43;
+    public static final int REPEAT=42;
+    public static final int FIELD=14;
+    public static final int LONG_TYPE=85;
+    public static final int LBRACK=30;
+    public static final int SEMI=103;
+    public static final int CATCH=96;
+    public static final int EXPONENTFLOAT=116;
+    public static final int CASE=72;
+    public static final int BYTE_TYPE=89;
+    public static final int EQUAL=33;
+    public static final int ELSE=81;
+    public static final int T__125=125;
+    public static final int LESSEQUAL=46;
+    public static final int SELF=58;
+    public static final int NULL=59;
+    public static final int COLON=23;
+    public static final int AMPER=105;
+    public static final int POINTER=91;
+    public static final int IDENTIFIER=8;
+    public static final int T__124=124;
+    public static final int TRUE=83;
+    public static final int POUND=27;
+    public static final int DEBUGSTOP=19;
+    public static final int UNDERSCORE=108;
+    public static final int THROW=97;
+    public static final int TYPE=7;
+    public static final int STRING_TYPE=24;
+    public static final int LONG=113;
+    public static final int PERCENT=26;
+    public static final int FLOAT=112;
+    public static final int MODULEINFO=77;
+    public static final int T__126=126;
+    public static final int SLASHEQUAL=66;
+    public static final int MOD=54;
+    public static final int STRICT=6;
+    public static final int NOTEQUAL=44;
+    public static final int LESS=45;
+    public static final int ALPHA_LOWER=121;
+    public static final int INT=114;
+    public static final int T__127=127;
+    public static final int VBAR=104;
+    public static final int LPAREN=21;
+    public static final int GREATER=48;
+    public static final int DIGIT=120;
+    public static final int EXIT=99;
+    public static final int INT_TYPE=86;
+    public static final int DELETE=93;
+    public static final int FRAMEWORK=75;
+    public static final int NOT_TEST=62;
+    public static final int OBJECT_TYPE=25;
+    public static final int Exponent=119;
+    public static final int DIGITS=117;
+    public static final int SLASH=53;
+    public static final int WHILE=68;
+    public static final int POWER=106;
+    public static final int AND_TEST=55;
+    public static final int INCBIN=100;
+    public static final int LINE_CONTINUATION=60;
+    public static final int REM=35;
+    public static final int T__129=129;
+    public static final int FLOAT_TYPE=87;
+    public static final int WHITESPACE=123;
+    public static final int VAR=34;
+    public static final int DEBUGLOG=78;
+    public static final int NEXT=41;
+    public static final int INCBINPTR=101;
+    public static final int RETURN=20;
+    public static final int RIGHTSHIFT=110;
+    public static final int MINUSEQUAL=64;
+    public static final int IF=79;
+    public static final int INCBINLEN=102;
+    public static final int EOF=-1;
+    public static final int ALPHA_UPPER=122;
+    public static final int FOR=36;
+    public static final int OR_TEST=51;
+    public static final int RBRACK=31;
+    public static final int DEFAULT=71;
+    public static final int GREATEREQUAL=47;
+    public static final int VBAREQUAL=67;
+    public static final int STAREQUAL=65;
+    public static final int STAR=52;
+    public static final int TRY=95;
+    public static final int LEFTSHIFT=109;
+    public static final int EACHIN=40;
 
     /** Handles context-sensitive lexing of implicit line joining such as
      *  the case where newline is ignored in cases like this:
@@ -159,38 +160,17 @@ public class blitzmaxLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g"; }
-
-    // $ANTLR start "T__123"
-    public final void mT__123() throws RecognitionException {
-        try {
-            int _type = T__123;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:18:8: ( 'endtype' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:18:10: 'endtype'
-            {
-            match("endtype"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__123"
+    public String getGrammarFileName() { return "/Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g"; }
 
     // $ANTLR start "T__124"
     public final void mT__124() throws RecognitionException {
         try {
             int _type = T__124;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:19:8: ( 'endmethod' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:19:10: 'endmethod'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:18:8: ( 'endtype' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:18:10: 'endtype'
             {
-            match("endmethod"); 
+            match("endtype"); 
 
 
             }
@@ -208,10 +188,10 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = T__125;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:20:8: ( 'endfunction' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:20:10: 'endfunction'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:19:8: ( 'endmethod' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:19:10: 'endmethod'
             {
-            match("endfunction"); 
+            match("endmethod"); 
 
 
             }
@@ -229,10 +209,10 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = T__126;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:21:8: ( 'endrem' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:21:10: 'endrem'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:20:8: ( 'endfunction' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:20:10: 'endfunction'
             {
-            match("endrem"); 
+            match("endfunction"); 
 
 
             }
@@ -250,10 +230,10 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = T__127;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:22:8: ( 'endselect' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:22:10: 'endselect'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:21:8: ( 'endrem' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:21:10: 'endrem'
             {
-            match("endselect"); 
+            match("endrem"); 
 
 
             }
@@ -271,10 +251,10 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = T__128;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:23:8: ( 'elseif' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:23:10: 'elseif'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:22:8: ( 'endselect' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:22:10: 'endselect'
             {
-            match("elseif"); 
+            match("endselect"); 
 
 
             }
@@ -292,10 +272,10 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = T__129;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:24:8: ( 'endif' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:24:10: 'endif'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:23:8: ( 'elseif' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:23:10: 'elseif'
             {
-            match("endif"); 
+            match("elseif"); 
 
 
             }
@@ -308,58 +288,47 @@ public class blitzmaxLexer extends Lexer {
     }
     // $ANTLR end "T__129"
 
-    // $ANTLR start "LINE_COMMENT"
-    public final void mLINE_COMMENT() throws RecognitionException {
+    // $ANTLR start "T__130"
+    public final void mT__130() throws RecognitionException {
         try {
-            int _type = LINE_COMMENT;
+            int _type = T__130;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:704:2: ( '\\'' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:704:4: '\\'' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:24:8: ( 'endif' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:24:10: 'endif'
             {
-            match('\''); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:704:9: (~ ( '\\n' | '\\r' ) )*
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
-
-                if ( ((LA1_0>='\u0000' && LA1_0<='\t')||(LA1_0>='\u000B' && LA1_0<='\f')||(LA1_0>='\u000E' && LA1_0<='\uFFFF')) ) {
-                    alt1=1;
-                }
+            match("endif"); 
 
 
-                switch (alt1) {
-            	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:704:9: ~ ( '\\n' | '\\r' )
-            	    {
-            	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
-            	        input.consume();
-
-            	    }
-            	    else {
-            	        MismatchedSetException mse = new MismatchedSetException(null,input);
-            	        recover(mse);
-            	        throw mse;}
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop1;
-                }
-            } while (true);
-
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:704:23: ( '\\r' )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
-
-            if ( (LA2_0=='\r') ) {
-                alt2=1;
             }
-            switch (alt2) {
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T__130"
+
+    // $ANTLR start "LINE_CONTINUATION"
+    public final void mLINE_CONTINUATION() throws RecognitionException {
+        try {
+            int _type = LINE_CONTINUATION;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:796:2: ( '..' ( '\\r' )? '\\n' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:796:4: '..' ( '\\r' )? '\\n'
+            {
+            match(".."); 
+
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:796:9: ( '\\r' )?
+            int alt1=2;
+            int LA1_0 = input.LA(1);
+
+            if ( (LA1_0=='\r') ) {
+                alt1=1;
+            }
+            switch (alt1) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:704:23: '\\r'
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:796:10: '\\r'
                     {
                     match('\r'); 
 
@@ -379,15 +348,15 @@ public class blitzmaxLexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "LINE_COMMENT"
+    // $ANTLR end "LINE_CONTINUATION"
 
     // $ANTLR start "SUPERSTRICT"
     public final void mSUPERSTRICT() throws RecognitionException {
         try {
             int _type = SUPERSTRICT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:707:13: ( 'superstrict' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:707:15: 'superstrict'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:799:13: ( 'superstrict' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:799:15: 'superstrict'
             {
             match("superstrict"); 
 
@@ -407,8 +376,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = STRICT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:708:8: ( 'strict' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:708:10: 'strict'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:800:8: ( 'strict' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:800:10: 'strict'
             {
             match("strict"); 
 
@@ -428,8 +397,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FRAMEWORK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:710:11: ( 'framework' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:710:13: 'framework'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:802:11: ( 'framework' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:802:13: 'framework'
             {
             match("framework"); 
 
@@ -449,8 +418,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = MODULE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:711:8: ( 'module' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:711:10: 'module'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:803:8: ( 'module' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:803:10: 'module'
             {
             match("module"); 
 
@@ -470,8 +439,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = MODULEINFO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:712:12: ( 'moduleinfo' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:712:14: 'moduleinfo'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:804:12: ( 'moduleinfo' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:804:14: 'moduleinfo'
             {
             match("moduleinfo"); 
 
@@ -491,8 +460,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = IMPORT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:713:8: ( 'import' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:713:10: 'import'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:805:8: ( 'import' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:805:10: 'import'
             {
             match("import"); 
 
@@ -512,8 +481,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = INCLUDE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:714:9: ( 'include' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:714:11: 'include'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:806:9: ( 'include' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:806:11: 'include'
             {
             match("include"); 
 
@@ -533,8 +502,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LOCAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:716:7: ( 'local' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:716:9: 'local'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:808:7: ( 'local' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:808:9: 'local'
             {
             match("local"); 
 
@@ -554,8 +523,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = GLOBAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:717:8: ( 'global' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:717:10: 'global'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:809:8: ( 'global' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:809:10: 'global'
             {
             match("global"); 
 
@@ -575,8 +544,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:718:6: ( 'type' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:718:8: 'type'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:810:6: ( 'type' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:810:8: 'type'
             {
             match("type"); 
 
@@ -596,8 +565,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FUNCTION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:719:10: ( 'function' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:719:12: 'function'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:811:10: ( 'function' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:811:12: 'function'
             {
             match("function"); 
 
@@ -617,8 +586,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = METHOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:720:8: ( 'method' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:720:10: 'method'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:812:8: ( 'method' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:812:10: 'method'
             {
             match("method"); 
 
@@ -638,8 +607,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = EXTERN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:721:8: ( 'extern' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:721:10: 'extern'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:813:8: ( 'extern' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:813:10: 'extern'
             {
             match("extern"); 
 
@@ -659,8 +628,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = EXTENDS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:722:9: ( 'extends' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:722:11: 'extends'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:814:9: ( 'extends' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:814:11: 'extends'
             {
             match("extends"); 
 
@@ -680,8 +649,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = ABSTRACT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:723:10: ( 'abstract' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:723:12: 'abstract'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:815:10: ( 'abstract' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:815:12: 'abstract'
             {
             match("abstract"); 
 
@@ -701,8 +670,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FINAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:724:7: ( 'final' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:724:9: 'final'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:816:7: ( 'final' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:816:9: 'final'
             {
             match("final"); 
 
@@ -722,8 +691,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FIELD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:725:7: ( 'field' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:725:9: 'field'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:817:7: ( 'field' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:817:9: 'field'
             {
             match("field"); 
 
@@ -743,8 +712,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = CONST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:726:7: ( 'const' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:726:9: 'const'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:818:7: ( 'const' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:818:9: 'const'
             {
             match("const"); 
 
@@ -764,8 +733,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = VAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:727:5: ( 'var' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:727:7: 'var'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:819:5: ( 'var' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:819:7: 'var'
             {
             match("var"); 
 
@@ -780,13 +749,34 @@ public class blitzmaxLexer extends Lexer {
     }
     // $ANTLR end "VAR"
 
+    // $ANTLR start "RETURN"
+    public final void mRETURN() throws RecognitionException {
+        try {
+            int _type = RETURN;
+            int _channel = DEFAULT_TOKEN_CHANNEL;
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:820:8: ( 'return' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:820:10: 'return'
+            {
+            match("return"); 
+
+
+            }
+
+            state.type = _type;
+            state.channel = _channel;
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "RETURN"
+
     // $ANTLR start "REM"
     public final void mREM() throws RecognitionException {
         try {
             int _type = REM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:729:5: ( 'rem' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:729:7: 'rem'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:822:5: ( 'rem' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:822:7: 'rem'
             {
             match("rem"); 
 
@@ -806,8 +796,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = TRUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:731:6: ( 'true' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:731:8: 'true'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:824:6: ( 'true' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:824:8: 'true'
             {
             match("true"); 
 
@@ -827,8 +817,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:732:7: ( 'false' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:732:9: 'false'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:825:7: ( 'false' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:825:9: 'false'
             {
             match("false"); 
 
@@ -848,8 +838,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LONG_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:734:11: ( 'long' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:734:13: 'long'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:827:11: ( 'long' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:827:13: 'long'
             {
             match("long"); 
 
@@ -869,8 +859,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = INT_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:735:10: ( 'int' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:735:12: 'int'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:828:10: ( 'int' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:828:12: 'int'
             {
             match("int"); 
 
@@ -890,8 +880,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FLOAT_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:736:12: ( 'float' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:736:14: 'float'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:829:12: ( 'float' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:829:14: 'float'
             {
             match("float"); 
 
@@ -911,8 +901,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DOUBLE_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:737:13: ( 'double' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:737:15: 'double'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:830:13: ( 'double' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:830:15: 'double'
             {
             match("double"); 
 
@@ -932,8 +922,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = BYTE_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:738:11: ( 'byte' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:738:13: 'byte'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:831:11: ( 'byte' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:831:13: 'byte'
             {
             match("byte"); 
 
@@ -953,8 +943,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = STRING_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:739:13: ( 'string' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:739:15: 'string'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:832:13: ( 'string' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:832:15: 'string'
             {
             match("string"); 
 
@@ -974,8 +964,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SHORT_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:740:12: ( 'short' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:740:14: 'short'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:833:12: ( 'short' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:833:14: 'short'
             {
             match("short"); 
 
@@ -995,8 +985,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = OBJECT_TYPE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:741:13: ( 'object' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:741:15: 'object'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:834:13: ( 'object' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:834:15: 'object'
             {
             match("object"); 
 
@@ -1016,8 +1006,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = POINTER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:742:10: ( 'ptr' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:742:12: 'ptr'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:835:10: ( 'ptr' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:835:12: 'ptr'
             {
             match("ptr"); 
 
@@ -1037,8 +1027,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = NULL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:744:6: ( 'null' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:744:8: 'null'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:837:6: ( 'null' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:837:8: 'null'
             {
             match("null"); 
 
@@ -1058,8 +1048,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SUPER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:745:7: ( 'super' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:745:9: 'super'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:838:7: ( 'super' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:838:9: 'super'
             {
             match("super"); 
 
@@ -1079,8 +1069,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SELF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:746:6: ( 'self' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:746:8: 'self'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:839:6: ( 'self' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:839:8: 'self'
             {
             match("self"); 
 
@@ -1100,8 +1090,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = NEW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:747:5: ( 'new' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:747:7: 'new'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:840:5: ( 'new' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:840:7: 'new'
             {
             match("new"); 
 
@@ -1121,8 +1111,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DELETE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:748:8: ( 'delete' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:748:10: 'delete'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:841:8: ( 'delete' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:841:10: 'delete'
             {
             match("delete"); 
 
@@ -1142,8 +1132,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:827:5: ( 'for' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:827:7: 'for'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:920:5: ( 'for' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:920:7: 'for'
             {
             match("for"); 
 
@@ -1163,8 +1153,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = NEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:828:6: ( 'next' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:828:8: 'next'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:921:6: ( 'next' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:921:8: 'next'
             {
             match("next"); 
 
@@ -1184,8 +1174,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = TO;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:829:4: ( 'to' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:829:6: 'to'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:922:4: ( 'to' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:922:6: 'to'
             {
             match("to"); 
 
@@ -1205,8 +1195,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = EACHIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:830:8: ( 'eachin' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:830:10: 'eachin'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:923:8: ( 'eachin' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:923:10: 'eachin'
             {
             match("eachin"); 
 
@@ -1226,8 +1216,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = STEP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:831:6: ( 'step' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:831:8: 'step'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:924:6: ( 'step' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:924:8: 'step'
             {
             match("step"); 
 
@@ -1247,8 +1237,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = WHILE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:832:7: ( 'while' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:832:9: 'while'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:925:7: ( 'while' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:925:9: 'while'
             {
             match("while"); 
 
@@ -1268,8 +1258,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = WEND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:833:6: ( 'wend' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:833:8: 'wend'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:926:6: ( 'wend' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:926:8: 'wend'
             {
             match("wend"); 
 
@@ -1289,8 +1279,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = REPEAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:834:8: ( 'repeat' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:834:10: 'repeat'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:927:8: ( 'repeat' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:927:10: 'repeat'
             {
             match("repeat"); 
 
@@ -1310,8 +1300,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = UNTIL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:835:7: ( 'until' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:835:9: 'until'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:928:7: ( 'until' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:928:9: 'until'
             {
             match("until"); 
 
@@ -1331,8 +1321,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FOREVER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:836:9: ( 'forever' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:836:11: 'forever'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:929:9: ( 'forever' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:929:11: 'forever'
             {
             match("forever"); 
 
@@ -1352,8 +1342,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = CONTINUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:837:10: ( 'continue' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:837:12: 'continue'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:930:10: ( 'continue' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:930:12: 'continue'
             {
             match("continue"); 
 
@@ -1373,8 +1363,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SELECT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:838:8: ( 'select' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:838:10: 'select'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:931:8: ( 'select' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:931:10: 'select'
             {
             match("select"); 
 
@@ -1394,8 +1384,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = CASE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:839:6: ( 'case' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:839:8: 'case'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:932:6: ( 'case' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:932:8: 'case'
             {
             match("case"); 
 
@@ -1415,8 +1405,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DEFAULT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:840:9: ( 'default' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:840:11: 'default'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:933:9: ( 'default' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:933:11: 'default'
             {
             match("default"); 
 
@@ -1436,8 +1426,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = IF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:841:4: ( 'if' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:841:6: 'if'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:934:4: ( 'if' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:934:6: 'if'
             {
             match("if"); 
 
@@ -1457,8 +1447,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = THEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:842:6: ( 'then' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:842:8: 'then'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:935:6: ( 'then' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:935:8: 'then'
             {
             match("then"); 
 
@@ -1478,8 +1468,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = ELSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:843:6: ( 'else' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:843:8: 'else'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:936:6: ( 'else' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:936:8: 'else'
             {
             match("else"); 
 
@@ -1499,8 +1489,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = TRY;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:845:5: ( 'try' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:845:7: 'try'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:938:5: ( 'try' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:938:7: 'try'
             {
             match("try"); 
 
@@ -1520,8 +1510,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = CATCH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:846:7: ( 'catch' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:846:9: 'catch'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:939:7: ( 'catch' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:939:9: 'catch'
             {
             match("catch"); 
 
@@ -1541,8 +1531,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = THROW;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:847:7: ( 'throw' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:847:9: 'throw'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:940:7: ( 'throw' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:940:9: 'throw'
             {
             match("throw"); 
 
@@ -1562,8 +1552,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = ASSERT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:848:8: ( 'assert' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:848:10: 'assert'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:941:8: ( 'assert' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:941:10: 'assert'
             {
             match("assert"); 
 
@@ -1583,8 +1573,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DEBUGLOG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:849:9: ( 'debuglog' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:849:11: 'debuglog'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:942:9: ( 'debuglog' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:942:11: 'debuglog'
             {
             match("debuglog"); 
 
@@ -1604,8 +1594,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DEBUGSTOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:850:11: ( 'debugstop' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:850:13: 'debugstop'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:943:11: ( 'debugstop' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:943:13: 'debugstop'
             {
             match("debugstop"); 
 
@@ -1625,8 +1615,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = EXIT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:852:6: ( 'exit' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:852:8: 'exit'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:945:6: ( 'exit' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:945:8: 'exit'
             {
             match("exit"); 
 
@@ -1646,8 +1636,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = END;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:853:5: ( 'end' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:853:7: 'end'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:946:5: ( 'end' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:946:7: 'end'
             {
             match("end"); 
 
@@ -1667,8 +1657,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = INCBIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:855:8: ( 'incbin' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:855:10: 'incbin'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:948:8: ( 'incbin' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:948:10: 'incbin'
             {
             match("incbin"); 
 
@@ -1688,8 +1678,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = INCBINPTR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:856:11: ( 'incbinptr' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:856:13: 'incbinptr'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:949:11: ( 'incbinptr' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:949:13: 'incbinptr'
             {
             match("incbinptr"); 
 
@@ -1709,8 +1699,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = INCBINLEN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:857:11: ( 'incbinlen' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:857:13: 'incbinlen'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:950:11: ( 'incbinlen' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:950:13: 'incbinlen'
             {
             match("incbinlen"); 
 
@@ -1730,8 +1720,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = NOT_TEST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:859:10: ( 'not' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:859:12: 'not'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:952:10: ( 'not' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:952:12: 'not'
             {
             match("not"); 
 
@@ -1751,8 +1741,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = AND_TEST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:860:10: ( 'and' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:860:12: 'and'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:953:10: ( 'and' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:953:12: 'and'
             {
             match("and"); 
 
@@ -1772,8 +1762,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = OR_TEST;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:861:9: ( 'or' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:861:11: 'or'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:954:9: ( 'or' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:954:11: 'or'
             {
             match("or"); 
 
@@ -1793,8 +1783,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SEMI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:863:6: ( ';' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:863:8: ';'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:956:6: ( ';' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:956:8: ';'
             {
             match(';'); 
 
@@ -1813,8 +1803,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = PLUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:864:6: ( '+' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:864:8: '+'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:957:6: ( '+' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:957:8: '+'
             {
             match('+'); 
 
@@ -1833,8 +1823,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = MINUS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:865:7: ( '-' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:865:9: '-'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:958:7: ( '-' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:958:9: '-'
             {
             match('-'); 
 
@@ -1853,8 +1843,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = STAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:866:6: ( '*' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:866:8: '*'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:959:6: ( '*' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:959:8: '*'
             {
             match('*'); 
 
@@ -1873,8 +1863,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SLASH;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:867:7: ( '/' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:867:9: '/'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:960:7: ( '/' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:960:9: '/'
             {
             match('/'); 
 
@@ -1893,8 +1883,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = VBAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:868:6: ( '|' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:868:8: '|'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:961:6: ( '|' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:961:8: '|'
             {
             match('|'); 
 
@@ -1913,8 +1903,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = AMPER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:869:7: ( '&' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:869:9: '&'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:962:7: ( '&' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:962:9: '&'
             {
             match('&'); 
 
@@ -1933,8 +1923,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LESS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:870:6: ( '<' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:870:8: '<'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:963:6: ( '<' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:963:8: '<'
             {
             match('<'); 
 
@@ -1953,8 +1943,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = GREATER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:871:9: ( '>' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:871:11: '>'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:964:9: ( '>' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:964:11: '>'
             {
             match('>'); 
 
@@ -1973,8 +1963,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = EQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:872:7: ( '=' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:872:9: '='
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:965:7: ( '=' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:965:9: '='
             {
             match('='); 
 
@@ -1993,8 +1983,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = PERCENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:873:9: ( '%' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:873:11: '%'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:966:9: ( '%' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:966:11: '%'
             {
             match('%'); 
 
@@ -2013,8 +2003,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = POWER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:874:7: ( '^' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:874:9: '^'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:967:7: ( '^' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:967:9: '^'
             {
             match('^'); 
 
@@ -2033,8 +2023,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:875:8: ( ':' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:875:10: ':'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:968:8: ( ':' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:968:10: ':'
             {
             match(':'); 
 
@@ -2053,8 +2043,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:876:7: ( ',' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:876:9: ','
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:969:7: ( ',' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:969:9: ','
             {
             match(','); 
 
@@ -2073,8 +2063,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = TILDE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:877:7: ( '~' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:877:9: '~'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:970:7: ( '~' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:970:9: '~'
             {
             match('~'); 
 
@@ -2093,8 +2083,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = POUND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:878:7: ( '#' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:878:9: '#'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:971:7: ( '#' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:971:9: '#'
             {
             match('#'); 
 
@@ -2113,8 +2103,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = BANG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:879:6: ( '!' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:879:8: '!'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:972:6: ( '!' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:972:8: '!'
             {
             match('!'); 
 
@@ -2133,8 +2123,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DOLLAR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:880:8: ( '$' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:880:10: '$'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:973:8: ( '$' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:973:10: '$'
             {
             match('$'); 
 
@@ -2153,8 +2143,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:882:5: ( '.' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:882:7: '.'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:975:5: ( '.' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:975:7: '.'
             {
             match('.'); 
 
@@ -2173,8 +2163,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = UNDERSCORE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:883:12: ( '_' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:883:14: '_'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:976:12: ( '_' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:976:14: '_'
             {
             match('_'); 
 
@@ -2193,8 +2183,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:886:8: ( '(' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:886:10: '('
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:979:8: ( '(' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:979:10: '('
             {
             match('('); 
 
@@ -2213,8 +2203,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = RPAREN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:888:8: ( ')' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:888:10: ')'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:981:8: ( ')' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:981:10: ')'
             {
             match(')'); 
 
@@ -2233,8 +2223,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:890:8: ( '[' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:890:10: '['
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:983:8: ( '[' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:983:10: '['
             {
             match('['); 
 
@@ -2253,8 +2243,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = RBRACK;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:892:8: ( ']' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:892:10: ']'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:985:8: ( ']' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:985:10: ']'
             {
             match(']'); 
 
@@ -2273,8 +2263,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = NOTEQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:895:9: ( '<>' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:895:11: '<>'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:988:9: ( '<>' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:988:11: '<>'
             {
             match("<>"); 
 
@@ -2294,8 +2284,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LESSEQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:896:11: ( '<=' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:896:13: '<='
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:989:11: ( '<=' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:989:13: '<='
             {
             match("<="); 
 
@@ -2315,8 +2305,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = GREATEREQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:897:14: ( '>=' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:897:16: '>='
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:990:14: ( '>=' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:990:16: '>='
             {
             match(">="); 
 
@@ -2336,8 +2326,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = PLUSEQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:898:11: ( ':+' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:898:13: ':+'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:991:11: ( ':+' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:991:13: ':+'
             {
             match(":+"); 
 
@@ -2357,8 +2347,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = MINUSEQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:899:12: ( ':-' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:899:14: ':-'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:992:12: ( ':-' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:992:14: ':-'
             {
             match(":-"); 
 
@@ -2378,8 +2368,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = STAREQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:900:11: ( ':*' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:900:13: ':*'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:993:11: ( ':*' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:993:13: ':*'
             {
             match(":*"); 
 
@@ -2399,8 +2389,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = SLASHEQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:901:12: ( ':/' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:901:14: ':/'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:994:12: ( ':/' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:994:14: ':/'
             {
             match(":/"); 
 
@@ -2420,8 +2410,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = VBAREQUAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:902:11: ( ':|' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:902:13: ':|'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:995:11: ( ':|' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:995:13: ':|'
             {
             match(":|"); 
 
@@ -2441,8 +2431,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LEFTSHIFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:903:11: ( 'shl' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:903:13: 'shl'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:996:11: ( 'shl' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:996:13: 'shl'
             {
             match("shl"); 
 
@@ -2462,8 +2452,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = RIGHTSHIFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:904:12: ( 'shr' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:904:14: 'shr'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:997:12: ( 'shr' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:997:14: 'shr'
             {
             match("shr"); 
 
@@ -2483,8 +2473,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = ARITHRIGHTSHIFT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:905:17: ( 'sar' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:905:19: 'sar'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:998:17: ( 'sar' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:998:19: 'sar'
             {
             match("sar"); 
 
@@ -2504,8 +2494,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = MOD;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:907:6: ( 'mod' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:907:8: 'mod'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1000:6: ( 'mod' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1000:8: 'mod'
             {
             match("mod"); 
 
@@ -2525,19 +2515,19 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = FLOAT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:922:9: ( POINTFLOAT | EXPONENTFLOAT )
-            int alt3=2;
-            alt3 = dfa3.predict(input);
-            switch (alt3) {
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1015:9: ( POINTFLOAT | EXPONENTFLOAT )
+            int alt2=2;
+            alt2 = dfa2.predict(input);
+            switch (alt2) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:922:11: POINTFLOAT
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1015:11: POINTFLOAT
                     {
                     mPOINTFLOAT(); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:922:24: EXPONENTFLOAT
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1015:24: EXPONENTFLOAT
                     {
                     mEXPONENTFLOAT(); 
 
@@ -2556,23 +2546,23 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "POINTFLOAT"
     public final void mPOINTFLOAT() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:926:2: ( ( DIGITS )? FRACTION | DIGITS DOT )
-            int alt5=2;
-            alt5 = dfa5.predict(input);
-            switch (alt5) {
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1019:2: ( ( DIGITS )? FRACTION | DIGITS DOT )
+            int alt4=2;
+            alt4 = dfa4.predict(input);
+            switch (alt4) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:926:4: ( DIGITS )? FRACTION
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1019:4: ( DIGITS )? FRACTION
                     {
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:926:4: ( DIGITS )?
-                    int alt4=2;
-                    int LA4_0 = input.LA(1);
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1019:4: ( DIGITS )?
+                    int alt3=2;
+                    int LA3_0 = input.LA(1);
 
-                    if ( ((LA4_0>='0' && LA4_0<='9')) ) {
-                        alt4=1;
+                    if ( ((LA3_0>='0' && LA3_0<='9')) ) {
+                        alt3=1;
                     }
-                    switch (alt4) {
+                    switch (alt3) {
                         case 1 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:926:4: DIGITS
+                            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1019:4: DIGITS
                             {
                             mDIGITS(); 
 
@@ -2586,7 +2576,7 @@ public class blitzmaxLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:926:23: DIGITS DOT
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1019:23: DIGITS DOT
                     {
                     mDIGITS(); 
                     mDOT(); 
@@ -2604,8 +2594,8 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "FRACTION"
     public final void mFRACTION() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:931:2: ( DOT DIGITS )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:931:4: DOT DIGITS
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1024:2: ( DOT DIGITS )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1024:4: DOT DIGITS
             {
             mDOT(); 
             mDIGITS(); 
@@ -2621,22 +2611,22 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "EXPONENTFLOAT"
     public final void mEXPONENTFLOAT() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:935:2: ( ( DIGITS | POINTFLOAT ) Exponent )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:935:4: ( DIGITS | POINTFLOAT ) Exponent
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1028:2: ( ( DIGITS | POINTFLOAT ) Exponent )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1028:4: ( DIGITS | POINTFLOAT ) Exponent
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:935:4: ( DIGITS | POINTFLOAT )
-            int alt6=2;
-            alt6 = dfa6.predict(input);
-            switch (alt6) {
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1028:4: ( DIGITS | POINTFLOAT )
+            int alt5=2;
+            alt5 = dfa5.predict(input);
+            switch (alt5) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:935:5: DIGITS
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1028:5: DIGITS
                     {
                     mDIGITS(); 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:935:14: POINTFLOAT
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1028:14: POINTFLOAT
                     {
                     mPOINTFLOAT(); 
 
@@ -2658,8 +2648,8 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "Exponent"
     public final void mExponent() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:940:2: ( ( 'e' | 'E' ) ( '+' | '-' )? DIGITS )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:940:4: ( 'e' | 'E' ) ( '+' | '-' )? DIGITS
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1033:2: ( ( 'e' | 'E' ) ( '+' | '-' )? DIGITS )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1033:4: ( 'e' | 'E' ) ( '+' | '-' )? DIGITS
             {
             if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                 input.consume();
@@ -2670,16 +2660,16 @@ public class blitzmaxLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:940:16: ( '+' | '-' )?
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1033:16: ( '+' | '-' )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA7_0=='+'||LA7_0=='-') ) {
-                alt7=1;
+            if ( (LA6_0=='+'||LA6_0=='-') ) {
+                alt6=1;
             }
-            switch (alt7) {
+            switch (alt6) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:
                     {
                     if ( input.LA(1)=='+'||input.LA(1)=='-' ) {
                         input.consume();
@@ -2711,8 +2701,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = LONG;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:943:7: ( INT )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:943:10: INT
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1036:7: ( INT )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1036:10: INT
             {
             mINT(); 
 
@@ -2729,35 +2719,35 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "INT"
     public final void mINT() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:946:5: ( '$' ( DIGIT | 'a' .. 'f' | 'A' .. 'F' )+ | ( MINUS )? ( DIGITS )* )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1039:5: ( '$' ( DIGIT | 'a' .. 'f' | 'A' .. 'F' )+ | ( MINUS )? ( DIGITS )* )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA11_0=='$') ) {
-                alt11=1;
+            if ( (LA10_0=='$') ) {
+                alt10=1;
             }
             else {
-                alt11=2;}
-            switch (alt11) {
+                alt10=2;}
+            switch (alt10) {
                 case 1 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:947:9: '$' ( DIGIT | 'a' .. 'f' | 'A' .. 'F' )+
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1040:9: '$' ( DIGIT | 'a' .. 'f' | 'A' .. 'F' )+
                     {
                     match('$'); 
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:947:13: ( DIGIT | 'a' .. 'f' | 'A' .. 'F' )+
-                    int cnt8=0;
-                    loop8:
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1040:13: ( DIGIT | 'a' .. 'f' | 'A' .. 'F' )+
+                    int cnt7=0;
+                    loop7:
                     do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
 
-                        if ( ((LA8_0>='0' && LA8_0<='9')||(LA8_0>='A' && LA8_0<='F')||(LA8_0>='a' && LA8_0<='f')) ) {
-                            alt8=1;
+                        if ( ((LA7_0>='0' && LA7_0<='9')||(LA7_0>='A' && LA7_0<='F')||(LA7_0>='a' && LA7_0<='f')) ) {
+                            alt7=1;
                         }
 
 
-                        switch (alt8) {
+                        switch (alt7) {
                     	case 1 :
-                    	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:
+                    	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:
                     	    {
                     	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='F')||(input.LA(1)>='a' && input.LA(1)<='f') ) {
                     	        input.consume();
@@ -2773,30 +2763,30 @@ public class blitzmaxLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    if ( cnt8 >= 1 ) break loop8;
+                    	    if ( cnt7 >= 1 ) break loop7;
                                 EarlyExitException eee =
-                                    new EarlyExitException(8, input);
+                                    new EarlyExitException(7, input);
                                 throw eee;
                         }
-                        cnt8++;
+                        cnt7++;
                     } while (true);
 
 
                     }
                     break;
                 case 2 :
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:948:9: ( MINUS )? ( DIGITS )*
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1041:9: ( MINUS )? ( DIGITS )*
                     {
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:948:9: ( MINUS )?
-                    int alt9=2;
-                    int LA9_0 = input.LA(1);
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1041:9: ( MINUS )?
+                    int alt8=2;
+                    int LA8_0 = input.LA(1);
 
-                    if ( (LA9_0=='-') ) {
-                        alt9=1;
+                    if ( (LA8_0=='-') ) {
+                        alt8=1;
                     }
-                    switch (alt9) {
+                    switch (alt8) {
                         case 1 :
-                            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:948:9: MINUS
+                            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1041:9: MINUS
                             {
                             mMINUS(); 
 
@@ -2805,20 +2795,20 @@ public class blitzmaxLexer extends Lexer {
 
                     }
 
-                    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:948:16: ( DIGITS )*
-                    loop10:
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1041:16: ( DIGITS )*
+                    loop9:
                     do {
-                        int alt10=2;
-                        int LA10_0 = input.LA(1);
+                        int alt9=2;
+                        int LA9_0 = input.LA(1);
 
-                        if ( ((LA10_0>='0' && LA10_0<='9')) ) {
-                            alt10=1;
+                        if ( ((LA9_0>='0' && LA9_0<='9')) ) {
+                            alt9=1;
                         }
 
 
-                        switch (alt10) {
+                        switch (alt9) {
                     	case 1 :
-                    	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:948:16: DIGITS
+                    	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1041:16: DIGITS
                     	    {
                     	    mDIGITS(); 
 
@@ -2826,7 +2816,7 @@ public class blitzmaxLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop10;
+                    	    break loop9;
                         }
                     } while (true);
 
@@ -2844,8 +2834,8 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "ALPHA_LOWER"
     public final void mALPHA_LOWER() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:953:2: ( 'a' .. 'z' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:953:4: 'a' .. 'z'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1046:2: ( 'a' .. 'z' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1046:4: 'a' .. 'z'
             {
             matchRange('a','z'); 
 
@@ -2860,8 +2850,8 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "ALPHA_UPPER"
     public final void mALPHA_UPPER() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:958:2: ( 'A' .. 'Z' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:958:4: 'A' .. 'Z'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1051:2: ( 'A' .. 'Z' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1051:4: 'A' .. 'Z'
             {
             matchRange('A','Z'); 
 
@@ -2876,24 +2866,24 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "DIGITS"
     public final void mDIGITS() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:962:8: ( ( DIGIT )+ )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:962:10: ( DIGIT )+
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1055:8: ( ( DIGIT )+ )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1055:10: ( DIGIT )+
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:962:10: ( DIGIT )+
-            int cnt12=0;
-            loop12:
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1055:10: ( DIGIT )+
+            int cnt11=0;
+            loop11:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( ((LA12_0>='0' && LA12_0<='9')) ) {
-                    alt12=1;
+                if ( ((LA11_0>='0' && LA11_0<='9')) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt11) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:962:12: DIGIT
+            	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1055:12: DIGIT
             	    {
             	    mDIGIT(); 
 
@@ -2901,12 +2891,12 @@ public class blitzmaxLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt12 >= 1 ) break loop12;
+            	    if ( cnt11 >= 1 ) break loop11;
                         EarlyExitException eee =
-                            new EarlyExitException(12, input);
+                            new EarlyExitException(11, input);
                         throw eee;
                 }
-                cnt12++;
+                cnt11++;
             } while (true);
 
 
@@ -2921,8 +2911,8 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR start "DIGIT"
     public final void mDIGIT() throws RecognitionException {
         try {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:965:8: ( '0' .. '9' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:965:10: '0' .. '9'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1058:8: ( '0' .. '9' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1058:10: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -2939,8 +2929,8 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = IDENTIFIER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:968:11: ( ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE ) ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE | DIGIT )* )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:968:13: ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE ) ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE | DIGIT )*
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1061:11: ( ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE ) ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE | DIGIT )* )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1061:13: ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE ) ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE | DIGIT )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -2951,20 +2941,20 @@ public class blitzmaxLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:969:9: ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE | DIGIT )*
-            loop13:
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1062:9: ( ALPHA_LOWER | ALPHA_UPPER | UNDERSCORE | DIGIT )*
+            loop12:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( ((LA13_0>='0' && LA13_0<='9')||(LA13_0>='A' && LA13_0<='Z')||LA13_0=='_'||(LA13_0>='a' && LA13_0<='z')) ) {
-                    alt13=1;
+                if ( ((LA12_0>='0' && LA12_0<='9')||(LA12_0>='A' && LA12_0<='Z')||LA12_0=='_'||(LA12_0>='a' && LA12_0<='z')) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt12) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:
+            	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:
             	    {
             	    if ( (input.LA(1)>='0' && input.LA(1)<='9')||(input.LA(1)>='A' && input.LA(1)<='Z')||input.LA(1)=='_'||(input.LA(1)>='a' && input.LA(1)<='z') ) {
             	        input.consume();
@@ -2980,7 +2970,7 @@ public class blitzmaxLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop12;
                 }
             } while (true);
 
@@ -3000,24 +2990,24 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = WHITESPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:972:12: ( ( ' ' | '\\t' )+ )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:972:14: ( ' ' | '\\t' )+
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1065:12: ( ( ' ' | '\\t' )+ )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1065:14: ( ' ' | '\\t' )+
             {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:972:14: ( ' ' | '\\t' )+
-            int cnt14=0;
-            loop14:
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1065:14: ( ' ' | '\\t' )+
+            int cnt13=0;
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( (LA14_0=='\t'||LA14_0==' ') ) {
-                    alt14=1;
+                if ( (LA13_0=='\t'||LA13_0==' ') ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:
+            	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:
             	    {
             	    if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -3033,12 +3023,12 @@ public class blitzmaxLexer extends Lexer {
             	    break;
 
             	default :
-            	    if ( cnt14 >= 1 ) break loop14;
+            	    if ( cnt13 >= 1 ) break loop13;
                         EarlyExitException eee =
-                            new EarlyExitException(14, input);
+                            new EarlyExitException(13, input);
                         throw eee;
                 }
-                cnt14++;
+                cnt13++;
             } while (true);
 
             _channel=HIDDEN;
@@ -3058,27 +3048,27 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = STRING_LITERAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:983:2: ( '\"' ( options {greedy=false; } : . )* '\"' )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:983:4: '\"' ( options {greedy=false; } : . )* '\"'
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1076:2: ( '\"' ( options {greedy=false; } : . )* '\"' )
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1076:4: '\"' ( options {greedy=false; } : . )* '\"'
             {
             match('\"'); 
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:983:8: ( options {greedy=false; } : . )*
-            loop15:
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1076:8: ( options {greedy=false; } : . )*
+            loop14:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA15_0=='\"') ) {
-                    alt15=2;
+                if ( (LA14_0=='\"') ) {
+                    alt14=2;
                 }
-                else if ( ((LA15_0>='\u0000' && LA15_0<='!')||(LA15_0>='#' && LA15_0<='\uFFFF')) ) {
-                    alt15=1;
+                else if ( ((LA14_0>='\u0000' && LA14_0<='!')||(LA14_0>='#' && LA14_0<='\uFFFF')) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt14) {
             	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:983:36: .
+            	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1076:36: .
             	    {
             	    matchAny(); 
 
@@ -3086,7 +3076,7 @@ public class blitzmaxLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop14;
                 }
             } while (true);
 
@@ -3107,60 +3097,138 @@ public class blitzmaxLexer extends Lexer {
         try {
             int _type = NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:987:5: ( ( ( '\\r' )? '\\n' )+ )
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:987:9: ( ( '\\r' )? '\\n' )+
-            {
-            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:987:9: ( ( '\\r' )? '\\n' )+
-            int cnt17=0;
-            loop17:
-            do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1080:5: ( ( ( '\\r' )? '\\n' )+ | '\\'' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n' )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-                if ( (LA17_0=='\n'||LA17_0=='\r') ) {
-                    alt17=1;
-                }
+            if ( (LA19_0=='\n'||LA19_0=='\r') ) {
+                alt19=1;
+            }
+            else if ( (LA19_0=='\'') ) {
+                alt19=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 19, 0, input);
+
+                throw nvae;
+            }
+            switch (alt19) {
+                case 1 :
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1080:9: ( ( '\\r' )? '\\n' )+
+                    {
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1080:9: ( ( '\\r' )? '\\n' )+
+                    int cnt16=0;
+                    loop16:
+                    do {
+                        int alt16=2;
+                        int LA16_0 = input.LA(1);
+
+                        if ( (LA16_0=='\n'||LA16_0=='\r') ) {
+                            alt16=1;
+                        }
 
 
-                switch (alt17) {
-            	case 1 :
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:987:10: ( '\\r' )? '\\n'
-            	    {
-            	    // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:987:10: ( '\\r' )?
-            	    int alt16=2;
-            	    int LA16_0 = input.LA(1);
+                        switch (alt16) {
+                    	case 1 :
+                    	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1080:10: ( '\\r' )? '\\n'
+                    	    {
+                    	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1080:10: ( '\\r' )?
+                    	    int alt15=2;
+                    	    int LA15_0 = input.LA(1);
 
-            	    if ( (LA16_0=='\r') ) {
-            	        alt16=1;
-            	    }
-            	    switch (alt16) {
-            	        case 1 :
-            	            // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:987:11: '\\r'
-            	            {
-            	            match('\r'); 
+                    	    if ( (LA15_0=='\r') ) {
+                    	        alt15=1;
+                    	    }
+                    	    switch (alt15) {
+                    	        case 1 :
+                    	            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1080:11: '\\r'
+                    	            {
+                    	            match('\r'); 
 
-            	            }
-            	            break;
+                    	            }
+                    	            break;
 
-            	    }
+                    	    }
 
-            	    match('\n'); 
+                    	    match('\n'); 
 
-            	    }
-            	    break;
+                    	    }
+                    	    break;
 
-            	default :
-            	    if ( cnt17 >= 1 ) break loop17;
-                        EarlyExitException eee =
-                            new EarlyExitException(17, input);
-                        throw eee;
-                }
-                cnt17++;
-            } while (true);
+                    	default :
+                    	    if ( cnt16 >= 1 ) break loop16;
+                                EarlyExitException eee =
+                                    new EarlyExitException(16, input);
+                                throw eee;
+                        }
+                        cnt16++;
+                    } while (true);
 
+
+                    }
+                    break;
+                case 2 :
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1081:7: '\\'' (~ ( '\\n' | '\\r' ) )* ( '\\r' )? '\\n'
+                    {
+                    match('\''); 
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1081:12: (~ ( '\\n' | '\\r' ) )*
+                    loop17:
+                    do {
+                        int alt17=2;
+                        int LA17_0 = input.LA(1);
+
+                        if ( ((LA17_0>='\u0000' && LA17_0<='\t')||(LA17_0>='\u000B' && LA17_0<='\f')||(LA17_0>='\u000E' && LA17_0<='\uFFFF')) ) {
+                            alt17=1;
+                        }
+
+
+                        switch (alt17) {
+                    	case 1 :
+                    	    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1081:12: ~ ( '\\n' | '\\r' )
+                    	    {
+                    	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
+                    	        input.consume();
+
+                    	    }
+                    	    else {
+                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
+                    	        recover(mse);
+                    	        throw mse;}
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop17;
+                        }
+                    } while (true);
+
+                    // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1081:26: ( '\\r' )?
+                    int alt18=2;
+                    int LA18_0 = input.LA(1);
+
+                    if ( (LA18_0=='\r') ) {
+                        alt18=1;
+                    }
+                    switch (alt18) {
+                        case 1 :
+                            // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1081:27: '\\r'
+                            {
+                            match('\r'); 
+
+                            }
+                            break;
+
+                    }
+
+                    match('\n'); 
+
+                    }
+                    break;
 
             }
-
             state.type = _type;
             state.channel = _channel;
         }
@@ -3170,824 +3238,831 @@ public class blitzmaxLexer extends Lexer {
     // $ANTLR end "NEWLINE"
 
     public void mTokens() throws RecognitionException {
-        // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:8: ( T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | LINE_COMMENT | SUPERSTRICT | STRICT | FRAMEWORK | MODULE | MODULEINFO | IMPORT | INCLUDE | LOCAL | GLOBAL | TYPE | FUNCTION | METHOD | EXTERN | EXTENDS | ABSTRACT | FINAL | FIELD | CONST | VAR | REM | TRUE | FALSE | LONG_TYPE | INT_TYPE | FLOAT_TYPE | DOUBLE_TYPE | BYTE_TYPE | STRING_TYPE | SHORT_TYPE | OBJECT_TYPE | POINTER | NULL | SUPER | SELF | NEW | DELETE | FOR | NEXT | TO | EACHIN | STEP | WHILE | WEND | REPEAT | UNTIL | FOREVER | CONTINUE | SELECT | CASE | DEFAULT | IF | THEN | ELSE | TRY | CATCH | THROW | ASSERT | DEBUGLOG | DEBUGSTOP | EXIT | END | INCBIN | INCBINPTR | INCBINLEN | NOT_TEST | AND_TEST | OR_TEST | SEMI | PLUS | MINUS | STAR | SLASH | VBAR | AMPER | LESS | GREATER | EQUAL | PERCENT | POWER | COLON | COMMA | TILDE | POUND | BANG | DOLLAR | DOT | UNDERSCORE | LPAREN | RPAREN | LBRACK | RBRACK | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINUSEQUAL | STAREQUAL | SLASHEQUAL | VBAREQUAL | LEFTSHIFT | RIGHTSHIFT | ARITHRIGHTSHIFT | MOD | FLOAT | LONG | IDENTIFIER | WHITESPACE | STRING_LITERAL | NEWLINE )
-        int alt18=117;
-        alt18 = dfa18.predict(input);
-        switch (alt18) {
+        // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:8: ( T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | LINE_CONTINUATION | SUPERSTRICT | STRICT | FRAMEWORK | MODULE | MODULEINFO | IMPORT | INCLUDE | LOCAL | GLOBAL | TYPE | FUNCTION | METHOD | EXTERN | EXTENDS | ABSTRACT | FINAL | FIELD | CONST | VAR | RETURN | REM | TRUE | FALSE | LONG_TYPE | INT_TYPE | FLOAT_TYPE | DOUBLE_TYPE | BYTE_TYPE | STRING_TYPE | SHORT_TYPE | OBJECT_TYPE | POINTER | NULL | SUPER | SELF | NEW | DELETE | FOR | NEXT | TO | EACHIN | STEP | WHILE | WEND | REPEAT | UNTIL | FOREVER | CONTINUE | SELECT | CASE | DEFAULT | IF | THEN | ELSE | TRY | CATCH | THROW | ASSERT | DEBUGLOG | DEBUGSTOP | EXIT | END | INCBIN | INCBINPTR | INCBINLEN | NOT_TEST | AND_TEST | OR_TEST | SEMI | PLUS | MINUS | STAR | SLASH | VBAR | AMPER | LESS | GREATER | EQUAL | PERCENT | POWER | COLON | COMMA | TILDE | POUND | BANG | DOLLAR | DOT | UNDERSCORE | LPAREN | RPAREN | LBRACK | RBRACK | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINUSEQUAL | STAREQUAL | SLASHEQUAL | VBAREQUAL | LEFTSHIFT | RIGHTSHIFT | ARITHRIGHTSHIFT | MOD | FLOAT | LONG | IDENTIFIER | WHITESPACE | STRING_LITERAL | NEWLINE )
+        int alt20=118;
+        alt20 = dfa20.predict(input);
+        switch (alt20) {
             case 1 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:10: T__123
-                {
-                mT__123(); 
-
-                }
-                break;
-            case 2 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:17: T__124
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:10: T__124
                 {
                 mT__124(); 
 
                 }
                 break;
-            case 3 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:24: T__125
+            case 2 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:17: T__125
                 {
                 mT__125(); 
 
                 }
                 break;
-            case 4 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:31: T__126
+            case 3 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:24: T__126
                 {
                 mT__126(); 
 
                 }
                 break;
-            case 5 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:38: T__127
+            case 4 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:31: T__127
                 {
                 mT__127(); 
 
                 }
                 break;
-            case 6 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:45: T__128
+            case 5 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:38: T__128
                 {
                 mT__128(); 
 
                 }
                 break;
-            case 7 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:52: T__129
+            case 6 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:45: T__129
                 {
                 mT__129(); 
 
                 }
                 break;
-            case 8 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:59: LINE_COMMENT
+            case 7 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:52: T__130
                 {
-                mLINE_COMMENT(); 
+                mT__130(); 
+
+                }
+                break;
+            case 8 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:59: LINE_CONTINUATION
+                {
+                mLINE_CONTINUATION(); 
 
                 }
                 break;
             case 9 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:72: SUPERSTRICT
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:77: SUPERSTRICT
                 {
                 mSUPERSTRICT(); 
 
                 }
                 break;
             case 10 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:84: STRICT
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:89: STRICT
                 {
                 mSTRICT(); 
 
                 }
                 break;
             case 11 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:91: FRAMEWORK
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:96: FRAMEWORK
                 {
                 mFRAMEWORK(); 
 
                 }
                 break;
             case 12 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:101: MODULE
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:106: MODULE
                 {
                 mMODULE(); 
 
                 }
                 break;
             case 13 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:108: MODULEINFO
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:113: MODULEINFO
                 {
                 mMODULEINFO(); 
 
                 }
                 break;
             case 14 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:119: IMPORT
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:124: IMPORT
                 {
                 mIMPORT(); 
 
                 }
                 break;
             case 15 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:126: INCLUDE
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:131: INCLUDE
                 {
                 mINCLUDE(); 
 
                 }
                 break;
             case 16 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:134: LOCAL
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:139: LOCAL
                 {
                 mLOCAL(); 
 
                 }
                 break;
             case 17 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:140: GLOBAL
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:145: GLOBAL
                 {
                 mGLOBAL(); 
 
                 }
                 break;
             case 18 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:147: TYPE
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:152: TYPE
                 {
                 mTYPE(); 
 
                 }
                 break;
             case 19 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:152: FUNCTION
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:157: FUNCTION
                 {
                 mFUNCTION(); 
 
                 }
                 break;
             case 20 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:161: METHOD
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:166: METHOD
                 {
                 mMETHOD(); 
 
                 }
                 break;
             case 21 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:168: EXTERN
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:173: EXTERN
                 {
                 mEXTERN(); 
 
                 }
                 break;
             case 22 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:175: EXTENDS
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:180: EXTENDS
                 {
                 mEXTENDS(); 
 
                 }
                 break;
             case 23 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:183: ABSTRACT
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:188: ABSTRACT
                 {
                 mABSTRACT(); 
 
                 }
                 break;
             case 24 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:192: FINAL
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:197: FINAL
                 {
                 mFINAL(); 
 
                 }
                 break;
             case 25 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:198: FIELD
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:203: FIELD
                 {
                 mFIELD(); 
 
                 }
                 break;
             case 26 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:204: CONST
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:209: CONST
                 {
                 mCONST(); 
 
                 }
                 break;
             case 27 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:210: VAR
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:215: VAR
                 {
                 mVAR(); 
 
                 }
                 break;
             case 28 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:214: REM
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:219: RETURN
+                {
+                mRETURN(); 
+
+                }
+                break;
+            case 29 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:226: REM
                 {
                 mREM(); 
 
                 }
                 break;
-            case 29 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:218: TRUE
+            case 30 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:230: TRUE
                 {
                 mTRUE(); 
 
                 }
                 break;
-            case 30 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:223: FALSE
+            case 31 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:235: FALSE
                 {
                 mFALSE(); 
 
                 }
                 break;
-            case 31 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:229: LONG_TYPE
+            case 32 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:241: LONG_TYPE
                 {
                 mLONG_TYPE(); 
 
                 }
                 break;
-            case 32 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:239: INT_TYPE
+            case 33 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:251: INT_TYPE
                 {
                 mINT_TYPE(); 
 
                 }
                 break;
-            case 33 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:248: FLOAT_TYPE
+            case 34 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:260: FLOAT_TYPE
                 {
                 mFLOAT_TYPE(); 
 
                 }
                 break;
-            case 34 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:259: DOUBLE_TYPE
+            case 35 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:271: DOUBLE_TYPE
                 {
                 mDOUBLE_TYPE(); 
 
                 }
                 break;
-            case 35 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:271: BYTE_TYPE
+            case 36 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:283: BYTE_TYPE
                 {
                 mBYTE_TYPE(); 
 
                 }
                 break;
-            case 36 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:281: STRING_TYPE
+            case 37 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:293: STRING_TYPE
                 {
                 mSTRING_TYPE(); 
 
                 }
                 break;
-            case 37 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:293: SHORT_TYPE
+            case 38 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:305: SHORT_TYPE
                 {
                 mSHORT_TYPE(); 
 
                 }
                 break;
-            case 38 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:304: OBJECT_TYPE
+            case 39 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:316: OBJECT_TYPE
                 {
                 mOBJECT_TYPE(); 
 
                 }
                 break;
-            case 39 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:316: POINTER
+            case 40 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:328: POINTER
                 {
                 mPOINTER(); 
 
                 }
                 break;
-            case 40 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:324: NULL
+            case 41 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:336: NULL
                 {
                 mNULL(); 
 
                 }
                 break;
-            case 41 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:329: SUPER
+            case 42 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:341: SUPER
                 {
                 mSUPER(); 
 
                 }
                 break;
-            case 42 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:335: SELF
+            case 43 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:347: SELF
                 {
                 mSELF(); 
 
                 }
                 break;
-            case 43 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:340: NEW
+            case 44 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:352: NEW
                 {
                 mNEW(); 
 
                 }
                 break;
-            case 44 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:344: DELETE
+            case 45 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:356: DELETE
                 {
                 mDELETE(); 
 
                 }
                 break;
-            case 45 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:351: FOR
+            case 46 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:363: FOR
                 {
                 mFOR(); 
 
                 }
                 break;
-            case 46 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:355: NEXT
+            case 47 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:367: NEXT
                 {
                 mNEXT(); 
 
                 }
                 break;
-            case 47 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:360: TO
+            case 48 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:372: TO
                 {
                 mTO(); 
 
                 }
                 break;
-            case 48 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:363: EACHIN
+            case 49 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:375: EACHIN
                 {
                 mEACHIN(); 
 
                 }
                 break;
-            case 49 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:370: STEP
+            case 50 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:382: STEP
                 {
                 mSTEP(); 
 
                 }
                 break;
-            case 50 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:375: WHILE
+            case 51 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:387: WHILE
                 {
                 mWHILE(); 
 
                 }
                 break;
-            case 51 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:381: WEND
+            case 52 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:393: WEND
                 {
                 mWEND(); 
 
                 }
                 break;
-            case 52 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:386: REPEAT
+            case 53 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:398: REPEAT
                 {
                 mREPEAT(); 
 
                 }
                 break;
-            case 53 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:393: UNTIL
+            case 54 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:405: UNTIL
                 {
                 mUNTIL(); 
 
                 }
                 break;
-            case 54 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:399: FOREVER
+            case 55 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:411: FOREVER
                 {
                 mFOREVER(); 
 
                 }
                 break;
-            case 55 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:407: CONTINUE
+            case 56 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:419: CONTINUE
                 {
                 mCONTINUE(); 
 
                 }
                 break;
-            case 56 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:416: SELECT
+            case 57 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:428: SELECT
                 {
                 mSELECT(); 
 
                 }
                 break;
-            case 57 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:423: CASE
+            case 58 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:435: CASE
                 {
                 mCASE(); 
 
                 }
                 break;
-            case 58 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:428: DEFAULT
+            case 59 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:440: DEFAULT
                 {
                 mDEFAULT(); 
 
                 }
                 break;
-            case 59 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:436: IF
+            case 60 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:448: IF
                 {
                 mIF(); 
 
                 }
                 break;
-            case 60 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:439: THEN
+            case 61 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:451: THEN
                 {
                 mTHEN(); 
 
                 }
                 break;
-            case 61 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:444: ELSE
+            case 62 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:456: ELSE
                 {
                 mELSE(); 
 
                 }
                 break;
-            case 62 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:449: TRY
+            case 63 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:461: TRY
                 {
                 mTRY(); 
 
                 }
                 break;
-            case 63 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:453: CATCH
+            case 64 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:465: CATCH
                 {
                 mCATCH(); 
 
                 }
                 break;
-            case 64 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:459: THROW
+            case 65 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:471: THROW
                 {
                 mTHROW(); 
 
                 }
                 break;
-            case 65 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:465: ASSERT
+            case 66 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:477: ASSERT
                 {
                 mASSERT(); 
 
                 }
                 break;
-            case 66 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:472: DEBUGLOG
+            case 67 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:484: DEBUGLOG
                 {
                 mDEBUGLOG(); 
 
                 }
                 break;
-            case 67 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:481: DEBUGSTOP
+            case 68 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:493: DEBUGSTOP
                 {
                 mDEBUGSTOP(); 
 
                 }
                 break;
-            case 68 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:491: EXIT
+            case 69 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:503: EXIT
                 {
                 mEXIT(); 
 
                 }
                 break;
-            case 69 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:496: END
+            case 70 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:508: END
                 {
                 mEND(); 
 
                 }
                 break;
-            case 70 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:500: INCBIN
+            case 71 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:512: INCBIN
                 {
                 mINCBIN(); 
 
                 }
                 break;
-            case 71 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:507: INCBINPTR
+            case 72 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:519: INCBINPTR
                 {
                 mINCBINPTR(); 
 
                 }
                 break;
-            case 72 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:517: INCBINLEN
+            case 73 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:529: INCBINLEN
                 {
                 mINCBINLEN(); 
 
                 }
                 break;
-            case 73 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:527: NOT_TEST
+            case 74 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:539: NOT_TEST
                 {
                 mNOT_TEST(); 
 
                 }
                 break;
-            case 74 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:536: AND_TEST
+            case 75 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:548: AND_TEST
                 {
                 mAND_TEST(); 
 
                 }
                 break;
-            case 75 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:545: OR_TEST
+            case 76 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:557: OR_TEST
                 {
                 mOR_TEST(); 
 
                 }
                 break;
-            case 76 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:553: SEMI
+            case 77 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:565: SEMI
                 {
                 mSEMI(); 
 
                 }
                 break;
-            case 77 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:558: PLUS
+            case 78 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:570: PLUS
                 {
                 mPLUS(); 
 
                 }
                 break;
-            case 78 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:563: MINUS
+            case 79 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:575: MINUS
                 {
                 mMINUS(); 
 
                 }
                 break;
-            case 79 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:569: STAR
+            case 80 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:581: STAR
                 {
                 mSTAR(); 
 
                 }
                 break;
-            case 80 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:574: SLASH
+            case 81 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:586: SLASH
                 {
                 mSLASH(); 
 
                 }
                 break;
-            case 81 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:580: VBAR
+            case 82 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:592: VBAR
                 {
                 mVBAR(); 
 
                 }
                 break;
-            case 82 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:585: AMPER
+            case 83 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:597: AMPER
                 {
                 mAMPER(); 
 
                 }
                 break;
-            case 83 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:591: LESS
+            case 84 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:603: LESS
                 {
                 mLESS(); 
 
                 }
                 break;
-            case 84 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:596: GREATER
+            case 85 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:608: GREATER
                 {
                 mGREATER(); 
 
                 }
                 break;
-            case 85 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:604: EQUAL
+            case 86 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:616: EQUAL
                 {
                 mEQUAL(); 
 
                 }
                 break;
-            case 86 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:610: PERCENT
+            case 87 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:622: PERCENT
                 {
                 mPERCENT(); 
 
                 }
                 break;
-            case 87 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:618: POWER
+            case 88 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:630: POWER
                 {
                 mPOWER(); 
 
                 }
                 break;
-            case 88 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:624: COLON
+            case 89 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:636: COLON
                 {
                 mCOLON(); 
 
                 }
                 break;
-            case 89 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:630: COMMA
+            case 90 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:642: COMMA
                 {
                 mCOMMA(); 
 
                 }
                 break;
-            case 90 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:636: TILDE
+            case 91 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:648: TILDE
                 {
                 mTILDE(); 
 
                 }
                 break;
-            case 91 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:642: POUND
+            case 92 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:654: POUND
                 {
                 mPOUND(); 
 
                 }
                 break;
-            case 92 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:648: BANG
+            case 93 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:660: BANG
                 {
                 mBANG(); 
 
                 }
                 break;
-            case 93 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:653: DOLLAR
+            case 94 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:665: DOLLAR
                 {
                 mDOLLAR(); 
 
                 }
                 break;
-            case 94 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:660: DOT
+            case 95 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:672: DOT
                 {
                 mDOT(); 
 
                 }
                 break;
-            case 95 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:664: UNDERSCORE
+            case 96 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:676: UNDERSCORE
                 {
                 mUNDERSCORE(); 
 
                 }
                 break;
-            case 96 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:675: LPAREN
+            case 97 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:687: LPAREN
                 {
                 mLPAREN(); 
 
                 }
                 break;
-            case 97 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:682: RPAREN
+            case 98 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:694: RPAREN
                 {
                 mRPAREN(); 
 
                 }
                 break;
-            case 98 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:689: LBRACK
+            case 99 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:701: LBRACK
                 {
                 mLBRACK(); 
 
                 }
                 break;
-            case 99 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:696: RBRACK
+            case 100 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:708: RBRACK
                 {
                 mRBRACK(); 
 
                 }
                 break;
-            case 100 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:703: NOTEQUAL
+            case 101 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:715: NOTEQUAL
                 {
                 mNOTEQUAL(); 
 
                 }
                 break;
-            case 101 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:712: LESSEQUAL
+            case 102 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:724: LESSEQUAL
                 {
                 mLESSEQUAL(); 
 
                 }
                 break;
-            case 102 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:722: GREATEREQUAL
+            case 103 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:734: GREATEREQUAL
                 {
                 mGREATEREQUAL(); 
 
                 }
                 break;
-            case 103 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:735: PLUSEQUAL
+            case 104 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:747: PLUSEQUAL
                 {
                 mPLUSEQUAL(); 
 
                 }
                 break;
-            case 104 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:745: MINUSEQUAL
+            case 105 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:757: MINUSEQUAL
                 {
                 mMINUSEQUAL(); 
 
                 }
                 break;
-            case 105 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:756: STAREQUAL
+            case 106 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:768: STAREQUAL
                 {
                 mSTAREQUAL(); 
 
                 }
                 break;
-            case 106 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:766: SLASHEQUAL
+            case 107 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:778: SLASHEQUAL
                 {
                 mSLASHEQUAL(); 
 
                 }
                 break;
-            case 107 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:777: VBAREQUAL
+            case 108 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:789: VBAREQUAL
                 {
                 mVBAREQUAL(); 
 
                 }
                 break;
-            case 108 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:787: LEFTSHIFT
+            case 109 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:799: LEFTSHIFT
                 {
                 mLEFTSHIFT(); 
 
                 }
                 break;
-            case 109 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:797: RIGHTSHIFT
+            case 110 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:809: RIGHTSHIFT
                 {
                 mRIGHTSHIFT(); 
 
                 }
                 break;
-            case 110 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:808: ARITHRIGHTSHIFT
+            case 111 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:820: ARITHRIGHTSHIFT
                 {
                 mARITHRIGHTSHIFT(); 
 
                 }
                 break;
-            case 111 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:824: MOD
+            case 112 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:836: MOD
                 {
                 mMOD(); 
 
                 }
                 break;
-            case 112 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:828: FLOAT
+            case 113 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:840: FLOAT
                 {
                 mFLOAT(); 
 
                 }
                 break;
-            case 113 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:834: LONG
+            case 114 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:846: LONG
                 {
                 mLONG(); 
 
                 }
                 break;
-            case 114 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:839: IDENTIFIER
+            case 115 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:851: IDENTIFIER
                 {
                 mIDENTIFIER(); 
 
                 }
                 break;
-            case 115 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:850: WHITESPACE
+            case 116 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:862: WHITESPACE
                 {
                 mWHITESPACE(); 
 
                 }
                 break;
-            case 116 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:861: STRING_LITERAL
+            case 117 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:873: STRING_LITERAL
                 {
                 mSTRING_LITERAL(); 
 
                 }
                 break;
-            case 117 :
-                // C:\\000_programming\\eclipse_plugins\\workspace\\net.brucey.dltk.blitzmax.core\\src\\net\\brucey\\dltk\\blitzmax\\core\\parsers\\blitzmax.g:1:876: NEWLINE
+            case 118 :
+                // /Volumes/Misc Data/programming/java/projects/net.brucey.dltk.blitzmax.core/src/net/brucey/dltk/blitzmax/core/parsers/blitzmax.g:1:888: NEWLINE
                 {
                 mNEWLINE(); 
 
@@ -3999,23 +4074,23 @@ public class blitzmaxLexer extends Lexer {
     }
 
 
-    protected DFA3 dfa3 = new DFA3(this);
+    protected DFA2 dfa2 = new DFA2(this);
+    protected DFA4 dfa4 = new DFA4(this);
     protected DFA5 dfa5 = new DFA5(this);
-    protected DFA6 dfa6 = new DFA6(this);
-    protected DFA18 dfa18 = new DFA18(this);
-    static final String DFA3_eotS =
+    protected DFA20 dfa20 = new DFA20(this);
+    static final String DFA2_eotS =
         "\4\uffff\2\6\1\uffff";
-    static final String DFA3_eofS =
+    static final String DFA2_eofS =
         "\7\uffff";
-    static final String DFA3_minS =
+    static final String DFA2_minS =
         "\2\56\1\60\1\uffff\2\60\1\uffff";
-    static final String DFA3_maxS =
+    static final String DFA2_maxS =
         "\1\71\1\145\1\71\1\uffff\2\145\1\uffff";
-    static final String DFA3_acceptS =
+    static final String DFA2_acceptS =
         "\3\uffff\1\2\2\uffff\1\1";
-    static final String DFA3_specialS =
+    static final String DFA2_specialS =
         "\7\uffff}>";
-    static final String[] DFA3_transitionS = {
+    static final String[] DFA2_transitionS = {
             "\1\2\1\uffff\12\1",
             "\1\4\1\uffff\12\1\13\uffff\1\3\37\uffff\1\3",
             "\12\5",
@@ -4025,56 +4100,108 @@ public class blitzmaxLexer extends Lexer {
             ""
     };
 
-    static final short[] DFA3_eot = DFA.unpackEncodedString(DFA3_eotS);
-    static final short[] DFA3_eof = DFA.unpackEncodedString(DFA3_eofS);
-    static final char[] DFA3_min = DFA.unpackEncodedStringToUnsignedChars(DFA3_minS);
-    static final char[] DFA3_max = DFA.unpackEncodedStringToUnsignedChars(DFA3_maxS);
-    static final short[] DFA3_accept = DFA.unpackEncodedString(DFA3_acceptS);
-    static final short[] DFA3_special = DFA.unpackEncodedString(DFA3_specialS);
-    static final short[][] DFA3_transition;
+    static final short[] DFA2_eot = DFA.unpackEncodedString(DFA2_eotS);
+    static final short[] DFA2_eof = DFA.unpackEncodedString(DFA2_eofS);
+    static final char[] DFA2_min = DFA.unpackEncodedStringToUnsignedChars(DFA2_minS);
+    static final char[] DFA2_max = DFA.unpackEncodedStringToUnsignedChars(DFA2_maxS);
+    static final short[] DFA2_accept = DFA.unpackEncodedString(DFA2_acceptS);
+    static final short[] DFA2_special = DFA.unpackEncodedString(DFA2_specialS);
+    static final short[][] DFA2_transition;
 
     static {
-        int numStates = DFA3_transitionS.length;
-        DFA3_transition = new short[numStates][];
+        int numStates = DFA2_transitionS.length;
+        DFA2_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA3_transition[i] = DFA.unpackEncodedString(DFA3_transitionS[i]);
+            DFA2_transition[i] = DFA.unpackEncodedString(DFA2_transitionS[i]);
         }
     }
 
-    class DFA3 extends DFA {
+    class DFA2 extends DFA {
 
-        public DFA3(BaseRecognizer recognizer) {
+        public DFA2(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 3;
-            this.eot = DFA3_eot;
-            this.eof = DFA3_eof;
-            this.min = DFA3_min;
-            this.max = DFA3_max;
-            this.accept = DFA3_accept;
-            this.special = DFA3_special;
-            this.transition = DFA3_transition;
+            this.decisionNumber = 2;
+            this.eot = DFA2_eot;
+            this.eof = DFA2_eof;
+            this.min = DFA2_min;
+            this.max = DFA2_max;
+            this.accept = DFA2_accept;
+            this.special = DFA2_special;
+            this.transition = DFA2_transition;
         }
         public String getDescription() {
-            return "922:1: FLOAT : ( POINTFLOAT | EXPONENTFLOAT );";
+            return "1015:1: FLOAT : ( POINTFLOAT | EXPONENTFLOAT );";
         }
     }
-    static final String DFA5_eotS =
+    static final String DFA4_eotS =
         "\3\uffff\1\4\1\uffff";
-    static final String DFA5_eofS =
+    static final String DFA4_eofS =
         "\5\uffff";
-    static final String DFA5_minS =
+    static final String DFA4_minS =
         "\2\56\1\uffff\1\60\1\uffff";
-    static final String DFA5_maxS =
+    static final String DFA4_maxS =
         "\2\71\1\uffff\1\71\1\uffff";
-    static final String DFA5_acceptS =
+    static final String DFA4_acceptS =
         "\2\uffff\1\1\1\uffff\1\2";
-    static final String DFA5_specialS =
+    static final String DFA4_specialS =
         "\5\uffff}>";
-    static final String[] DFA5_transitionS = {
+    static final String[] DFA4_transitionS = {
             "\1\2\1\uffff\12\1",
             "\1\3\1\uffff\12\1",
             "",
             "\12\2",
+            ""
+    };
+
+    static final short[] DFA4_eot = DFA.unpackEncodedString(DFA4_eotS);
+    static final short[] DFA4_eof = DFA.unpackEncodedString(DFA4_eofS);
+    static final char[] DFA4_min = DFA.unpackEncodedStringToUnsignedChars(DFA4_minS);
+    static final char[] DFA4_max = DFA.unpackEncodedStringToUnsignedChars(DFA4_maxS);
+    static final short[] DFA4_accept = DFA.unpackEncodedString(DFA4_acceptS);
+    static final short[] DFA4_special = DFA.unpackEncodedString(DFA4_specialS);
+    static final short[][] DFA4_transition;
+
+    static {
+        int numStates = DFA4_transitionS.length;
+        DFA4_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA4_transition[i] = DFA.unpackEncodedString(DFA4_transitionS[i]);
+        }
+    }
+
+    class DFA4 extends DFA {
+
+        public DFA4(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 4;
+            this.eot = DFA4_eot;
+            this.eof = DFA4_eof;
+            this.min = DFA4_min;
+            this.max = DFA4_max;
+            this.accept = DFA4_accept;
+            this.special = DFA4_special;
+            this.transition = DFA4_transition;
+        }
+        public String getDescription() {
+            return "1017:1: fragment POINTFLOAT : ( ( DIGITS )? FRACTION | DIGITS DOT );";
+        }
+    }
+    static final String DFA5_eotS =
+        "\4\uffff";
+    static final String DFA5_eofS =
+        "\4\uffff";
+    static final String DFA5_minS =
+        "\2\56\2\uffff";
+    static final String DFA5_maxS =
+        "\1\71\1\145\2\uffff";
+    static final String DFA5_acceptS =
+        "\2\uffff\1\2\1\1";
+    static final String DFA5_specialS =
+        "\4\uffff}>";
+    static final String[] DFA5_transitionS = {
+            "\1\2\1\uffff\12\1",
+            "\1\2\1\uffff\12\1\13\uffff\1\3\37\uffff\1\3",
+            "",
             ""
     };
 
@@ -4108,230 +4235,179 @@ public class blitzmaxLexer extends Lexer {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "924:1: fragment POINTFLOAT : ( ( DIGITS )? FRACTION | DIGITS DOT );";
+            return "1028:4: ( DIGITS | POINTFLOAT )";
         }
     }
-    static final String DFA6_eotS =
-        "\4\uffff";
-    static final String DFA6_eofS =
-        "\4\uffff";
-    static final String DFA6_minS =
-        "\2\56\2\uffff";
-    static final String DFA6_maxS =
-        "\1\71\1\145\2\uffff";
-    static final String DFA6_acceptS =
-        "\2\uffff\1\2\1\1";
-    static final String DFA6_specialS =
-        "\4\uffff}>";
-    static final String[] DFA6_transitionS = {
-            "\1\2\1\uffff\12\1",
-            "\1\2\1\uffff\12\1\13\uffff\1\3\37\uffff\1\3",
-            "",
-            ""
-    };
-
-    static final short[] DFA6_eot = DFA.unpackEncodedString(DFA6_eotS);
-    static final short[] DFA6_eof = DFA.unpackEncodedString(DFA6_eofS);
-    static final char[] DFA6_min = DFA.unpackEncodedStringToUnsignedChars(DFA6_minS);
-    static final char[] DFA6_max = DFA.unpackEncodedStringToUnsignedChars(DFA6_maxS);
-    static final short[] DFA6_accept = DFA.unpackEncodedString(DFA6_acceptS);
-    static final short[] DFA6_special = DFA.unpackEncodedString(DFA6_specialS);
-    static final short[][] DFA6_transition;
-
-    static {
-        int numStates = DFA6_transitionS.length;
-        DFA6_transition = new short[numStates][];
-        for (int i=0; i<numStates; i++) {
-            DFA6_transition[i] = DFA.unpackEncodedString(DFA6_transitionS[i]);
-        }
-    }
-
-    class DFA6 extends DFA {
-
-        public DFA6(BaseRecognizer recognizer) {
-            this.recognizer = recognizer;
-            this.decisionNumber = 6;
-            this.eot = DFA6_eot;
-            this.eof = DFA6_eof;
-            this.min = DFA6_min;
-            this.max = DFA6_max;
-            this.accept = DFA6_accept;
-            this.special = DFA6_special;
-            this.transition = DFA6_transition;
-        }
-        public String getDescription() {
-            return "935:4: ( DIGITS | POINTFLOAT )";
-        }
-    }
-    static final String DFA18_eotS =
-        "\1\56\1\57\1\uffff\22\57\2\uffff\1\140\4\uffff\1\143\1\145\3\uffff"+
-        "\1\153\4\uffff\1\154\1\155\1\157\4\uffff\1\56\5\uffff\23\57\1\u0089"+
-        "\4\57\1\u0090\14\57\1\u00a2\7\57\20\uffff\1\u00b1\10\57\1\u00ba"+
-        "\1\u00bb\1\57\1\u00be\6\57\1\u00c6\1\u00c8\3\57\1\u00cd\1\uffff"+
-        "\5\57\1\u00d3\1\uffff\4\57\1\u00d8\3\57\1\u00dd\1\u00de\7\57\1\uffff"+
-        "\1\u00e6\1\57\1\u00e8\1\57\1\u00ea\11\57\1\uffff\1\u00f5\1\57\1"+
-        "\u00f8\3\57\1\u00fd\1\57\2\uffff\1\u00ff\1\57\1\uffff\7\57\1\uffff"+
-        "\1\57\1\uffff\4\57\1\uffff\1\57\1\u010e\1\57\1\u0110\1\u0111\1\uffff"+
-        "\1\u0112\3\57\1\uffff\2\57\1\u0118\1\57\2\uffff\5\57\1\u011f\1\57"+
-        "\1\uffff\1\u0121\1\uffff\1\u0122\1\uffff\1\57\1\u0124\6\57\1\u012b"+
-        "\1\57\1\uffff\2\57\1\uffff\1\57\1\u0131\2\57\1\uffff\1\u0134\1\uffff"+
-        "\3\57\1\u0138\1\u0139\1\u013a\1\u013b\6\57\1\u0142\1\uffff\1\57"+
-        "\3\uffff\1\u0144\2\57\1\u0147\1\57\1\uffff\1\u0149\5\57\1\uffff"+
-        "\1\57\2\uffff\1\u0151\1\uffff\1\u0152\3\57\1\u0156\1\57\1\uffff"+
-        "\1\u0158\1\u0159\1\57\1\u015b\1\57\1\uffff\1\u015d\1\u015e\1\uffff"+
-        "\1\u015f\2\57\4\uffff\1\57\1\u0164\1\u0165\1\u0166\1\57\1\u016a"+
-        "\1\uffff\1\u016b\1\uffff\1\57\1\u016d\1\uffff\1\57\1\uffff\1\u016f"+
-        "\1\u0170\1\u0171\3\57\1\u0175\2\uffff\1\u0176\2\57\1\uffff\1\57"+
-        "\2\uffff\1\u017a\1\uffff\1\57\3\uffff\2\57\1\u017e\1\57\3\uffff"+
-        "\1\u0180\2\57\2\uffff\1\57\1\uffff\1\57\3\uffff\1\u0185\2\57\2\uffff"+
-        "\3\57\1\uffff\2\57\1\u018d\1\uffff\1\57\1\uffff\2\57\1\u0191\1\u0192"+
-        "\1\uffff\1\u0193\1\57\1\u0195\1\57\1\u0197\1\57\1\u0199\1\uffff"+
-        "\1\57\1\u019b\1\u019c\3\uffff\1\u019d\1\uffff\1\57\1\uffff\1\57"+
-        "\1\uffff\1\u01a0\3\uffff\1\u01a1\1\u01a2\3\uffff";
-    static final String DFA18_eofS =
-        "\u01a3\uffff";
-    static final String DFA18_minS =
-        "\1\11\1\141\1\uffff\2\141\1\145\1\146\1\157\1\154\1\150\1\142\2"+
-        "\141\2\145\1\171\1\142\1\164\2\145\1\156\2\uffff\1\60\4\uffff\2"+
-        "\75\3\uffff\1\52\4\uffff\3\60\4\uffff\1\56\5\uffff\1\144\1\163\1"+
-        "\151\1\143\1\160\1\145\2\154\1\162\1\141\1\156\1\145\1\154\1\157"+
-        "\1\162\1\144\1\164\1\160\1\143\1\60\1\143\1\157\1\160\1\165\1\60"+
-        "\1\145\2\163\1\144\1\156\1\163\1\162\1\155\1\165\1\142\1\164\1\152"+
-        "\1\60\1\162\1\154\1\167\1\164\1\151\1\156\1\164\20\uffff\1\60\2"+
-        "\145\1\164\1\150\1\145\1\151\1\160\1\162\2\60\1\145\1\60\1\155\1"+
-        "\143\1\141\1\154\1\163\1\141\2\60\1\150\1\157\1\142\1\60\1\uffff"+
-        "\1\141\1\147\1\142\2\145\1\60\1\uffff\1\156\1\157\1\164\1\145\1"+
-        "\60\1\163\1\145\1\143\2\60\1\145\1\142\1\145\1\141\1\165\2\145\1"+
-        "\uffff\1\60\1\154\1\60\1\164\1\60\1\154\1\144\1\151\1\171\1\145"+
-        "\1\165\2\145\1\146\1\uffff\1\60\1\156\1\60\1\151\1\162\1\143\1\60"+
-        "\1\164\2\uffff\1\60\1\143\1\uffff\1\145\1\164\1\154\1\144\1\145"+
-        "\1\164\1\166\1\uffff\1\154\1\uffff\1\157\1\162\1\165\1\151\1\uffff"+
-        "\1\154\1\60\1\141\2\60\1\uffff\1\60\1\167\2\162\1\uffff\1\164\1"+
-        "\151\1\60\1\150\2\uffff\1\141\1\154\1\164\1\165\1\147\1\60\1\143"+
-        "\1\uffff\1\60\1\uffff\1\60\1\uffff\1\145\1\60\1\154\1\160\1\164"+
-        "\1\156\1\155\1\154\1\60\1\146\1\uffff\1\156\1\144\1\uffff\1\156"+
-        "\1\60\1\164\1\147\1\uffff\1\60\1\uffff\1\164\1\167\1\151\4\60\2"+
-        "\145\1\144\1\164\1\144\1\156\1\60\1\uffff\1\154\3\uffff\1\60\1\141"+
-        "\1\164\1\60\1\156\1\uffff\1\60\1\164\2\145\2\154\1\uffff\1\164\2"+
-        "\uffff\1\60\1\uffff\1\60\1\145\1\150\1\143\1\60\1\145\1\uffff\2"+
-        "\60\1\163\1\60\1\164\1\uffff\2\60\1\uffff\1\60\2\157\4\uffff\1\162"+
-        "\3\60\1\145\1\60\1\uffff\1\60\1\uffff\1\143\1\60\1\uffff\1\165\1"+
-        "\uffff\3\60\1\164\1\157\1\164\1\60\2\uffff\1\60\1\157\1\164\1\uffff"+
-        "\1\143\2\uffff\1\60\1\uffff\1\162\3\uffff\1\162\1\156\1\60\1\156"+
-        "\3\uffff\1\60\1\164\1\145\2\uffff\1\164\1\uffff\1\145\3\uffff\1"+
-        "\60\1\147\1\157\2\uffff\1\144\1\151\1\164\1\uffff\1\151\1\153\1"+
-        "\60\1\uffff\1\146\1\uffff\1\162\1\156\2\60\1\uffff\1\60\1\160\1"+
-        "\60\1\157\1\60\1\143\1\60\1\uffff\1\157\2\60\3\uffff\1\60\1\uffff"+
-        "\1\156\1\uffff\1\164\1\uffff\1\60\3\uffff\2\60\3\uffff";
-    static final String DFA18_maxS =
-        "\1\176\1\170\1\uffff\2\165\1\157\1\156\1\157\1\154\1\171\1\163"+
-        "\1\157\1\141\1\145\1\157\1\171\1\162\1\164\1\165\1\150\1\156\2\uffff"+
-        "\1\71\4\uffff\1\76\1\75\3\uffff\1\174\4\uffff\1\146\1\71\1\172\4"+
-        "\uffff\1\145\5\uffff\1\144\1\163\1\164\1\143\1\160\2\162\1\154\1"+
-        "\162\1\141\2\156\1\154\1\157\1\162\1\144\1\164\1\160\1\164\1\172"+
+    static final String DFA20_eotS =
+        "\1\55\1\56\1\67\22\56\2\uffff\1\142\4\uffff\1\145\1\147\3\uffff"+
+        "\1\155\4\uffff\1\156\1\157\4\uffff\1\55\5\uffff\4\56\3\uffff\17"+
+        "\56\1\u0089\4\56\1\u0090\14\56\1\u00a3\7\56\16\uffff\1\u00b2\10"+
+        "\56\1\u00bb\1\u00bc\1\56\1\u00bf\6\56\1\u00c7\1\u00c9\3\56\1\u00ce"+
+        "\1\uffff\5\56\1\u00d4\1\uffff\4\56\1\u00d9\3\56\1\u00de\1\56\1\u00e0"+
+        "\7\56\1\uffff\1\u00e8\1\56\1\u00ea\1\56\1\u00ec\11\56\1\uffff\1"+
+        "\u00f7\1\56\1\u00fa\3\56\1\u00ff\1\56\2\uffff\1\u0101\1\56\1\uffff"+
+        "\7\56\1\uffff\1\56\1\uffff\4\56\1\uffff\1\56\1\u0110\1\56\1\u0112"+
+        "\1\u0113\1\uffff\1\u0114\3\56\1\uffff\2\56\1\u011a\1\56\1\uffff"+
+        "\1\56\1\uffff\5\56\1\u0122\1\56\1\uffff\1\u0124\1\uffff\1\u0125"+
+        "\1\uffff\1\56\1\u0127\6\56\1\u012e\1\56\1\uffff\2\56\1\uffff\1\56"+
+        "\1\u0134\2\56\1\uffff\1\u0137\1\uffff\3\56\1\u013b\1\u013c\1\u013d"+
+        "\1\u013e\6\56\1\u0145\1\uffff\1\56\3\uffff\1\u0147\2\56\1\u014a"+
+        "\1\56\1\uffff\1\u014c\6\56\1\uffff\1\56\2\uffff\1\u0155\1\uffff"+
+        "\1\u0156\3\56\1\u015a\1\56\1\uffff\1\u015c\1\u015d\1\56\1\u015f"+
+        "\1\56\1\uffff\1\u0161\1\u0162\1\uffff\1\u0163\2\56\4\uffff\1\56"+
+        "\1\u0168\1\u0169\1\u016a\1\56\1\u016e\1\uffff\1\u016f\1\uffff\1"+
+        "\56\1\u0171\1\uffff\1\56\1\uffff\1\u0173\1\u0174\1\u0175\1\u0176"+
+        "\3\56\1\u017a\2\uffff\1\u017b\2\56\1\uffff\1\56\2\uffff\1\u017f"+
+        "\1\uffff\1\56\3\uffff\2\56\1\u0183\1\56\3\uffff\1\u0185\2\56\2\uffff"+
+        "\1\56\1\uffff\1\56\4\uffff\1\u018a\2\56\2\uffff\3\56\1\uffff\2\56"+
+        "\1\u0192\1\uffff\1\56\1\uffff\2\56\1\u0196\1\u0197\1\uffff\1\u0198"+
+        "\1\56\1\u019a\1\56\1\u019c\1\56\1\u019e\1\uffff\1\56\1\u01a0\1\u01a1"+
+        "\3\uffff\1\u01a2\1\uffff\1\56\1\uffff\1\56\1\uffff\1\u01a5\3\uffff"+
+        "\1\u01a6\1\u01a7\3\uffff";
+    static final String DFA20_eofS =
+        "\u01a8\uffff";
+    static final String DFA20_minS =
+        "\1\11\1\141\1\56\2\141\1\145\1\146\1\157\1\154\1\150\1\142\2\141"+
+        "\2\145\1\171\1\142\1\164\2\145\1\156\2\uffff\1\60\4\uffff\2\75\3"+
+        "\uffff\1\52\4\uffff\2\60\4\uffff\1\56\5\uffff\1\144\1\163\1\151"+
+        "\1\143\3\uffff\1\160\1\145\2\154\1\162\1\141\1\156\1\145\1\154\1"+
+        "\157\1\162\1\144\1\164\1\160\1\143\1\60\1\143\1\157\1\160\1\165"+
+        "\1\60\1\145\2\163\1\144\1\156\1\163\1\162\1\155\1\165\1\142\1\164"+
+        "\1\152\1\60\1\162\1\154\1\167\1\164\1\151\1\156\1\164\16\uffff\1"+
+        "\60\2\145\1\164\1\150\1\145\1\151\1\160\1\162\2\60\1\145\1\60\1"+
+        "\155\1\143\1\141\1\154\1\163\1\141\2\60\1\150\1\157\1\142\1\60\1"+
+        "\uffff\1\141\1\147\1\142\2\145\1\60\1\uffff\1\156\1\157\1\164\1"+
+        "\145\1\60\1\163\1\145\1\143\1\60\1\165\1\60\1\145\1\142\1\145\1"+
+        "\141\1\165\2\145\1\uffff\1\60\1\154\1\60\1\164\1\60\1\154\1\144"+
+        "\1\151\1\171\1\145\1\165\2\145\1\146\1\uffff\1\60\1\156\1\60\1\151"+
+        "\1\162\1\143\1\60\1\164\2\uffff\1\60\1\143\1\uffff\1\145\1\164\1"+
+        "\154\1\144\1\145\1\164\1\166\1\uffff\1\154\1\uffff\1\157\1\162\1"+
+        "\165\1\151\1\uffff\1\154\1\60\1\141\2\60\1\uffff\1\60\1\167\2\162"+
+        "\1\uffff\1\164\1\151\1\60\1\150\1\uffff\1\162\1\uffff\1\141\1\154"+
+        "\1\164\1\165\1\147\1\60\1\143\1\uffff\1\60\1\uffff\1\60\1\uffff"+
+        "\1\145\1\60\1\154\1\160\1\164\1\156\1\155\1\154\1\60\1\146\1\uffff"+
+        "\1\156\1\144\1\uffff\1\156\1\60\1\164\1\147\1\uffff\1\60\1\uffff"+
+        "\1\164\1\167\1\151\4\60\2\145\1\144\1\164\1\144\1\156\1\60\1\uffff"+
+        "\1\154\3\uffff\1\60\1\141\1\164\1\60\1\156\1\uffff\1\60\1\156\1"+
+        "\164\2\145\2\154\1\uffff\1\164\2\uffff\1\60\1\uffff\1\60\1\145\1"+
+        "\150\1\143\1\60\1\145\1\uffff\2\60\1\163\1\60\1\164\1\uffff\2\60"+
+        "\1\uffff\1\60\2\157\4\uffff\1\162\3\60\1\145\1\60\1\uffff\1\60\1"+
+        "\uffff\1\143\1\60\1\uffff\1\165\1\uffff\4\60\1\164\1\157\1\164\1"+
+        "\60\2\uffff\1\60\1\157\1\164\1\uffff\1\143\2\uffff\1\60\1\uffff"+
+        "\1\162\3\uffff\1\162\1\156\1\60\1\156\3\uffff\1\60\1\164\1\145\2"+
+        "\uffff\1\164\1\uffff\1\145\4\uffff\1\60\1\147\1\157\2\uffff\1\144"+
+        "\1\151\1\164\1\uffff\1\151\1\153\1\60\1\uffff\1\146\1\uffff\1\162"+
+        "\1\156\2\60\1\uffff\1\60\1\160\1\60\1\157\1\60\1\143\1\60\1\uffff"+
+        "\1\157\2\60\3\uffff\1\60\1\uffff\1\156\1\uffff\1\164\1\uffff\1\60"+
+        "\3\uffff\2\60\3\uffff";
+    static final String DFA20_maxS =
+        "\1\176\1\170\1\71\2\165\1\157\1\156\1\157\1\154\1\171\1\163\1\157"+
+        "\1\141\1\145\1\157\1\171\1\162\1\164\1\165\1\150\1\156\2\uffff\1"+
+        "\71\4\uffff\1\76\1\75\3\uffff\1\174\4\uffff\1\146\1\172\4\uffff"+
+        "\1\145\5\uffff\1\144\1\163\1\164\1\143\3\uffff\1\160\2\162\1\154"+
+        "\1\162\1\141\2\156\1\154\1\157\1\162\1\144\1\164\1\160\1\164\1\172"+
         "\1\156\1\157\1\160\1\171\1\172\1\162\2\163\1\144\1\156\1\164\1\162"+
-        "\1\160\1\165\1\154\1\164\1\152\1\172\1\162\1\154\1\170\1\164\1\151"+
-        "\1\156\1\164\20\uffff\1\172\2\145\1\164\1\150\1\145\1\151\1\160"+
+        "\1\164\1\165\1\154\1\164\1\152\1\172\1\162\1\154\1\170\1\164\1\151"+
+        "\1\156\1\164\16\uffff\1\172\2\145\1\164\1\150\1\145\1\151\1\160"+
         "\1\162\2\172\1\146\1\172\1\155\1\143\1\141\1\154\1\163\1\141\2\172"+
         "\1\150\1\157\1\154\1\172\1\uffff\1\141\1\147\1\142\2\145\1\172\1"+
-        "\uffff\1\156\1\157\1\164\1\145\1\172\1\164\1\145\1\143\2\172\1\145"+
-        "\1\142\1\145\1\141\1\165\2\145\1\uffff\1\172\1\154\1\172\1\164\1"+
-        "\172\1\154\1\144\1\151\1\171\1\145\1\165\2\145\1\146\1\uffff\1\172"+
-        "\1\162\1\172\1\151\1\162\1\156\1\172\1\164\2\uffff\1\172\1\143\1"+
-        "\uffff\1\145\1\164\1\154\1\144\1\145\1\164\1\166\1\uffff\1\154\1"+
-        "\uffff\1\157\1\162\1\165\1\151\1\uffff\1\154\1\172\1\141\2\172\1"+
-        "\uffff\1\172\1\167\2\162\1\uffff\1\164\1\151\1\172\1\150\2\uffff"+
-        "\1\141\1\154\1\164\1\165\1\147\1\172\1\143\1\uffff\1\172\1\uffff"+
-        "\1\172\1\uffff\1\145\1\172\1\154\1\160\1\164\1\156\1\155\1\154\1"+
-        "\172\1\146\1\uffff\1\156\1\144\1\uffff\1\156\1\172\1\164\1\147\1"+
-        "\uffff\1\172\1\uffff\1\164\1\167\1\151\4\172\2\145\1\144\1\164\1"+
-        "\144\1\156\1\172\1\uffff\1\154\3\uffff\1\172\1\141\1\164\1\172\1"+
-        "\156\1\uffff\1\172\1\164\2\145\1\154\1\163\1\uffff\1\164\2\uffff"+
-        "\1\172\1\uffff\1\172\1\145\1\150\1\143\1\172\1\145\1\uffff\2\172"+
-        "\1\163\1\172\1\164\1\uffff\2\172\1\uffff\1\172\2\157\4\uffff\1\162"+
-        "\3\172\1\145\1\172\1\uffff\1\172\1\uffff\1\143\1\172\1\uffff\1\165"+
-        "\1\uffff\3\172\1\164\1\157\1\164\1\172\2\uffff\1\172\1\157\1\164"+
-        "\1\uffff\1\143\2\uffff\1\172\1\uffff\1\162\3\uffff\1\162\1\156\1"+
-        "\172\1\156\3\uffff\1\172\1\164\1\145\2\uffff\1\164\1\uffff\1\145"+
-        "\3\uffff\1\172\1\147\1\157\2\uffff\1\144\1\151\1\164\1\uffff\1\151"+
-        "\1\153\1\172\1\uffff\1\146\1\uffff\1\162\1\156\2\172\1\uffff\1\172"+
-        "\1\160\1\172\1\157\1\172\1\143\1\172\1\uffff\1\157\2\172\3\uffff"+
-        "\1\172\1\uffff\1\156\1\uffff\1\164\1\uffff\1\172\3\uffff\2\172\3"+
-        "\uffff";
-    static final String DFA18_acceptS =
-        "\2\uffff\1\10\22\uffff\1\114\1\115\1\uffff\1\117\1\120\1\121\1"+
-        "\122\2\uffff\1\125\1\126\1\127\1\uffff\1\131\1\132\1\133\1\134\3"+
-        "\uffff\1\140\1\141\1\142\1\143\1\uffff\1\161\1\162\1\163\1\164\1"+
-        "\165\55\uffff\1\116\1\144\1\145\1\123\1\146\1\124\1\147\1\150\1"+
-        "\151\1\152\1\153\1\130\1\135\1\136\1\160\1\137\31\uffff\1\73\6\uffff"+
-        "\1\57\21\uffff\1\113\16\uffff\1\105\10\uffff\1\154\1\155\2\uffff"+
-        "\1\156\7\uffff\1\55\1\uffff\1\157\4\uffff\1\40\5\uffff\1\76\4\uffff"+
-        "\1\112\4\uffff\1\33\1\34\7\uffff\1\47\1\uffff\1\53\1\uffff\1\111"+
-        "\12\uffff\1\75\2\uffff\1\104\4\uffff\1\61\1\uffff\1\52\16\uffff"+
-        "\1\37\1\uffff\1\22\1\35\1\74\5\uffff\1\71\6\uffff\1\43\1\uffff\1"+
-        "\50\1\56\1\uffff\1\63\6\uffff\1\7\5\uffff\1\51\2\uffff\1\45\3\uffff"+
-        "\1\30\1\31\1\36\1\41\6\uffff\1\20\1\uffff\1\100\2\uffff\1\32\1\uffff"+
-        "\1\77\7\uffff\1\62\1\65\3\uffff\1\4\1\uffff\1\6\1\25\1\uffff\1\60"+
-        "\1\uffff\1\12\1\44\1\70\4\uffff\1\14\1\24\1\16\3\uffff\1\106\1\21"+
-        "\1\uffff\1\101\1\uffff\1\64\1\42\1\54\3\uffff\1\46\1\1\3\uffff\1"+
-        "\26\3\uffff\1\66\1\uffff\1\17\4\uffff\1\72\7\uffff\1\23\3\uffff"+
-        "\1\27\1\67\1\102\1\uffff\1\2\1\uffff\1\5\1\uffff\1\13\1\uffff\1"+
-        "\107\1\110\1\103\2\uffff\1\15\1\3\1\11";
-    static final String DFA18_specialS =
-        "\u01a3\uffff}>";
-    static final String[] DFA18_transitionS = {
-            "\1\60\1\62\2\uffff\1\62\22\uffff\1\60\1\45\1\61\1\44\1\46\1"+
-            "\37\1\33\1\2\1\51\1\52\1\30\1\26\1\42\1\27\1\47\1\31\12\55\1"+
-            "\41\1\25\1\34\1\36\1\35\2\uffff\32\57\1\53\1\uffff\1\54\1\40"+
-            "\1\50\1\uffff\1\12\1\17\1\13\1\16\1\1\1\4\1\10\1\57\1\6\2\57"+
-            "\1\7\1\5\1\22\1\20\1\21\1\57\1\15\1\3\1\11\1\24\1\14\1\23\3"+
-            "\57\1\uffff\1\32\1\uffff\1\43",
-            "\1\66\12\uffff\1\64\1\uffff\1\63\11\uffff\1\65",
-            "",
-            "\1\73\3\uffff\1\72\2\uffff\1\71\13\uffff\1\70\1\67",
-            "\1\77\7\uffff\1\76\2\uffff\1\100\2\uffff\1\101\2\uffff\1\74"+
-            "\2\uffff\1\75",
-            "\1\103\11\uffff\1\102",
-            "\1\106\6\uffff\1\104\1\105",
-            "\1\107",
-            "\1\110",
-            "\1\114\6\uffff\1\113\2\uffff\1\112\6\uffff\1\111",
-            "\1\115\13\uffff\1\117\4\uffff\1\116",
-            "\1\121\15\uffff\1\120",
-            "\1\122",
-            "\1\123",
-            "\1\125\11\uffff\1\124",
-            "\1\126",
-            "\1\127\17\uffff\1\130",
-            "\1\131",
-            "\1\133\11\uffff\1\134\5\uffff\1\132",
-            "\1\136\2\uffff\1\135",
-            "\1\137",
-            "",
-            "",
-            "\12\56",
+        "\uffff\1\156\1\157\1\164\1\145\1\172\1\164\1\145\1\143\1\172\1\165"+
+        "\1\172\1\145\1\142\1\145\1\141\1\165\2\145\1\uffff\1\172\1\154\1"+
+        "\172\1\164\1\172\1\154\1\144\1\151\1\171\1\145\1\165\2\145\1\146"+
+        "\1\uffff\1\172\1\162\1\172\1\151\1\162\1\156\1\172\1\164\2\uffff"+
+        "\1\172\1\143\1\uffff\1\145\1\164\1\154\1\144\1\145\1\164\1\166\1"+
+        "\uffff\1\154\1\uffff\1\157\1\162\1\165\1\151\1\uffff\1\154\1\172"+
+        "\1\141\2\172\1\uffff\1\172\1\167\2\162\1\uffff\1\164\1\151\1\172"+
+        "\1\150\1\uffff\1\162\1\uffff\1\141\1\154\1\164\1\165\1\147\1\172"+
+        "\1\143\1\uffff\1\172\1\uffff\1\172\1\uffff\1\145\1\172\1\154\1\160"+
+        "\1\164\1\156\1\155\1\154\1\172\1\146\1\uffff\1\156\1\144\1\uffff"+
+        "\1\156\1\172\1\164\1\147\1\uffff\1\172\1\uffff\1\164\1\167\1\151"+
+        "\4\172\2\145\1\144\1\164\1\144\1\156\1\172\1\uffff\1\154\3\uffff"+
+        "\1\172\1\141\1\164\1\172\1\156\1\uffff\1\172\1\156\1\164\2\145\1"+
+        "\154\1\163\1\uffff\1\164\2\uffff\1\172\1\uffff\1\172\1\145\1\150"+
+        "\1\143\1\172\1\145\1\uffff\2\172\1\163\1\172\1\164\1\uffff\2\172"+
+        "\1\uffff\1\172\2\157\4\uffff\1\162\3\172\1\145\1\172\1\uffff\1\172"+
+        "\1\uffff\1\143\1\172\1\uffff\1\165\1\uffff\4\172\1\164\1\157\1\164"+
+        "\1\172\2\uffff\1\172\1\157\1\164\1\uffff\1\143\2\uffff\1\172\1\uffff"+
+        "\1\162\3\uffff\1\162\1\156\1\172\1\156\3\uffff\1\172\1\164\1\145"+
+        "\2\uffff\1\164\1\uffff\1\145\4\uffff\1\172\1\147\1\157\2\uffff\1"+
+        "\144\1\151\1\164\1\uffff\1\151\1\153\1\172\1\uffff\1\146\1\uffff"+
+        "\1\162\1\156\2\172\1\uffff\1\172\1\160\1\172\1\157\1\172\1\143\1"+
+        "\172\1\uffff\1\157\2\172\3\uffff\1\172\1\uffff\1\156\1\uffff\1\164"+
+        "\1\uffff\1\172\3\uffff\2\172\3\uffff";
+    static final String DFA20_acceptS =
+        "\25\uffff\1\115\1\116\1\uffff\1\120\1\121\1\122\1\123\2\uffff\1"+
+        "\126\1\127\1\130\1\uffff\1\132\1\133\1\134\1\135\2\uffff\1\141\1"+
+        "\142\1\143\1\144\1\uffff\1\162\1\163\1\164\1\165\1\166\4\uffff\1"+
+        "\10\1\137\1\161\51\uffff\1\117\1\145\1\146\1\124\1\147\1\125\1\150"+
+        "\1\151\1\152\1\153\1\154\1\131\1\136\1\140\31\uffff\1\74\6\uffff"+
+        "\1\60\22\uffff\1\114\16\uffff\1\106\10\uffff\1\155\1\156\2\uffff"+
+        "\1\157\7\uffff\1\56\1\uffff\1\160\4\uffff\1\41\5\uffff\1\77\4\uffff"+
+        "\1\113\4\uffff\1\33\1\uffff\1\35\7\uffff\1\50\1\uffff\1\54\1\uffff"+
+        "\1\112\12\uffff\1\76\2\uffff\1\105\4\uffff\1\62\1\uffff\1\53\16"+
+        "\uffff\1\40\1\uffff\1\22\1\36\1\75\5\uffff\1\72\7\uffff\1\44\1\uffff"+
+        "\1\51\1\57\1\uffff\1\64\6\uffff\1\7\5\uffff\1\52\2\uffff\1\46\3"+
+        "\uffff\1\30\1\31\1\37\1\42\6\uffff\1\20\1\uffff\1\101\2\uffff\1"+
+        "\32\1\uffff\1\100\10\uffff\1\63\1\66\3\uffff\1\4\1\uffff\1\6\1\25"+
+        "\1\uffff\1\61\1\uffff\1\12\1\45\1\71\4\uffff\1\14\1\24\1\16\3\uffff"+
+        "\1\107\1\21\1\uffff\1\102\1\uffff\1\34\1\65\1\43\1\55\3\uffff\1"+
+        "\47\1\1\3\uffff\1\26\3\uffff\1\67\1\uffff\1\17\4\uffff\1\73\7\uffff"+
+        "\1\23\3\uffff\1\27\1\70\1\103\1\uffff\1\2\1\uffff\1\5\1\uffff\1"+
+        "\13\1\uffff\1\110\1\111\1\104\2\uffff\1\15\1\3\1\11";
+    static final String DFA20_specialS =
+        "\u01a8\uffff}>";
+    static final String[] DFA20_transitionS = {
+            "\1\57\1\61\2\uffff\1\61\22\uffff\1\57\1\45\1\60\1\44\1\46\1"+
+            "\37\1\33\1\61\1\50\1\51\1\30\1\26\1\42\1\27\1\2\1\31\12\54\1"+
+            "\41\1\25\1\34\1\36\1\35\2\uffff\32\56\1\52\1\uffff\1\53\1\40"+
+            "\1\47\1\uffff\1\12\1\17\1\13\1\16\1\1\1\4\1\10\1\56\1\6\2\56"+
+            "\1\7\1\5\1\22\1\20\1\21\1\56\1\15\1\3\1\11\1\24\1\14\1\23\3"+
+            "\56\1\uffff\1\32\1\uffff\1\43",
+            "\1\65\12\uffff\1\63\1\uffff\1\62\11\uffff\1\64",
+            "\1\66\1\uffff\12\70",
+            "\1\75\3\uffff\1\74\2\uffff\1\73\13\uffff\1\72\1\71",
+            "\1\101\7\uffff\1\100\2\uffff\1\102\2\uffff\1\103\2\uffff\1"+
+            "\76\2\uffff\1\77",
+            "\1\105\11\uffff\1\104",
+            "\1\110\6\uffff\1\106\1\107",
+            "\1\111",
+            "\1\112",
+            "\1\116\6\uffff\1\115\2\uffff\1\114\6\uffff\1\113",
+            "\1\117\13\uffff\1\121\4\uffff\1\120",
+            "\1\123\15\uffff\1\122",
+            "\1\124",
+            "\1\125",
+            "\1\127\11\uffff\1\126",
+            "\1\130",
+            "\1\131\17\uffff\1\132",
+            "\1\133",
+            "\1\135\11\uffff\1\136\5\uffff\1\134",
+            "\1\140\2\uffff\1\137",
+            "\1\141",
             "",
             "",
-            "",
-            "",
-            "\1\142\1\141",
-            "\1\144",
-            "",
-            "",
-            "",
-            "\1\150\1\146\1\uffff\1\147\1\uffff\1\151\114\uffff\1\152",
+            "\12\55",
             "",
             "",
             "",
             "",
-            "\12\56\7\uffff\6\56\32\uffff\6\56",
-            "\12\156",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\144\1\143",
+            "\1\146",
+            "",
+            "",
+            "",
+            "\1\152\1\150\1\uffff\1\151\1\uffff\1\153\114\uffff\1\154",
             "",
             "",
             "",
             "",
-            "\1\156\1\uffff\12\55\13\uffff\1\156\37\uffff\1\156",
+            "\12\55\7\uffff\6\55\32\uffff\6\55",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "",
+            "",
+            "",
+            "\1\70\1\uffff\12\54\13\uffff\1\70\37\uffff\1\70",
             "",
             "",
             "",
@@ -4341,6 +4417,9 @@ public class blitzmaxLexer extends Lexer {
             "\1\161",
             "\1\163\12\uffff\1\162",
             "\1\164",
+            "",
+            "",
+            "",
             "\1\165",
             "\1\167\14\uffff\1\166",
             "\1\171\2\uffff\1\170\2\uffff\1\172",
@@ -4356,12 +4435,12 @@ public class blitzmaxLexer extends Lexer {
             "\1\u0085",
             "\1\u0086",
             "\1\u0087\20\uffff\1\u0088",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u008a\12\uffff\1\u008b",
             "\1\u008c",
             "\1\u008d",
             "\1\u008e\3\uffff\1\u008f",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0091\14\uffff\1\u0092",
             "\1\u0093",
             "\1\u0094",
@@ -4369,19 +4448,19 @@ public class blitzmaxLexer extends Lexer {
             "\1\u0096",
             "\1\u0097\1\u0098",
             "\1\u0099",
-            "\1\u009a\2\uffff\1\u009b",
-            "\1\u009c",
-            "\1\u009f\3\uffff\1\u009e\5\uffff\1\u009d",
-            "\1\u00a0",
+            "\1\u009b\2\uffff\1\u009c\3\uffff\1\u009a",
+            "\1\u009d",
+            "\1\u00a0\3\uffff\1\u009f\5\uffff\1\u009e",
             "\1\u00a1",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00a3",
+            "\1\u00a2",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00a4",
-            "\1\u00a5\1\u00a6",
-            "\1\u00a7",
+            "\1\u00a5",
+            "\1\u00a6\1\u00a7",
             "\1\u00a8",
             "\1\u00a9",
             "\1\u00aa",
+            "\1\u00ab",
             "",
             "",
             "",
@@ -4396,11 +4475,8 @@ public class blitzmaxLexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\5\57\1\u00ad\2\57"+
-            "\1\u00b0\3\57\1\u00ac\4\57\1\u00ae\1\u00af\1\u00ab\6\57",
-            "\1\u00b2",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\5\56\1\u00ae\2\56"+
+            "\1\u00b1\3\56\1\u00ad\4\56\1\u00af\1\u00b0\1\u00ac\6\56",
             "\1\u00b3",
             "\1\u00b4",
             "\1\u00b5",
@@ -4408,57 +4484,55 @@ public class blitzmaxLexer extends Lexer {
             "\1\u00b7",
             "\1\u00b8",
             "\1\u00b9",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00bd\1\u00bc",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00bf",
+            "\1\u00ba",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00be\1\u00bd",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00c0",
             "\1\u00c1",
             "\1\u00c2",
             "\1\u00c3",
             "\1\u00c4",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\u00c5\25"+
-            "\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\24\57\1\u00c7\5"+
-            "\57",
-            "\1\u00c9",
+            "\1\u00c5",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\4\56\1\u00c6\25\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\24\56\1\u00c8\5\56",
             "\1\u00ca",
-            "\1\u00cc\11\uffff\1\u00cb",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00cb",
+            "\1\u00cd\11\uffff\1\u00cc",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u00ce",
             "\1\u00cf",
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00d3",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u00d4",
             "\1\u00d5",
             "\1\u00d6",
             "\1\u00d7",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00d9\1\u00da",
-            "\1\u00db",
+            "\1\u00d8",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00da\1\u00db",
             "\1\u00dc",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00dd",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00df",
-            "\1\u00e0",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00e1",
             "\1\u00e2",
             "\1\u00e3",
             "\1\u00e4",
             "\1\u00e5",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u00e6",
             "\1\u00e7",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00e9",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00eb",
-            "\1\u00ec",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u00ed",
             "\1\u00ee",
             "\1\u00ef",
@@ -4466,285 +4540,290 @@ public class blitzmaxLexer extends Lexer {
             "\1\u00f1",
             "\1\u00f2",
             "\1\u00f3",
+            "\1\u00f4",
+            "\1\u00f5",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\u00f4\21"+
-            "\57",
-            "\1\u00f7\3\uffff\1\u00f6",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00f9",
-            "\1\u00fa",
-            "\1\u00fb\12\uffff\1\u00fc",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u00fe",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\10\56\1\u00f6\21"+
+            "\56",
+            "\1\u00f9\3\uffff\1\u00f8",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u00fb",
+            "\1\u00fc",
+            "\1\u00fd\12\uffff\1\u00fe",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0100",
             "",
-            "\1\u0101",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0102",
+            "",
             "\1\u0103",
             "\1\u0104",
             "\1\u0105",
             "\1\u0106",
             "\1\u0107",
-            "",
             "\1\u0108",
-            "",
             "\1\u0109",
+            "",
             "\1\u010a",
+            "",
             "\1\u010b",
             "\1\u010c",
-            "",
             "\1\u010d",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u010e",
+            "",
             "\1\u010f",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0111",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0113",
-            "\1\u0114",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0115",
-            "",
             "\1\u0116",
             "\1\u0117",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "\1\u0118",
             "\1\u0119",
-            "",
-            "",
-            "\1\u011a",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u011b",
+            "",
             "\1\u011c",
+            "",
             "\1\u011d",
             "\1\u011e",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u011f",
             "\1\u0120",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\1\u0121",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0123",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0125",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
             "\1\u0126",
-            "\1\u0127",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0128",
             "\1\u0129",
             "\1\u012a",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u012b",
             "\1\u012c",
-            "",
             "\1\u012d",
-            "\1\u012e",
-            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u012f",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\22\57\1\u0130\7"+
-            "\57",
+            "",
+            "\1\u0130",
+            "\1\u0131",
+            "",
             "\1\u0132",
-            "\1\u0133",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\22\56\1\u0133\7\56",
             "\1\u0135",
             "\1\u0136",
-            "\1\u0137",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u013c",
-            "\1\u013d",
-            "\1\u013e",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\1\u0138",
+            "\1\u0139",
+            "\1\u013a",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u013f",
             "\1\u0140",
             "\1\u0141",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
+            "\1\u0142",
             "\1\u0143",
+            "\1\u0144",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0145",
             "\1\u0146",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0148",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u014a",
+            "\1\u0149",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u014b",
-            "\1\u014c",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u014d",
-            "\1\u014e\6\uffff\1\u014f",
-            "",
+            "\1\u014e",
+            "\1\u014f",
             "\1\u0150",
+            "\1\u0151",
+            "\1\u0152\6\uffff\1\u0153",
             "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0153",
             "\1\u0154",
-            "\1\u0155",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0157",
+            "\1\u0158",
+            "\1\u0159",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u015b",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u015a",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u015c",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u015e",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0160",
-            "\1\u0161",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0164",
+            "\1\u0165",
             "",
             "",
             "",
             "",
-            "\1\u0162",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\u0163\21"+
-            "\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0167",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\u0169\3"+
-            "\57\1\u0168\12\57",
+            "\1\u0166",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\10\56\1\u0167\21"+
+            "\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u016b",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\13\56\1\u016d\3\56"+
+            "\1\u016c\12\56",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u016c",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0170",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u016e",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u0172",
-            "\1\u0173",
-            "\1\u0174",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0177",
             "\1\u0178",
-            "",
             "\1\u0179",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\1\u017b",
-            "",
-            "",
-            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u017c",
             "\1\u017d",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u017f",
+            "",
+            "\1\u017e",
+            "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\1\u0180",
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "\1\u0181",
             "\1\u0182",
-            "",
-            "",
-            "\1\u0183",
-            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0184",
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u0186",
             "\1\u0187",
             "",
             "",
             "\1\u0188",
-            "\1\u0189",
-            "\1\u018a",
             "",
+            "\1\u0189",
+            "",
+            "",
+            "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "\1\u018b",
             "\1\u018c",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
+            "",
+            "\1\u018d",
             "\1\u018e",
-            "",
             "\1\u018f",
+            "",
             "\1\u0190",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0191",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0193",
+            "",
             "\1\u0194",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0196",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\1\u0198",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\1\u0195",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\1\u019a",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "",
-            "\1\u019e",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u0199",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u019b",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\1\u019d",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "\1\u019f",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "",
+            "\1\u01a3",
+            "",
+            "\1\u01a4",
+            "",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
+            "\12\56\7\uffff\32\56\4\uffff\1\56\1\uffff\32\56",
             "",
             "",
             ""
     };
 
-    static final short[] DFA18_eot = DFA.unpackEncodedString(DFA18_eotS);
-    static final short[] DFA18_eof = DFA.unpackEncodedString(DFA18_eofS);
-    static final char[] DFA18_min = DFA.unpackEncodedStringToUnsignedChars(DFA18_minS);
-    static final char[] DFA18_max = DFA.unpackEncodedStringToUnsignedChars(DFA18_maxS);
-    static final short[] DFA18_accept = DFA.unpackEncodedString(DFA18_acceptS);
-    static final short[] DFA18_special = DFA.unpackEncodedString(DFA18_specialS);
-    static final short[][] DFA18_transition;
+    static final short[] DFA20_eot = DFA.unpackEncodedString(DFA20_eotS);
+    static final short[] DFA20_eof = DFA.unpackEncodedString(DFA20_eofS);
+    static final char[] DFA20_min = DFA.unpackEncodedStringToUnsignedChars(DFA20_minS);
+    static final char[] DFA20_max = DFA.unpackEncodedStringToUnsignedChars(DFA20_maxS);
+    static final short[] DFA20_accept = DFA.unpackEncodedString(DFA20_acceptS);
+    static final short[] DFA20_special = DFA.unpackEncodedString(DFA20_specialS);
+    static final short[][] DFA20_transition;
 
     static {
-        int numStates = DFA18_transitionS.length;
-        DFA18_transition = new short[numStates][];
+        int numStates = DFA20_transitionS.length;
+        DFA20_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA18_transition[i] = DFA.unpackEncodedString(DFA18_transitionS[i]);
+            DFA20_transition[i] = DFA.unpackEncodedString(DFA20_transitionS[i]);
         }
     }
 
-    class DFA18 extends DFA {
+    class DFA20 extends DFA {
 
-        public DFA18(BaseRecognizer recognizer) {
+        public DFA20(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 18;
-            this.eot = DFA18_eot;
-            this.eof = DFA18_eof;
-            this.min = DFA18_min;
-            this.max = DFA18_max;
-            this.accept = DFA18_accept;
-            this.special = DFA18_special;
-            this.transition = DFA18_transition;
+            this.decisionNumber = 20;
+            this.eot = DFA20_eot;
+            this.eof = DFA20_eof;
+            this.min = DFA20_min;
+            this.max = DFA20_max;
+            this.accept = DFA20_accept;
+            this.special = DFA20_special;
+            this.transition = DFA20_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__123 | T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | LINE_COMMENT | SUPERSTRICT | STRICT | FRAMEWORK | MODULE | MODULEINFO | IMPORT | INCLUDE | LOCAL | GLOBAL | TYPE | FUNCTION | METHOD | EXTERN | EXTENDS | ABSTRACT | FINAL | FIELD | CONST | VAR | REM | TRUE | FALSE | LONG_TYPE | INT_TYPE | FLOAT_TYPE | DOUBLE_TYPE | BYTE_TYPE | STRING_TYPE | SHORT_TYPE | OBJECT_TYPE | POINTER | NULL | SUPER | SELF | NEW | DELETE | FOR | NEXT | TO | EACHIN | STEP | WHILE | WEND | REPEAT | UNTIL | FOREVER | CONTINUE | SELECT | CASE | DEFAULT | IF | THEN | ELSE | TRY | CATCH | THROW | ASSERT | DEBUGLOG | DEBUGSTOP | EXIT | END | INCBIN | INCBINPTR | INCBINLEN | NOT_TEST | AND_TEST | OR_TEST | SEMI | PLUS | MINUS | STAR | SLASH | VBAR | AMPER | LESS | GREATER | EQUAL | PERCENT | POWER | COLON | COMMA | TILDE | POUND | BANG | DOLLAR | DOT | UNDERSCORE | LPAREN | RPAREN | LBRACK | RBRACK | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINUSEQUAL | STAREQUAL | SLASHEQUAL | VBAREQUAL | LEFTSHIFT | RIGHTSHIFT | ARITHRIGHTSHIFT | MOD | FLOAT | LONG | IDENTIFIER | WHITESPACE | STRING_LITERAL | NEWLINE );";
+            return "1:1: Tokens : ( T__124 | T__125 | T__126 | T__127 | T__128 | T__129 | T__130 | LINE_CONTINUATION | SUPERSTRICT | STRICT | FRAMEWORK | MODULE | MODULEINFO | IMPORT | INCLUDE | LOCAL | GLOBAL | TYPE | FUNCTION | METHOD | EXTERN | EXTENDS | ABSTRACT | FINAL | FIELD | CONST | VAR | RETURN | REM | TRUE | FALSE | LONG_TYPE | INT_TYPE | FLOAT_TYPE | DOUBLE_TYPE | BYTE_TYPE | STRING_TYPE | SHORT_TYPE | OBJECT_TYPE | POINTER | NULL | SUPER | SELF | NEW | DELETE | FOR | NEXT | TO | EACHIN | STEP | WHILE | WEND | REPEAT | UNTIL | FOREVER | CONTINUE | SELECT | CASE | DEFAULT | IF | THEN | ELSE | TRY | CATCH | THROW | ASSERT | DEBUGLOG | DEBUGSTOP | EXIT | END | INCBIN | INCBINPTR | INCBINLEN | NOT_TEST | AND_TEST | OR_TEST | SEMI | PLUS | MINUS | STAR | SLASH | VBAR | AMPER | LESS | GREATER | EQUAL | PERCENT | POWER | COLON | COMMA | TILDE | POUND | BANG | DOLLAR | DOT | UNDERSCORE | LPAREN | RPAREN | LBRACK | RBRACK | NOTEQUAL | LESSEQUAL | GREATEREQUAL | PLUSEQUAL | MINUSEQUAL | STAREQUAL | SLASHEQUAL | VBAREQUAL | LEFTSHIFT | RIGHTSHIFT | ARITHRIGHTSHIFT | MOD | FLOAT | LONG | IDENTIFIER | WHITESPACE | STRING_LITERAL | NEWLINE );";
         }
     }
  

@@ -16,59 +16,60 @@ import org.eclipse.dltk.core.DLTKCore;
 
 public class BlitzMaxSourceParser extends AbstractSourceParser {
 
-	private TokenStream tokenStream;
-	private IProblemReporter problemReporter = null;
+  private TokenStream tokenStream;
+  private IProblemReporter problemReporter = null;
 
-	public BlitzMaxSourceParser() {
-		// TODO Auto-generated constructor stub
-	}
+  public BlitzMaxSourceParser() {
+    // TODO Auto-generated constructor stub
+  }
 
-	public static class Lexer extends blitzmaxLexer {
-		public Lexer(CharStream lexer) {
-			super(lexer);
-		}
+  public static class Lexer extends blitzmaxLexer {
+    public Lexer(CharStream lexer) {
+      super(lexer);
+    }
 
-		public Token nextToken() {
-			startPos = getCharPositionInLine();
-			return super.nextToken();
-		}
-	}
+    @Override
+    public Token nextToken() {
+      startPos = getCharPositionInLine();
+      return super.nextToken();
+    }
+  }
 
-	public ModuleDeclaration parse(char[] fileName, char[] source,
-	    IProblemReporter reporter) {
-		this.problemReporter = reporter;
+  public ModuleDeclaration parse(char[] fileName, char[] source,
+      IProblemReporter reporter) {
+    this.problemReporter = reporter;
 
-		BlitzMaxModuleDeclaration moduleDeclaration = new BlitzMaxModuleDeclaration(
-		    source.length, true);
+    BlitzMaxModuleDeclaration moduleDeclaration = new BlitzMaxModuleDeclaration(
+        source.length, true);
 
-		// FIXME : re-enable this section to test the grammar/parser
-		/*CharStream st = new ANTLRNoCaseStringStream(new String(source));
-		blitzmaxLexer lexer = new Lexer(st);
+    // FIXME : re-enable this section to test the grammar/parser
+    CharStream st = new ANTLRNoCaseStringStream(new String(source));
+    blitzmaxLexer lexer = new Lexer(st);
 
-		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		tokens.discardOffChannelTokens(true);
-		//BlitzMaxTokenStream indentedSource = new BlitzMaxTokenStream(tokens);
-		//tokens = new CommonTokenStream(indentedSource);
-		this.tokenStream = tokens;
+    CommonTokenStream tokens = new CommonTokenStream(lexer);
+    tokens.discardOffChannelTokens(true);
+    //BlitzMaxTokenStream indentedSource = new BlitzMaxTokenStream(tokens);
+    //tokens = new CommonTokenStream(indentedSource);
+    this.tokenStream = tokens;
 
-		blitzmaxParser bmxParser = new blitzmaxParser(this.tokenStream);
-		bmxParser.decl = moduleDeclaration;
-		bmxParser.length = source.length;
-		// bmxParser.converter = new DLTKTokenConverter(content0);
-		bmxParser.reporter = new DLTKBlitzMaxErrorReporter(problemReporter,
-		    bmxParser);
+    blitzmaxParser bmxParser = new blitzmaxParser(this.tokenStream);
+    bmxParser.decl = moduleDeclaration;
+    bmxParser.length = source.length;
+    // bmxParser.converter = new DLTKTokenConverter(content0);
+    bmxParser.reporter = new DLTKBlitzMaxErrorReporter(problemReporter,
+        bmxParser);
 
-		try {
-			bmxParser.file_input();
-		} catch (Throwable e) {
-			if (DLTKCore.DEBUG_PARSER) {
-				e.printStackTrace();
-			}
-		}
-		moduleDeclaration.rebuild();
-*/
-		return moduleDeclaration;
+    try {
+      bmxParser.file_input();
+    } catch (Throwable e) {
+      if (DLTKCore.DEBUG_PARSER) {
+        e.printStackTrace();
+      }
+    }
+    moduleDeclaration.rebuild();
 
-	}
+    return moduleDeclaration;
+
+  }
 
 }

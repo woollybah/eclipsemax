@@ -1,5 +1,7 @@
 grammar blitzmax;
-
+options{
+	backtrack=true;
+}
 @lexer::header {
 package net.brucey.dltk.blitzmax.core.parsers;
 }
@@ -312,11 +314,11 @@ function_block returns [ BlitzMaxFunctionDeclaration functionDeclaration = null 
 	;
 
 statement_block returns [ BlitzMaxBlock statement = new BlitzMaxBlock() ]
-	:
-		{
+@init{
 		  	int startPos = -1;
 		  	int endPos = -1;
 		}
+	:
 		(
 			(
 				statement_list[statement.getStatements()]
@@ -370,7 +372,13 @@ statement_list[List statements]
 		| global_def[statements]
 		| local_def[statements]
 		| rem_block
-		| expression
+		| if_block
+		| DEBUGSTOP NEWLINE
+		| END NEWLINE
+		| RETURN expression NEWLINE
+		| cast_or_function_call NEWLINE
+		| IDENTIFIER assignment expression NEWLINE
+		//| expression // FIXME : should be a statement.. like a = 1
 		| NEWLINE
 	;
 
@@ -388,10 +396,10 @@ function_definition returns [BlitzMaxFunctionExpression exp = null]
 		;
 
 typedef returns [BlitzMaxTypedefExpression expr = null]
-	:	
-		{
+@init{
 			boolean at = false;
 		}
+	:	
 		(
 			(COLON
 				nt = named_type
@@ -446,14 +454,18 @@ function_type
 	;
 
 symbol_type returns [ BlitzMaxTypeReference tr = null ]
-	:	PERCENT
-		| POUND
-		| BANG
-		| DOLLAR
+	:	(d = PERCENT
+		| d = POUND
+		| d = BANG
+		| d = DOLLAR
+		)
+		{
+			tr = new BlitzMaxTypeReference(d);
+		}
 	;
 
 array_type
-	:	LBRACK RBRACK
+	:	LBRACK (number)? RBRACK
 	;
 
 argument_list[boolean functionArgs ] returns [ List<Declaration> args = new ArrayList<Declaration>() ]
@@ -469,14 +481,22 @@ argument_list[boolean functionArgs ] returns [ List<Declaration> args = new Arra
 	;
 
 argument[boolean functionArg] returns [ Declaration arg = null ]
-	:	a = variable_definition[functionArg]
+	:	a = variable_def[functionArg] (EQUAL simple_expression)?
 		{
 			arg = a;
 		}
+		| function_definition
 	;
 
 variable_definition[boolean functionArg] returns [ Declaration dec = null ]
-	:	(n = IDENTIFIER
+	:	v = variable_def[functionArg] (NEWLINE | EQUAL
+		(simple_expression NEWLINE)
+		)?
+		| function_definition
+	;
+	
+variable_def[boolean functionArg] returns [ Declaration dec = null ]
+	:	n = IDENTIFIER
 			(t = typedef
 				{
 					dec = new BlitzMaxVariableDeclaration(n, t);
@@ -497,8 +517,6 @@ variable_definition[boolean functionArg] returns [ Declaration dec = null ]
 					dec = new BlitzMaxVariableDeclaration(n, null);
 				}
 			}
-		)
-		| function_definition
 	;
 
 rem_block
@@ -510,12 +528,25 @@ rem_block_contents
   : .*
     ('endrem' | END (~REM rem_block_contents | REM))
   ;
-	
+
+/*
+remb
+  : REM NEWLINE
+  	remc
+  ;
+
+remc
+  : (END REM )=> END REM
+  | .* (END REM NEWLINE )
+ //|    'endrem' NEWLINE
+    //| REMC
+  ;
+*/
 for_block returns [ BlitzMaxForStatement stmt = null ]
 	:	(
 			f = FOR
 			LOCAL?
-			vdef = variable_definition[false]
+			vdef = variable_def[false]
 			EQUAL
 			(
 			(
@@ -569,7 +600,7 @@ repeat_block
 		(FOREVER | UNTIL expression)
 		NEWLINE
 	;
-
+/*
 expression returns [ Expression exp = null ]
 	:	id = IDENTIFIER
 			{
@@ -593,9 +624,72 @@ expression returns [ Expression exp = null ]
 				exp = s;
 			}
 	;
+*/
+expression returns [ Expression exp = null ]
+	:	expr
+	;
+	
+expr
+    : simple_expression
+	  ( (EQUAL | NOTEQUAL | LESS | LESSEQUAL | GREATEREQUAL | GREATER ) simple_expression )*
+    ;
 
+simple_expression
+    : term ( adding_operator term )*
+    ;
+
+adding_operator
+    : PLUS | MINUS | OR_TEST
+    ;
+
+term
+    : signed_factor ( multiplying_operator signed_factor )*
+    ;
+
+multiplying_operator
+    : STAR | SLASH | MOD | AND_TEST
+    ;
+
+signed_factor
+    : (PLUS | MINUS)? factor
+    ;
+
+factor
+    : NEW? (IDENTIFIER DOT)* IDENTIFIER
+    | func_var_designator 
+    | constant_expression
+    | LPAREN simple_expression RPAREN
+    | SELF
+    | NULL
+    | LINE_CONTINUATION
+    ;
+
+func_var_designator
+    : IDENTIFIER (DOT IDENTIFIER)* LPAREN (expr (COMMA expr)* )? RPAREN
+    ;
+
+constant_expression
+	: number
+	| STRING_LITERAL
+	| NOT_TEST factor
+	;
+
+assignment
+	:	EQUAL
+	| PLUSEQUAL
+	| MINUSEQUAL
+	| STAREQUAL
+	| SLASHEQUAL
+	| VBAREQUAL
+	;
+	
 cast_or_function_call
-	:	(IDENTIFIER LPAREN expression_list? RPAREN)
+	:	IDENTIFIER (DOT IDENTIFIER)* 
+	(
+	LPAREN expression_list? RPAREN
+	| 
+	 expression_list?
+	 )
 	;
 
 expression_list
@@ -683,11 +777,9 @@ if_block
 		
 		(
 			(
-				ELSE
-				| (
-					ELSE IF
-					| 'elseif'
-				)
+				ELSE 
+				// FIXME : handle "Else If"
+				| 'elseif' expression THEN? NEWLINE
 			)
 			
 			statement_block
@@ -700,10 +792,10 @@ if_block
 		NEWLINE
 	;
 
-LINE_COMMENT
-	:	'\'' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
+LINE_CONTINUATION
+	:	'..' ('\r')? '\n' {$channel=HIDDEN;}
 	;
-
+	
 SUPERSTRICT : 'superstrict';
 STRICT : 'strict';
 
@@ -725,6 +817,7 @@ FINAL : 'final';
 FIELD : 'field';
 CONST : 'const';
 VAR : 'var';
+RETURN : 'return';
 
 REM : 'rem';
 
@@ -908,14 +1001,14 @@ MOD		: 'mod' ;
 
 number returns [ Literal num = null ]
 	:	
-		( s = MINUS
+		/*( s = MINUS
 		| s = PLUS)?
-		
+		*/
 		(n = FLOAT
 		| n = LONG
 		| n = INT)
 		{
-			num = new BlitzMaxNumericLiteral(s, n);
+			num = new BlitzMaxNumericLiteral(null, n);
 		}
 	;
 	
@@ -985,7 +1078,10 @@ STRING_LITERAL
 
 NEWLINE
     :   (('\r')? '\n' )+
+    | '\'' ~('\n'|'\r')* ('\r')? '\n' // single line comment
         //{if ( startPos==0 || implicitLineJoiningLevel>0 )
         //{$channel=HIDDEN;}
         //}
     ;
+    
+
