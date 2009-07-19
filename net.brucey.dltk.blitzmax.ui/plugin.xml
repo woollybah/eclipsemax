@@ -151,7 +151,7 @@
          default="true"
         extensions="bmx"
             icon="icons/obj16/blitzmax_obj.gif"
-            id="net.brucey.dltk.blitzmax.ui.editor"
+            id="net.brucey.dltk.blitzmax.ui.editor.BlitzMaxEditor"
             name="%BlitzMaxEditor.name">
          <contentTypeBinding contentTypeId="net.brucey.dltk.blitzmax.blitzmaxContentType"/>
       </editor>
